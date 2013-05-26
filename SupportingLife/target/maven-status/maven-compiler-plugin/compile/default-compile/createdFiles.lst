@@ -1,1 +1,6 @@
+ie/ucc/bis/controller/PatientController.class
 ie/ucc/bis/controller/BaseController.class
+ie/ucc/bis/domain/Patient.class
+ie/ucc/bis/service/SupportingLifeServiceInf.class
+ie/ucc/bis/controller/interfaces/PatientControllerInf.class
+ie/ucc/bis/service/SupportingLifeService.class

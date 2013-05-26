@@ -10,22 +10,21 @@
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
-	<context:annotation-config />
-	<context:component-scan base-package="ie.ucc.bis.controller" />
+	<!-- =================================================================================== -->
+	<!-- **** This file should only contain imports 									**** -->
+	<!-- **** Define required beans in an imported file 								**** -->
+	<!-- =================================================================================== -->
 
-	<!-- Enables the Spring MVC @Controller programming model -->
-	<mvc:annotation-driven />
+	<!-- =================================================================================== -->
+	<!-- **** Supporting LIFE Imports 													**** -->
+	<!-- =================================================================================== -->
 
-	<!-- Handles GET requests for /resources/** by efficiently serving static 
-		content in the ${webappRoot}/resources dir -->
-	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<import resource="config/SupportingLifeControllers.xml" />
+	<import resource="config/SupportingLifeViewResolvers.xml" />
+ 	<import resource="config/SupportingLifeServices.xml" />
 
-	<!-- Allows for mapping the DispatcherServlet to "/" by forwarding static 
-		resource requests to the container's default Servlet -->
-<!--	<mvc:default-servlet-handler /> -->
-
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-		p:prefix="/WEB-INF/pages/" p:suffix=".jsp" />
+	<!-- =================================================================================== -->
+	<!-- **** End of IMPORTS 															**** -->
+	<!-- =================================================================================== -->
 
 </beans>

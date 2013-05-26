@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/test")
 public class BaseController {
 	
-	@RequestMapping(value="/welcome", method = RequestMethod.GET)
+	@RequestMapping(value="/greeting", method = RequestMethod.GET)
 	public String welcome(ModelMap model) {
 		model.addAttribute("message", "Supporting LIFE - Welcome");
 		
@@ -19,7 +19,7 @@ public class BaseController {
 		return"welcome";
 	}
 	
-	@RequestMapping(value="/welcome/{name}", method = RequestMethod.GET)
+	@RequestMapping(value="/greeting/{name}", method = RequestMethod.GET)
 	public String welcomeName(@PathVariable String name, ModelMap model) {
 		model.addAttribute("message", "Supporting LIFE - Welcome " + name);
 

@@ -11,20 +11,15 @@
 		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
 	<!-- =================================================================================== -->
-	<!-- **** This file should only contain imports 									**** -->
-	<!-- **** Define required beans in an imported file 								**** -->
+	<!-- **** SPRINGIFIED SERVICES														**** -->
 	<!-- =================================================================================== -->
 
-	<!-- =================================================================================== -->
-	<!-- **** Supporting LIFE Imports 													**** -->
-	<!-- =================================================================================== -->
-
-	<import resource="config/SupportingLifeControllers.xml" />
-	<import resource="config/SupportingLifeViewResolvers.xml" />
- 	<import resource="config/SupportingLifeServices.xml" />
+	<bean id="SupportingLifeServiceBean" class="ie.ucc.bis.service.SupportingLifeService">
+	    
+	</bean>
 
 	<!-- =================================================================================== -->
-	<!-- **** End of IMPORTS 															**** -->
+	<!-- **** End of SPRINGIFIED SERVICES												**** -->
 	<!-- =================================================================================== -->
-
+    		
 </beans>
