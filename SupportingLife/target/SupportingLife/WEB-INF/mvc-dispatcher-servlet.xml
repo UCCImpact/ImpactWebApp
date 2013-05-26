@@ -9,22 +9,21 @@
 		http://www.springframework.org/schema/context/spring-context-3.2.xsd
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+    <!-- =================================================================================== -->
+    <!-- **** SUPPORTING LIFE CONTROLLERS												**** -->
+    <!-- =================================================================================== -->    
+    
+	<context:annotation-config />
+	<context:component-scan base-package="ie.ucc.bis.controller" />
 
-	<!-- =================================================================================== -->
-	<!-- **** This file should only contain imports 									**** -->
-	<!-- **** Define required beans in an imported file 								**** -->
-	<!-- =================================================================================== -->
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven />
 
-	<!-- =================================================================================== -->
-	<!-- **** Supporting LIFE Imports 													**** -->
-	<!-- =================================================================================== -->
-
-	<import resource="config/SupportingLifeControllers.xml" />
-	<import resource="config/SupportingLifeViewResolvers.xml" />
- 	<import resource="config/SupportingLifeServices.xml" />
-
-	<!-- =================================================================================== -->
-	<!-- **** End of IMPORTS 															**** -->
-	<!-- =================================================================================== -->
-
+	<!-- Handles GET requests for /resources/** by efficiently serving static 
+		content in the ${webappRoot}/resources dir -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
+    <!-- =================================================================================== -->
+    <!-- **** End of SUPPORTING LIFE CONTROLLERS										**** -->
+    <!-- =================================================================================== -->    
 </beans>
