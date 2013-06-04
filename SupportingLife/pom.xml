@@ -12,10 +12,12 @@
 		<spring.version>3.2.0.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<jdk.version>1.6</jdk.version>
+		<jackson.version>1.9.12</jackson.version>
+		<jstl.version>1.2</jstl.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  		<project.resources.sourceEncoding>UTF-8</project.resources.sourceEncoding>
-	</properties>	
-	
+		<project.resources.sourceEncoding>UTF-8</project.resources.sourceEncoding>
+	</properties>
+
 	<dependencies>
 		<!-- Spring 3 dependencies -->
 		<dependency>
@@ -23,30 +25,50 @@
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
- 
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
- 
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
- 
+
+		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Jackson JSON Processor -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<!-- By default, Tomcat container doesn’t contain any jstl library -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
 	</dependencies>
+
 	<build>
-	    <finalName>SupportingLife</finalName>
+		<finalName>SupportingLife</finalName>
 		<plugins>
-		    <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.0</version>
@@ -57,7 +79,7 @@
 					<downloadJavadocs>false</downloadJavadocs>
 					<wtpversion>2.0</wtpversion>
 					<encoding>${project.build.sourceEncoding}</encoding>
-    				<sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+					<sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
 				</configuration>
 			</plugin>
 		</plugins>

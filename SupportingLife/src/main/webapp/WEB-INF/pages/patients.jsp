@@ -1,6 +1,7 @@
 <html>
 <body>
-	<h2>We're looking at patient.....</h2>
-	<h4>${patient.name}</h4>
+	<h2>Patient Examination</h2>
+	<h5>Patient Id: ${patient.patientId}</h5>
+	<h5>Patient Name: ${patient.name}</h5>
 </body>
 </html>
