@@ -42,28 +42,9 @@ public class PatientController implements PatientControllerInf {
 	 * @param model
 	 * @return
 	 */
-//	@RequestMapping(value="/{id}", method=RequestMethod.GET)
-//	public String getPatient(@PathVariable("id") long id, Model model) {
-//		model.addAttribute(supportingLifeService.getPatientById(id));
-//		
-//		return "patients";
-//		
-//	}
-
-	
-	/**
-	 * Returns the requested patient record
-	 * 
-	 * @param id
-	 * @param model
-	 * @return
-	 */
 	@RequestMapping(value="/{id}", method=RequestMethod.GET, headers="Accept=application/json")
 	public @ResponseBody Patient getPatientForAndroid(@PathVariable("id") long id) {
 		return supportingLifeService.getPatientById(id);
 	}
-
-	
-	
 } // end of class
 

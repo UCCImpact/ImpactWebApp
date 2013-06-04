@@ -5,9 +5,7 @@ public class Patient {
 	private long patientId;
 	private String name;
 	
-	public Patient() {
-		
-	}
+	public Patient() {}
 	
 	/**
 	 * Constructor
@@ -19,11 +17,9 @@ public class Patient {
 		this.setName(name);
 	}
 
-
 	public String getName() {
 		return name;
 	}
-
 
 	public void setName(String name) {
 		this.name = name;
@@ -35,7 +31,5 @@ public class Patient {
 
 	public void setPatientId(long patientId) {
 		this.patientId = patientId;
-	}
-	
-	
+	}	
 }
