@@ -1,9 +1,29 @@
 package ie.ucc.bis.domain;
 
-public class Patient {
+import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="patient")
+public class Patient implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="id")
+	@GeneratedValue
 	private long patientId;
-	private String name;
+	
+	@Column(name="first_name")
+	private String firstName;
+
+	@Column(name="surname")
+	private String surname;	
 	
 	public Patient() {}
 	
@@ -12,17 +32,10 @@ public class Patient {
 	 * 
 	 * @param name
 	 */
-	public Patient(long patientId, String name) {
+	public Patient(long patientId, String firstName, String surname) {
 		this.setPatientId(patientId);
-		this.setName(name);
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+		this.setFirstName(firstName);
+		this.setSurname(surname);
 	}
 
 	public long getPatientId() {
@@ -31,5 +44,21 @@ public class Patient {
 
 	public void setPatientId(long patientId) {
 		this.patientId = patientId;
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}	
 }

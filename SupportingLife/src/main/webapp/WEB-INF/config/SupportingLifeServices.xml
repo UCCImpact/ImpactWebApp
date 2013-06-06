@@ -11,15 +11,13 @@
 		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
 	<!-- =================================================================================== -->
-	<!-- **** SPRINGIFIED SERVICES														**** -->
+	<!-- **** SUPPORTING LIFE SERVICES													**** -->
 	<!-- =================================================================================== -->
 
-	<bean id="SupportingLifeServiceBean" class="ie.ucc.bis.service.SupportingLifeService">
-	    
-	</bean>
-
+	<!-- Service Beans are added through @Servce annotation -->
+	
 	<!-- =================================================================================== -->
-	<!-- **** End of SPRINGIFIED SERVICES												**** -->
+	<!-- **** END OF SUPPORTING LIFE SERVICES											**** -->
 	<!-- =================================================================================== -->
     		
 </beans>
