@@ -14,7 +14,15 @@
 	<!-- **** SUPPORTING LIFE SERVICES													**** -->
 	<!-- =================================================================================== -->
 
-	<!-- Service Beans are added through @Servce annotation -->
+	<!-- Validation support (e.g. @Valid) notatation requires a validator bean be added to the 
+		 context -->
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+	
+	<bean id="SupportingLifeServiceBean" class="ie.ucc.bis.service.SupportingLifeService">
+		<property name="patientDAO">
+		    <ref bean="PatientDaoBean"/>
+		</property>
+	</bean>
 	
 	<!-- =================================================================================== -->
 	<!-- **** END OF SUPPORTING LIFE SERVICES											**** -->

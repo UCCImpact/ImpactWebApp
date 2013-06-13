@@ -14,7 +14,7 @@
     <!-- =================================================================================== -->    
     
 	<context:annotation-config />
-	<context:component-scan base-package="ie.ucc.bis.controller, ie.ucc.bis.dao, ie.ucc.bis.service" />
+	<context:component-scan base-package="ie.ucc.bis.controller, ie.ucc.bis.dao" />
 
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven />

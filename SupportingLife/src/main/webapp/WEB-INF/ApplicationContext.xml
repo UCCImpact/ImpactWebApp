@@ -20,8 +20,10 @@
 	<!-- =================================================================================== -->
 
 	<import resource="config/SupportingLifeViewResolvers.xml" />
+	<import resource="config/SupportingLifeDaoBeans.xml" />
  	<import resource="config/SupportingLifeServices.xml" />
  	<import resource="config/SupportingLifePersistence.xml" />
+ 	<import resource="config/SupportingLifeTxManager.xml" />
 
 	<!-- =================================================================================== -->
 	<!-- **** END OF SUPPORTING LIFE IMPORT												**** -->
