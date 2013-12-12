@@ -28,47 +28,15 @@
 	<bean
 		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
-<!--	<jee:jndi-lookup id="supportingLifeDataSource"
-		jndi-name="/jdbc/supp_life" resource-ref="true" /> -->
-
-<!--	<bean id="supportingLifeDataSource" class="org.apache.tomcat.jdbc.pool.DataSourceFactory"
-		destroy-method="close">
-		<property name="driverClassName">
-			<value>com.mysql.jdbc.Driver</value>
-		</property>
-		<property name="url">
-			<value>${JDBC_CONNECTION_STRING}</value>
-		</property>
-		<property name="username">
-			<value>${AWS_ACCESS_KEY_ID}</value>
-		</property>
-		<property name="password">
-			<value>${AWS_SECRET_KEY}</value>
-		</property>
-	</bean> -->
-
-	<bean id="supportingLifeDataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close">
-		<property name="driverClassName">
-			<value>com.mysql.jdbc.Driver</value>
-		</property>
-		<property name="url">
-			<value>jdbc:mysql://myslinstance.ckaovsq8slyk.eu-west-1.rds.amazonaws.com:3306/supportinglifedb</value>
-		</property>
-		<property name="username">
-			<value>tosulliv</value>
-		</property>
-		<property name="password">
-			<value>supporting2013</value>
-		</property>
-		<property name="maxActive">
-			<value>0</value>
-		</property>
-		<property name="initialSize">
-			<value>50</value>
-		</property>
-	</bean>
-
+	<bean id="supportingLifeDataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="${JDBC_CONNECTION_STRING}" />
+		<property name="username" value="${AWS_ACCESS_KEY_ID}"/>
+		<property name="password" value="${AWS_SECRET_KEY}"/>
+		<property name="initialSize" value="5" />
+		<property name="maxActive" value="10" />
+	</bean>   
+	
 	<bean id="jpaVendorAdapter"
 		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 		<property name="database" value="MYSQL" />

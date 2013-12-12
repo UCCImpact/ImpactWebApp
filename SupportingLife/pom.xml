@@ -105,25 +105,41 @@
 			<version>${mysql.version}</version>
 		</dependency>
 
-		<!-- TEMP START -->
-    <dependency>
-        <groupId>commons-dbcp</groupId>
-        <artifactId>commons-dbcp</artifactId>
-        <version>1.4</version>
-    </dependency>
+		<!-- Many Apache projects support interaction with a relational database. 
+			 Creating a new connection for each user can be time consuming (often 
+			 requiring multiple seconds of clock time), in order to perform a database 
+			 transaction that might take milliseconds. Opening a connection per user
+			 can be unfeasible in a publicly-hosted Internet application where the 
+			 number of simultaneous users can be very large. 
+			 
+			 Accordingly, developers often wish to share a "pool" of open connections 
+			 between all of the application's current users. The number of users 
+			 actually performing a request at any given time is usually a very small 
+			 percentage of the total number of active users, and during request 
+			 processing is the only time that a database connection is required. 
+			 The application itself logs into the DBMS, and handles any user account 
+			 issues internally. -->
+		<!-- Commons Database Connection Pooling -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
 
-    <dependency>
-        <groupId>commons-pool</groupId>
-        <artifactId>commons-pool</artifactId>
-        <version>1.6</version>
-    </dependency>
+		<!-- The commons-dbcp package relies on code in the commons-pool package 
+			 to provide the underlying object pool mechanisms that it utilizes -->
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>1.6</version>
+		</dependency>
 
-    <dependency>
-        <groupId>commons-collections</groupId>
-        <artifactId>commons-collections</artifactId>
-        <version>3.2.1</version>
-    </dependency>
-		<!-- TEMP END -->
+		<!-- Types that extend and augment the Java Collections Framework -->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
 
 		<!-- Bean Validation -->
 		<dependency>
