@@ -28,13 +28,16 @@
 	<bean
 		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
-	<bean id="supportingLifeDataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
+	<!-- Use apache pooling to create a pool of DB connections -->
+	<bean id="supportingLifeDataSource" class="org.apache.commons.dbcp.BasicDataSource" 
+	    destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="${JDBC_CONNECTION_STRING}" />
-		<property name="username" value="${AWS_ACCESS_KEY_ID}"/>
-		<property name="password" value="${AWS_SECRET_KEY}"/>
+		<property name="username" value="${AWS_ACCESS_KEY_ID}" />
+		<property name="password" value="${AWS_SECRET_KEY}" />
 		<property name="initialSize" value="5" />
 		<property name="maxActive" value="10" />
+		<property name="maxIdle" value="2" />
 	</bean>   
 	
 	<bean id="jpaVendorAdapter"
