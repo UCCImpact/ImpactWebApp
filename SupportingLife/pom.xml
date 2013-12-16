@@ -127,7 +127,7 @@
 		</dependency>
 
 		<!-- The commons-dbcp package relies on code in the commons-pool package 
-			 to provide the underlying object pool mechanisms that it utilizes -->
+			to provide the underlying object pool mechanisms that it utilizes -->
 		<dependency>
 			<groupId>commons-pool</groupId>
 			<artifactId>commons-pool</artifactId>
@@ -161,7 +161,6 @@
 			<version>${javax.servlet.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>

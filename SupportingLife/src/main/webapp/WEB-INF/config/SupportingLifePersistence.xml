@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
 	xmlns:jee="http://www.springframework.org/schema/jee"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans 
@@ -10,6 +11,8 @@
 		http://www.springframework.org/schema/context/spring-context-3.2.xsd
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/jdbc
+		http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
 		http://www.springframework.org/schema/jee
 		http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
 
@@ -28,18 +31,6 @@
 	<bean
 		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
-	<!-- Use apache pooling to create a pool of DB connections -->
-	<bean id="supportingLifeDataSource" class="org.apache.commons.dbcp.BasicDataSource" 
-	    destroy-method="close">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="${JDBC_CONNECTION_STRING}" />
-		<property name="username" value="${AWS_ACCESS_KEY_ID}" />
-		<property name="password" value="${AWS_SECRET_KEY}" />
-		<property name="initialSize" value="5" />
-		<property name="maxActive" value="10" />
-		<property name="maxIdle" value="2" />
-	</bean>   
-	
 	<bean id="jpaVendorAdapter"
 		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 		<property name="database" value="MYSQL" />
@@ -59,7 +50,31 @@
 			</props>
 		</property>
 	</bean>
-
+	
+	<!-- Development Profile:  use single connection configuration to connect to DB -->
+    <beans profile="development">
+		<bean id="supportingLifeDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+			<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+			<property name="url" value="jdbc:mysql://myslinstance.ckaovsq8slyk.eu-west-1.rds.amazonaws.com:3306/supportinglifedb" />
+			<property name="username" value="supporting_user"/>
+			<property name="password" value="supporting_pw_14"/>
+		</bean>
+    </beans>
+	
+	<!-- Production Profile:  Use apache pooling to create a pool of DB connections -->
+    <beans profile="production">
+		<bean id="supportingLifeDataSource" class="org.apache.commons.dbcp.BasicDataSource" 
+		    destroy-method="close">
+			<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+			<property name="url" value="${JDBC_CONNECTION_STRING}" />
+			<property name="username" value="${AWS_ACCESS_KEY_ID}" />
+			<property name="password" value="${AWS_SECRET_KEY}" />
+			<property name="initialSize" value="5" />
+			<property name="maxActive" value="10" />
+			<property name="maxIdle" value="2" />
+		</bean>
+    </beans>
+    
 	<!-- =================================================================================== -->
 	<!-- **** END OF SUPPORTING LIFE PERSISTENCE **** -->
 	<!-- =================================================================================== -->
