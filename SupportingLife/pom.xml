@@ -21,6 +21,7 @@
 		<mysql.version>5.1.25</mysql.version>
 		<javax.validation.version>1.0.0.GA</javax.validation.version>
 		<javax.servlet.version>3.0.1</javax.servlet.version>
+		<jquery.ui.version>1.10.2-1</jquery.ui.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.resources.sourceEncoding>UTF-8</project.resources.sourceEncoding>
 	</properties>
@@ -106,19 +107,16 @@
 		</dependency>
 
 		<!-- Many Apache projects support interaction with a relational database. 
-			 Creating a new connection for each user can be time consuming (often 
-			 requiring multiple seconds of clock time), in order to perform a database 
-			 transaction that might take milliseconds. Opening a connection per user
-			 can be unfeasible in a publicly-hosted Internet application where the 
-			 number of simultaneous users can be very large. 
-			 
-			 Accordingly, developers often wish to share a "pool" of open connections 
-			 between all of the application's current users. The number of users 
-			 actually performing a request at any given time is usually a very small 
-			 percentage of the total number of active users, and during request 
-			 processing is the only time that a database connection is required. 
-			 The application itself logs into the DBMS, and handles any user account 
-			 issues internally. -->
+			Creating a new connection for each user can be time consuming (often requiring 
+			multiple seconds of clock time), in order to perform a database transaction 
+			that might take milliseconds. Opening a connection per user can be unfeasible 
+			in a publicly-hosted Internet application where the number of simultaneous 
+			users can be very large. Accordingly, developers often wish to share a "pool" 
+			of open connections between all of the application's current users. The number 
+			of users actually performing a request at any given time is usually a very 
+			small percentage of the total number of active users, and during request 
+			processing is the only time that a database connection is required. The application 
+			itself logs into the DBMS, and handles any user account issues internally. -->
 		<!-- Commons Database Connection Pooling -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
@@ -160,6 +158,13 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>${javax.servlet.version}</version>
 			<scope>provided</scope>
+		</dependency>
+
+		<!-- JQuery Dependency -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery-ui</artifactId>
+			<version>${jquery.ui.version}</version>
 		</dependency>
 	</dependencies>
 
