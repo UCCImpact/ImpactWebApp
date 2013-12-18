@@ -13,14 +13,7 @@
 	<!-- =================================================================================== -->
 	<!-- **** SUPPORTING LIFE VIEW RESOLVERS **** -->
 	<!-- =================================================================================== -->
-
-<!-- <bean
-		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
--->
-		<!-- Turn off working out content type based on URL file extension, should 
-			fall back to looking at the Accept headers -->
-<!-- 	<property name="favorPathExtension" value="false" /> -->
-	
+		
     <!-- REST -->
     <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
         <property name="order" value="1" />

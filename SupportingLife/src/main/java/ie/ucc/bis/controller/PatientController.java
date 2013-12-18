@@ -1,7 +1,7 @@
 package ie.ucc.bis.controller;
 
+import ie.ucc.bis.ccm.domain.Patient;
 import ie.ucc.bis.controller.interfaces.PatientControllerInf;
-import ie.ucc.bis.domain.Patient;
 import ie.ucc.bis.service.SupportingLifeService;
 import ie.ucc.bis.service.SupportingLifeServiceInf;
 
@@ -57,25 +57,6 @@ public class PatientController implements PatientControllerInf {
 	@RequestMapping(method = RequestMethod.GET, headers="Accept=html/text")
 	public String getAllPatientsForBrowser(ModelMap model) throws SQLException {
 		List<Patient> patients = supportingLifeService.getAllPatients();
-//		List<Patient> patients = new ArrayList<Patient>();
-
-		//*********** FOR DEBUGGING FROM LOCAL TOMCAT SERVER ****************// 
-//		java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://myslinstance.ckaovsq8slyk.eu-west-1.rds.amazonaws.com:3306/supportinglifedb",
-//				"supporting_user", "supporting_pw_14");
-		//********************************************************************//
-		
-		
-//		java.sql.Connection connection = DriverManager.getConnection(System.getProperty("JDBC_CONNECTION_STRING"),
-//				System.getProperty("AWS_ACCESS_KEY_ID"), System.getProperty("AWS_SECRET_KEY"));
-//		
-//		
-//		java.sql.PreparedStatement s = connection.prepareStatement("SELECT * FROM Patient;");     
-//		ResultSet rs = s.executeQuery();
-//
-//		while (rs.next()) {
-//		    System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3));
-//		    patients.add(new Patient(rs.getString(2), rs.getString(3)));
-//		}
 		model.addAttribute("patients", patients);
 		
 		// Spring uses InternalResourceViewResolver and returns back patients.jsp

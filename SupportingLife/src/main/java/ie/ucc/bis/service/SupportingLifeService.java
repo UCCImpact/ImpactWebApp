@@ -2,8 +2,8 @@ package ie.ucc.bis.service;
 
 import java.util.List;
 
-import ie.ucc.bis.dao.PatientDAO;
-import ie.ucc.bis.domain.Patient;
+import ie.ucc.bis.ccm.dao.PatientDAO;
+import ie.ucc.bis.ccm.domain.Patient;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -1,4 +1,4 @@
-package ie.ucc.bis.domain;
+package ie.ucc.bis.ccm.domain;
 
 import java.io.Serializable;
 
@@ -9,13 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Patient")
+@Table(name="sl_ccm_patient_details")
 public class Patient implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id")
+	@Column(name="patient_id")
 	@GeneratedValue
 	private long patientId;
 	
@@ -23,7 +23,7 @@ public class Patient implements Serializable {
 	private String firstName;
 
 	@Column(name="surname")
-	private String surname;	
+	private String surname;
 	
 	public Patient() {}
 

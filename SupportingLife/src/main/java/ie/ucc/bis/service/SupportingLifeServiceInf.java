@@ -2,7 +2,7 @@ package ie.ucc.bis.service;
 
 import java.util.List;
 
-import ie.ucc.bis.domain.Patient;
+import ie.ucc.bis.ccm.domain.Patient;
 
 public interface SupportingLifeServiceInf {
 

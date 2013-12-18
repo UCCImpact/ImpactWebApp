@@ -1,8 +1,8 @@
-package ie.ucc.bis.dao;
+package ie.ucc.bis.ccm.dao;
 
 import java.util.List;
 
-import ie.ucc.bis.domain.Patient;
+import ie.ucc.bis.ccm.domain.Patient;
 
 public interface PatientDAO {
 
