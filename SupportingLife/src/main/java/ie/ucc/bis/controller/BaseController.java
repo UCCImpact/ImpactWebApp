@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-@RequestMapping("/test")
+@RequestMapping("/greeting")
 public class BaseController {
 	
 	Logger log = Logger.getLogger(BaseController.class); 
 	
-	@RequestMapping(value="/greeting", method = RequestMethod.GET)
+	@RequestMapping("/welcome")
 	public String welcome(ModelMap model) {
 		model.addAttribute("message", "Supporting LIFE - Welcome");
 		
@@ -22,7 +22,18 @@ public class BaseController {
 		return"welcome";
 	}
 	
-	@RequestMapping(value="/greeting/{name}", method = RequestMethod.GET)
+	@RequestMapping(value="/sl_header", method = RequestMethod.GET)
+	public String showHeader(ModelMap model) {
+		// TODO 1. Identify predefined reports
+		
+		// TODO 2. Identify custom reports
+		
+		// Spring uses InternalResourceViewResolver and returns back sl_header.jsp
+		return"sl_header";
+	}
+	
+	
+	@RequestMapping(value="/{name}", method = RequestMethod.GET)
 	public String welcomeName(@PathVariable String name, ModelMap model) {
 		log.info("GET API called for name : " + name);
 		

@@ -1,5 +1,5 @@
 <html>
-<jsp:include page="sl_menu_bar.jsp" />
+<jsp:include page="sl_header.jsp"/>
 <body>
 	<h2>Let's Do This.....</h2>
 	<h4>${message}</h4>

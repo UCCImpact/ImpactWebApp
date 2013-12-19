@@ -6,22 +6,30 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <html lang="en">
 <!-- Include <head> in jspf, including JS Script refs. -->
-<%@include file="sl_menu_bar.jspf"%>
+<%@include file="sl_header.jspf"%>
 <body>
 	<nav>
 		<!-- HTML 5 element: Nav Replaces divs for menus, improving GoogleBot searches -->
 		<ul id="menubar">
-			<li><c:url value="#">Generate Reports</c:url></li>
-			<li><c:url value="#">Custom Report</c:url></li>
-
-			<!-- Restores proper scaling when relative positioning is used in UL. -->
+			<li><a href="#">Generate Reports</a>
+				<ul>
+					<!-- Dropdown menu -->
+					<li><a href="#">Pre-defined Report</a></li>
+					<li><a href="#">Pre-defined Report 1</a></li>
+					<li><a href="#">Pre-defined Report 2</a></li>
+					<li><a href="#">Pre-defined Report 3</a></li>
+					<li><a href="#">Pre-defined Report 4</a></li>
+					<li><a href="#">Custom Report</a></li>
+				</ul>
+				<div class="clear"></div> <!-- Restores proper scaling when relative positioning is used in UL. -->
+			</li>
 			<!-- END Produce Reports dropdown menu. -->
 
-			<li><c:url value="#">Register User</c:url></li>
-			<li><c:url value="#">Account Settings</c:url></li>
-			<li><c:url value="#">Training</c:url></li>
-			<li><c:url value="#">About</c:url></li>
-			<li><c:url value="#">Log Out</c:url></li>
+			<li><a href="#">Register User</a></li>
+			<li><a href="#">Account Settings</a></li>
+			<li><a href="#">Training</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Log Out</a></li>
 		</ul>
 		<!-- END menubar -->
 		<div class="clear"></div>

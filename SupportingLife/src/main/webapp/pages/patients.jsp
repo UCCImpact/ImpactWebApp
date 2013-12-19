@@ -2,7 +2,7 @@
 <html>
 <body>
 	<div id="logo">
-		<img src="/resources/images/SupportingLifeLogo.jpg" alt="Supporting Life">
+		<img src=<c:url value="/images/supporting_life_logo.jpg"/> alt="Supporting Life">
 	</div>
 	<h2>Patients</h2>
 	<table border="1">
