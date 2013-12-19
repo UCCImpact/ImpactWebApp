@@ -14,12 +14,15 @@
 			<li><a href="#">Generate Reports</a>
 				<ul>
 					<!-- Dropdown menu -->
+					
 					<li><a href="#">Pre-defined Report</a></li>
-					<li><a href="#">Pre-defined Report 1</a></li>
-					<li><a href="#">Pre-defined Report 2</a></li>
-					<li><a href="#">Pre-defined Report 3</a></li>
-					<li><a href="#">Pre-defined Report 4</a></li>
+					<c:forEach var="preDefinedReport" items="${preDefinedReports}">
+						<li><a href="#">${preDefinedReport}</a></li>
+					</c:forEach>
 					<li><a href="#">Custom Report</a></li>
+					<c:forEach var="customReport" items="${customReports}">
+						<li><a href="#">${customReport}</a></li>
+					</c:forEach>
 				</ul>
 				<div class="clear"></div> <!-- Restores proper scaling when relative positioning is used in UL. -->
 			</li>

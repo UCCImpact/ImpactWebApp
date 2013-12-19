@@ -24,6 +24,7 @@
  	<import resource="config/SupportingLifeServices.xml" />
  	<import resource="config/SupportingLifePersistence.xml" />
  	<import resource="config/SupportingLifeTxManager.xml" />
+ 	<import resource="config/SupportingLifeCommonReferenceData.xml" />
 
 	<!-- =================================================================================== -->
 	<!-- **** END OF SUPPORTING LIFE IMPORT												**** -->
