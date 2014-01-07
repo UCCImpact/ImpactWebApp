@@ -1,10 +1,11 @@
+<!-- Function Header Description -->
 <head>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_header.css"/>/>
 	 
 	<%-- jQuery Source file. --%>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js" charset="utf-8"></script>
-	<%-- Animated appearance and hiding of dropdown menus. --%>
-	<script type="text/javascript" src=<c:url value="/js/sl_menu_bar_scroll.js"/> charset="utf-8"></script>
+	<%-- Animated appearance and hiding of Toolbar Dropdown menus. --%>
+  	<script type="text/javascript" src=<c:url value="/js/sl_menu_bar_scroll.js"/> charset="utf-8"></script>
 	
 	<title>Supporting LIFE Administration Page</title>	 
 </head>

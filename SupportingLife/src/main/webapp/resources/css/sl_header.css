@@ -3,24 +3,27 @@ body {
 	font-size: 11px;
 }
 
-/* Used after sub menu ULs to reset positioning to normal. */
-.clear {
-	clear: both
+/* Positions menubar as absolute, so that text below bar is not moved when a submenu opens. */
+nav {
+	position: absolute;
+	width: 100%;
 }
 
-/* remove the list style (i.e. bullet headers) */
-#menubar {
+/****************************************************************************/
+
+/* Top Level Menu Bar */
+.topLevelMenuBar {
+	display: block;
 	margin: 0;
 	padding: 0;
-	list-style: none;
+	list-style: none; /* remove the list style (i.e. bullet headers) */
 }
 
-/* make the LIs display inline */
-#menubar li {
+/* Top Level Menu Bar List Item */
+.topLevelMenuBar > li {
 	float: left;
 	display: block;
-	width: 15.5%;
-	/* Fit 6 items on header as full screen width, without Log Out dropping to next line when narrowed. */
+	width: 15.5%; /* Fit 6 items on header as full screen width, without 'Log Out' dropping to next line when narrowed. */
 	position: relative;
 	z-index: 500; /* z-index set to 500 to ensure it is always in front. */
 	margin-top: 0px;
@@ -30,10 +33,9 @@ body {
 	background: #228032; /* Green, same colour as JIRA SL menu bar. */
 }
 
-/* Menu bar at the top of page. */
-#menubar li a {
-	display: block;
-	/* Display as block element, i.e.: full-width and with line-break before and after. */
+/* Top Level Menu Bar List Item Anchor */
+.topLevelMenuBar > li > a {
+	display: block; /* Display as block element, i.e.: full-width and with line-break before and after. */
 	padding-top: 8px;
 	padding-right: 5px;
 	padding-bottom: 0px;
@@ -45,51 +47,108 @@ body {
 	color: #292929; /* Near-Black */
 }
 
-/* Colour on-hover of top menubar item, e.g. Produce Reports */
-#menubar li a:hover {
+/* Style when Hovering on Top Level Menu Bar List Item Anchor */
+.topLevelMenuBar > li > a:hover {
 	color: #E8DB95; /* Pale Yellow */
+	font-weight: 800; /* Increase number to increase boldness of text */
 	background: #363636; /* Dark grey */
+	text-decoration: none;
 }
 
-/* Style for default selected value */
-#menubar a.selected {
+/* Style when Top Level Menu Bar List Item Anchor is Selected. */
+.topLevelMenuBar > li > a.selected {
 	color: #228032; /*Dark green */
+	font-weight: 800; /* Increase number to increase boldness of text */
 	background: #ffffff; /* White */
 }
 
-/* dropdown menu */
-#menubar ul {
+/****************************************************************************/
+
+/* Second Level Menu Bar */
+.secondLevelMenuBar {
 	position: absolute;
 	left: 0;
 	display: none;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	margin-right: 0px;
-	margin-left: -1px;
+	margin-right: 1px;
+	margin-left: 1px;
 	padding: 0;
 	list-style: none; /* No bullet point headers. */
 }
 
-/* dropdown menu items */
-#menubar ul li {
+/* Second Level Menu Bar List Item */
+.secondLevelMenuBar > li {
 	width: 100%;
 	float: left;
+	z-index: 499; /* z-index set to 499 to ensure it is in front of everything except the Top Level Menu Bar. */
 	border-top: 1px solid #ffffff; /* White */
 }
 
-/* Fits anchor link to full width of dropdown menu. */
-#menubar ul a {
+/* Second Level Menu Bar List Item Anchor */
+.secondLevelMenuBar > li > a {
 	display: block;
 	height: 15px;
 	padding: 8px 5px;
+	font-weight: 600; /* Increase number to increase boldness of text */
 	color: #003410; /* Dark Green text color, when not hovered over. */
-	background: #30B547; /* Light Green, to contrast with top menubar */
+	background: #30B547; /* Light Green, to contrast with the Top Level Menu Bar */
+	text-decoration: none;
 }
 
-/* Dropdown items onHover */
-#menubar ul a:hover {
+/* Style when Hovering on Second Level Menu Bar List Item Anchor */
+.secondLevelMenuBar > li > a:hover {
 	text-decoration: none;
 	color: #E8DB95; /* Pale Yellow */
-	background: #696969;
-	/* Grey Background, lighter than menubar onHover */
+	font-weight: 600; /* Increase number to increase boldness of text */
+	background: #696969; /* Grey Background, lighter than levelOne onHover */
+}
+
+/****************************************************************************/
+
+/* Third Level Menu Bar */
+.thirdLevelMenuBar {
+	display: none;
+	position: relative;
+	left: 100%; /* Start position of the submenu, where 100% = RH edge of the Second Level Menu Bar. */
+	z-index: 498; /* z-index set to 498 to ensure it is always in front of everything except the two parent menus. */
+	margin-top: -32px;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-left: -40px;
+	padding: 0;
+	list-style: none; /* No bullet point headers. */
+}
+
+/* Third Level Menu Bar List Item */
+.thirdLevelMenuBar > li {
+	width: 100%;
+	float: left;
+	border-top: 1px solid #ffffff; /* White */
+	border-left: 1px solid #ffffff; /* White */
+	margin-left: 40px;
+}
+
+/* Third Level Menu Bar List Item Anchor */
+.thirdLevelMenuBar > li > a {
+	height: 15px;
+	padding: 8px 5px;
+	color: #003410; /* Dark Green text color, when not hovered over. */
+	font-weight: 600; /* Increase number to increase boldness of text */
+	background: #30B547; /* Light Green, to contrast with Top Level Menu Bar */
+	text-decoration: none;
+}
+
+/* Style when Hovering on Third Level Menu Bar List Item Anchor */
+.thirdLevelMenuBar > li:hover a{
+	text-decoration: none;
+	color: #E8DB95; /* Pale Yellow */
+	font-weight: 600; /* Increase number to increase boldness of text */
+	background: #696969; /* Grey Background, lighter than the Second Level Menu Bar onHover */	
+}
+
+/****************************************************************************/
+
+.mainPageContent {
+	padding-top: 30px; /* ensure that main menubar does not overlap text, due to absolute positioning. */
 }
