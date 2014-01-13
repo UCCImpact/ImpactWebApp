@@ -1,12 +1,9 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%-- JSTL FMT supports time, number and localisation formats. --%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%-- JSTL Functions allow for String manipulation. --%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%-- sl_header.jsp --%>
+<%-- Top navigation menu bar. --%>
+<%-- author: James Flynn --%>
+<%-- Last Updated: 09/01/2014 --%>
 
-<html lang="en">
 <!-- Include <head> in jspf, including JS Script refs. -->
-<%@include file="sl_header.jspf"%>
 	<body>
 		<nav>
 			<!-- HTML 5 element: Nav Replaces divs for menus, improving GoogleBot searches -->
@@ -34,22 +31,15 @@
 					</ul> 				
 				</li>  <!-- END: Generate Reports -->
 	
-				<li><a href="#">Register User</a></li> <!-- END: Register User -->
+				<!-- Contains tooltip stating that "Feature Is Not Implemented Yet." -->
+				<li class="disabledButton" id="disabledRegisterUserFeature"><a id="open-event" href="#" >Register User</a></li> <!-- END: Register User -->
 				
-				<li><a href="#">Account Settings</a></li> <!-- END: Account Settings -->
+				<li class="disabledButton" id="disabledAccountSettingsFeature"><a id="open-event" href="#">Account Settings</a></li> <!-- END: Account Settings -->
 
-				<li><a href="#">Training</a></li> <!-- END: Training -->
+				<li class="disabledButton" id="disabledTrainingFeature"><a id="open-event" href="#">Training</a></li> <!-- END: Training -->
 
-				<li><a href="#">About</a></li> <!-- END: About -->
+				<li class="disabledButton" id="disabledAboutFeature"><a id="open-event" href="#">About</a></li> <!-- END: About -->
 
-				<li><a href="#">Log Out</a></li> <!-- END: Log Out -->
+				<li class="disabledButton" id="disabledLogOutFeature"><a id="open-event" href="#">Log Out</a></li> <!-- END: Log Out -->
 			</ul> <!-- END: Top Level Menu Bar -->
 		</nav>
-	
-		<div class="mainPageContent">
-			<h1>Welcome to the Supporting LIFE admin website.</h1>
-			<p>Please choose an option from the menu, above.</p>
-		</div> <!-- END Main Page Content -->
-		
-	</body>
-</html>

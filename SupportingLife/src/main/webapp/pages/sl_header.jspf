@@ -1,11 +1,21 @@
-<!-- Function Header Description -->
+<%-- sl_header.jspf --%>
+<%-- Header for menu bar, containing scrolling CSS styling and jQuery scrolling functions. --%>
+<%-- author: James Flynn --%>
+<%-- Last Updated: 09/01/2014. --%>
 <head>
+	<meta charset="UTF-8"/>
+	<meta name="author" content="Tim O'Sullivan, James Flynn"/>
+	
+	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_header.css"/>/>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_footer.css"/>/>
+	<!--  jQuery UI CSS -->
+	<link rel="stylesheet" type="text/css" href=<c:url value="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>/>
 	 
 	<%-- jQuery Source file. --%>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js" charset="utf-8"></script>
 	<%-- Animated appearance and hiding of Toolbar Dropdown menus. --%>
-  	<script type="text/javascript" src=<c:url value="/js/sl_menu_bar_scroll.js"/> charset="utf-8"></script>
-	
-	<title>Supporting LIFE Administration Page</title>	 
-</head>
+  	<script type="text/javascript" src=<c:url value="/js/sl_menu_bar.js"/> charset="utf-8"></script>
+  	<%--  Removes time delay of tooltip on hover and customises look of tooltip. --%>
+  	<script type="text/javascript" src=<c:url value="/js/sl_tooltip.js"/> charset="utf-8"></script>
+  	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_toolip.css"/>/>

@@ -1,0 +1,137 @@
+/* **************************************************************************
+** Filename: sl_ccm_custom_report.css
+** 
+** Styling for CCM Custom Report Page.
+**
+** Author: James Flynn.
+**
+** Last Updated: 08/01/2014.
+** *************************************************************************/
+
+body {
+	text-align:center; /* Centre-align all components, unless overridden individually. */
+}
+
+h1 {
+	color:#363636; /* Dark grey. */
+	font-size:2.5em; /* Standard size of h1 = 2em. */
+	padding-top:40px;
+}
+
+/* Header used within checkbox list divs. */
+h2 {
+	position:absolute; /* Ensures that checkboxes horizontally align properly across all the divs. */
+	color: #228032; /* Green, same colour as sl_header top level menu bar. */
+	width:32%; /* Matches size of div, ensuring text wraps. */
+	text-align:left;
+}
+
+/* Container for all report form. */
+.report_ccm_container {
+	width:93%; /* Matches report_checkbox_lists Div. */	
+}
+
+/* Div containing 'National ID', 'National Health ID' and 'HSA User' fields. */
+.report_ccm_id {
+	border-style:none;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+/* Div containing 'From' and 'To' Date Pickers */
+.report_ccm_dates {
+	border-style:none;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+/* Table containing inputs, used in Divs not containing checkboxes. */
+.input_table {
+	width:99%;
+	text-align:right;
+	margin-bottom:10px;
+}
+
+/* Table field containing input values. */
+.input_table td {
+	width:33%;
+}
+
+/* Span containing 'From' Date Picker */
+#report_ccm_dates_from {
+	margin-left: 5%;
+}
+
+/* Span containing 'To' Date Picker */
+#report_ccm_dates_to {
+	margin-left: 5%;
+}
+
+/* Parent Div containing 'ASK and LOOK Assessment Symptom', 'Classification' and 'Classification Type' checkbox divs. */
+.report_ccm_checkbox_lists {
+	min-height:500px; /* Assign minimum height, so that all child divs are of the same size. Set to required height, based on max. number of rows. */
+}
+/* Div containing 'ASK and LOOK Assessment Symptom' checkboxes. */
+.report_ccm_ask_look {
+	border-style:none;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:10px;
+	width:32%; /* Ensures that last checkbox div does not drop below other checkbox divs. */
+	min-height:500px; /* Assign minimum height, which matches parent div, report_ccm_checkbox_lists. */
+	float:left;
+}
+
+/* Div containing 'Classification' checkboxes. */
+.report_ccm_classification {
+	border-style:none;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:10px;
+	width:32%; /* Ensures that last checkbox div does not drop below other checkbox divs. */
+	min-height:500px; /* Assign minimum height, which matches parent div, report_ccm_checkbox_lists. */
+	float:left;
+}
+
+/* Div containing 'Classification Type' checkboxes. */
+.report_ccm_classification_types {
+	border-style:none;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:10px;
+	width:32%; /* Ensures that last checkbox div does not drop below other checkbox divs. */
+	min-height:500px; /* Assign minimum height, which matches parent div, report_ccm_checkbox_lists. */
+	float:left;
+}
+
+/* UL containing checkboxes */
+.checkbox_table {
+	position: relative; /* Ensure that tables are positioned evenly across all divs, irrespective of whether text wraps in h2. */
+	width:100%;
+	margin-top:100px; /* Places table below header, irrespective of text wrap. */
+	list-style:none;
+}
+
+/* Checkboxes with Checkbox UL */
+.checkbox_table input {
+	float:right; /* Ensures that checkboxes are aligned at RHS of div. */
+}
+
+/* Div containing 'Generate Report' submit button. */
+.report_ccm_generate_report {
+	clear:both; /* Overrides float:right. Ensures that 'Generate Report' button is located below checkboxes, and not alongside. */
+	margin-top:30px;
+}
+
+#generate_excel_button {
+	background-color:#BCCC61; /* Pale green. */
+}
+
+#generate_pdf_button {	
+	background-color:#FFFE93; /* Pale yellow. */
+}
+
+#clear_fields_button {
+	margin-left: 30px;
+	background-color:#D3DEFF; /* Sky blue. */
+}
