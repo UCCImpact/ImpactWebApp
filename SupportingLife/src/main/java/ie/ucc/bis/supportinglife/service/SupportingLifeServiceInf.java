@@ -1,8 +1,8 @@
-package ie.ucc.bis.service;
+package ie.ucc.bis.supportinglife.service;
 
 import java.util.List;
 
-import ie.ucc.bis.ccm.domain.Patient;
+import ie.ucc.bis.supportinglife.ccm.domain.Patient;
 
 public interface SupportingLifeServiceInf {
 

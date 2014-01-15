@@ -1,9 +1,9 @@
-package ie.ucc.bis.controller;
+package ie.ucc.bis.supportinglife.controller;
 
-import ie.ucc.bis.ccm.domain.Patient;
-import ie.ucc.bis.controller.interfaces.PatientControllerInf;
-import ie.ucc.bis.service.SupportingLifeService;
-import ie.ucc.bis.service.SupportingLifeServiceInf;
+import ie.ucc.bis.supportinglife.ccm.domain.Patient;
+import ie.ucc.bis.supportinglife.controller.interfaces.PatientControllerInf;
+import ie.ucc.bis.supportinglife.service.SupportingLifeService;
+import ie.ucc.bis.supportinglife.service.SupportingLifeServiceInf;
 
 import java.sql.SQLException;
 import java.util.List;

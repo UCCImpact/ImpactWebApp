@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
 		http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
 		http://www.springframework.org/schema/context 
@@ -14,21 +11,149 @@
 	<!-- **** SPRINGIFIED REFERENCE DATA												**** -->
 	<!-- =================================================================================== -->
 
-	<bean name="SupportingLifeRefDataHelper" class="ie.ucc.bis.service.helper.SupportingLifeRefDataHelper">
-	    <property name="preDefinedReports">
-	        <map>
-	            <entry key="PRE_DEFINED_REPORT_1">
+	<bean name="ccmCustomReportReferenceCriteria" class="ie.ucc.bis.supportinglife.reference.CcmCustomReportReferenceCriteria">
+		<property name="askLookSymptoms">
+			<map>
+				<entry key="COUGH_SYMPTOM">
+					<value>Cough</value>
+				</entry>
+				<entry key="DIARRHOEA_SYMPTOM">
+					<value>Diarrhoea (Loose Stools)</value>
+				</entry>
+				<entry key="BLOOD_IN_STOOL_SYMPTOM">
+					<value>Blood in stool</value>
+				</entry>
+				<entry key="FEVER_SYMPTOM">
+					<value>Fever (reported or now)</value>
+				</entry>
+				<entry key="CONVULSIONS_SYMPTOM">
+					<value>Convulsions</value>
+				</entry>
+				<entry key="DIFFICULTY_DRINKING_OR_FEEDING_SYMPTOM">
+					<value>Difficulty drinking or feeding</value>
+				</entry>
+				<entry key="VOMITING_SYMPTOM">
+					<value>Vomiting</value>
+				</entry>
+				<entry key="RED_EYES_SYMPTOM">
+					<value>Red Eyes</value>
+				</entry>
+				<entry key="DIFFICULTY_IN_SEEING_SYMPTOM">
+					<value>Difficulty in seeing</value>
+				</entry>
+				<entry key="OTHER_PROBLEMS_SYMPTOM">
+					<value>Other problems</value>
+				</entry>
+				<entry key="CHEST_INDRAWING_SYMPTOM">
+					<value>Chest indrawing</value>
+				</entry>
+				<entry key="FAST_BREATHING_SYMPTOM">
+					<value>Fast breathing</value>
+				</entry>
+				<entry key="VERY_SLEEPY_OR_UNCONSCIOUS_SYMPTOM">
+					<value>Very sleepy or unconscious</value>
+				</entry>
+				<entry key="PALMAR_PALLOR_SYMPTOM">
+					<value>Palmar pallor</value>
+				</entry>
+				<entry key="MUAC_TAPE_COLOUR_SYMPTOM">
+					<value>Muac tape colour</value>
+				</entry>
+				<entry key="SWELLING_OF_BOTH_FEET_SYMPTOM">
+					<value>Swelling of both feet</value>
+				</entry>
+			</map>
+		</property>
+		<property name="classifications">
+			<map>
+				<entry key="COUGH_FOR_21_DAYS_OR_MORE_CLASSIFICATION">
+					<value>Cough for 21 days or more</value>
+				</entry>
+				<entry key="DIARRHOEA_FOR_14_DAYS_OR_MORE_CLASSIFICATION">
+					<value>Diarrhoea for 14 days or more</value>
+				</entry>
+				<entry key="BLOOD_IN_STOOL_CLASSIFICATION">
+					<value>Blood in stool</value>
+				</entry>
+				<entry key="DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_CLASSIFICATION">
+					<value>Diarrhoea (less than 14 days AND no blood in stool)</value>
+				</entry>
+				<entry key="FEVER_FOR_LAST_7_DAYS_CLASSIFICATION">
+					<value>Fever for last 7 days</value>
+				</entry>
+				<entry key="FEVER_FOR_LESS_THAN_7_DAYS_CLASSIFICATION">
+					<value>Fever (less than 7 days)</value>
+				</entry>
+				<entry key="CONVULSIONS_CLASSIFICATION">
+					<value>Convulsions</value>
+				</entry>
+				<entry key="NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING_CLASSIFICATION">
+					<value>Not Able to Drink or Feed Anything</value>
+				</entry>
+				<entry key="VOMITS_EVERYTHING_CLASSIFICATION">
+					<value>Vomits Everything</value>
+				</entry>
+				<entry key="RED_EYE_FOR_4_DAYS_OR_MORE_CLASSIFICATION">
+					<value>Red Eye for 4 Days or more</value>
+				</entry>
+				<entry key="RED_EYE_WITH_VISUAL_PROBLEMS_CLASSIFICATION">
+					<value>Red Eye with Visual Problems</value>
+				</entry>
+				<entry key="RED_EYE_LESS_THAN_4_DAYS_CLASSIFICATION">
+					<value>Red Eye (less than 4 days)</value>
+				</entry>
+				<entry key="OTHER_PROBLEM_CLASSIFICATION">
+					<value>Other Problem</value>
+				</entry>
+				<entry key="CHEST_INDRAWING_CLASSIFICATION">
+					<value>Chest Indrawing</value>
+				</entry>
+				<entry key="FAST_BREATHING_CLASSIFICATION">
+					<value>Fast Breathing</value>
+				</entry>
+				<entry key="VERY_SLEEPY_OR_UNCONSCIOUS_CLASSIFICATION">
+					<value>Very Sleep or Unconscious</value>
+				</entry>
+				<entry key="PALMAR_PALLOR_CLASSIFICATION">
+					<value>Palmar Pallor</value>
+				</entry>
+				<entry key="RED_ON_MUAC_TAPE_CLASSIFICATION">
+					<value>Red on MUAC Tape</value>
+				</entry>
+				<entry key="SWELLING_OF_BOTH_FEET_CLASSIFICATION">
+					<value>Swelling of Both Feet</value>
+				</entry>
+			</map>
+		</property>
+		<property name="classificationTypes">
+			<map>
+				<entry key="DANGER_SIGN_CLASSIFICATION_TYPE">
+					<value>Danger Sign</value>
+				</entry>
+				<entry key="SICK_CLASSIFICATION_TYPE">
+					<value>Sick</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+
+	<bean name="SupportingLifeRefDataHelper" class="ie.ucc.bis.supportinglife.service.helper.SupportingLifeRefDataHelper">
+		<property name="ccmCustomReportReferenceCriteria" ref="ccmCustomReportReferenceCriteria"/>
+		<property name="preDefinedReports">
+			<map>
+				<entry key="PRE_DEFINED_REPORT_1">
 					<value>CCM Referral Rate</value>
 				</entry>
-	        </map>
-	    </property>
-	    <property name="customReports">
-	        <map>
-	            <entry key="CUSTOM_REPORT_1">
+			</map>
+		</property>
+		<property name="customReports">
+			<map>
+				<entry key="CUSTOM_REPORT_1">
 					<value>CCM Custom Report</value>
 				</entry>
-	        </map>
-	    </property>
+			</map>
+		</property>
 	</bean>
 
 </beans>

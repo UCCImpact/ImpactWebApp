@@ -1,4 +1,4 @@
-package ie.ucc.bis.ccm.domain;
+package ie.ucc.bis.supportinglife.ccm.domain;
 
 import java.io.Serializable;
 

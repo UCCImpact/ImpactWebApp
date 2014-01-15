@@ -1,6 +1,6 @@
-package ie.ucc.bis.interceptor;
+package ie.ucc.bis.supportinglife.interceptor;
 
-import ie.ucc.bis.service.helper.SupportingLifeRefDataHelperInf;
+import ie.ucc.bis.supportinglife.service.helper.SupportingLifeRefDataHelperInf;
 
 import java.util.Collection;
 

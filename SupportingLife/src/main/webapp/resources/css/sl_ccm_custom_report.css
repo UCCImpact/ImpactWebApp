@@ -20,7 +20,7 @@ h1 {
 
 /* Header used within checkbox list divs. */
 h2 {
-	position:absolute; /* Ensures that checkboxes horizontally align properly across all the divs. */
+	position:relative; /* Ensures that checkboxes horizontally align properly across all the divs. */
 	color: #228032; /* Green, same colour as sl_header top level menu bar. */
 	width:32%; /* Matches size of div, ensuring text wraps. */
 	text-align:left;
@@ -69,51 +69,30 @@ h2 {
 
 /* Parent Div containing 'ASK and LOOK Assessment Symptom', 'Classification' and 'Classification Type' checkbox divs. */
 .report_ccm_checkbox_lists {
-	min-height:500px; /* Assign minimum height, so that all child divs are of the same size. Set to required height, based on max. number of rows. */
+	 overflow: hidden;   /* so that all child divs are of the same size. */
 }
 /* Div containing 'ASK and LOOK Assessment Symptom' checkboxes. */
-.report_ccm_ask_look {
-	border-style:none;
+.report_ccm_checkbox_list {
+	overflow: hidden
 	padding-top:5px;
 	padding-bottom:5px;
 	padding-left:10px;
+	padding-right:10px;
 	width:32%; /* Ensures that last checkbox div does not drop below other checkbox divs. */
-	min-height:500px; /* Assign minimum height, which matches parent div, report_ccm_checkbox_lists. */
+	min-height:500px; /* Assign minimum height. */
 	float:left;
+	border-collapse: collapse;
+    border: 1px solid #228032; /* Green, same colour as JIRA SL menu bar. */
 }
 
-/* Div containing 'Classification' checkboxes. */
-.report_ccm_classification {
-	border-style:none;
-	padding-top:5px;
-	padding-bottom:5px;
-	padding-left:10px;
-	width:32%; /* Ensures that last checkbox div does not drop below other checkbox divs. */
-	min-height:500px; /* Assign minimum height, which matches parent div, report_ccm_checkbox_lists. */
-	float:left;
-}
-
-/* Div containing 'Classification Type' checkboxes. */
-.report_ccm_classification_types {
-	border-style:none;
-	padding-top:5px;
-	padding-bottom:5px;
-	padding-left:10px;
-	width:32%; /* Ensures that last checkbox div does not drop below other checkbox divs. */
-	min-height:500px; /* Assign minimum height, which matches parent div, report_ccm_checkbox_lists. */
-	float:left;
-}
-
-/* UL containing checkboxes */
-.checkbox_table {
-	position: relative; /* Ensure that tables are positioned evenly across all divs, irrespective of whether text wraps in h2. */
-	width:100%;
-	margin-top:100px; /* Places table below header, irrespective of text wrap. */
-	list-style:none;
+.report_ccm_checkbox_list_header {
+	font-size: 20px;
+    line-height: 40px;
+    color: #228032; /* Green, same colour as JIRA SL menu bar. */
 }
 
 /* Checkboxes with Checkbox UL */
-.checkbox_table input {
+.report_ccm_checkbox_list input {
 	float:right; /* Ensures that checkboxes are aligned at RHS of div. */
 }
 

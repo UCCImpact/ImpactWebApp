@@ -17,10 +17,10 @@
 	<!-- **** SUPPORTING LIFE DAOs 														**** -->
 	<!-- =================================================================================== -->
 
-	<bean id="PatientDaoBean" class="ie.ucc.bis.ccm.dao.PatientDAOImpl"/>
+	<bean id="PatientDaoBean" class="ie.ucc.bis.supportinglife.ccm.dao.PatientDAOImpl"/>
 
 	<!-- =================================================================================== -->
 	<!-- **** END OF SUPPORTING LIFE DAOs												**** -->
 	<!-- =================================================================================== -->
-
+ 
 </beans>

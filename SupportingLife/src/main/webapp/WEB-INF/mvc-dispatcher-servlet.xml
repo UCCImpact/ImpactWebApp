@@ -14,14 +14,14 @@
 	<!-- =================================================================================== -->
 
 	<context:annotation-config />
-	<context:component-scan base-package="ie.ucc.bis.controller, ie.ucc.bis.dao, ie.ucc.bis.interceptor" />
+	<context:component-scan base-package="ie.ucc.bis.supportinglife.controller, ie.ucc.bis.supportinglife.dao, ie.ucc.bis.supportinglife.interceptor" />
 
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven />
 
 	<!-- Configure Interceptor -->
 	<mvc:interceptors>
-		<bean class="ie.ucc.bis.interceptor.SupportingLifeHandlerInterceptor" />
+		<bean class="ie.ucc.bis.supportinglife.interceptor.SupportingLifeHandlerInterceptor" />
 	</mvc:interceptors>
 
 	<mvc:default-servlet-handler />
@@ -33,7 +33,7 @@
 	<mvc:resources mapping="/images/**" location="/resources/images/" />
 
 	<mvc:resources mapping="/resources/**" location="/resources/" />
-
+ 
 	<!-- =================================================================================== -->
 	<!-- **** End of SUPPORTING LIFE CONTROLLERS **** -->
 	<!-- =================================================================================== -->

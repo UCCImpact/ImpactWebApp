@@ -1,6 +1,6 @@
-package ie.ucc.bis.ccm.dao;
+package ie.ucc.bis.supportinglife.ccm.dao;
 
-import ie.ucc.bis.ccm.domain.Patient;
+import ie.ucc.bis.supportinglife.ccm.domain.Patient;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package ie.ucc.bis.controller;
+package ie.ucc.bis.supportinglife.controller;
 
-import ie.ucc.bis.service.helper.SupportingLifeRefDataHelperInf;
+import ie.ucc.bis.supportinglife.service.helper.SupportingLifeRefDataHelperInf;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

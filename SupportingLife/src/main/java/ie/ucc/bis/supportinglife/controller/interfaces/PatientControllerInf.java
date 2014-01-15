@@ -1,6 +1,6 @@
-package ie.ucc.bis.controller.interfaces;
+package ie.ucc.bis.supportinglife.controller.interfaces;
 
-import ie.ucc.bis.ccm.domain.Patient;
+import ie.ucc.bis.supportinglife.ccm.domain.Patient;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;

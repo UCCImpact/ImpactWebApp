@@ -34,7 +34,7 @@
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="supportingLifeDataSource" />
-		<property name="packagesToScan" value="ie.ucc.bis.ccm.domain" /> <!-- scans for entities (model) -->
+		<property name="packagesToScan" value="ie.ucc.bis.supportinglife.ccm.domain" /> <!-- scans for entities (model) -->
 	    <property name="persistenceProvider">
        		<bean class="org.hibernate.ejb.HibernatePersistence" />
     	</property>
@@ -70,7 +70,7 @@
 			<property name="maxIdle" value="2" />
 		</bean>
 	</beans>
-
+ 
 	<!-- =================================================================================== -->
 	<!-- **** END OF SUPPORTING LIFE PERSISTENCE **** -->
 	<!-- =================================================================================== -->
