@@ -1,54 +1,108 @@
 package ie.ucc.bis.supportinglife.ccm.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="sl_ccm_patient_details")
+@Table(name="sl_ccm_patient")
 public class Patient implements Serializable {
 	
-	private static final long serialVersionUID = 1L;
+	/**
+	 * Generated Serial Version Id
+	 */
+	private static final long serialVersionUID = -6120098477412745960L;
 
 	@Id
 	@Column(name="patient_id")
 	@GeneratedValue
 	private long patientId;
 	
-	@Column(name="first_name")
-	private String firstName;
-
-	@Column(name="surname")
-	private String surname;
+	// association to sl_user table
+	@ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
 	
+	@Column(name="child_first_name")
+	private String childFirstName;
+
+	@Column(name="child_surname")
+	private String childSurname;
+	
+	@Column(name="date_of_birth")
+	@Temporal(TemporalType.DATE)
+	private Date birthDate;
+	
+	@Column(name="gender")
+	private String gender;
+	
+	@Column(name="caregiver_name")
+	private String caregiverName;
+
+	@Column(name="relationship")
+	private String relationship;
+	
+	@Column(name="other_relationship")
+	private String otherRelationship;
+	
+	@Column(name="physical_address")
+	private String physicalAddress;
+	
+	@Column(name="village_ta")
+	private String villageTa;
+	
+	@Column(name="created_dt")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createdDate;
+	
+	@Column(name="updated_dt")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date updatedDate;
+	 
 	public Patient() {}
 
 	/**
 	 * Constructor
 	 * 
-	 * @param firstName
-	 * @param surname
+	 * @param user
+	 * @param childFirstName
+	 * @param childSurname
+	 * @param birthDate
+	 * @param gender
+	 * @param caregiverName
+	 * @param relationship
+	 * @param otherRelationship
+	 * @param physicalAddress
+	 * @param villageTa
+	 * @param createdDate
+	 * @param updatedDate
 	 */
-	public Patient(String firstName, String surname) {
-		this.setFirstName(firstName);
-		this.setSurname(surname);
-	}	
-	
-	/**
-	 * Constructor
-	 * 
-	 * @param patientId
-	 * @param firstName
-	 * @param surname
-	 */
-	public Patient(long patientId, String firstName, String surname) {
-		this.setPatientId(patientId);
-		this.setFirstName(firstName);
-		this.setSurname(surname);
+	public Patient(User user, String childFirstName, String childSurname, Date birthDate,
+					String gender, String caregiverName, String relationship, 
+					String otherRelationship, String physicalAddress, String villageTa,
+					Date createdDate, Date updatedDate) {
+		
+		setUser(user);
+		setChildFirstName(childFirstName);
+		setChildSurname(childSurname);
+		setBirthDate(birthDate);
+		setGender(gender);
+		setCaregiverName(caregiverName);
+		setRelationship(relationship);
+		setOtherRelationship(otherRelationship);
+		setPhysicalAddress(physicalAddress);
+		setVillageTa(villageTa);
+		setCreatedDate(createdDate);
+		setUpdatedDate(updatedDate);
 	}
 
 	public long getPatientId() {
@@ -58,20 +112,100 @@ public class Patient implements Serializable {
 	public void setPatientId(long patientId) {
 		this.patientId = patientId;
 	}
-	
-	public String getFirstName() {
-		return firstName;
+
+	public User getUser() {
+		return user;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public String getSurname() {
-		return surname;
+	public String getChildFirstName() {
+		return childFirstName;
 	}
 
-	public void setSurname(String surname) {
-		this.surname = surname;
+	public void setChildFirstName(String childFirstName) {
+		this.childFirstName = childFirstName;
+	}
+
+	public String getChildSurname() {
+		return childSurname;
+	}
+
+	public void setChildSurname(String childSurname) {
+		this.childSurname = childSurname;
+	}
+
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getCaregiverName() {
+		return caregiverName;
+	}
+
+	public void setCaregiverName(String caregiverName) {
+		this.caregiverName = caregiverName;
+	}
+
+	public String getRelationship() {
+		return relationship;
+	}
+
+	public void setRelationship(String relationship) {
+		this.relationship = relationship;
+	}
+
+	public String getOtherRelationship() {
+		return otherRelationship;
+	}
+
+	public void setOtherRelationship(String otherRelationship) {
+		this.otherRelationship = otherRelationship;
+	}
+
+	public String getPhysicalAddress() {
+		return physicalAddress;
+	}
+
+	public void setPhysicalAddress(String physicalAddress) {
+		this.physicalAddress = physicalAddress;
+	}
+
+	public String getVillageTa() {
+		return villageTa;
+	}
+
+	public void setVillageTa(String villageTa) {
+		this.villageTa = villageTa;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
 	}	
 }

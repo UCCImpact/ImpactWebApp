@@ -21,8 +21,8 @@ CREATE TABLE IF NOT EXISTS sl_user (
     								first_name 		VARCHAR(50),
     								surname 		VARCHAR(50),
     								role 			VARCHAR(10),
-    								created_dt 		DATETIME,
-    								updated_dt 		DATETIME,
+    								created_dt 		TIMESTAMP,
+    								updated_dt 		TIMESTAMP,
     								PRIMARY KEY (user_id)
 									);
 
@@ -45,15 +45,15 @@ CREATE TABLE IF NOT EXISTS sl_ccm_patient(
     										user_id 			VARCHAR(8),
     										child_first_name 	VARCHAR(50),
     										child_surname 		VARCHAR(50),
-    										date_of_birth 		DATETIME,
+    										date_of_birth 		DATE,
     										gender 				VARCHAR(6),
     										caregiver_name 		VARCHAR(100),
     										relationship 		VARCHAR(7),
     										other_relationship 	VARCHAR(50),
     										physical_address 	VARCHAR(250),
     										village_ta 			VARCHAR(50),
-    										created_dt 			DATETIME,
-    										updated_dt 			DATETIME,
+    										created_dt 			TIMESTAMP,
+    										updated_dt 			TIMESTAMP,
     										PRIMARY KEY (patient_id),
                        						FOREIGN KEY (user_id) REFERENCES sl_user(user_id)
 										  );
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS sl_ccm_patient_visit (
     												visit_id 		INTEGER(18) NOT NULL AUTO_INCREMENT,
     												patient_id 		INTEGER(18) NOT NULL,
     												follow_up_id 	INTEGER(18),
-    												visit_dt 		DATETIME,
+    												visit_dt 		DATE,
 				    								PRIMARY KEY (visit_id),
 				    								FOREIGN KEY (patient_id) REFERENCES sl_ccm_patient(patient_id)
 												);
