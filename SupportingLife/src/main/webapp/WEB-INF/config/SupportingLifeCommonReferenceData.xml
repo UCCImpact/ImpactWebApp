@@ -32,8 +32,14 @@
 				<entry key="DIFFICULTY_DRINKING_OR_FEEDING_SYMPTOM">
 					<value>Difficulty drinking or feeding</value>
 				</entry>
+				<entry key="NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING_SYMPTOM">
+					<value>Not able to drink or feed anything</value>
+				</entry>
 				<entry key="VOMITING_SYMPTOM">
 					<value>Vomiting</value>
+				</entry>
+				<entry key="VOMITS_EVERYTHING_SYMPTOM">
+					<value>Vomits everything</value>
 				</entry>
 				<entry key="RED_EYES_SYMPTOM">
 					<value>Red Eyes</value>

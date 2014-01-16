@@ -5,11 +5,16 @@
 -- CLEAN TABLES
 -----------------------------------------------------------------------------------------------------------------
 USE supportinglifedb;
+DELETE FROM sl_ccm_look_symptoms;
+DELETE FROM sl_ccm_ask_look_symptoms;
+DELETE FROM sl_ccm_patient_classification;
+DELETE FROM sl_ccm_patient_treatment;
+DELETE FROM sl_ccm_patient_visit;
 DELETE FROM sl_ccm_patient;
 DELETE FROM sl_user;
 
 -----------------------------------------------------------------------------------------------------------------
--- ADD USER DATA
+-- ADD CCM USER DATA
 -----------------------------------------------------------------------------------------------------------------
 
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
@@ -38,7 +43,28 @@ INSERT INTO sl_ccm_patient(patient_id, user_id, first_name, surname, date_of_bir
 -----------------------------------------------------------------------------------------------------------------
 -- ADD CCM PATIENT VISIT DATA
 -----------------------------------------------------------------------------------------------------------------									 
-
-
-
+								 
+INSERT INTO sl_ccm_patient_visit(visit_id, patient_id, follow_up_id, visit_dt) 
+									VALUES (NULL, 1, NULL, STR_TO_DATE('15,01,2014','%d,%m,%Y'));
+						
+--*** patient has 'Look' symptoms
+INSERT INTO sl_ccm_look_symptoms(visit_id, patient_id, chest_indrawing, breaths_per_minute, 
+								 sleepy_unconscious, palmar_pallor, muac_tap_colour, swelling_both_feet) 
+									VALUES (1, 1, 0, 38, 0, 0, 'GREEN', 0);
+						
+									
+--*** patient has 'Ask and Look' symptoms:'cough for 30 days' & 'convulsions'									
+INSERT INTO sl_ccm_ask_look_symptoms(visit_id, patient_id, problem, cough, cough_duration, diarrhoea, diarrhoea_duration,
+								 		blood_in_stool, fever, fever_duration, convulsions, difficulty_drink_feed,
+								 		not_able_drink_feed, vomiting, vomits_everything, red_eye, red_eye_duration,
+								 		difficulty_in_seeing, difficulty_in_seeing_duration, other_problems) 
+									VALUES (1, 1, "patient has bad cough and convulsions", 1, 30, 0, NULL,
+											0, 0, NULL, 1, 0,
+											0, 0, 0, 0, NULL,
+											0, NULL, NULL);									
+									
+--*** patient has classifications: 'cough for 21 days or more' & 'convulsions'
+INSERT INTO sl_ccm_patient_classification(visit_id, patient_id, classification_id) 
+											VALUES (1, 1, 1), 
+												   (1, 1, 7);
 									 
