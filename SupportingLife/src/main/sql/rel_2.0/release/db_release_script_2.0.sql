@@ -43,8 +43,8 @@ USE supportinglifedb;
 CREATE TABLE IF NOT EXISTS sl_ccm_patient(
 										 	patient_id 			INTEGER(18) NOT NULL AUTO_INCREMENT,
     										user_id 			VARCHAR(8),
-    										first_name 			VARCHAR(50),
-    										surname 			VARCHAR(50),
+    										child_first_name 	VARCHAR(50),
+    										child_surname 		VARCHAR(50),
     										date_of_birth 		DATETIME,
     										gender 				VARCHAR(6),
     										caregiver_name 		VARCHAR(100),
