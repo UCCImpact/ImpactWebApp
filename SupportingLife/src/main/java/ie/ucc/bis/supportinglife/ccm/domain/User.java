@@ -28,11 +28,11 @@ public class User implements Serializable {
 	@Column(name="password")
 	private String password;
 
-	@Column(name="ccm_user")
-	private int ccmUser;
+	@Column(name="ccm_user", columnDefinition = "TINYINT(1)")
+	private boolean ccmUser;
 	
-	@Column(name="imci_user")
-	private int imciUser;
+	@Column(name="imci_user", columnDefinition = "TINYINT(1)")
+	private boolean imciUser;
 	
 	@Column(name="first_name")
 	private String firstName;
@@ -65,7 +65,7 @@ public class User implements Serializable {
 	 * @param createdDate
 	 * @param updatedDate
 	 */
-	public User(String password, int ccmUser, int imciUser, String firstName,
+	public User(String password, boolean ccmUser, boolean imciUser, String firstName,
 				String surname, String role, Date createdDate, Date updatedDate) {
 		setPassword(password);
 		setCcmUser(ccmUser);
@@ -93,19 +93,19 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public int getCcmUser() {
+	public boolean getCcmUser() {
 		return ccmUser;
 	}
 
-	public void setCcmUser(int ccmUser) {
+	public void setCcmUser(boolean ccmUser) {
 		this.ccmUser = ccmUser;
 	}
 
-	public int getImciUser() {
+	public boolean getImciUser() {
 		return imciUser;
 	}
 
-	public void setImciUser(int imciUser) {
+	public void setImciUser(boolean imciUser) {
 		this.imciUser = imciUser;
 	}
 
