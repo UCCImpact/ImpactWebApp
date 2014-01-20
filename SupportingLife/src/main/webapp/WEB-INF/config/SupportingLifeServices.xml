@@ -19,8 +19,8 @@
 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
 	
 	<bean id="SupportingLifeServiceBean" class="ie.ucc.bis.supportinglife.service.SupportingLifeService">
-		<property name="patientDAO">
-		    <ref bean="PatientDaoBean"/>
+		<property name="daoBeans">
+		    <ref bean="daoMapBean"/>
 		</property>
 	</bean>
 	

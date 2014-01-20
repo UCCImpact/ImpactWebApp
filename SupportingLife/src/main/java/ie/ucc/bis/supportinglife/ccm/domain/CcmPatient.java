@@ -3,6 +3,7 @@ package ie.ucc.bis.supportinglife.ccm.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,9 +14,14 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+/**
+ * Domain class capturing a CcmPatient entity
+ * 
+ * @author TOSullivan
+ */
 @Entity
 @Table(name="sl_ccm_patient")
-public class Patient implements Serializable {
+public class CcmPatient implements Serializable {
 	
 	/**
 	 * Generated Serial Version Id
@@ -25,10 +31,11 @@ public class Patient implements Serializable {
 	@Id
 	@Column(name="patient_id")
 	@GeneratedValue
-	private long patientId;
+	private Long patientId;
 	
 	// association to sl_user table
-	@ManyToOne
+	// - one user can create many patients 
+	@ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="user_id")
     private User user;
 	
@@ -68,7 +75,7 @@ public class Patient implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedDate;
 	 
-	public Patient() {}
+	public CcmPatient() {}
 
 	/**
 	 * Constructor
@@ -86,7 +93,7 @@ public class Patient implements Serializable {
 	 * @param createdDate
 	 * @param updatedDate
 	 */
-	public Patient(User user, String childFirstName, String childSurname, Date birthDate,
+	public CcmPatient(User user, String childFirstName, String childSurname, Date birthDate,
 					String gender, String caregiverName, String relationship, 
 					String otherRelationship, String physicalAddress, String villageTa,
 					Date createdDate, Date updatedDate) {
@@ -105,11 +112,11 @@ public class Patient implements Serializable {
 		setUpdatedDate(updatedDate);
 	}
 
-	public long getPatientId() {
+	public Long getPatientId() {
 		return patientId;
 	}
 
-	public void setPatientId(long patientId) {
+	public void setPatientId(Long patientId) {
 		this.patientId = patientId;
 	}
 

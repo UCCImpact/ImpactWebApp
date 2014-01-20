@@ -44,12 +44,12 @@ INSERT INTO sl_ccm_patient(patient_id, user_id, child_first_name, child_surname,
 -- ADD CCM PATIENT VISIT DATA
 -----------------------------------------------------------------------------------------------------------------									 
 								 
-INSERT INTO sl_ccm_patient_visit(visit_id, patient_id, follow_up_id, visit_dt) 
-									VALUES (NULL, 1, NULL, STR_TO_DATE('15,01,2014','%d,%m,%Y'));
+INSERT INTO sl_ccm_patient_visit(visit_id, patient_id, visit_dt) 
+									VALUES (NULL, 1, STR_TO_DATE('15,01,2014','%d,%m,%Y'));
 						
 --*** patient has 'Look' symptoms
 INSERT INTO sl_ccm_look_symptoms(visit_id, patient_id, chest_indrawing, breaths_per_minute, 
-								 sleepy_unconscious, palmar_pallor, muac_tap_colour, swelling_both_feet) 
+								 sleepy_unconscious, palmar_pallor, muac_tape_colour, swelling_both_feet) 
 									VALUES (1, 1, 0, 38, 0, 0, 'GREEN', 0);
 						
 									

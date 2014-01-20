@@ -1,6 +1,6 @@
 package ie.ucc.bis.supportinglife.controller;
 
-import ie.ucc.bis.supportinglife.ccm.domain.Patient;
+import ie.ucc.bis.supportinglife.ccm.domain.CcmPatient;
 import ie.ucc.bis.supportinglife.controller.interfaces.PatientControllerInf;
 import ie.ucc.bis.supportinglife.service.SupportingLifeService;
 import ie.ucc.bis.supportinglife.service.SupportingLifeServiceInf;
@@ -34,8 +34,7 @@ public class PatientController implements PatientControllerInf {
 	 * Default Constructor
 	 * 
 	 */
-	public PatientController() {
-	}	
+	public PatientController() {}	
 	
 	/**
 	 * Constructor
@@ -56,7 +55,8 @@ public class PatientController implements PatientControllerInf {
 	 */
 	@RequestMapping(method = RequestMethod.GET, headers="Accept=html/text")
 	public String getAllPatientsForBrowser(ModelMap model) throws SQLException {
-		List<Patient> patients = supportingLifeService.getAllPatients();
+		List<CcmPatient> patients = supportingLifeService.getAllPatients();
+		
 		model.addAttribute("patients", patients);
 		
 		// Spring uses InternalResourceViewResolver and returns back patients.jsp
@@ -73,14 +73,14 @@ public class PatientController implements PatientControllerInf {
 	 */
 	@RequestMapping(value="/search/{firstName}", method=RequestMethod.GET, headers="Accept=html/text")
 	public String getAllPatientsByFirstName(@PathVariable String firstName, ModelMap model) {
-		List<Patient> patients = supportingLifeService.getAllPatientsByFirstName(firstName);
-		
+		List<CcmPatient> patients = supportingLifeService.getAllPatientsByFirstName(firstName);
+				
 		model.addAttribute("patients", patients);
 		
 		// Spring uses InternalResourceViewResolver and returns back patients.jsp
 		return "patients";		
-	}		
-	
+	}
+		
 	/**
 	 * Returns the requested patient record (JSON Request)
 	 * 
@@ -89,7 +89,7 @@ public class PatientController implements PatientControllerInf {
 	 * @return
 	 */
 	@RequestMapping(value="/{id}", method=RequestMethod.GET, headers="Accept=application/json")
-	public @ResponseBody Patient getPatientForAndroid(@PathVariable("id") long id) {
+	public @ResponseBody CcmPatient getPatientForAndroid(@PathVariable("id") long id) {
 		return supportingLifeService.getPatientById(id);
 	}
 		
@@ -105,7 +105,7 @@ public class PatientController implements PatientControllerInf {
 	 */
 	@RequestMapping(value="/add", method=RequestMethod.POST,  produces={"application/json"}, consumes={"application/json"})
 	@ResponseStatus(HttpStatus.CREATED)
-	public @ResponseBody Patient addPatientForAndroid(@Valid @RequestBody Patient patient, BindingResult result) throws BindException {
+	public @ResponseBody CcmPatient addPatientForAndroid(@Valid @RequestBody CcmPatient patient, BindingResult result) throws BindException {
 		if(result.hasErrors()) {
 			throw new BindException(result);
 		}

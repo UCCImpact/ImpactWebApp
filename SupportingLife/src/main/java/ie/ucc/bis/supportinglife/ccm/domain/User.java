@@ -11,6 +11,12 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+/**
+ * Domain class capturing a user entity
+ * (e.g. HSA user)
+ * 
+ * @author TOSullivan
+ */
 @Entity
 @Table(name="sl_user")
 public class User implements Serializable {

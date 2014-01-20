@@ -12,8 +12,8 @@
 			<td>Patient Surname</td>
 			<td>Patient Date of Birth</td>
 			<td>HSA Responsible for Assessment</td>
-			<td>HSA is CCM User</td>
-			<td>HSA is IMCI User</td>
+			<td>CCM User?</td>
+			<td>IMCI User?</td>
 		</tr>
 		<c:forEach var="patient" items="${patients}">
 			<tr>

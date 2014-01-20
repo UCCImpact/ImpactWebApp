@@ -75,7 +75,6 @@ USE supportinglifedb;
 CREATE TABLE IF NOT EXISTS sl_ccm_patient_visit (
     												visit_id 		INTEGER(18) NOT NULL AUTO_INCREMENT,
     												patient_id 		INTEGER(18) NOT NULL,
-    												follow_up_id 	INTEGER(18),
     												visit_dt 		DATE,
 				    								PRIMARY KEY (visit_id),
 				    								FOREIGN KEY (patient_id) REFERENCES sl_ccm_patient(patient_id)
@@ -115,9 +114,11 @@ TRUNCATE TABLE sl_ccm_classification;
 -----------------------------------------------------------------------------------------------------------------
 USE supportinglifedb;
 CREATE TABLE IF NOT EXISTS sl_ccm_patient_classification (
+													id 					INTEGER(18) NOT NULL AUTO_INCREMENT,
     												visit_id 			INTEGER(18) NOT NULL,
     												patient_id 			INTEGER(18) NOT NULL,
     												classification_id 	INTEGER(18) NOT NULL,
+    												PRIMARY KEY (id),
 				    								FOREIGN KEY (visit_id) REFERENCES sl_ccm_patient_visit(visit_id),
 				    								FOREIGN KEY (patient_id) REFERENCES sl_ccm_patient(patient_id),
 				    								FOREIGN KEY (classification_id) REFERENCES sl_ccm_classification(classification_id)
@@ -158,9 +159,11 @@ TRUNCATE TABLE sl_ccm_treatment;
 -----------------------------------------------------------------------------------------------------------------
 USE supportinglifedb;
 CREATE TABLE IF NOT EXISTS sl_ccm_patient_treatment (
+													id 				INTEGER(18) NOT NULL AUTO_INCREMENT,
     												visit_id 		INTEGER(18) NOT NULL,
     												patient_id 		INTEGER(18) NOT NULL,
     												treatment_id 	INTEGER(18) NOT NULL,
+    												PRIMARY KEY (id),
 				    								FOREIGN KEY (visit_id) REFERENCES sl_ccm_patient_visit(visit_id),
 				    								FOREIGN KEY (patient_id) REFERENCES sl_ccm_patient(patient_id),
 				    								FOREIGN KEY (treatment_id) REFERENCES sl_ccm_treatment(treatment_id)
@@ -181,14 +184,16 @@ TRUNCATE TABLE sl_ccm_patient_treatment;
 -----------------------------------------------------------------------------------------------------------------
 USE supportinglifedb;
 CREATE TABLE IF NOT EXISTS sl_ccm_look_symptoms (
+													id 					INTEGER(18) NOT NULL AUTO_INCREMENT,
     												visit_id 			INTEGER(18) NOT NULL,
     												patient_id 			INTEGER(18) NOT NULL,
     												chest_indrawing 	TINYINT(1),
     												breaths_per_minute 	INTEGER(4),
     												sleepy_unconscious 	TINYINT(1),
     												palmar_pallor	 	TINYINT(1),
-    												muac_tap_colour 	VARCHAR(7),
+    												muac_tape_colour 	VARCHAR(7),
     												swelling_both_feet 	TINYINT(1),
+    												PRIMARY KEY (id),
 				    								FOREIGN KEY (visit_id) REFERENCES sl_ccm_patient_visit(visit_id),
 				    								FOREIGN KEY (patient_id) REFERENCES sl_ccm_patient(patient_id)
 												);
@@ -207,6 +212,7 @@ TRUNCATE TABLE sl_ccm_look_symptoms;
 -----------------------------------------------------------------------------------------------------------------
 USE supportinglifedb;
 CREATE TABLE IF NOT EXISTS sl_ccm_ask_look_symptoms (
+													id 										INTEGER(18) NOT NULL AUTO_INCREMENT,
     												visit_id 								INTEGER(18) NOT NULL,
     												patient_id 								INTEGER(18) NOT NULL,
     												problem						 			VARCHAR(1000),
@@ -227,6 +233,7 @@ CREATE TABLE IF NOT EXISTS sl_ccm_ask_look_symptoms (
     												difficulty_in_seeing					TINYINT(1),
     												difficulty_in_seeing_duration 			INTEGER(4),
     												other_problems					 			VARCHAR(1000),
+    												PRIMARY KEY (id),
 				    								FOREIGN KEY (visit_id) REFERENCES sl_ccm_patient_visit(visit_id),
 				    								FOREIGN KEY (patient_id) REFERENCES sl_ccm_patient(patient_id)
 													);
