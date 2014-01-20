@@ -2,6 +2,7 @@
 <%-- Header for menu bar, containing scrolling CSS styling and jQuery scrolling functions. --%>
 <%-- author: James Flynn --%>
 <%-- Last Updated: 09/01/2014. --%>
+<!DOCTYPE html>
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="author" content="Tim O'Sullivan, James Flynn"/>
