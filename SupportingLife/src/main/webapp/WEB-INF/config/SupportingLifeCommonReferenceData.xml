@@ -72,72 +72,214 @@
 		</property>
 		<property name="classifications">
 			<map>
-				<entry key="COUGH_FOR_21_DAYS_OR_MORE_CLASSIFICATION">
+				<entry key="CCM_COUGH_FOR_21_DAYS_OR_MORE_CLASSIFICATION">
 					<value>Cough for 21 days or more</value>
 				</entry>
-				<entry key="DIARRHOEA_FOR_14_DAYS_OR_MORE_CLASSIFICATION">
+				<entry key="CCM_DIARRHOEA_FOR_14_DAYS_OR_MORE_CLASSIFICATION">
 					<value>Diarrhoea for 14 days or more</value>
 				</entry>
-				<entry key="BLOOD_IN_STOOL_CLASSIFICATION">
+				<entry key="CCM_BLOOD_IN_STOOL_CLASSIFICATION">
 					<value>Blood in stool</value>
 				</entry>
-				<entry key="DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_CLASSIFICATION">
+				<entry key="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_CLASSIFICATION">
 					<value>Diarrhoea (less than 14 days AND no blood in stool)</value>
 				</entry>
-				<entry key="FEVER_FOR_LAST_7_DAYS_CLASSIFICATION">
+				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_CLASSIFICATION">
 					<value>Fever for last 7 days</value>
 				</entry>
-				<entry key="FEVER_FOR_LESS_THAN_7_DAYS_CLASSIFICATION">
+				<entry key="CCM_FEVER_FOR_LESS_THAN_7_DAYS_CLASSIFICATION">
 					<value>Fever (less than 7 days)</value>
 				</entry>
-				<entry key="CONVULSIONS_CLASSIFICATION">
+				<entry key="CCM_CONVULSIONS_CLASSIFICATION">
 					<value>Convulsions</value>
 				</entry>
-				<entry key="NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING_CLASSIFICATION">
+				<entry key="CCM_NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING_CLASSIFICATION">
 					<value>Not Able to Drink or Feed Anything</value>
 				</entry>
-				<entry key="VOMITS_EVERYTHING_CLASSIFICATION">
+				<entry key="CCM_VOMITS_EVERYTHING_CLASSIFICATION">
 					<value>Vomits Everything</value>
 				</entry>
-				<entry key="RED_EYE_FOR_4_DAYS_OR_MORE_CLASSIFICATION">
+				<entry key="CCM_RED_EYE_FOR_4_DAYS_OR_MORE_CLASSIFICATION">
 					<value>Red Eye for 4 Days or more</value>
 				</entry>
-				<entry key="RED_EYE_WITH_VISUAL_PROBLEMS_CLASSIFICATION">
+				<entry key="CCM_RED_EYE_WITH_VISUAL_PROBLEMS_CLASSIFICATION">
 					<value>Red Eye with Visual Problems</value>
 				</entry>
-				<entry key="RED_EYE_LESS_THAN_4_DAYS_CLASSIFICATION">
+				<entry key="CCM_RED_EYE_LESS_THAN_4_DAYS_CLASSIFICATION">
 					<value>Red Eye (less than 4 days)</value>
 				</entry>
-				<entry key="OTHER_PROBLEM_CLASSIFICATION">
+				<entry key="CCM_OTHER_PROBLEM_CLASSIFICATION">
 					<value>Other Problem</value>
 				</entry>
-				<entry key="CHEST_INDRAWING_CLASSIFICATION">
+				<entry key="CCM_CHEST_INDRAWING_CLASSIFICATION">
 					<value>Chest Indrawing</value>
 				</entry>
-				<entry key="FAST_BREATHING_CLASSIFICATION">
+				<entry key="CCM_FAST_BREATHING_CLASSIFICATION">
 					<value>Fast Breathing</value>
 				</entry>
-				<entry key="VERY_SLEEPY_OR_UNCONSCIOUS_CLASSIFICATION">
+				<entry key="CCM_VERY_SLEEPY_OR_UNCONSCIOUS_CLASSIFICATION">
 					<value>Very Sleep or Unconscious</value>
 				</entry>
-				<entry key="PALMAR_PALLOR_CLASSIFICATION">
+				<entry key="CCM_PALMAR_PALLOR_CLASSIFICATION">
 					<value>Palmar Pallor</value>
 				</entry>
-				<entry key="RED_ON_MUAC_TAPE_CLASSIFICATION">
+				<entry key="CCM_RED_ON_MUAC_TAPE_CLASSIFICATION">
 					<value>Red on MUAC Tape</value>
 				</entry>
-				<entry key="SWELLING_OF_BOTH_FEET_CLASSIFICATION">
+				<entry key="CCM_SWELLING_OF_BOTH_FEET_CLASSIFICATION">
 					<value>Swelling of Both Feet</value>
 				</entry>
 			</map>
 		</property>
 		<property name="classificationTypes">
 			<map>
-				<entry key="DANGER_SIGN_CLASSIFICATION_TYPE">
+				<entry key="CCM_DANGER_SIGN_CLASSIFICATION_TYPE">
 					<value>Danger Sign</value>
 				</entry>
-				<entry key="SICK_CLASSIFICATION_TYPE">
+				<entry key="CCM_SICK_CLASSIFICATION_TYPE">
 					<value>Sick</value>
+				</entry>
+			</map>
+		</property>
+		<property name="treatments">
+			<map>
+				<entry key="CCM_DANGER_SIGN_REFER_URGENTLY_TREATMENT">
+					<value>REFER URGENTLY to health facility</value>
+				</entry>
+				<entry key="CCM_DANGER_SIGN_EXPLAIN_REFERRAL_TREATMENT">
+					<value>Explain why child needs to go to health facility</value>
+				</entry>
+				<entry key="CCM_DANGER_SIGN_FLUIDS_AND_FEEDING_TREATMENT">
+					<value>Advise to give fluids and continue feeding</value>
+				</entry>
+				<entry key="CCM_DIARRHOEA_FOR_14_DAYS_OR_MORE_ORS_SOLUTION_TREATMENT">
+					<value>Begin giving ORS solution immediately</value>
+				</entry>
+				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_DOSE_FOR_LA_NOT_RECOMMENDED_TREATMENT">
+					<value>Dose for LA: Not recommended</value>
+				</entry>
+				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_DOSE_FOR_LA_ONE_TABLET_TREATMENT">
+					<value>Give first dose of LA: 1 tablet</value>
+				</entry>
+				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_DOSE_FOR_LA_TWO_TABLETS_TREATMENT">
+					<value>Give first dose of LA: 2 tablets</value>
+				</entry>
+				<entry key="CCM_CHEST_INDRAWING_ORAL_ANTIBIOTIC_HALF_TABLET_TREATMENT">
+					<value>Give first dose of oral antibiotic
+							\n (Cotrimoxazole adult tablet - 80/400)
+							\n Age 2 months up to 12 months: 1/2 tablet</value>
+				</entry>
+				<entry key="CCM_CHEST_INDRAWING_ORAL_ANTIBIOTIC_ONE_TABLET_TREATMENT">
+					<value>Give first dose of oral antibiotic
+							\n (Cotrimoxazole adult tablet - 80/400)
+							\n Age 12 months up to 5 years: 1 tablet</value>
+				</entry>
+				<entry key="CCM_FAST_BREATHING_AND_DANGER_SIGN_ORAL_ANTIBIOTIC_HALF_TABLET_TREATMENT">
+					<value>Give first dose of oral antibiotic (cotrimoxazole adult tablet - 80/400).
+							\n Age 2 months up to 12 months: 1/2 tablet</value>
+				</entry>
+				<entry key="CCM_FAST_BREATHING_AND_DANGER_SIGN_ORAL_ANTIBIOTIC_ONE_TABLET_TREATMENT">
+					<value>Give first dose of oral antibiotic (cotrimoxazole adult tablet - 80/400).
+							\n Age 12 months up to 5 years: 1 tablet</value>
+				</entry>
+				<entry key="CCM_RED_EYE_FOR_4_DAYS_OR_MORE_ANTIBIOTIC_EYE_OINTMENT_TREATMENT">
+					<value>Apply antibiotic eye ointment</value>
+				</entry>
+				<entry key="CCM_DANGER_SIGN_KEEP_CHILD_WARM_TREATMENT">
+					<value>Advise to keep child warm, if 'child is NOT hot with fever'</value>
+				</entry>
+				<entry key="CCM_DANGER_SIGN_REFERRAL_NOTE_TREATMENT">
+					<value>Write a referral note</value>
+				</entry>
+				<entry key="CCM_DANGER_SIGN_TRANSPORTATION_TREATMENT">
+					<value>Arrange transportation and help solve other difficulties in referral</value>
+				</entry>
+				<entry key="CCM_REFER_SIGN_HEALTH_FACILITY_REFER_TREATMENT">
+					<value>Refer child to health facility</value>
+				</entry>
+				<entry key="CCM_REFER_SIGN_REFERRAL_NOTE_TREATMENT">
+					<value>Write referral note</value>
+				</entry>
+				<entry key="CCM_REFER_SIGN_GIVE_ORS_TREATMENT">
+					<value>Give ORS</value>
+				</entry>
+				<entry key="CCM_REFER_SIGN_ANTIBIOTIC_OR_ANTIMALARIAL_NEGATIVE_TREATMENT">
+					<value>Do not give antibiotic or antimalarial</value>
+				</entry>
+				<entry key="CCM_SICK_SIGN_HOME_ADVICE_TREATMENT">
+					<value>TREAT at home and ADVISE on home care</value>
+				</entry>
+				<entry key="CCM_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ORS_TREATMENT">
+					<value>Give ORS.
+							\n Help caregiver give child ORS solution in front of you until child is no longer thirsty.</value>
+				</entry>
+				<entry key="CCM_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_2_ORS_PACKETS_TREATMENT">
+					<value>Give caregiver 2 ORS packets to take home.
+							\n Advise to give as much as child wants, but at least 1/2 cup ORS solution after each loose stool.</value>
+				</entry>
+				<entry key="CCM_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ZINC_SUPPLEMENT_HALF_TABLET_TREATMENT">
+					<value>Give zinc supplement.
+							\n Give one dose daily for 10 days.
+							\n Help caregiver to give first dose now
+							\n Age 2 months up to 6 months: 1/2 tablet (total 5 tabs)</value>
+				</entry>
+				<entry key="CCM_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ZINC_SUPPLEMENT_1_TABLET_TREATMENT">
+					<value>Give zinc supplement.
+							\n Give one dose daily for 10 days.
+							\n Help caregiver to give first dose now
+							\n Age 6 months up to 5 years: 1 tablet (total 10 tabs)</value>
+				</entry>
+				<entry key="CCM_FEVER_LESS_THAN_7_DAYS_DOSE_FOR_LA_NOT_RECOMMENDED_TREATMENT">
+					<value>Dose for LA: Not recommended</value>
+				</entry>
+				<entry key="CCM_FEVER_LESS_THAN_7_DAYS_DOSE_FOR_LA_ONE_TABLET_TREATMENT">
+					<value>Give LA.
+							\n Help caregiver give first dose now and 2nd dose after 8 hours.Then give dose twice daily for 2 more days.
+							\n Age 5 months up to 3 years: 1 tablet (total 6 tabs)</value>
+				</entry>
+				<entry key="CCM_FEVER_FOR_LESS_THAN_7_DAYS_DOSE_FOR_LA_TWO_TABLETS_TREATMENT">
+					<value>Give LA.
+							\n Help caregiver give first dose now and 2nd dose after 8 hours.Then give dose twice daily for 2 more days.
+							\n Age 3 years up to 5 years: 2 tablet (total 12 tabs)</value>
+				</entry>
+				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_ITN_TREATMENT">
+					<value>Advise caregiver on use of a ITN</value>
+				</entry>
+				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_PARACETAMOL_QUARTER_TABLET_TREATMENT">
+					<value>Give Paracetamol. Give 4 times a day for 3 days,
+							\n Age 2 months up to 3 years: 1/4 tablet (total 3 tabs)</value>
+				</entry>
+				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_PARACETAMOL_HALF_TABLET_TREATMENT">
+					<value>Give Paracetamol. Give 4 times a day for 3 days.
+							\n Age 3 years up to 5 years: 1/2 tablet (total 6 tabs)</value>
+				</entry>
+				<entry key="CCM_FAST_BREATHING_ORAL_ANTIBIOTIC_HALF_TABLET_TREATMENT">
+					<value>Give oral antibiotic (cotrimoxazole adult tablet - 80/400).
+							\n Give twice daily for 5 days.
+							\n Help caregiver to give first dose now.
+							\n Age 2 months up to 12 months: 1/2 tablet (total 5 tabs)</value>
+				</entry>
+				<entry key="CCM_FAST_BREATHING_ORAL_ANTIBIOTIC_1_TABLET_TREATMENT">
+					<value>Give oral antibiotic (cotrimoxazole adult tablet - 80/400).
+							\n Give twice daily for 5 days.
+							\n Help caregiver to give first dose now.
+							\n Age 12 months up to 5 years: 1 tablet (total 10 tabs)</value>
+				</entry>
+				<entry key="CCM_RED_EYE_LESS_THAN_4_DAYS_ANTIBIOTIC_EYE_OINTMENT_TREATMENT">
+					<value>Apply antibiotic eye ointment.
+							\n Squeeze the size of a grain of rice on each of the inner lower eyelids, three times a day for 3 days.</value>
+				</entry>
+				<entry key="CCM_SICK_SIGN_FLUIDS_AND_FEEDING_ADVICE_TREATMENT">
+					<value>Advise caregiver to give more fluids and continue feeding</value>
+				</entry>
+				<entry key="CCM_SICK_SIGN_RETURN_ADVICE_TREATMENT">
+					<value>Advise on when to return. Go to nearest health facility or, if not possible, return immediately if child:
+							\n 1) Cannot drink
+							\n 2) Becomes Sicker
+							\n 3) Has blood in stool</value>
+				</entry>
+				<entry key="CCM_SICK_SIGN_FOLLOW_UP_THREE_DAYS_TREATMENT">
+					<value>Follow up child in 3 days</value>
 				</entry>
 			</map>
 		</property>

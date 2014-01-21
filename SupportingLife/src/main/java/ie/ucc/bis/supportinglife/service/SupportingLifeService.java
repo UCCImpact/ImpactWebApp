@@ -4,12 +4,14 @@ import ie.ucc.bis.supportinglife.ccm.dao.CcmAskLookSymptomsDao;
 import ie.ucc.bis.supportinglife.ccm.dao.CcmLookSymptomsDao;
 import ie.ucc.bis.supportinglife.ccm.dao.CcmPatientClassificationDao;
 import ie.ucc.bis.supportinglife.ccm.dao.CcmPatientDao;
+import ie.ucc.bis.supportinglife.ccm.dao.CcmPatientTreatmentDao;
 import ie.ucc.bis.supportinglife.ccm.dao.CcmPatientVisitDao;
 import ie.ucc.bis.supportinglife.ccm.dao.Dao;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatient;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientAskLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
+import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 
 import java.util.List;
@@ -92,6 +94,15 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	public List<CcmPatientClassification> getPatientClassificationsByVisit(CcmPatientVisit ccmPatientVisit) {
 		CcmPatientClassificationDao patientClassificationDao = (CcmPatientClassificationDao) getDaoBeans().get("CcmPatientClassificationDao");
 		return patientClassificationDao.getPatientClassificationsByVisit(ccmPatientVisit);				
+	}
+	
+	/*******************************************************************************/
+	/*******************************Patient Treatments******************************/
+	/*******************************************************************************/	
+	@Override
+	public List<CcmPatientTreatment> getPatientTreatmentsByVisit(CcmPatientVisit ccmPatientVisit) {
+		CcmPatientTreatmentDao patientTreatmentDao = (CcmPatientTreatmentDao) getDaoBeans().get("CcmPatientTreatmentDao");
+		return patientTreatmentDao.getPatientTreatmentsByVisit(ccmPatientVisit);				
 	}
 	
 	/*******************************************************************************/

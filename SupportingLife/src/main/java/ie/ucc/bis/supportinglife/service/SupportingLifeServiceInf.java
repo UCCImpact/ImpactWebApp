@@ -4,6 +4,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatient;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientAskLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
+import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 
 import java.util.List;
@@ -35,4 +36,9 @@ public interface SupportingLifeServiceInf {
 	/******************************Patient Classifications**************************/
 	/*******************************************************************************/
 	public List<CcmPatientClassification> getPatientClassificationsByVisit(CcmPatientVisit ccmPatientVisit);
+	
+	/*******************************************************************************/
+	/*******************************Patient Treatments******************************/
+	/*******************************************************************************/	
+	public List<CcmPatientTreatment> getPatientTreatmentsByVisit(CcmPatientVisit ccmPatientVisit);
 }

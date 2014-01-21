@@ -63,7 +63,7 @@
 						</tr>
 					</c:forEach>
 				</table> <!--  END: checkbox table -->
-			</div> <!--  END: report_ccm_ask_look -->
+			</div> <!--  END: report_ccm_checkbox_list: 'Ask and Look Symptoms' -->
 
 			<div class="report_ccm_checkbox_list">	
 				<table>
@@ -78,7 +78,7 @@
 						</tr>
 					</c:forEach>
 				</table> <!--  END: checkbox table -->
-			</div> <!--  END: report_ccm_classification -->
+			</div> <!--  END: report_ccm_checkbox_list: 'Classifications' -->
 
 			<div class="report_ccm_checkbox_list">
 				<table>
@@ -93,7 +93,23 @@
 						</tr>
 					</c:forEach>
 				</table> <!--  END: checkbox table -->
-			</div> <!--  END: report_ccm_classification_types -->
+			</div> <!--  END: report_ccm_checkbox_list: 'Classification Types' -->
+			
+			<div class="report_ccm_checkbox_list">
+				<table>
+					<tr class="report_ccm_checkbox_list_header">
+						<td>Treatments</td>
+					</tr>
+					<c:forEach var="treatment" items="${treatments}">
+						<tr>
+							<td>${treatment.value} <input type="checkbox"
+								value="${treatment.key}">
+							</td>
+						</tr>
+					</c:forEach>
+				</table> <!--  END: checkbox table -->
+			</div> <!--  END: report_ccm_checkbox_list: 'Treatments' -->			
+						
 		</div> <!--  END: report_checkbox_lists -->
 
 		<div class="report_ccm_generate_report">

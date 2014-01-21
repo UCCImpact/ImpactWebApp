@@ -58,6 +58,7 @@ public class ReportController implements ReportControllerInf {
 		model.addAttribute("askLookSymptoms", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getAskLookSymptoms());
 		model.addAttribute("classifications", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getClassifications());
 		model.addAttribute("classificationTypes", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getClassificationTypes());
+		model.addAttribute("treatments", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getTreatments());
 		
 		// Spring uses InternalResourceViewResolver and returns back report criteria jsp
 		return REPORT_PREFIX + reportName;		

@@ -27,9 +27,11 @@ public class CcmClassification implements Serializable {
 	@GeneratedValue
 	private Long classificationId;
 
-	// association to sl_ccm_classification table
-	@Column(name="name")
-	private String name;
+	@Column(name="classification_key")
+	private String classificationKey;
+	
+	@Column(name="classification_name")
+	private String classificationName;
 			 
 	public CcmClassification() {}
 
@@ -39,9 +41,10 @@ public class CcmClassification implements Serializable {
 	 * @param classificationId
 	 * @param name
 	 */
-	public CcmClassification(Long classificationId, String name) {
+	public CcmClassification(Long classificationId, String classificationKey, String classificationName) {
 		setClassificationId(classificationId);
-		setName(name);
+		setClassificationKey(classificationKey);
+		setClassificationName(classificationName);
 	}
 
 	public Long getClassificationId() {
@@ -52,12 +55,22 @@ public class CcmClassification implements Serializable {
 		this.classificationId = classificationId;
 	}
 
-	public String getName() {
-		return name;
+	public String getClassificationKey() {
+		return classificationKey;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setClassificationKey(String classificationKey) {
+		this.classificationKey = classificationKey;
 	}
+
+	public String getClassificationName() {
+		return classificationName;
+	}
+
+	public void setClassificationName(String classificationName) {
+		this.classificationName = classificationName;
+	}
+
+
 
 }

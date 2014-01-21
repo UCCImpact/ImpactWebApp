@@ -97,16 +97,32 @@
 		<tr>
 			<td>Visit ID</td>
 			<td>Patient ID</td>
-			<td>Classification</td>
+			<td>Classification Title</td>
 		</tr>
 		<c:forEach var="patientClassification" items="${patientClassifications}">
 			<tr>
 				<td>${patientClassification.visit.visitId}</td>
-				<td>${patientClassification.patient.patientId}</td>		
-				<td>${patientClassification.classification.name}</td>
+				<td>${patientClassification.patient.patientId}</td>
+				<td>${patientClassification.classification.classificationName}</td>
 			</tr>
 		</c:forEach>
 	</table>
 	
+	<h2>Patient Treatments</h2>
+	<table border="1">
+		<tr>
+			<td>Visit ID</td>
+			<td>Patient ID</td>
+			<td>Treatment</td>
+		</tr>
+		<c:forEach var="patientTreatment" items="${patientTreatments}">
+			<tr>
+				<td>${patientTreatment.visit.visitId}</td>
+				<td>${patientTreatment.patient.patientId}</td>
+				<td>${patientTreatment.treatment.description}</td>
+			</tr>
+		</c:forEach>
+	</table>	
+		
 </body>
 </html>

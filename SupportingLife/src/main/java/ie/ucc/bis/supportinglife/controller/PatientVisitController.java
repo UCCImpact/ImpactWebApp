@@ -3,6 +3,7 @@ package ie.ucc.bis.supportinglife.controller;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientAskLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
+import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.controller.interfaces.PatientVisitControllerInf;
 import ie.ucc.bis.supportinglife.service.SupportingLifeService;
@@ -85,6 +86,10 @@ public class PatientVisitController implements PatientVisitControllerInf {
 		// 4. pull back the determined classifications associated with this assessment 
 		List<CcmPatientClassification> patientClassifications = supportingLifeService.getPatientClassificationsByVisit(patientVisit);
 		model.addAttribute("patientClassifications", patientClassifications);
+
+		// 5. pull back the treatments associated with this assessment 
+		List<CcmPatientTreatment> patientTreatments = supportingLifeService.getPatientTreatmentsByVisit(patientVisit);
+		model.addAttribute("patientTreatments", patientTreatments);
 		
 		// Spring uses InternalResourceViewResolver and returns back patient_visit.jsp
 		return "patient_visit";		
