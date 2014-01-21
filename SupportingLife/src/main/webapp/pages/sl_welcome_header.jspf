@@ -1,0 +1,14 @@
+<%-- sl_ccm_custom_report.jspf --%>
+<%-- Header for Welcome Page. --%>
+<%-- author: Timothy O Sullivan --%>
+<%-- Last Updated: 20/01/2014. --%>
+
+	<title>Supporting LIFE Admin</title>
+	 
+	<%--------------------------------------------- CSS Links -----------------------------------------%>
+	<%-- Custom style for the carousel --%>
+    <link rel="stylesheet" type="text/css" href=<c:url value="/css/library/carousel.css"/>/>
+	<%-- Custom style for the welcome page  --%>
+    <link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_welcome.css"/>/>
+    
+</head>

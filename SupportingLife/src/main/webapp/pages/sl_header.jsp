@@ -1,45 +1,63 @@
 <%-- sl_header.jsp --%>
-<%-- Top navigation menu bar. --%>
-<%-- author: James Flynn --%>
-<%-- Last Updated: 09/01/2014 --%>
+<%-- Navigation menu bar --%>
+<%-- author: James Flynn, Timothy O Sullivan --%>
+<%-- Last Updated: 20/01/2014 --%>
 
-<!-- Include <head> in jspf, including JS Script refs. -->
-	<body>
-		<nav>
-			<!-- HTML 5 element: Nav Replaces divs for menus, improving GoogleBot searches -->
-			<ul class="topLevelMenuBar">
-				<li><a href="#">Generate Reports</a>
-	
-					<ul class="secondLevelMenuBar">
-						<li><a href="#">Pre-defined Report</a>
-							<ul class="thirdLevelMenuBar">
-								<c:forEach var="preDefinedReport" items="${preDefinedReports}">
-	
-									<li><a href="#">${preDefinedReport}</a></li>
-	
-								</c:forEach>
-							</ul>
-						</li> <!-- END: Pre-Defined Reports -->
-						
-						<li><a href="#">Custom Report</a>
-							<ul class="thirdLevelMenuBar">
-								<c:forEach var="customReport" items="${customReports}">
-									<li><a href="#">${customReport}</a></li>
-								</c:forEach>
-							</ul>
-						</li> <!-- END: Custom Reports -->	
-					</ul> 				
-				</li>  <!-- END: Generate Reports -->
-	
-				<!-- Contains tooltip stating that "Feature Is Not Implemented Yet." -->
-				<li class="disabledButton" id="disabledRegisterUserFeature"><a id="open-event" href="#" >Register User</a></li> <!-- END: Register User -->
-				
-				<li class="disabledButton" id="disabledAccountSettingsFeature"><a id="open-event" href="#">Account Settings</a></li> <!-- END: Account Settings -->
+<!-- Include <head> in invoked jspf files -->
 
-				<li class="disabledButton" id="disabledTrainingFeature"><a id="open-event" href="#">Training</a></li> <!-- END: Training -->
 
-				<li class="disabledButton" id="disabledAboutFeature"><a id="open-event" href="#">About</a></li> <!-- END: About -->
+<!-- =================================================== NAVIGATION BAR ================================================ -->
+<body>
+	<div class="navbar-wrapper">
+		<div class="container">
+			<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span> 
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Supporting LIFE</a>
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#">Home</a></li>															<!-- HOME -->
 
-				<li class="disabledButton" id="disabledLogOutFeature"><a id="open-event" href="#">Log Out</a></li> <!-- END: Log Out -->
-			</ul> <!-- END: Top Level Menu Bar -->
-		</nav>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle"	data-toggle="dropdown">Reporting<b class="caret"></b></a>		<!-- REPORTING -->
+								<ul class="dropdown-menu">
+									<li class="dropdown-header">Custom Reports</li>							
+									<li><a href="#">CCM Custom Report</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">Pre-defined Reports</li>
+									<li><a href="#">Pre-defined Report 1</a></li>
+								</ul>
+							</li> <!-- END: REPORTING -->
+
+							<li><a href="#contact">Surveillance</a></li>															<!-- SURVEILLANCE -->
+							
+							<li><a href="#contact">Training</a></li>																<!-- TRAINING -->
+							
+		
+							<li class="dropdown">																					<!-- ADMIN -->
+								<a href="#" class="dropdown-toggle"	data-toggle="dropdown">Admin<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li class="dropdown-header">User Management</li>
+									<li><a href="#">Register User</a></li>
+									<li><a href="#">Modify User</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">Account Settings</li>
+									<li><a href="#">View Account</a></li>
+								</ul>
+							</li> <!-- END: ADMIN -->
+							
+							<li><a href="#about">About</a></li>																		<!-- ABOUT -->
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

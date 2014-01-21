@@ -25,7 +25,7 @@ public class BaseController {
 		model.addAttribute("message", "Supporting LIFE - Welcome");
 		
 		// Spring uses InternalResourceViewResolver and returns back welcome.jsp
-		return"welcome";
+		return"sl_welcome";
 	}
 	
 	
@@ -36,6 +36,6 @@ public class BaseController {
 		model.addAttribute("message", "Supporting LIFE - Welcome " + name);
 
 		// Spring uses InternalResourceViewResolver and returns back welcome.jsp
-		return"welcome";		
+		return"sl_welcome";		
 	}	
 }
