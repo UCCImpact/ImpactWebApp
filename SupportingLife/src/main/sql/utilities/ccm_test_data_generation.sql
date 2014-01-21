@@ -63,8 +63,38 @@ INSERT INTO sl_ccm_ask_look_symptoms(visit_id, patient_id, problem, cough, cough
 											0, 0, 0, 0, NULL,
 											0, NULL, NULL);									
 									
+												   
+-------------------------------------*********************************-------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
+-- ADD CCM CLASSIFICATIONS TEST DATA
+-----------------------------------------------------------------------------------------------------------------									 
 --*** patient has classifications: 'cough for 21 days or more' & 'convulsions'
+INSERT INTO sl_ccm_classification(classification_key, classification_name) 
+									VALUES ("CCM_COUGH_FOR_21_DAYS_OR_MORE_CLASSIFICATION", "Cough for 21 Days or more"),
+										   ("CCM_CONVULSIONS_CLASSIFICATION", "Convulsions");
+
 INSERT INTO sl_ccm_patient_classification(visit_id, patient_id, classification_id) 
 											VALUES (1, 1, 1), 
-												   (1, 1, 7);
-									 
+												   (1, 1, 2);
+										   
+-------------------------------------*********************************-------------------------------------------										   
+-----------------------------------------------------------------------------------------------------------------
+-- ADD CCM TREATMENTS TEST DATA
+-----------------------------------------------------------------------------------------------------------------										 						 
+INSERT INTO sl_ccm_treatment(treatment_key, description)
+								VALUES ("CCM_DANGER_SIGN_REFER_URGENTLY_TREATMENT", "REFER URGENTLY to health facility"),
+									   ("CCM_DANGER_SIGN_EXPLAIN_REFERRAL_TREATMENT", "Explain why child needs to go to health facility"),
+									   ("CCM_DANGER_SIGN_FLUIDS_AND_FEEDING_TREATMENT", "Advise to give fluids and continue feeding"),
+									   ("CCM_DANGER_SIGN_KEEP_CHILD_WARM_TREATMENT", "Advise to keep child warm, if 'child is NOT hot with fever'"),
+									   ("CCM_DANGER_SIGN_REFERRAL_NOTE_TREATMENT", "Write a referral note"),	 
+									   ("CCM_DANGER_SIGN_TRANSPORTATION_TREATMENT", "Arrange transportation and help solve other difficulties in referral");	 
+											 
+											 
+INSERT INTO sl_ccm_patient_treatment(visit_id, patient_id, treatment_id) 
+											VALUES (1, 1, 1), 
+												   (1, 1, 2),
+												   (1, 1, 3),
+												   (1, 1, 4),
+												   (1, 1, 5),
+												   (1, 1, 6);
+

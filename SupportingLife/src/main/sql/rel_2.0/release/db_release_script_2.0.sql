@@ -95,8 +95,9 @@ TRUNCATE TABLE sl_ccm_patient_visit;
 -----------------------------------------------------------------------------------------------------------------
 USE supportinglifedb;
 CREATE TABLE IF NOT EXISTS sl_ccm_classification (
-    												classification_id 	INTEGER(18) NOT NULL,
-    												name 				VARCHAR(250),
+    												classification_id 			INTEGER(18) NOT NULL AUTO_INCREMENT,
+    												classification_key			VARCHAR(250),
+    												classification_name			VARCHAR(1000),
 				    								PRIMARY KEY (classification_id)
 												 );
 
@@ -139,8 +140,9 @@ TRUNCATE TABLE sl_ccm_patient_classification;
 -----------------------------------------------------------------------------------------------------------------
 USE supportinglifedb;
 CREATE TABLE IF NOT EXISTS sl_ccm_treatment (
-    											treatment_id 		INTEGER(18) NOT NULL,
-    											description 		VARCHAR(100),
+    											treatment_id 		INTEGER(18) NOT NULL AUTO_INCREMENT,
+    											treatment_key		VARCHAR(250),
+    											description 		VARCHAR(1000),
 				    							PRIMARY KEY (treatment_id)
 											 );
 
@@ -245,41 +247,5 @@ USE supportinglifedb;
 TRUNCATE TABLE sl_ccm_ask_look_symptoms;
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
-
-
--------------------------------------*********************************-------------------------------------------
------------------------------------------------------------------------------------------------------------------
--- ADD CCM CLASSIFICATIONS (REQUIRED DATA)
------------------------------------------------------------------------------------------------------------------									 
-
-INSERT INTO sl_ccm_classification(classification_id, name) 
-									VALUES (1, "CCM_COUGH_FOR_21_DAYS_OR_MORE_CLASSIFICATION"),
-										   (2, "CCM_DIARRHOEA_FOR_14_DAYS_OR_MORE_CLASSIFICATION"),
-										   (3, "CCM_BLOOD_IN_STOOL_CLASSIFICATION"),
-										   (4, "CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_CLASSIFICATION"),
-										   (5, "CCM_FEVER_FOR_LAST_7_DAYS_CLASSIFICATION"),
-										   (6, "CCM_FEVER_FOR_LESS_THAN_7_DAYS_CLASSIFICATION"),
-										   (7, "CCM_CONVULSIONS_CLASSIFICATION"),
-										   (8, "CCM_NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING_CLASSIFICATION"),
-										   (9, "CCM_VOMITS_EVERYTHING_CLASSIFICATION"),
-										   (10, "CCM_RED_EYE_FOR_4_DAYS_OR_MORE_CLASSIFICATION"),
-										   (11, "CCM_RED_EYE_WITH_VISUAL_PROBLEMS_CLASSIFICATION"),
-										   (12, "CCM_RED_EYE_LESS_THAN_4_DAYS_CLASSIFICATION"),
-										   (13, "CCM_OTHER_PROBLEM_CLASSIFICATION"),
-										   (14, "CCM_CHEST_INDRAWING_CLASSIFICATION"),
-										   (15, "CCM_FAST_BREATHING_CLASSIFICATION"),
-										   (16, "CCM_VERY_SLEEPY_OR_UNCONSCIOUS_CLASSIFICATION"),
-										   (17, "CCM_PALMAR_PALLOR_CLASSIFICATION"),
-										   (18, "CCM_RED_ON_MUAC_TAPE_CLASSIFICATION"),
-										   (19, "CCM_SWELLING_OF_BOTH_FEET_CLASSIFICATION");
-
-										   
--------------------------------------*********************************-------------------------------------------										   
------------------------------------------------------------------------------------------------------------------
--- ADD CCM TREATMENTS (REQUIRED DATA) --> NEED TO WORK OUT HOW TO HANDLE TREATMENTS IN CCM
------------------------------------------------------------------------------------------------------------------		
-
-
-										   
-										   
+	
 										   
