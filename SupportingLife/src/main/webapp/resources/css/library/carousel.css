@@ -38,11 +38,13 @@ body {
 /* Carousel base class */
 .carousel {
   height: 500px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
+
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   z-index: 10;
+  margin-bottom: 60px;
 }
 
 /* Declare heights because of positioning of img element */
@@ -58,6 +60,29 @@ body {
   height: 500px;
 }
 
+.carousel h1 {
+  font-size: 80px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.carousel h2 {
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.carousel p {
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+}
 
 
 /* MARKETING CONTENT

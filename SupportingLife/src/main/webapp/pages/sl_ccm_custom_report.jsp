@@ -12,12 +12,12 @@
 
 <html lang="en">
 <!--  Include Top Level Menu Bar -->
-<%@include file="sl_header.jspf"%>
+<%@include file="headers/sl_header.jspf"%>
 <!--  Include sl_ccm_custom_report header -->
 <%@include file="sl_ccm_custom_report.jspf"%>
 
 <!--  Include sl_header (i.e. main Toolbar) -->
-<jsp:include page="sl_header.jsp" />
+<jsp:include page="sl_top_level_navigation.jsp" />
 
 <!-- CCM Custom Report Body -->
 <div class="report_ccm_container">

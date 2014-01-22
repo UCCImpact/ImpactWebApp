@@ -1,43 +1,44 @@
 <!--  Include SL Header -->
-<%@include file="sl_header.jspf"%>
+<%@include file="headers/sl_header.jspf"%>
 <!--  Include 'sl_welcome' header -->
-<%@include file="sl_welcome_header.jspf"%>
+<%@include file="headers/sl_welcome_header.jspf"%>
 
-<!--  Include sl_header (i.e. main Toolbar) -->
-<jsp:include page="sl_header.jsp" />
+<!--  Include sl_header (i.e. main navigation bar) -->
+<jsp:include page="sl_top_level_navigation.jsp" />
 
 
-<!-- Carousel
-    ================================================== -->
+<!-- =================================================== CAROUSEL ================================================ -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-	<!-- Indicators -->
-	<ol class="carousel-indicators">
-		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#myCarousel" data-slide-to="1"></li>
-		<li data-target="#myCarousel" data-slide-to="2"></li>
-	</ol>
+
 	<div class="carousel-inner">
 		<div class="item active">
-			<img
-				data-src="holder.js/900x500/auto/#077204:#7a7a7a/text:First slide"
-				alt="First slide">
+			<img data-src="holder.js/900x500/auto/#077204:#7a7a7a/text: ">
 			<div class="container">
-				<div class="carousel-caption">
-					<h1>Example headline.</h1>
+				<div class="carousel-caption">		
+					<h1>Supporting LIFE</h1>
 					<p>
-						Note: If you're viewing this page via a
-						<code>file://</code>
-						URL, the "next" and "previous" Glyphicon buttons on the left and
-						right might not load/display properly due to web browser security
-						rules.
+						Empowering Health Care Professionals in the remotest regions of Africa
 					</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Sign
-							up today</a>
+						<a class="btn btn-lg btn-primary" href="#" role="button"><i id="android-phone" class="fa fa-mobile"></i>  Download the App</a>
 					</p>
 				</div>
 			</div>
-		</div>
+		</div> <!-- end of active item -->
+		<div class="item">
+			<img data-src="holder.js/900x500/auto/#077204:#7a7a7a/text: ">
+			<div class="container">
+				<div class="carousel-caption">
+					<h2>Disease Outbreak Surveillance</h2>
+					<p>
+						Real-Time Tracking of Disease Outbreaks
+					</p>
+					<p>
+						<a class="btn btn-lg btn-primary" href="#" role="button">Launch Surveillance</a>
+					</p>
+				</div>
+			</div>
+		</div> <!-- end of item -->
 		<div class="item">
 			<img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide"
 				alt="Second slide">
@@ -53,7 +54,7 @@
 					</p>
 				</div>
 			</div>
-		</div>
+		</div> <!-- end of item -->
 		<div class="item">
 			<img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide"
 				alt="Third slide">
@@ -69,14 +70,14 @@
 					</p>
 				</div>
 			</div>
-		</div>
-	</div>
+		</div> <!-- end of item -->
+	</div> <!-- end of carousel inner --> 
+	
 	<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span
 		class="glyphicon glyphicon-chevron-left"></span></a> <a
 		class="right carousel-control" href="#myCarousel" data-slide="next"><span
 		class="glyphicon glyphicon-chevron-right"></span></a>
-</div>
-<!-- /.carousel -->
+</div> <!-- end of carousel slide -->
 
 
 
@@ -89,7 +90,7 @@
 	<!-- Three columns of text below the carousel -->
 	<div class="row">
 		<div class="col-lg-4">
-			<span class="glyphicon glyphicon-star"></span> 
+			<span class="glyphicon glyphicon-5x glyphicon-star"></span> 
 			<h2>Heading</h2>
 			<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis
 				euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
@@ -199,7 +200,7 @@
 <!-- /.container -->
 
 <!--  Include 'sl_welcome' footer -->
-<%@include file="sl_welcome_footer.jspf"%>
+<%@include file="footers/sl_welcome_footer.jspf"%>
 
 <!--  Include SL footer -->
-<%@include file="sl_footer.jspf"%>
+<%@include file="footers/sl_footer.jspf"%>

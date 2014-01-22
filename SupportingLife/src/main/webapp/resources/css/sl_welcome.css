@@ -8,7 +8,18 @@
 ** Last Updated: 20/01/2014.
 ** *************************************************************************/
 
-/* Set the size */
+/* Create modifier classes to facilitate manipulation of glyphicon size */
 .glyphicon {
-    font-size: 140px; 
+    font-size: 30px; 
+}
+.glyphicon-2x{
+    font-size: 60px; 
+}
+.glyphicon-5x{
+    font-size: 150px; 
+}
+
+/* phone icon */
+#android-phone {
+	font-size: 24px;
 }
