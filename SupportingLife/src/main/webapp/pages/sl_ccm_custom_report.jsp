@@ -1,26 +1,19 @@
 <%-- sl_ccm_custom_report.jsp --%>
 <%-- CCM Custom Report Generation Page. --%>
-<%-- author: James Flynn --%>
-<%-- Last Updated: 09/01/2014. --%>
+<%-- Author: Timothy O' Sullivan, James Flynn --%>
+<%-- Last Updated: 22/01/2014. --%>
 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%-- JSTL FMT supports time, number and localisation formats. --%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"
-	prefix="fmt"%>
-<%-- JSTL Functions allow for String manipulation. --%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<html lang="en">
-<!--  Include Top Level Menu Bar -->
+<!--  Include SL Header -->
 <%@include file="headers/sl_header.jspf"%>
 <!--  Include sl_ccm_custom_report header -->
-<%@include file="sl_ccm_custom_report.jspf"%>
+<%@include file="headers/sl_ccm_custom_report_header.jspf"%>
 
-<!--  Include sl_header (i.e. main Toolbar) -->
+<!--  Include sl_header (i.e. main navigation bar) -->
 <jsp:include page="sl_top_level_navigation.jsp" />
 
 <!-- CCM Custom Report Body -->
-<div class="report_ccm_container">
+<div id="report_ccm_container" class="container">
 	<h1>CCM Custom Report</h1>
 
 	<form>
@@ -117,11 +110,12 @@
 				value="Generate Excel Report"> <input type="submit"
 				id="generate_pdf_button" value="Generate PDF Report"> <input
 				type="reset" id="clear_fields_button" value="Clear Fields">
-		</div>
-		<!--  END: report_ccm_generate_report -->
-	</form>
-	<!-- END: form containing all fields -->
-</div>
-<!--  END: report_ccm_container -->
-</body>
-</html>
+		</div>	<!--  END: report_ccm_generate_report -->
+	</form>	<!-- END: form containing all fields -->
+</div> <!--  END: report_ccm_container -->
+
+<!--  Include 'sl_ccm_custom_report' footer -->
+<%@include file="footers/sl_ccm_custom_report_footer.jspf"%>
+
+<!--  Include SL footer -->
+<%@include file="footers/sl_footer.jspf"%>

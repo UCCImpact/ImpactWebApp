@@ -10,7 +10,7 @@
 			<a href="#">Back to top</a>
 		</p>
 		
-		<p>
+		<p id="footer-link">
 			&copy; 2014 <a href="http://www.supportinglife.eu">Supporting LIFE</a>
 		</p>
 	</footer>

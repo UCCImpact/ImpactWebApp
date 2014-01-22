@@ -13,32 +13,28 @@
 			<div class="navbar navbar-inverse navbar-static-top" role="navigation">
 				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span> 
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
 						<a class="navbar-brand" href="#">Supporting LIFE</a>
 					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">Home</a></li>															<!-- HOME -->
+							<li class="active">																						<!-- HOME -->
+								<a href="/SupportingLife/greeting/welcome">Home</a>
+							</li>								
 
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle"	data-toggle="dropdown">Reporting<b class="caret"></b></a>		<!-- REPORTING -->
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Reporting<b class="caret"></b></a>		<!-- REPORTING -->
 								<ul class="dropdown-menu">
 									<li class="dropdown-header">Custom Reports</li>							
-									<li><a href="#">CCM Custom Report</a></li>
+									<li><a href="/SupportingLife/reports/ccm_custom_report">CCM Custom Report</a></li>
 									<li class="divider"></li>
 									<li class="dropdown-header">Pre-defined Reports</li>
 									<li><a href="#">Pre-defined Report 1</a></li>
 								</ul>
 							</li> <!-- END: REPORTING -->
 
-							<li><a href="#contact">Surveillance</a></li>															<!-- SURVEILLANCE -->
+							<li><a data-toggle="tab" href="#contact">Surveillance</a></li>											<!-- SURVEILLANCE -->
 							
-							<li><a href="#contact">Training</a></li>																<!-- TRAINING -->
+							<li><a data-toggle="tab" href="#contact">Training</a></li>												<!-- TRAINING -->
 							
 		
 							<li class="dropdown">																					<!-- ADMIN -->
@@ -53,7 +49,7 @@
 								</ul>
 							</li> <!-- END: ADMIN -->
 							
-							<li><a href="#about">About</a></li>																		<!-- ABOUT -->
+							<li><a  data-toggle="tab" href="#about">About</a></li>													<!-- ABOUT -->
 							
 						</ul>
 					</div>

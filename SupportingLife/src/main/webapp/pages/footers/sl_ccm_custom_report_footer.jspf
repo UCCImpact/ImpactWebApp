@@ -1,0 +1,19 @@
+<%-- sl_footer.jspf --%>
+<%-- SL Footer, containing JS references --%>
+<%-- author: Timothy O' Sullivan --%>
+<%-- Last Updated: 20/01/2014 --%>
+
+ 	<%----------------------------------------- JS References -----------------------------------------%>
+ 	<%-- Placed at the end of the document so the pages load faster --%>
+ 	
+	<%-- Holder renders image placeholders entirely on the client side. --%>
+	<%-- It works both online and offline, and offers a chainable API   --%>
+	<%-- to style and create placeholders with ease. --%>
+	<%-- Ref. http://imsky.github.io/holder/ --%>
+	<script src=<c:url value="/js/library/holder.js"/>></script>
+	
+	<%--  jQuery UI Datepicker --%>
+	<script type="text/javascript" src=<c:url value="/js/sl_datepicker.js"/> charset="utf-8"></script>
+	<%--  jQuery UI Buttons and Checkbox functionality. --%>
+	<script type="text/javascript" src=<c:url value="/js/sl_button.js"/> charset="utf-8"></script>
+

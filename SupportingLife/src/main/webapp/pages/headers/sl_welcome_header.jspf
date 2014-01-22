@@ -6,8 +6,6 @@
 	<title>Supporting LIFE Admin</title>
 	 
 	<%--------------------------------------------- CSS Links -----------------------------------------%>
-	<%-- Custom style for the carousel --%>
-    <link rel="stylesheet" type="text/css" href=<c:url value="/css/library/carousel.css"/>/>
 	<%-- Custom style for the welcome page  --%>
     <link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_welcome.css"/>/>
     

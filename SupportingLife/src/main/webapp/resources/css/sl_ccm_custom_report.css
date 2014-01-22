@@ -3,32 +3,22 @@
 ** 
 ** Styling for CCM Custom Report Page.
 **
-** Author: James Flynn.
+** Author: James Flynn, Timothy O' Sullivan
 **
-** Last Updated: 08/01/2014.
+** Last Updated: 22/01/2014.
 ** *************************************************************************/
 
+/* -------------------------------------------------- */
+/* */
+/* -------------------------------------------------- */
 body {
 	text-align:center; /* Centre-align all components, unless overridden individually. */
 }
 
-h1 {
-	color:#363636; /* Dark grey. */
-	font-size:2.5em; /* Standard size of h1 = 2em. */
-	padding-top:40px;
-}
-
-/* Header used within checkbox list divs. */
-h2 {
-	position:relative; /* Ensures that checkboxes horizontally align properly across all the divs. */
-	color: #228032; /* Green, same colour as sl_header top level menu bar. */
-	width:32%; /* Matches size of div, ensuring text wraps. */
-	text-align:left;
-}
 
 /* Container for all report form. */
-.report_ccm_container {
-	width:93%; /* Matches report_checkbox_lists Div. */	
+#report_ccm_container {
+	margin-top: 70px;
 }
 
 /* Div containing 'National ID', 'National Health ID' and 'HSA User' fields. */

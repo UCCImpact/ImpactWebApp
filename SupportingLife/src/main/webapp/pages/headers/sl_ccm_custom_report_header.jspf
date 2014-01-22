@@ -1,0 +1,16 @@
+<%-- sl_ccm_custom_report_header.jspf --%>
+<%-- Header for Custom Report --%>
+<%-- author: Timothy O Sullivan --%>
+<%-- Last Updated: 22/01/2014. --%>
+	 
+	<title>CCM Custom Report Page</title>
+	 
+	<%--------------------------------------------- CSS Links -----------------------------------------%>
+	<%-- Custom style for the ccm custom report --%>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_ccm_custom_report.css"/>/>
+	<%-- jQuery-UI CSS for datepicker --%>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/carousel.css"/>/>
+    
+</head>
