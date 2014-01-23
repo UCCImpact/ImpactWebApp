@@ -11,96 +11,81 @@
 /* -------------------------------------------------- */
 /* */
 /* -------------------------------------------------- */
-body {
-	text-align:center; /* Centre-align all components, unless overridden individually. */
-}
+
+/* tailor page header - if it works bring it out to universal css */
 
 
-/* Container for all report form. */
-#report_ccm_container {
+/* container for entire report form */
+#report-ccm-container {
 	margin-top: 70px;
+	text-align: center; /* Centre-align all components, unless overridden individually */
 }
 
-/* Div containing 'National ID', 'National Health ID' and 'HSA User' fields. */
-.report_ccm_id {
-	border-style:none;
-	padding-top:5px;
-	padding-bottom:5px;
+#report-ccm-container h1 {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
 }
 
-/* Div containing 'From' and 'To' Date Pickers */
-.report_ccm_dates {
-	border-style:none;
-	padding-top:5px;
-	padding-bottom:5px;
+.form-group {
+	margin-top: 50px;
 }
 
-/* Table containing inputs, used in Divs not containing checkboxes. */
-.input_table {
-	width:99%;
-	text-align:right;
-	margin-bottom:10px;
+/* container for national id, national health id, hsa user id  */
+#patient-identifier-container {
+	padding-top: 25px;
 }
 
-/* Table field containing input values. */
-.input_table td {
-	width:33%;
+#patient-identifier-container input {
+	 width: 200px;
 }
 
-/* Span containing 'From' Date Picker */
-#report_ccm_dates_from {
-	margin-left: 5%;
+/* container for assessment date range */
+#assessment-date-container {
+	padding-top: 25px;
 }
 
-/* Span containing 'To' Date Picker */
-#report_ccm_dates_to {
-	margin-left: 5%;
+#assessment-date-container input {
+	 width: 200px;
 }
 
-/* Parent Div containing 'ASK and LOOK Assessment Symptom', 'Classification' and 'Classification Type' checkbox divs. */
-.report_ccm_checkbox_lists {
-	 overflow: hidden;   /* so that all child divs are of the same size. */
-}
-/* Div containing 'ASK and LOOK Assessment Symptom' checkboxes. */
-.report_ccm_checkbox_list {
-	overflow: hidden
-	padding-top:5px;
-	padding-bottom:5px;
-	padding-left:10px;
-	padding-right:10px;
-	width:32%; /* Ensures that last checkbox div does not drop below other checkbox divs. */
-	min-height:500px; /* Assign minimum height. */
-	float:left;
-	border-collapse: collapse;
-    border: 1px solid #228032; /* Green, same colour as JIRA SL menu bar. */
+#checkbox-list-container {
+	margin-top: 25px;
 }
 
-.report_ccm_checkbox_list_header {
-	font-size: 20px;
-    line-height: 40px;
-    color: #228032; /* Green, same colour as JIRA SL menu bar. */
+/* -------------------------------------------------- */
+/* Style the tables as follows: 					  */
+/* 													  */
+/* 1. Add a border to all cells						  */
+/* 2. Center the text in the table					  */
+/* 3. Remember, we're also using jQuery Datatables	  */
+/*	  to also initialise the table UI and 			  */
+/*	  functionality									  */
+/*													  */
+/* -------------------------------------------------- */
+
+/* hide horizontal scroll-bar */
+.sl-table {
+	overflow-x: hidden;
+	text-align: center;
+}
+ 
+.sl-table > thead > tr > th {
+	text-align: center;
 }
 
-/* Checkboxes with Checkbox UL */
-.report_ccm_checkbox_list input {
-	float:right; /* Ensures that checkboxes are aligned at RHS of div. */
+.sl-table > thead > tr > td,
+.sl-table > tbody > tr > td,
+.sl-table > tfoot > tr > td {
+	border: 1px solid #bbbbbb;
 }
 
-/* Div containing 'Generate Report' submit button. */
-.report_ccm_generate_report {
-	clear:both; /* Overrides float:right. Ensures that 'Generate Report' button is located below checkboxes, and not alongside. */
-	margin-top:30px;
+.sl-table > thead > tr > th,
+.sl-table > thead > tr > td {
+	border-bottom-width: 1px;
 }
 
-#generate_excel_button {
-	background-color:#BCCC61; /* Pale green. */
-}
 
-#generate_pdf_button {	
-	background-color:#FFFE93; /* Pale yellow. */
-}
 
-#clear_fields_button {
-	margin-left: 30px;
-	background-color:#D3DEFF; /* Sky blue. */
-}
+

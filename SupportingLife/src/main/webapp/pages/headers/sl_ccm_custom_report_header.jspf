@@ -6,11 +6,10 @@
 	<title>CCM Custom Report Page</title>
 	 
 	<%--------------------------------------------- CSS Links -----------------------------------------%>
-	<%-- Custom style for the ccm custom report --%>
-	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_ccm_custom_report.css"/>/>
-	<%-- jQuery-UI CSS for datepicker --%>
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	<%-- CSS for datepicker --%>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/datepicker.css"/>/>
 	
-	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/carousel.css"/>/>
-    
+	<%-- Custom style for the ccm custom report --%>
+ 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_ccm_custom_report.css"/>/>
+     
 </head>

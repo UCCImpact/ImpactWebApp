@@ -3,9 +3,6 @@
 <%-- author: James Flynn, Timothy O Sullivan --%>
 <%-- Last Updated: 20/01/2014 --%>
 
-<!-- Include <head> in invoked jspf files -->
-
-
 <!-- =================================================== NAVIGATION BAR ================================================ -->
 <body>
 	<div class="navbar-wrapper">
@@ -18,7 +15,7 @@
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 							<li class="active">																						<!-- HOME -->
-								<a href="/SupportingLife/greeting/welcome">Home</a>
+								<a href="/SupportingLife/greeting/welcome"><i id="home-icon" class="fa fa-home"></i> Home</a>
 							</li>								
 
 							<li class="dropdown">
@@ -29,6 +26,9 @@
 									<li class="divider"></li>
 									<li class="dropdown-header">Pre-defined Reports</li>
 									<li><a href="#">Pre-defined Report 1</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">Usage Analytics</li>
+									<li><a href="#">Android App Analytics</a></li>
 								</ul>
 							</li> <!-- END: REPORTING -->
 

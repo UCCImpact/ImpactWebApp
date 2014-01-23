@@ -6,6 +6,7 @@
 body {
   padding-bottom: 40px;
   color: #5a5a5a;
+  text-align: center;
 }
 
 
@@ -15,11 +16,11 @@ body {
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 20;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
 }
 
 /* Flip around the padding for proper display in narrow viewports */
@@ -27,10 +28,17 @@ body {
   padding-left: 0;
   padding-right: 0;
 }
+
 .navbar-wrapper .navbar {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+/* home icon */
+#home-icon {
+	font-size: 16px;
+}
+
 
 
 /* -------------------------------------------------- */
@@ -42,6 +50,7 @@ body {
   /* Navbar positioning foo */
   .navbar-wrapper {
     margin-top: 20px;
+    z-index:9999;
   }
   .navbar-wrapper .container {
     padding-left:  15px;

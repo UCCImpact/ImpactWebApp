@@ -6,14 +6,20 @@
  	<%----------------------------------------- JS References -----------------------------------------%>
  	<%-- Placed at the end of the document so the pages load faster --%>
  	
-	<%-- Holder renders image placeholders entirely on the client side. --%>
-	<%-- It works both online and offline, and offers a chainable API   --%>
-	<%-- to style and create placeholders with ease. --%>
-	<%-- Ref. http://imsky.github.io/holder/ --%>
-	<script src=<c:url value="/js/library/holder.js"/>></script>
+	<%-- NOTE: NEEDED TO ORDER JS FILES IN THE FOLLOWING ORDER AS OTHERWISE WAS GETTING CONFLICT --%>
+	<%-- 	   JQUERY AND BOOTSTRAP WITH THE DATEPICKER: 										 --%>
+	<%-- 	   ORDER: 				 															 --%>
+	<%--			  1. JQUERY		 															 --%>
+	<%--			  2. BOOTSTRAP JS FILES  			 										 --%>
 	
-	<%--  jQuery UI Datepicker --%>
-	<script type="text/javascript" src=<c:url value="/js/sl_datepicker.js"/> charset="utf-8"></script>
-	<%--  jQuery UI Buttons and Checkbox functionality. --%>
-	<script type="text/javascript" src=<c:url value="/js/sl_button.js"/> charset="utf-8"></script>
+	<%-- jQuery Source file --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery-1.10.2.min.js"/> charset="utf-8"></script>
 
+	<%--  Bootstrap Datepicker --%>
+	<script type="text/javascript" src=<c:url value="/js/library/bootstrap_datepicker.js"/>></script>
+
+	<%--  Bootstrap Datepicker --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery.dataTables.js"/>></script>
+
+	<%--  SL CCM Custom Report JS Functionality --%>
+	<script type="text/javascript" src=<c:url value="/js/sl_ccm_custom_report.js"/>></script>

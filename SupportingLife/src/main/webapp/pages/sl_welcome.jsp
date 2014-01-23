@@ -1,9 +1,9 @@
-<!--  Include SL Header -->
+<%--  Include SL Header --%>
 <%@include file="headers/sl_header.jspf"%>
-<!--  Include 'sl_welcome' header -->
+<%--  Include 'sl_welcome' header --%>
 <%@include file="headers/sl_welcome_header.jspf"%>
 
-<!--  Include sl_header (i.e. main navigation bar) -->
+<%--  Include sl_header (i.e. main navigation bar) --%>
 <jsp:include page="sl_top_level_navigation.jsp" />
 
 
@@ -156,7 +156,6 @@
 	<!-- /END THE FEATURETTES -->
 
 </div>
-<!-- /.container -->
 
 <!--  Include 'sl_welcome' footer -->
 <%@include file="footers/sl_welcome_footer.jspf"%>

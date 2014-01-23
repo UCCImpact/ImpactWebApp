@@ -1,120 +1,96 @@
 <%-- sl_ccm_custom_report.jsp --%>
 <%-- CCM Custom Report Generation Page. --%>
 <%-- Author: Timothy O' Sullivan, James Flynn --%>
-<%-- Last Updated: 22/01/2014. --%>
+<%-- Last Updated: 23/01/2014. --%>
 
-
-<!--  Include SL Header -->
+<%--  Include SL Header --%>
 <%@include file="headers/sl_header.jspf"%>
-<!--  Include sl_ccm_custom_report header -->
+
+<%--  Include 'sl_ccm_custom_report_header' header --%>
 <%@include file="headers/sl_ccm_custom_report_header.jspf"%>
 
-<!--  Include sl_header (i.e. main navigation bar) -->
-<jsp:include page="sl_top_level_navigation.jsp" />
+<%--  Include sl_header (i.e. main navigation bar) --%>
+<jsp:include page="sl_top_level_navigation.jsp" /> 
+
 
 <!-- CCM Custom Report Body -->
-<div id="report_ccm_container" class="container">
+<div id="report-ccm-container" class="container">
 	<h1>CCM Custom Report</h1>
-
-	<form>
-		<div class="report_ccm_id">
-			<table class="input_table">
-				<tr>
+	 	        
+	<div class="form-group">
+		<!-- three columns for user/patient identifier input -->
+		<div id="patient-identifier-container" class="row">
+			<div class="col-lg-4">
+				<p>
 					<!-- Number input, maximum value = 1, minimum value = 10000000 (max. 8 characters, as per Functional Specification.) -->
-					<td>National ID: <input type="number" min="0" max="10000000"></td>
-					<td>National Health ID: <input type="number" min="0"
-						max="10000000"></td>
-					<td>HSA User: <input type="text"></td>
-				</tr>
-			</table> <!-- END: input table -->
-		</div> <!--  END: report_ccm_id -->
+					<label>National ID: </label>
+					<input id="national-id" type="number" min="0" max="10000000" placeholder="Enter National Id"></input>
+				</p>
+			</div>
+			<div class="col-lg-4">
+				<p>
+					<!-- Number input, maximum value = 1, minimum value = 10000000 (max. 8 characters, as per Functional Specification.) -->
+					<label>National Health ID: </label> 
+					<input id = "national-health-id" type="number" min="0" max="10000000" placeholder="Enter National Health Id"></input>
+				</p>
+			</div>
+			<div class="col-lg-4">
+				<p>
+					<label>HSA User ID: </label>
+					<input id="hsa-user-id" type="text" placeholder="Enter HSA User Id"></input>
+				</p>
+			</div>
+		</div> <!-- end row -->
 
-		<div class="report_ccm_dates">
-			<table class="input_table">
-				<tr>
-					<td>Assessment Date Range:</td>
-					<!-- HTML5 date picker, not compatible with Firefox or IE. -->
-					<td><span id="report_ccm_dates_from">From: <input
-							type="text" class="datepicker"></span></td>
-					<td><span id="report_ccm_dates_to">To: <input
-							type="text" class="datepicker"></span></td>
-				</tr>
-			</table> <!-- END: input table -->
-		</div> <!--  END: report_ccm_dates -->
+		<!-- two columns for assessment date range -->
+		<div id="assessment-date-container" class="row">
+			<div class="col-lg-6">
+				<p>
+					<label>From: </label>
+					<input id="assessment-date-from" class="assessment-datepicker" type="text" data-format="dd-MM-yyyy" placeholder="Assessment Date From"/>
+				</p>
+			</div>
+			<div class="col-lg-6">
+				<p>
+					<label>To: </label>
+					<input	id="assessment-date-to" class="assessment-datepicker" type="text" data-format="dd-MM-yyyy" placeholder="Assessment Date To"/>
+				</p>
+			</div>
+		</div> <!-- end row -->
 
-		<div class="report_ccm_checkbox_lists">
-			<div class="report_ccm_checkbox_list">
-				<table>
-					<tr class="report_ccm_checkbox_list_header">
-						<td>'ASK and LOOK Assessment' Symptoms</td>
-					</tr>
-					<c:forEach var="askLookSymptom" items="${askLookSymptoms}">
+		<!-- two columns for assessment date range -->
+		<div id="checkbox-list-container" class="row">
+			<div class="col-lg-4 sl-table-container">
+				<table class="table-hover sl-table">
+					<thead>
 						<tr>
-							<td>${askLookSymptom.value} <input type="checkbox"
-								value="${askLookSymptom.key}">
-							</td>
+							<th>CLASSIFICATION</th>
+							<th>SELECT</th>
 						</tr>
-					</c:forEach>
-				</table> <!--  END: checkbox table -->
-			</div> <!--  END: report_ccm_checkbox_list: 'Ask and Look Symptoms' -->
+					</thead>
+					<tbody>
+						<c:forEach var="classification" items="${classifications}">
+							<tr>
+								<td>${classification.value} </td>
+								<td> <input type="checkbox" value="${classification.key}"> </td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-lg-4">
+			</div>
+			<div class="col-lg-4">
+			</div>
+		</div> <!-- end row -->
 
-			<div class="report_ccm_checkbox_list">	
-				<table>
-					<tr class="report_ccm_checkbox_list_header">
-						<td>Classifications</td>
-					</tr>
-					<c:forEach var="classification" items="${classifications}">
-						<tr>
-							<td>${classification.value} <input type="checkbox"
-								value="${classification.key}">
-							</td>
-						</tr>
-					</c:forEach>
-				</table> <!--  END: checkbox table -->
-			</div> <!--  END: report_ccm_checkbox_list: 'Classifications' -->
 
-			<div class="report_ccm_checkbox_list">
-				<table>
-					<tr class="report_ccm_checkbox_list_header">
-						<td>Classification Types</td>
-					</tr>
-					<c:forEach var="classificationType" items="${classificationTypes}">
-						<tr>
-							<td>${classificationType.value} <input type="checkbox"
-								value="${classificationType.key}">
-							</td>
-						</tr>
-					</c:forEach>
-				</table> <!--  END: checkbox table -->
-			</div> <!--  END: report_ccm_checkbox_list: 'Classification Types' -->
-			
-			<div class="report_ccm_checkbox_list">
-				<table>
-					<tr class="report_ccm_checkbox_list_header">
-						<td>Treatments</td>
-					</tr>
-					<c:forEach var="treatment" items="${treatments}">
-						<tr>
-							<td>${treatment.value} <input type="checkbox"
-								value="${treatment.key}">
-							</td>
-						</tr>
-					</c:forEach>
-				</table> <!--  END: checkbox table -->
-			</div> <!--  END: report_ccm_checkbox_list: 'Treatments' -->			
-						
-		</div> <!--  END: report_checkbox_lists -->
 
-		<div class="report_ccm_generate_report">
-			<input type="submit" id="generate_excel_button"
-				value="Generate Excel Report"> <input type="submit"
-				id="generate_pdf_button" value="Generate PDF Report"> <input
-				type="reset" id="clear_fields_button" value="Clear Fields">
-		</div>	<!--  END: report_ccm_generate_report -->
-	</form>	<!-- END: form containing all fields -->
-</div> <!--  END: report_ccm_container -->
 
-<!--  Include 'sl_ccm_custom_report' footer -->
+	</div>	<!-- END: form containing all fields --> 
+</div> <!--  END: report-ccm-container --> 
+
+<!--  Include 'sl_ccm_custom_report_footer' footer -->
 <%@include file="footers/sl_ccm_custom_report_footer.jspf"%>
 
 <!--  Include SL footer -->
