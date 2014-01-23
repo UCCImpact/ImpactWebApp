@@ -12,8 +12,6 @@
 <%--  Include sl_header (i.e. main navigation bar) --%>
 <jsp:include page="sl_top_level_navigation.jsp" /> 
 
-
-<!-- CCM Custom Report Body -->
 <div id="report-ccm-container" class="container">
 	<h1>CCM Custom Report</h1>
 	 	        
@@ -89,6 +87,26 @@
 
 	</div>	<!-- END: form containing all fields --> 
 </div> <!--  END: report-ccm-container --> 
+
+
+
+
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading">
+				And lastly, this one
+			</h2>
+
+		</div>
+		<div class="col-md-5">
+
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+
+
+
 
 <!--  Include 'sl_ccm_custom_report_footer' footer -->
 <%@include file="footers/sl_ccm_custom_report_footer.jspf"%>
