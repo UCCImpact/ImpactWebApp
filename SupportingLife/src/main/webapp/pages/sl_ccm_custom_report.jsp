@@ -82,30 +82,9 @@
 			</div>
 		</div> <!-- end row -->
 
-
-
-
 	</div>	<!-- END: form containing all fields --> 
+
 </div> <!--  END: report-ccm-container --> 
-
-
-
-
-	<div class="row featurette">
-		<div class="col-md-7">
-			<h2 class="featurette-heading">
-				And lastly, this one
-			</h2>
-
-		</div>
-		<div class="col-md-5">
-
-		</div>
-	</div>
-
-	<hr class="featurette-divider">
-
-
 
 
 <!--  Include 'sl_ccm_custom_report_footer' footer -->

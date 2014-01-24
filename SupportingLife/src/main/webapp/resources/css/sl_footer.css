@@ -10,8 +10,26 @@
 
 
 /* -------------------------------------------------- */
-/* Ensure space between body content and footer */
+/* Ensure space between body content and footer 	  */
 /* -------------------------------------------------- */
 #footer-link {
-	margin-top: 20px;
+	margin-top: 40px;
+}
+
+/* -------------------------------------------------- */
+/*													  */
+/* NOTE: This is a hack needed to ensure the navbar	  */
+/*		 remains in the same position between pages.  */
+/*													  */
+/*		 Not the most elegant, but this margin size	  */
+/*		 appeared to have an influence on the 		  */
+/*		 movement. To ensure all pages will correctly */
+/*		 align the navbar, the necessary row-divider  */
+/*		 was added to the sl_footer.jspf and this 	  */
+/*		 css style was added to sl_footer.css		  */
+/*													  */
+/* -------------------------------------------------- */
+
+.featurette-divider {
+  margin: 35px 0px; /* Space out the Bootstrap <hr> more */
 }

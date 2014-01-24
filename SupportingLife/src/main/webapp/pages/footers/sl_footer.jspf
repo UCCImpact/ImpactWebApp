@@ -14,9 +14,32 @@
 			&copy; 2014 <a href="http://www.supportinglife.eu">Supporting LIFE</a>
 		</p>
 	</footer>
+
+<%-- ---------------------------------------------------- --%>
+<%--													  --%>
+<%-- NOTE: This is a hack needed to ensure the navbar	  --%>
+<%--		 remains in the same position between pages.  --%>
+<%--													  --%>
+<%--	   Not the most elegant, but this div			  --%>
+<%--		 appeared to have an influence on the 		  --%>
+<%--		 movement. To ensure all pages will correctly --%>
+<%--		 align the navbar, the necessary row-divider  --%>
+<%--		 was added to the sl_footer.jspf and the 	  --%>
+<%--		 required css style was added to 			  --%>
+<%--		 sl_footer.css file							  --%>
+<%--													  --%>
+<%-- ---------------------------------------------------- --%>
+
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h4 class="featurette-heading"></h4>
+		</div>
+		<div class="col-md-5"></div>
+	</div>
+	<hr class="featurette-divider">
 </div>
 
- 	<%----------------------------------------- JS References -----------------------------------------%>
+<%----------------------------------------- JS References -----------------------------------------%>
  	<%-- Placed at the end of the document so the pages load faster --%>
  	
 	<%-- Bootstrap core JavaScript --%>

@@ -17,6 +17,7 @@ body {
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
 	position: fixed;
+	margin-top: 20px;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -39,8 +40,6 @@ body {
 	font-size: 16px;
 }
 
-
-
 /* -------------------------------------------------- */
 /* RESPONSIVE CSS */
 /* -------------------------------------------------- */
@@ -49,8 +48,12 @@ body {
 
   /* Navbar positioning foo */
   .navbar-wrapper {
-    margin-top: 20px;
-    z-index:9999;
+	position: fixed;
+	margin-top: 20px;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
   }
   .navbar-wrapper .container {
     padding-left:  15px;
@@ -65,5 +68,5 @@ body {
   .navbar-wrapper .navbar {
     border-radius: 4px;
   }
+  
 }
-
