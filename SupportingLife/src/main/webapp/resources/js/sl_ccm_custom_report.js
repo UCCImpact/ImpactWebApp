@@ -11,13 +11,6 @@
 
 $(document).ready(function() {
 
-	/* initialise jQuery dataTable functionality */
-	$('.sl-table').dataTable( {
-		"bFilter": false,
-		"bPaginate": false,
-		"sScrollY": "400px"
-	});
-
 	/* initialises jQuery UI datepicker functionality */
 	/*												  */
 	/* Note: Don't allow user to pick a future date	  */
@@ -26,6 +19,29 @@ $(document).ready(function() {
 	$('.assessment-datepicker').datepicker({
 		format: 'dd-mm-yyyy',
 		endDate: '+0d'
+	});
+	
+	/* when reset button is clicked, perform the following: */
+	/* 1. clear all checkboxes and unhighlight rows			*/
+	/* 2. remove any validation messages					*/
+	/*														*/
+	$('#reset-button').click(function(){
+		$('input[type=checkbox]').each(function () {					/* uncheck boxes */
+			$(this).prop('checked', false);
+		});
+		
+		$('.sl-table tbody tr').each(function(event) {					/* unhighlight rows */
+			$(this).removeClass('row_selected');
+		});
+		
+		var validator = jQuery('#ccm-report-form').validate();			/* remove any validation errors */ 
+		validator.resetForm();
+		
+		/* need to explicitly set labels to valid to get them */
+		/* back to black colour from red					  */
+		$('.control-label').each(function(event) {
+			$(this).removeClass('error').addClass('valid');	
+		});
 	});
 
 });
@@ -55,20 +71,45 @@ $(document).ready(function () {
 		},
 		messages: {
 			"hsa-user-id": {
-				minlength: "HSA user id is 8 characters"
+				minlength: "HSA User ID is 8 characters"
 			},
 		},
 		unhighlight: function(element, errorClass, validClass) {
-		    $(element).removeClass(errorClass).addClass(validClass);
-		    $(element).closest('.control-group').removeClass(errorClass);
+		    $(element).removeClass('error').addClass('valid');
+		    $(element).closest('.control-group').removeClass('error');
 		},
 		highlight: function (element) {
-			$(element).closest('.control-group').removeClass('success').addClass('error');
+			$(element).closest('.control-group').removeClass('valid').addClass('error');
 		},
 		success: function (element) {
-			element.addClass('valid')
-			.closest('.control-group').removeClass('error').addClass('success');
+			element.addClass('valid').closest('.control-group').removeClass('error').addClass('valid');
 		}
 	});
 });
+
+
+$(document).ready(function() {
+	/* Add a click handler to the rows - this could be used as a callback */
+	$(".sl-table tbody tr").click(function(event) {
+		if ($(this).hasClass('row_selected')) {
+			$(this).removeClass('row_selected');
+			$(this).closest('tr').find('[type=checkbox]').prop('checked', false); /* toggle the checkbox on the row off */
+		}
+		else {
+			$(this).addClass('row_selected');
+			$(this).closest('tr').find('[type=checkbox]').prop('checked', true); /* toggle the checkbox on the row on */
+		}
+	});
+	
+	/* initialise the dataTable */
+	oTable = $('.sl-table').dataTable( {
+		"bFilter": false,
+		"bPaginate": false,
+		"sScrollY": "400px",
+		"bJQueryUI": true
+	});
+});
+
+
+
 

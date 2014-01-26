@@ -20,6 +20,9 @@
 
 	<%--  Bootstrap Datepicker --%>
 	<script type="text/javascript" src=<c:url value="/js/library/jquery.dataTables.js"/>></script>
+	
+	<%--  jQuery Themeroller theme - used for customising look of datatables --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery-ui-1.10.4.custom.min.js"/>></script>
 
 	<%--  SL CCM Custom Report JS Functionality --%>
 	<script type="text/javascript" src=<c:url value="/js/sl_ccm_custom_report.js"/>></script>

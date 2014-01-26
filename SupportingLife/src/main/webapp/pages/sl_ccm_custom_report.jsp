@@ -68,7 +68,7 @@
 		<!-- classification list -->
 		<div id="checkbox-list-container" class="row">
 			<div class="col-lg-4 sl-table-container">
-				<table class="table-hover sl-table">
+				<table class="table-hover sl-table display">
 					<thead>
 						<tr>
 							<th>CLASSIFICATION</th>
@@ -79,7 +79,7 @@
 						<c:forEach var="classification" items="${classifications}">
 							<tr>
 								<td>${classification.value} </td>
-								<td> <input type="checkbox" value="${classification.key}"> </td>
+								<td class="classification-checkbox-column"> <input type="checkbox" value="${classification.key}"> </td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -93,8 +93,8 @@
 		
         <div class="form-actions">
             <input type="hidden" name="save" value="contact">
-            <button type="submit" class="btn btn-success">Submit</button>
-            <button type="reset" class="btn">Cancel</button>
+            <button id="submit-button" type="submit" class="btn btn-success">Submit</button>
+            <button id="reset-button" type="reset" class="btn">Reset</button>
         </div>
 	</form>
 </div> <!--  END: report-ccm-container --> 

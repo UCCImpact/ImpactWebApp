@@ -62,7 +62,8 @@
 
 
 #checkbox-list-container {
-	margin-top: 25px;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 /* -------------------------------------------------- */
@@ -73,28 +74,51 @@
 /* 3. Remember, we're also using jQuery Datatables	  */
 /*	  to also initialise the table UI and 			  */
 /*	  functionality									  */
+/* 4. Highlight row background colour an change	      */
+/*	  font colour when selected						  */
 /*													  */
 /* -------------------------------------------------- */
 
-/* hide horizontal scroll-bar */
 .sl-table {
-	overflow-x: hidden;
-	text-align: center;
+	text-align: left;
 }
- 
+
 .sl-table > thead > tr > th {
 	text-align: center;
+	font-size: 14px;
+  	font-weight: bold;
 }
 
 .sl-table > thead > tr > td,
 .sl-table > tbody > tr > td,
 .sl-table > tfoot > tr > td {
 	border: 1px solid #bbbbbb;
+	font-size: 12px;
 }
 
 .sl-table > thead > tr > th,
 .sl-table > thead > tr > td {
 	border-bottom-width: 1px;
+}
+
+/* ensure check-boxes are centered */
+.classification-checkbox-column {
+	text-align: center;
+}
+
+/* highlight row when selected */
+.sl-table > tbody > tr.row_selected td 
+{
+	background-color: #077204;
+	color: #FFFFFF;
+}
+
+/* -------------------------------------------------- */
+/* Customise the colour of the submit button		  */
+/* to match SL colour scheme						  */
+/* -------------------------------------------------- */
+.btn-success {
+	background-color: #077204;
 }
 
 
@@ -107,3 +131,6 @@
     color:#FF0000;  /* red */
 }
 
+.valid {
+    color:#000000; /* black */
+}
