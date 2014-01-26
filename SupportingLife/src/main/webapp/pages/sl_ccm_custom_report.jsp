@@ -56,7 +56,6 @@
 						<input id="assessment-date-from" name="assessment-date-from" class="assessment-datepicker" type="text" data-format="dd-MM-yyyy" placeholder="Assessment Date From"/>
 					</div>
 				</div>
-				
 				<div class="control-group">
 					<label for="assessment-date-to" class="control-label">To: </label>
 					<div class="controls">

@@ -51,13 +51,15 @@
 
 /* container for assessment date range */
 #assessment-date-container {
-	padding-left: 100px;
 	padding-top: 50px;
 }
 
-#assessment-date-container input {
-	 width: 200px;
+#assessment-date-container input,
+#assessment-date-container label {
+	text-align: left;
+	width: 200px;
 }
+
 
 #checkbox-list-container {
 	margin-top: 25px;

@@ -40,12 +40,15 @@ $(document).ready(function () {
 	$('#ccm-report-form').validate({
 		rules: {
 			"national-id": {
+				required: false, // this means the field can be left empty
 				digits: true
 			},
 			"national-health-id": {
+				required: false,
 				digits: true
 			},
 			"hsa-user-id": {
+				required: false,
 				minlength: 8,
 				maxlength: 8
 			}
@@ -54,6 +57,10 @@ $(document).ready(function () {
 			"hsa-user-id": {
 				minlength: "HSA user id is 8 characters"
 			},
+		},
+		unhighlight: function(element, errorClass, validClass) {
+		    $(element).removeClass(errorClass).addClass(validClass);
+		    $(element).closest('.control-group').removeClass(errorClass);
 		},
 		highlight: function (element) {
 			$(element).closest('.control-group').removeClass('success').addClass('error');
