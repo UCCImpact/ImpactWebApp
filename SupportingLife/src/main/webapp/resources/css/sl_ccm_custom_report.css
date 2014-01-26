@@ -105,6 +105,12 @@
 .classification-checkbox-column {
 	text-align: center;
 }
+.symptom-checkbox-column {
+	text-align: center;
+}
+.treatment-checkbox-column {
+	text-align: center;
+}
 
 /* highlight row when selected */
 .sl-table > tbody > tr.row_selected td 

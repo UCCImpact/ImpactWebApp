@@ -10,7 +10,7 @@
 			<div class="navbar navbar-inverse navbar-static-top" role="navigation">
 				<div class="container">
 					<div class="navbar-header">
-						<a class="navbar-brand" href="#">Supporting LIFE</a>
+						<a class="navbar-brand" href="#">Supporting LIFE - Technology</a>
 					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">

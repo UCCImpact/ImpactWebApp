@@ -8,7 +8,7 @@ public class CcmCustomReportReferenceCriteria {
 	private Map<String, String> askLookSymptoms;
 	private Map<String, String> classifications;
 	private Map<String, String> classificationTypes;
-	private Map<String, String> treatments;
+	private Map<String, Treatment> treatments;
 
 	public Map<String, String> getAskLookSymptoms() {
 		return askLookSymptoms;
@@ -34,11 +34,11 @@ public class CcmCustomReportReferenceCriteria {
 		this.classificationTypes = classificationTypes;
 	}
 
-	public Map<String, String> getTreatments() {
+	public Map<String, Treatment> getTreatments() {
 		return treatments;
 	}
 
-	public void setTreatments(Map<String, String> treatments) {
+	public void setTreatments(Map<String, Treatment> treatments) {
 		this.treatments = treatments;
 	}
 

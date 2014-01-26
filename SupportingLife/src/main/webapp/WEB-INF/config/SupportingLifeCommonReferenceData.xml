@@ -11,6 +11,8 @@
 	<!-- **** SPRINGIFIED REFERENCE DATA												**** -->
 	<!-- =================================================================================== -->
 
+	<bean id="treatmentBean" class="ie.ucc.bis.supportinglife.reference.Treatment"/>
+
 	<bean name="ccmCustomReportReferenceCriteria" class="ie.ucc.bis.supportinglife.reference.CcmCustomReportReferenceCriteria">
 		<property name="askLookSymptoms">
 			<map>
@@ -141,145 +143,289 @@
 				</entry>
 			</map>
 		</property>
+
 		<property name="treatments">
 			<map>
 				<entry key="CCM_DANGER_SIGN_REFER_URGENTLY_TREATMENT">
-					<value>REFER URGENTLY to health facility</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="REFER URGENTLY to health facility"/>
+						<property name="associatedClassification" value="Danger Sign - General Advice"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_DANGER_SIGN_EXPLAIN_REFERRAL_TREATMENT">
-					<value>Explain why child needs to go to health facility</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Explain why child needs to go to health facility"/>
+						<property name="associatedClassification" value="Danger Sign - General Advice"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_DANGER_SIGN_FLUIDS_AND_FEEDING_TREATMENT">
-					<value>Advise to give fluids and continue feeding</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Advise to give fluids and continue feeding"/>
+						<property name="associatedClassification" value="Danger Sign - General Advice"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_DIARRHOEA_FOR_14_DAYS_OR_MORE_ORS_SOLUTION_TREATMENT">
-					<value>Begin giving ORS solution immediately</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Begin giving ORS solution immediately"/>
+						<property name="associatedClassification" value="Diarrhoea for 14 days or more"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_DOSE_FOR_LA_NOT_RECOMMENDED_TREATMENT">
-					<value>Dose for LA: Not recommended</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Dose for LA: Not recommended"/>
+						<property name="associatedClassification" value="Fever for last 7 days"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_DOSE_FOR_LA_ONE_TABLET_TREATMENT">
-					<value>Give first dose of LA: 1 tablet</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give first dose of LA: 1 tablet"/>
+						<property name="associatedClassification" value="Fever for last 7 days"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_DOSE_FOR_LA_TWO_TABLETS_TREATMENT">
-					<value>Give first dose of LA: 2 tablets</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give first dose of LA: 2 tablets"/>
+						<property name="associatedClassification" value="Fever for last 7 days"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_CHEST_INDRAWING_ORAL_ANTIBIOTIC_HALF_TABLET_TREATMENT">
-					<value>Give first dose of oral antibiotic
-							\n (Cotrimoxazole adult tablet - 80/400)
-							\n Age 2 months up to 12 months: 1/2 tablet</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give first dose of oral antibiotic.
+														  (Cotrimoxazole adult tablet - 80/400)
+														  Age 2 months up to 12 months: 1/2 tablet"/>
+						<property name="associatedClassification" value="Chest Indrawing"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_CHEST_INDRAWING_ORAL_ANTIBIOTIC_ONE_TABLET_TREATMENT">
-					<value>Give first dose of oral antibiotic
-							\n (Cotrimoxazole adult tablet - 80/400)
-							\n Age 12 months up to 5 years: 1 tablet</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give first dose of oral antibiotic.
+						    							  (Cotrimoxazole adult tablet - 80/400)
+														  Age 12 months up to 5 years: 1 tablet"/>
+						<property name="associatedClassification" value="Chest Indrawing"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_FAST_BREATHING_AND_DANGER_SIGN_ORAL_ANTIBIOTIC_HALF_TABLET_TREATMENT">
-					<value>Give first dose of oral antibiotic (cotrimoxazole adult tablet - 80/400).
-							\n Age 2 months up to 12 months: 1/2 tablet</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give first dose of oral antibiotic (cotrimoxazole adult tablet - 80/400).
+														  Age 2 months up to 12 months: 1/2 tablet"/>
+						<property name="associatedClassification" value="Fast Breathing and Danger Sign"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_FAST_BREATHING_AND_DANGER_SIGN_ORAL_ANTIBIOTIC_ONE_TABLET_TREATMENT">
-					<value>Give first dose of oral antibiotic (cotrimoxazole adult tablet - 80/400).
-							\n Age 12 months up to 5 years: 1 tablet</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give first dose of oral antibiotic (cotrimoxazole adult tablet - 80/400).
+														  Age 12 months up to 5 years: 1 tablet"/>
+						<property name="associatedClassification" value="Fast Breathing and Danger Sign"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_RED_EYE_FOR_4_DAYS_OR_MORE_ANTIBIOTIC_EYE_OINTMENT_TREATMENT">
-					<value>Apply antibiotic eye ointment</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Apply antibiotic eye ointment"/>
+						<property name="associatedClassification" value="Red Eye for 4 Days or more"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_DANGER_SIGN_KEEP_CHILD_WARM_TREATMENT">
-					<value>Advise to keep child warm, if 'child is NOT hot with fever'</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Advise to keep child warm, if 'child is NOT hot with fever'"/>
+						<property name="associatedClassification" value="Danger Sign - General Advice"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_DANGER_SIGN_REFERRAL_NOTE_TREATMENT">
-					<value>Write a referral note</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Write a referral note"/>
+						<property name="associatedClassification" value="Danger Sign - General Advice"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_DANGER_SIGN_TRANSPORTATION_TREATMENT">
-					<value>Arrange transportation and help solve other difficulties in referral</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Arrange transportation and help solve other difficulties in referral"/>
+						<property name="associatedClassification" value="Danger Sign - General Advice"/>
+					</bean>
 				</entry>
-				<entry key="CCM_REFER_SIGN_HEALTH_FACILITY_REFER_TREATMENT">
-					<value>Refer child to health facility</value>
+
+				<entry key="CCM_DANGER_SIGN_TRANSPORTATION_TREATMENT">
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Refer child to health facility"/>
+						<property name="associatedClassification" value="Referral"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_REFER_SIGN_REFERRAL_NOTE_TREATMENT">
-					<value>Write referral note</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Write referral note"/>
+						<property name="associatedClassification" value="Referral"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_REFER_SIGN_GIVE_ORS_TREATMENT">
-					<value>Give ORS</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give ORS"/>
+						<property name="associatedClassification" value="Referral"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_REFER_SIGN_ANTIBIOTIC_OR_ANTIMALARIAL_NEGATIVE_TREATMENT">
-					<value>Do not give antibiotic or antimalarial</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Do not give antibiotic or antimalarial"/>
+						<property name="associatedClassification" value="Referral"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_SICK_SIGN_HOME_ADVICE_TREATMENT">
-					<value>TREAT at home and ADVISE on home care</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="TREAT at home and ADVISE on home care"/>
+						<property name="associatedClassification" value="Sick Sign - General Advice"/>
+					</bean>
 				</entry>
-				<entry key="CCM_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ORS_TREATMENT">
-					<value>Give ORS.
-							\n Help caregiver give child ORS solution in front of you until child is no longer thirsty.</value>
+
+				<entry key="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ORS_TREATMENT">
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give ORS.
+							Help caregiver give child ORS solution in front of you until child is no longer thirsty."/>
+						<property name="associatedClassification" value="Diarrhoea less than 14 days and no blood in stool"/>
+					</bean>
 				</entry>
-				<entry key="CCM_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_2_ORS_PACKETS_TREATMENT">
-					<value>Give caregiver 2 ORS packets to take home.
-							\n Advise to give as much as child wants, but at least 1/2 cup ORS solution after each loose stool.</value>
+
+				<entry key="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_2_ORS_PACKETS_TREATMENT">
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give caregiver 2 ORS packets to take home.
+								Advise to give as much as child wants, but at least 1/2 cup ORS solution after each loose stool."/>
+						<property name="associatedClassification" value="Diarrhoea less than 14 days and no blood in stool"/>
+					</bean>
 				</entry>
-				<entry key="CCM_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ZINC_SUPPLEMENT_HALF_TABLET_TREATMENT">
-					<value>Give zinc supplement.
-							\n Give one dose daily for 10 days.
-							\n Help caregiver to give first dose now
-							\n Age 2 months up to 6 months: 1/2 tablet (total 5 tabs)</value>
+
+				<entry key="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ZINC_SUPPLEMENT_HALF_TABLET_TREATMENT">
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give zinc supplement.
+												Give one dose daily for 10 days.
+												Help caregiver to give first dose now
+												Age 2 months up to 6 months: 1/2 tablet (total 5 tabs)"/>
+						<property name="associatedClassification" value="Diarrhoea less than 14 days and no blood in stool"/>
+					</bean>
 				</entry>
-				<entry key="CCM_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ZINC_SUPPLEMENT_1_TABLET_TREATMENT">
-					<value>Give zinc supplement.
-							\n Give one dose daily for 10 days.
-							\n Help caregiver to give first dose now
-							\n Age 6 months up to 5 years: 1 tablet (total 10 tabs)</value>
+
+				<entry key="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ZINC_SUPPLEMENT_1_TABLET_TREATMENT">
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give zinc supplement.
+												Give one dose daily for 10 days.
+												Help caregiver to give first dose now
+												Age 6 months up to 5 years: 1 tablet (total 10 tabs)"/>
+						<property name="associatedClassification" value="Diarrhoea less than 14 days and no blood in stool"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_FEVER_LESS_THAN_7_DAYS_DOSE_FOR_LA_NOT_RECOMMENDED_TREATMENT">
-					<value>Dose for LA: Not recommended</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Dose for LA: Not recommended"/>
+						<property name="associatedClassification" value="Fever less than 7 days"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_FEVER_LESS_THAN_7_DAYS_DOSE_FOR_LA_ONE_TABLET_TREATMENT">
-					<value>Give LA.
-							\n Help caregiver give first dose now and 2nd dose after 8 hours.Then give dose twice daily for 2 more days.
-							\n Age 5 months up to 3 years: 1 tablet (total 6 tabs)</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give LA.
+									Help caregiver give first dose now and 2nd dose after 8 hours.Then give dose twice daily for 2 more days.
+									Age 5 months up to 3 years: 1 tablet (total 6 tabs)"/>
+						<property name="associatedClassification" value="Fever less than 7 days"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_FEVER_FOR_LESS_THAN_7_DAYS_DOSE_FOR_LA_TWO_TABLETS_TREATMENT">
-					<value>Give LA.
-							\n Help caregiver give first dose now and 2nd dose after 8 hours.Then give dose twice daily for 2 more days.
-							\n Age 3 years up to 5 years: 2 tablet (total 12 tabs)</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give LA.
+									Help caregiver give first dose now and 2nd dose after 8 hours.Then give dose twice daily for 2 more days.
+									Age 3 years up to 5 years: 2 tablet (total 12 tabs)"/>
+						<property name="associatedClassification" value="Fever less than 7 days"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_ITN_TREATMENT">
-					<value>Advise caregiver on use of a ITN</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Advise caregiver on use of a ITN"/>
+						<property name="associatedClassification" value="Fever less than 7 days"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_PARACETAMOL_QUARTER_TABLET_TREATMENT">
-					<value>Give Paracetamol. Give 4 times a day for 3 days,
-							\n Age 2 months up to 3 years: 1/4 tablet (total 3 tabs)</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give Paracetamol. Give 4 times a day for 3 days,
+							Age 2 months up to 3 years: 1/4 tablet (total 3 tabs)"/>
+						<property name="associatedClassification" value="Fever less than 7 days"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_PARACETAMOL_HALF_TABLET_TREATMENT">
-					<value>Give Paracetamol. Give 4 times a day for 3 days.
-							\n Age 3 years up to 5 years: 1/2 tablet (total 6 tabs)</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give Paracetamol. Give 4 times a day for 3 days.
+							Age 3 years up to 5 years: 1/2 tablet (total 6 tabs)"/>
+						<property name="associatedClassification" value="Fever less than 7 days"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_FAST_BREATHING_ORAL_ANTIBIOTIC_HALF_TABLET_TREATMENT">
-					<value>Give oral antibiotic (cotrimoxazole adult tablet - 80/400).
-							\n Give twice daily for 5 days.
-							\n Help caregiver to give first dose now.
-							\n Age 2 months up to 12 months: 1/2 tablet (total 5 tabs)</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give oral antibiotic (cotrimoxazole adult tablet - 80/400).
+							Give twice daily for 5 days.
+							Help caregiver to give first dose now.
+							Age 2 months up to 12 months: 1/2 tablet (total 5 tabs)"/>
+						<property name="associatedClassification" value="Fast Breathing"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_FAST_BREATHING_ORAL_ANTIBIOTIC_1_TABLET_TREATMENT">
-					<value>Give oral antibiotic (cotrimoxazole adult tablet - 80/400).
-							\n Give twice daily for 5 days.
-							\n Help caregiver to give first dose now.
-							\n Age 12 months up to 5 years: 1 tablet (total 10 tabs)</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Give oral antibiotic (cotrimoxazole adult tablet - 80/400).
+							Give twice daily for 5 days.
+							Help caregiver to give first dose now.
+							Age 12 months up to 5 years: 1 tablet (total 10 tabs)"/>
+						<property name="associatedClassification" value="Fast Breathing"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_RED_EYE_LESS_THAN_4_DAYS_ANTIBIOTIC_EYE_OINTMENT_TREATMENT">
-					<value>Apply antibiotic eye ointment.
-							\n Squeeze the size of a grain of rice on each of the inner lower eyelids, three times a day for 3 days.</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Apply antibiotic eye ointment.
+							Squeeze the size of a grain of rice on each of the inner lower eyelids, three times a day for 3 days"/>
+						<property name="associatedClassification" value="Red eye less than 4 days"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_SICK_SIGN_FLUIDS_AND_FEEDING_ADVICE_TREATMENT">
-					<value>Advise caregiver to give more fluids and continue feeding</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Advise caregiver to give more fluids and continue feeding"/>
+						<property name="associatedClassification" value="Sick Sign - General Advice"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_SICK_SIGN_RETURN_ADVICE_TREATMENT">
-					<value>Advise on when to return. Go to nearest health facility or, if not possible, return immediately if child:
-							\n 1) Cannot drink
-							\n 2) Becomes Sicker
-							\n 3) Has blood in stool</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Advise on when to return. Go to nearest health facility or, if not possible, return immediately if child:
+							1) Cannot drink
+							2) Becomes Sicker
+							3) Has blood in stool"/>
+						<property name="associatedClassification" value="Sick Sign - General Advice"/>
+					</bean>
 				</entry>
+
 				<entry key="CCM_SICK_SIGN_FOLLOW_UP_THREE_DAYS_TREATMENT">
-					<value>Follow up child in 3 days</value>
+					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+						<property name="treatment" value="Follow up child in 3 days"/>
+						<property name="associatedClassification" value="Sick Sign - General Advice"/>
+					</bean>
 				</entry>
 			</map>
 		</property>

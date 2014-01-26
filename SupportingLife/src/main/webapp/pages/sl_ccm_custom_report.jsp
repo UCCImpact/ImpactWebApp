@@ -19,6 +19,8 @@
  	<canvas id="sl-report-canvas"></canvas>
 	
 	<h1>CCM Custom Report</h1>
+	
+	<h2> put in note description</h2>
 	 	        
  	<form method="POST" action="" class="form-horizontal" id="ccm-report-form">	        
 		<!-- three columns for user/patient identifier input -->
@@ -65,9 +67,32 @@
 			</div> <!-- end column -->
 		</div> <!-- end row -->
 
-		<!-- classification list -->
 		<div id="checkbox-list-container" class="row">
-			<div class="col-lg-4 sl-table-container">
+		
+			<!-- symptom list -->
+			<div class="col-lg-6 sl-table-container">
+				<table class="table-hover sl-table display">
+					<thead>
+						<tr>
+							<th>SYMPTOM</th>
+							<th>SELECT</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="symptom" items="${symptoms}">
+							<tr>
+								<td>${symptom.value} </td>
+								<td class="symptom-checkbox-column"> <input type="checkbox" value="${symptom.key}"> </td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+			
+
+			
+			<!-- classification list -->
+			<div class="col-lg-6 sl-table-container">
 				<table class="table-hover sl-table display">
 					<thead>
 						<tr>
@@ -85,12 +110,31 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="col-lg-4">
-			</div>
-			<div class="col-lg-4">
-			</div>
 		</div> <!-- end row -->
 		
+		<!-- treatment list -->
+		<div id="checkbox-list-container" class="row">
+			<div class="col-lg-12 sl-table-container">
+				<table class="table-hover sl-table display">
+					<thead>
+						<tr>
+							<th>TREATMENT</th>
+							<th>CATEGORY</th>
+							<th>SELECT</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="treatment" items="${treatments}">
+							<tr>
+								<td>${treatment.value.treatment} </td>
+								<td>${treatment.value.associatedClassification} </td>
+								<td class="treatment-checkbox-column"> <input type="checkbox" value="${treatment.key}"> </td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
         <div class="form-actions">
             <input type="hidden" name="save" value="contact">
             <button id="submit-button" type="submit" class="btn btn-success">Submit</button>

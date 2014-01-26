@@ -55,7 +55,7 @@ public class ReportController implements ReportControllerInf {
 		
 		log.info("GET API called for report: " + reportName);
 		
-		model.addAttribute("askLookSymptoms", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getAskLookSymptoms());
+		model.addAttribute("symptoms", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getAskLookSymptoms());
 		model.addAttribute("classifications", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getClassifications());
 		model.addAttribute("classificationTypes", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getClassificationTypes());
 		model.addAttribute("treatments", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getTreatments());
