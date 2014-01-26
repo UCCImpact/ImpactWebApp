@@ -5,15 +5,21 @@
 **
 ** Author: James Flynn, Timothy O' Sullivan
 **
-** Last Updated: 22/01/2014.
+** Last Updated: 26/01/2014.
 ** *************************************************************************/
 
-/* -------------------------------------------------- */
-/* */
-/* -------------------------------------------------- */
-
 /* tailor page header - if it works bring it out to universal css */
-
+/* Canvas to maintain visual consistency from carousel */
+/* screen to reporting screens 						   */
+#sl-report-canvas {
+	position: relative;
+	border-radius: 4px; /* round corner of rectangle */
+	width: 100%;
+	height: 60px;
+	padding-left: 15px;
+  	padding-right: 15px;
+	background: #077204;
+}
 
 /* container for entire report form */
 #report-ccm-container {
@@ -34,6 +40,8 @@
 
 /* container for national id, national health id, hsa user id  */
 #patient-identifier-container {
+	text-align: left;
+	padding-left: 100px;
 	padding-top: 25px;
 }
 
@@ -43,7 +51,8 @@
 
 /* container for assessment date range */
 #assessment-date-container {
-	padding-top: 25px;
+	padding-left: 100px;
+	padding-top: 50px;
 }
 
 #assessment-date-container input {
@@ -87,5 +96,12 @@
 }
 
 
-
+/* -------------------------------------------------- */
+/* Customise the colour of the form validation		  */
+/* messages presented to the user					  */
+/*													  */
+/* -------------------------------------------------- */
+.error {
+    color:#FF0000;  /* red */
+}
 

@@ -1,7 +1,7 @@
 <%-- sl_ccm_custom_report.jsp --%>
 <%-- CCM Custom Report Generation Page. --%>
 <%-- Author: Timothy O' Sullivan, James Flynn --%>
-<%-- Last Updated: 23/01/2014. --%>
+<%-- Last Updated: 26/01/2014. --%>
 
 <%--  Include SL Header --%>
 <%@include file="headers/sl_header.jspf"%>
@@ -13,50 +13,60 @@
 <jsp:include page="sl_top_level_navigation.jsp" /> 
 
 <div id="report-ccm-container" class="container">
+
+	<!-- Canvas to maintain visual consistency from carousel -->
+	<!-- screen to reporting screens -->
+ 	<canvas id="sl-report-canvas"></canvas>
+	
 	<h1>CCM Custom Report</h1>
 	 	        
-	<div class="form-group">
+ 	<form method="POST" action="" class="form-horizontal" id="ccm-report-form">	        
 		<!-- three columns for user/patient identifier input -->
-		<div id="patient-identifier-container" class="row">
-			<div class="col-lg-4">
-				<p>
-					<!-- Number input, maximum value = 1, minimum value = 10000000 (max. 8 characters, as per Functional Specification.) -->
-					<label>National ID: </label>
-					<input id="national-id" type="number" min="0" max="10000000" placeholder="Enter National Id"></input>
-				</p>
-			</div>
-			<div class="col-lg-4">
-				<p>
-					<!-- Number input, maximum value = 1, minimum value = 10000000 (max. 8 characters, as per Functional Specification.) -->
-					<label>National Health ID: </label> 
-					<input id = "national-health-id" type="number" min="0" max="10000000" placeholder="Enter National Health Id"></input>
-				</p>
-			</div>
-			<div class="col-lg-4">
-				<p>
-					<label>HSA User ID: </label>
-					<input id="hsa-user-id" type="text" placeholder="Enter HSA User Id"></input>
-				</p>
-			</div>
+		<div class="row">
+			<div id="patient-identifier-container" class="col-lg-6">
+				<div class="control-group">
+					<!-- Number input (max. 8 characters, as per Functional Specification.) -->
+					<label for="national-id" class="control-label">National ID: </label>
+					<div class="controls">
+						<input id="national-id" name="national-id" type="text" placeholder="Enter National Id"></input>
+					</div>
+				</div>
+			
+				<div class="control-group">
+					<!-- Number input (max. 8 characters, as per Functional Specification.) -->
+					<label for="national-health-id" class="control-label">National Health ID: </label>
+					<div class="controls">
+						<input id="national-health-id" name="national-health-id" type="text" placeholder="Enter National Health Id"></input>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label for="hsa-user-id" class="control-label">HSA User ID: </label>
+					<div class="controls">
+						<input id="hsa-user-id" name="hsa-user-id" type="text" placeholder="Enter HSA User Id"></input>
+					</div>
+				</div>
+			</div> <!-- end column -->
+
+			<div id="assessment-date-container" class="col-lg-6">
+				<div class="control-group">
+					<!-- assessment date range -->
+					<label for="assessment-date-from" class="control-label">From: </label>
+					<div class="controls">
+						<input id="assessment-date-from" name="assessment-date-from" class="assessment-datepicker" type="text" data-format="dd-MM-yyyy" placeholder="Assessment Date From"/>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label for="assessment-date-to" class="control-label">To: </label>
+					<div class="controls">
+						<input	id="assessment-date-to" name="assessment-date-to" class="assessment-datepicker" type="text" data-format="dd-MM-yyyy" placeholder="Assessment Date To"/>
+					</div>
+				</div>
+			</div> <!-- end column -->
 		</div> <!-- end row -->
 
-		<!-- two columns for assessment date range -->
-		<div id="assessment-date-container" class="row">
-			<div class="col-lg-6">
-				<p>
-					<label>From: </label>
-					<input id="assessment-date-from" class="assessment-datepicker" type="text" data-format="dd-MM-yyyy" placeholder="Assessment Date From"/>
-				</p>
-			</div>
-			<div class="col-lg-6">
-				<p>
-					<label>To: </label>
-					<input	id="assessment-date-to" class="assessment-datepicker" type="text" data-format="dd-MM-yyyy" placeholder="Assessment Date To"/>
-				</p>
-			</div>
-		</div> <!-- end row -->
-
-		<!-- two columns for assessment date range -->
+		<!-- classification list -->
 		<div id="checkbox-list-container" class="row">
 			<div class="col-lg-4 sl-table-container">
 				<table class="table-hover sl-table">
@@ -81,9 +91,13 @@
 			<div class="col-lg-4">
 			</div>
 		</div> <!-- end row -->
-
-	</div>	<!-- END: form containing all fields --> 
-
+		
+        <div class="form-actions">
+            <input type="hidden" name="save" value="contact">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="reset" class="btn">Cancel</button>
+        </div>
+	</form>
 </div> <!--  END: report-ccm-container --> 
 
 

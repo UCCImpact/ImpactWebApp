@@ -16,7 +16,7 @@ body {
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
-	position: fixed;
+	position: relative;
 	margin-top: 20px;
 	top: 0;
 	left: 0;
