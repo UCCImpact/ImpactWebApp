@@ -212,6 +212,10 @@
 
 @media (max-width: 1200px) {
 
+	#report-note-accordion {
+		width: 80%;
+	}
+	
 	#report-ccm-container {
 		margin-top: 50px;
 		text-align: center;
