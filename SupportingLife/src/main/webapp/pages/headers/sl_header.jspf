@@ -18,12 +18,17 @@
 	
 	<%--------------------------------------------- CSS Links -----------------------------------------%>
 	<%-- Bootstrap CSS --%>
- 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css" rel="stylesheet">
+ 	<link rel='stylesheet' type='text/css' href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css">
  	<%-- FontAwesome CSS --%>
- 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
- 	
+ 	<link rel='stylesheet' type='text/css' href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+
+ 	<%-- SL Global CSS --%>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_global.css"/>/>
+	 	
  	<%-- navigation bar CSS --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_navbar.css"/>/>
+	
  	<%-- footer CSS --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_footer.css"/>/>
  	

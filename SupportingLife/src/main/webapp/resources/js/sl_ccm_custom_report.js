@@ -21,6 +21,12 @@ $(document).ready(function() {
 		endDate: '+0d'
 	});
 	
+	/* ensure all accordion panels are collapsed by default */
+	$('.panel-collapse').collapse({
+	    toggle: false
+	  });
+	
+	
 	/* when reset button is clicked, perform the following: */
 	/* 1. clear all checkboxes and unhighlight rows			*/
 	/* 2. remove any validation messages					*/
