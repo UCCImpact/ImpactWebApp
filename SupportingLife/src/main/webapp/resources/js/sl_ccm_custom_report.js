@@ -20,13 +20,7 @@ $(document).ready(function() {
 		format: 'dd-mm-yyyy',
 		endDate: '+0d'
 	});
-	
-	/* ensure all accordion panels are collapsed by default */
-	$('.panel-collapse').collapse({
-	    toggle: false
-	  });
-	
-	
+		
 	/* when reset button is clicked, perform the following: */
 	/* 1. clear all checkboxes and unhighlight rows			*/
 	/* 2. remove any validation messages					*/
@@ -94,6 +88,7 @@ $(document).ready(function () {
 });
 
 
+/* Table handling */
 $(document).ready(function() {
 	/* Add a click handler to the rows - this could be used as a callback */
 	$(".sl-table tbody tr").click(function(event) {
@@ -116,6 +111,13 @@ $(document).ready(function() {
 	});
 });
 
+/* Accordion Panel Handling */
+$(document).ready(function() {
 
+	/* show plus-icon when panel minimised */
+	/* show minus-icon when panel maximised */
+	$(".report-note-title").click(function() {
+		$(this).find('i').toggleClass('fa-plus-square fa-minus-square');
+    });
 
-
+});

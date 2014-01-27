@@ -46,19 +46,19 @@
 	width: 40%;
 }
 
-/* toggle colour of icon on hover */
-.panel-title > a > i:hover {
+/* toggle colour of plus icon on hover */
+.fa-plus-square:hover {
 	color: #077204;
+}
+
+/* toggle colour of minus icon on hover */
+.fa-minus-square:hover {
+	color: #ff0000;
 }
 
 /* report note expand icon */
 #report-note-expand-icon {
 	font-size: 20px;
-}
-
-/* enlarge icon slightly on hover */
-#report-note-expand-icon:hover {
-	font-size: 21px;
 }
 
 .sticky-note {
