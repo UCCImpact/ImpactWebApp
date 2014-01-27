@@ -33,6 +33,27 @@ body {
 .navbar-wrapper .navbar {
   padding-left: 15px;
   padding-right: 15px;
+  min-height:32px !important
+}
+
+.navbar-wrapper .navbar .navbar-header label {
+  font-size: 16px;
+  color: #ffd700; /* gold */
+  padding-top:5px !important;
+  padding-bottom:0px !important;
+}
+
+/* bulb icon */
+#bulb-icon {
+	color: #ffd700; /* gold */
+	font-size: 16px;
+}
+
+/* rethinking technology slogan */
+#slogan {
+	font-size: 14px;
+	font-style: italic;
+	bold: false;
 }
 
 /* home icon */

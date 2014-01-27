@@ -7,10 +7,14 @@
 <body>
 	<div class="navbar-wrapper">
 		<div class="container">
-			<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<div class="navbar navbar-inverse navbar-static-top">
 				<div class="container">
 					<div class="navbar-header">
-						<a class="navbar-brand" href="#">Supporting LIFE - Technology</a>
+						<label class="navbar-brand">Supporting LIFE
+							<br> 
+							<i id="bulb-icon" class="fa fa-lightbulb-o"><span id="slogan"> Rethinking Technology</span></i>
+						</label>
+						
 					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">

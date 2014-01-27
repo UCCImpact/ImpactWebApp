@@ -23,7 +23,7 @@
  	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
  	
  	<%-- navigation bar CSS --%>
-	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/sl_navbar.css"/>/>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_navbar.css"/>/>
  	<%-- footer CSS --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_footer.css"/>/>
  	
