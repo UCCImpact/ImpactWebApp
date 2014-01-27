@@ -39,14 +39,12 @@
 				<div class="panel-body">
 					<div class="sticky-note">
 						<p>
-							<strong>Report Note</strong>
+							<strong>Note</strong>
 						</p>
-						<ol>
-							<li>This custom report gives the user total freedom in
-								specifying their CCM reporting criteria. It should be noted that
-								only those records which fulfil the specified criterion
-								completely will be extracted to be presented to the user.</li>
-						</ol>
+						<span class="sticky-note-content">
+							Please note that in order to obtain a meaningful set of results,
+							the criteria selected must represent a valid combination.
+						</span>
 					</div>
 				</div>
 			</div>
@@ -118,8 +116,8 @@
 		<div id="checkbox-list-container" class="row">
 	
 			<!-- symptom list -->
-			<div class="col-lg-6 sl-table-container">
-				<table class="table-hover sl-table display">
+			<div id="symptom-list" class="col-lg-6 sl-table-container">
+				<table id="symptom-table" class="table-hover sl-table display">
 					<thead>
 						<tr>
 							<th>SYMPTOM</th>
@@ -141,8 +139,8 @@
 	
 	
 			<!-- classification list -->
-			<div class="col-lg-6 sl-table-container">
-				<table class="table-hover sl-table display">
+			<div id="classification-list" class="col-lg-6 sl-table-container">
+				<table id="classification-table" class="table-hover sl-table display">
 					<thead>
 						<tr>
 							<th>CLASSIFICATION</th>
@@ -165,8 +163,8 @@
 	
 		<!-- treatment list -->
 		<div id="checkbox-list-container" class="row">
-			<div class="col-lg-12 sl-table-container">
-				<table class="table-hover sl-table display">
+			<div id="treatment-list" class="col-lg-12 sl-table-container">
+				<table id="treatment-table" class="table-hover sl-table display">
 					<thead>
 						<tr>
 							<th>TREATMENT</th>

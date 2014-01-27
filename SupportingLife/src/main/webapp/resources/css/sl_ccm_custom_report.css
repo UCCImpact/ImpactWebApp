@@ -33,8 +33,6 @@
 	border-radius: 4px; /* round corner of rectangle */
 	width: 100%;
 	min-height: 20px;
-	padding-left: 15px;
-  	padding-right: 15px;
 	background: #077204;
 }
 
@@ -92,7 +90,7 @@
     font-weight: bold
 }
  
-.sticky-note ol {
+.sticky-note-content {
     margin: 6px;
     text-align: left;
     font-size: 14px;
@@ -212,10 +210,45 @@
 /* RESPONSIVE CSS */
 /* -------------------------------------------------- */
 
-@media screen and (max-width: 767px) {
-#report-ccm-container {
-		margin-top: 68px;
+@media (max-width: 1200px) {
+
+	#report-ccm-container {
+		margin-top: 50px;
 		text-align: center;
-		/* Centre-align all components, unless overridden individually */
+	}
+	
+	/* container for national id, national health id, hsa user id  */
+	#patient-identifier-container {
+		padding-left: 0px;
+		text-align: center;
+	}
+
+
+	/* container for assessment date range */
+	#assessment-date-container {
+		text-align: center;
+		padding-left: 0px;
+	}
+	
+	#assessment-date-container input,
+	#assessment-date-container label {
+		text-align: center;
+	}
+	
+	/* put padding on classification table to put space between itself */
+	/* and symptom table when we reduce down screen width			   */
+	#classification-list {
+		padding-top: 30px;
+	}
+}
+
+/* this is the width point at which the navbar 	*/
+/* collapses to the mobile look					*/
+@media (max-width: 768px) {
+	#report-ccm-container {
+		margin-top: 68px; 
+		text-align: center; /* Centre-align all components, unless overridden individually */
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 }

@@ -21,7 +21,7 @@
 						</button>		
 						<label class="navbar-brand">Supporting LIFE
 							<br> 
-							<i id="bulb-icon" class="fa fa-lightbulb-o"><span id="slogan"> Rethinking Technology</span></i>
+							<i id="bulb-icon" class="fa fa-lightbulb-o"><span id="slogan"> Technology</span></i>
 						</label>
 					</div>
 					

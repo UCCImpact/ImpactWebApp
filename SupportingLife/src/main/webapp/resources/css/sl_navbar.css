@@ -80,6 +80,15 @@
   .navbar-wrapper .navbar {
  	margin-bottom: 0px;
     border-radius: 4px;
-  }
-  
+  } 
+}
+
+
+/* this is the width point at which the navbar 	*/
+/* collapses to the mobile look					*/
+@media (max-width: 768px) {
+	.navbar-wrapper .navbar .navbar-header label {
+	  padding-top: 15px !important;
+	  padding-bottom: 0px !important;
+	}
 }
