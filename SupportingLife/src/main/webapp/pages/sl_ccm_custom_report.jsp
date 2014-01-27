@@ -19,10 +19,23 @@
  	<canvas id="sl-report-canvas"></canvas>
 	
 	<h1>CCM Custom Report</h1>
-	
-	<h2> put in note description</h2>
-	 	        
- 	<form method="POST" action="" class="form-horizontal" id="ccm-report-form">	        
+
+	<div class="sticky-note">
+		<p>
+			<strong>Report Note</strong> 
+		</p>
+		<ol>
+			<li>
+				This custom report gives the user total freedom in specifying their 
+				CCM reporting criteria. It should be noted that only those records 
+				which fulfil the specified criterion completely will be extracted to be
+				presented to the user.
+			</li>
+		</ol>
+	</div>
+
+
+	<form method="POST" action="" class="form-horizontal" id="ccm-report-form">        
 		<!-- three columns for user/patient identifier input -->
 		<div class="row">
 			<div id="patient-identifier-container" class="col-lg-6">
