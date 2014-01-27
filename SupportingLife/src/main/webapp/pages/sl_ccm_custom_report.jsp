@@ -14,12 +14,16 @@
 
 <div id="report-ccm-container" class="container">
 
-	<!-- Canvas to maintain visual consistency from carousel -->
+	<!-- coloured banner to maintain visual consistency from carousel -->
 	<!-- screen to reporting screens -->
- 	<canvas id="sl-report-canvas"></canvas>
-	
-	<h1>CCM Custom Report</h1>
+     <div class="row-fluid">
+       <div class="span12 item">
+         <div id="sl-report-banner" class="box"></div>
+       </div>
+      </div>
 
+	<h1>CCM Custom Report</h1>
+	
 	<!-- using accordion to display sticky post-it note about the ccm custom report -->
 	<div class="panel-group center" id="report-note-accordion">
 		<div class="panel panel-default">
@@ -48,7 +52,7 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<!-- CCM report form -->
 	<form method="POST" action="" class="form-horizontal"
 		id="ccm-report-form">
@@ -64,7 +68,7 @@
 							placeholder="Enter National Id"></input>
 					</div>
 				</div>
-
+	
 				<div class="control-group">
 					<!-- Number input (max. 8 characters, as per Functional Specification.) -->
 					<label for="national-health-id" class="control-label">National
@@ -74,7 +78,7 @@
 							type="text" placeholder="Enter National Health Id"></input>
 					</div>
 				</div>
-
+	
 				<div class="control-group">
 					<label for="hsa-user-id" class="control-label">HSA User
 						ID: </label>
@@ -85,7 +89,7 @@
 				</div>
 			</div>
 			<!-- end column -->
-
+	
 			<div id="assessment-date-container" class="col-lg-6">
 				<div class="control-group">
 					<!-- assessment date range -->
@@ -110,9 +114,9 @@
 			<!-- end column -->
 		</div>
 		<!-- end row -->
-
+	
 		<div id="checkbox-list-container" class="row">
-
+	
 			<!-- symptom list -->
 			<div class="col-lg-6 sl-table-container">
 				<table class="table-hover sl-table display">
@@ -133,9 +137,9 @@
 					</tbody>
 				</table>
 			</div>
-
-
-
+	
+	
+	
 			<!-- classification list -->
 			<div class="col-lg-6 sl-table-container">
 				<table class="table-hover sl-table display">
@@ -158,7 +162,7 @@
 			</div>
 		</div>
 		<!-- end row -->
-
+	
 		<!-- treatment list -->
 		<div id="checkbox-list-container" class="row">
 			<div class="col-lg-12 sl-table-container">
@@ -189,12 +193,11 @@
 			<button id="reset-button" type="reset" class="btn">Reset</button>
 		</div>
 	</form>
-	</div>
-	<!--  END: report-ccm-container -->
+</div><!--  END: report-ccm-container -->
 
 
-		<!--  Include 'sl_ccm_custom_report_footer' footer -->
-		<%@include file="footers/sl_ccm_custom_report_footer.jspf"%>
+<!--  Include 'sl_ccm_custom_report_footer' footer -->
+<%@include file="footers/sl_ccm_custom_report_footer.jspf"%>
 
-		<!--  Include SL footer -->
-		<%@include file="footers/sl_footer.jspf"%>
+<!--  Include SL footer -->
+<%@include file="footers/sl_footer.jspf"%>

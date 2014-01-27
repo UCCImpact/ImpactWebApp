@@ -3,9 +3,9 @@
 <%-- author: James Flynn, Timothy O' Sullivan --%>
 <%-- Last Updated: 20/01/2014 --%>
 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- JSTL FMT supports time, number and localisation formats. --%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- JSTL Functions allow for String manipulation. --%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>

@@ -4,8 +4,9 @@
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
-	position: relative;
-	margin-top: 20px;
+	position: fixed;
+	margin-top: 0px;
+	margin-bottom: 0px;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -21,7 +22,8 @@
 .navbar-wrapper .navbar {
   padding-left: 15px;
   padding-right: 15px;
-  min-height:32px !important
+  min-height:32px !important;
+  margin-bottom: 0px;
 }
 
 .navbar-wrapper .navbar .navbar-header label {
@@ -58,7 +60,8 @@
   /* Navbar positioning foo */
   .navbar-wrapper {
 	position: fixed;
-	margin-top: 20px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -75,6 +78,7 @@
 
   /* The navbar becomes detached from the top, so we round the corners */
   .navbar-wrapper .navbar {
+ 	margin-bottom: 0px;
     border-radius: 4px;
   }
   
