@@ -49,11 +49,11 @@ public class ReportController implements ReportControllerInf {
 	 * 
 	 * @return String
 	 */
-	@RequestMapping(value="/ccm_custom_report", method=RequestMethod.GET, headers="Accept=html/text")
+	@RequestMapping(value="/ccm_custom_report_form", method=RequestMethod.GET, headers="Accept=html/text")
 	public String getCcmCustomReportSelectionCriteria(ModelMap model) {
 		final String reportName = "ccm_custom_report";
 		
-		log.info("GET API called for report: " + reportName);
+		log.info("GET form page for report: " + reportName);
 		
 		model.addAttribute("symptoms", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getAskLookSymptoms());
 		model.addAttribute("classifications", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getClassifications());
@@ -62,6 +62,23 @@ public class ReportController implements ReportControllerInf {
 		
 		// Spring uses InternalResourceViewResolver and returns back report criteria jsp
 		return REPORT_PREFIX + reportName;		
+	}
+	
+	/**
+	 * Returns the resultset for the CCM Custom Report
+	 * 
+	 * @param model
+	 * 
+	 * @return String
+	 */
+	@RequestMapping(value="/ccm_custom_report", method=RequestMethod.GET, headers="Accept=html/text")
+	public String getCcmCustomReport(ModelMap model) {
+		final String reportName = "ccm_custom_report";
+		
+		log.info("GET resultset for report: " + reportName);
+		
+		// Spring uses InternalResourceViewResolver and returns back welcome.jsp
+		return"sl_welcome";
 	}
 	
 } // end of class

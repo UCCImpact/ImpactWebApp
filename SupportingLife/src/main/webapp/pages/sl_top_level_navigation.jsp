@@ -35,7 +35,7 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Reporting<b class="caret"></b></a>		<!-- REPORTING -->
 								<ul class="dropdown-menu">
 									<li class="dropdown-header">Custom Reports</li>							
-									<li><a href="../reports/ccm_custom_report">CCM Custom Report</a></li>
+									<li><a href="../reports/ccm_custom_report_form">CCM Custom Report</a></li>
 									<li class="divider"></li>
 									<li class="dropdown-header">Pre-defined Reports</li>
 									<li><a href="#">Pre-defined Report 1</a></li>

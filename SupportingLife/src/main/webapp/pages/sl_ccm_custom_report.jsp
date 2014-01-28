@@ -52,8 +52,7 @@
 	</div>
 	
 	<!-- CCM report form -->
-	<form method="POST" action="" class="form-horizontal"
-		id="ccm-report-form">
+	<form method="GET" action="../reports/ccm_custom_report" class="form-horizontal" id="ccm-report-form">
 		<!-- three columns for user/patient identifier input -->
 		<div class="row">
 			<div id="patient-identifier-container" class="col-lg-6">
