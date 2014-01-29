@@ -1,5 +1,6 @@
 package ie.ucc.bis.supportinglife.controller;
 
+import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.controller.interfaces.ReportControllerInf;
 import ie.ucc.bis.supportinglife.report.form.CcmCustomForm;
 import ie.ucc.bis.supportinglife.service.SupportingLifeService;
@@ -8,6 +9,7 @@ import ie.ucc.bis.supportinglife.service.helper.SupportingLifeRefDataHelperInf;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -104,8 +106,22 @@ public class ReportController implements ReportControllerInf {
 		log.info("GET resultset for report: " + reportName);
 		
 		log.info("CCM Custom Form: " + ccmCustomForm.toString());
+
+		// 1. pull back all patient visits which meet the criteria
+		List<CcmPatientVisit> patientVisits = 
+				supportingLifeService.getPatientVisits(ccmCustomForm.getNationalId(),
+													   ccmCustomForm.getNationalHealthId(),
+													   ccmCustomForm.getHsaUserId(),
+													   ccmCustomForm.getAssessmentDateFrom(),
+													   ccmCustomForm.getAssessmentDateTo(),
+													   ccmCustomForm.getSymptoms(),
+													   ccmCustomForm.getClassifications(),
+													   ccmCustomForm.getTreatments());
 		
-        return "sl_welcome";
+		
+		model.addAttribute("patientVisits", patientVisits);
+		
+        return "ccm_report_results";
 	}
 	
 } // end of class

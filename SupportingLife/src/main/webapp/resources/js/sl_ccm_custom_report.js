@@ -67,8 +67,7 @@ $(document).ready(function () {
 	$('#ccm-report-form').validate({
 		rules: {
 			"nationalId": {
-				required: false, // this means the field can be left empty
-				digits: true
+				required: true // this means the field cannot be left empty
 			},
 			"nationalHealthId": {
 				required: false,

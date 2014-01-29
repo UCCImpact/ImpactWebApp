@@ -33,6 +33,12 @@ public class CcmPatient implements Serializable {
 	@GeneratedValue
 	private Long patientId;
 	
+	@Column(name="national_id")
+	private String nationalId;
+	
+	@Column(name="national_health_id")
+	private String nationalHealthId;
+	
 	// association to sl_user table
 	// - one user can create many patients 
 	@ManyToOne(cascade = CascadeType.ALL)
@@ -118,6 +124,22 @@ public class CcmPatient implements Serializable {
 
 	public void setPatientId(Long patientId) {
 		this.patientId = patientId;
+	}
+
+	public String getNationalId() {
+		return nationalId;
+	}
+
+	public void setNationalId(String nationalId) {
+		this.nationalId = nationalId;
+	}
+
+	public String getNationalHealthId() {
+		return nationalHealthId;
+	}
+
+	public void setNationalHealthId(String nationalHealthId) {
+		this.nationalHealthId = nationalHealthId;
 	}
 
 	public User getUser() {

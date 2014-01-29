@@ -42,6 +42,8 @@ TRUNCATE TABLE sl_user;
 USE supportinglifedb;
 CREATE TABLE IF NOT EXISTS sl_ccm_patient(
 										 	patient_id 			INTEGER(18) NOT NULL AUTO_INCREMENT,
+										 	national_id 		VARCHAR(8),
+										 	national_health_id 	VARCHAR(8),
     										user_id 			VARCHAR(8),
     										child_first_name 	VARCHAR(50),
     										child_surname 		VARCHAR(50),

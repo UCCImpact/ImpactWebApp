@@ -13,7 +13,12 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
+import ie.ucc.bis.supportinglife.reference.Classification;
+import ie.ucc.bis.supportinglife.reference.Symptom;
+import ie.ucc.bis.supportinglife.reference.Treatment;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -72,6 +77,31 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		return patientVisitDao.getAllPatientVisits();
 	}
 	
+	@Override
+	public List<CcmPatientVisit> getPatientVisits(String nationalId,
+												String nationalHealthId, 
+												String hsaUserId, 
+												Date assessmentDateFrom,
+												Date assessmentDateTo, 
+												List<Symptom> symptoms,
+												List<Classification> classifications, 
+												List<Treatment> treatments) {
+		// 1. identify symptoms selected by user
+		List<Symptom> selectedSymptoms = identifySelectedSymptoms(symptoms);
+		
+		// 2. identify classifications selected by user
+		List<Classification> selectedClassifications = identifySelectedClassifications(classifications);
+		
+		// 3. identify treatments selected by user
+		List<Treatment> selectedTreatments = identifySelectedTreatments(treatments);
+
+		CcmPatientVisitDao patientVisitDao = (CcmPatientVisitDao) getDaoBeans().get("CcmPatientVisitDao");
+		return patientVisitDao.getPatientVisits(nationalId, nationalHealthId,
+											hsaUserId, assessmentDateFrom,
+											assessmentDateTo, selectedSymptoms,
+											selectedClassifications, selectedTreatments);
+	}
+	
 	/*******************************************************************************/
 	/*********************************Patient Symptoms******************************/
 	/*******************************************************************************/
@@ -104,6 +134,69 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		CcmPatientTreatmentDao patientTreatmentDao = (CcmPatientTreatmentDao) getDaoBeans().get("CcmPatientTreatmentDao");
 		return patientTreatmentDao.getPatientTreatmentsByVisit(ccmPatientVisit);				
 	}
+	
+	/*******************************************************************************/
+	/*********************************Utility Methods*******************************/
+	/*******************************************************************************/
+	
+	/**
+	 * Utility method to identify those symptoms which have been checked
+	 * by a user from a symptom list
+	 * 
+	 * @param symptoms
+	 * 
+	 * @return List<Symptom>
+	 */
+	private List<Symptom> identifySelectedSymptoms(List<Symptom> symptoms) {
+		List<Symptom> symptomsSelected = new ArrayList<Symptom>();
+		
+		for (Symptom symptom : symptoms) {
+			if (symptom.getChecked()) {
+				symptomsSelected.add(symptom);
+			}
+		}	
+		return symptomsSelected;
+	}
+
+	/**
+	 * Utility method to identify those classifications which have been checked
+	 * by a user from a classification list
+	 * 
+	 * @param classifications
+	 * 
+	 * @return List<Classification>
+	 */
+	private List<Classification> identifySelectedClassifications(List<Classification> classifications) {
+		List<Classification> classificationsSelected = new ArrayList<Classification>();
+		
+		for (Classification classification : classifications) {
+			if (classification.getChecked()) {
+				classificationsSelected.add(classification);
+			}
+		}	
+		return classificationsSelected;
+	}
+	
+	/**
+	 * Utility method to identify those treatments which have been checked
+	 * by a user from a treatment list
+	 * 
+	 * @param treatment
+	 * 
+	 * @return List<Treatment>
+	 */
+	private List<Treatment> identifySelectedTreatments(List<Treatment> treatments) {
+		List<Treatment> treatmentsSelected = new ArrayList<Treatment>();
+		
+		for (Treatment treatment : treatments) {
+			if (treatment.getChecked()) {
+				treatmentsSelected.add(treatment);
+			}
+		}	
+		return treatmentsSelected;
+	}
+
+	
 	
 	/*******************************************************************************/
 	/*********************************Getters/Setters*******************************/

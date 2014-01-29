@@ -1,7 +1,11 @@
 package ie.ucc.bis.supportinglife.ccm.dao;
 
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
+import ie.ucc.bis.supportinglife.reference.Classification;
+import ie.ucc.bis.supportinglife.reference.Symptom;
+import ie.ucc.bis.supportinglife.reference.Treatment;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -56,6 +60,28 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 		criteriaQuery.select(root)
         	.where(criteriaBuilder.and(
         		criteriaBuilder.equal(root.get("patientId"), patientId)));
+		
+	    List<CcmPatientVisit> patientVisitResults = entityManager.createQuery(criteriaQuery).getResultList();
+	    return patientVisitResults;
+	}
+	
+	@Override
+	public List<CcmPatientVisit> getPatientVisits(String nationalId,
+												String nationalHealthId, 
+												String hsaUserId, 
+												Date assessmentDateFrom, 
+												Date assessmentDateTo, 
+												List<Symptom> selectedSymptoms,	
+												List<Classification> selectedClassifications,
+												List<Treatment> selectedTreatments) {
+		
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+		CriteriaQuery<CcmPatientVisit> criteriaQuery = criteriaBuilder.createQuery(CcmPatientVisit.class);
+		Root<CcmPatientVisit> root = criteriaQuery.from(CcmPatientVisit.class);
+		
+		criteriaQuery.select(root)
+        	.where(criteriaBuilder.and(
+        		criteriaBuilder.equal(root.get("nationalId"), nationalId)));
 		
 	    List<CcmPatientVisit> patientVisitResults = entityManager.createQuery(criteriaQuery).getResultList();
 	    return patientVisitResults;

@@ -6,9 +6,17 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
+import ie.ucc.bis.supportinglife.reference.Classification;
+import ie.ucc.bis.supportinglife.reference.Symptom;
+import ie.ucc.bis.supportinglife.reference.Treatment;
 
+import java.util.Date;
 import java.util.List;
 
+/**
+ * @author timothyosullivan
+ *
+ */
 public interface SupportingLifeServiceInf {
 
 	/*******************************************************************************/
@@ -26,6 +34,33 @@ public interface SupportingLifeServiceInf {
 	public List<CcmPatientVisit> getPatientVisitsbyPatientId(long patientId);
 	public List<CcmPatientVisit> getAllPatientVisits();
 
+	/**
+	 * Retrieve all patient visits which match the passed-in criteria.
+	 * Used in the CCM Custom Report Form on the desktop admin site.
+	 * 
+	 * @param nationalId
+	 * @param nationalHealthId
+	 * @param hsaUserId
+	 * @param assessmentDateFrom
+	 * @param assessmentDateTo
+	 * @param symptoms
+	 * @param classifications
+	 * @param treatments
+	 * 
+	 * @return List<CcmPatientVisit>
+	 *
+	 */
+
+	public List<CcmPatientVisit> getPatientVisits(String nationalId,
+												String nationalHealthId,
+												String hsaUserId, 
+												Date assessmentDateFrom,
+												Date assessmentDateTo, 
+												List<Symptom> symptoms,
+												List<Classification> classifications, 
+												List<Treatment> treatments);
+	
+	
 	/*******************************************************************************/
 	/*********************************Patient Symptoms******************************/
 	/*******************************************************************************/
