@@ -1,31 +1,32 @@
 
 package ie.ucc.bis.supportinglife.reference;
 
+import java.util.List;
 import java.util.Map;
 
 public class CcmCustomReportReferenceCriteria {
 
-	private Map<String, String> askLookSymptoms;
-	private Map<String, String> classifications;
+	private List<Symptom> askLookSymptoms;
+	private List<Classification> classifications;
 	private Map<String, String> classificationTypes;
-	private Map<String, Treatment> treatments;
-
-	public Map<String, String> getAskLookSymptoms() {
+	private List<Treatment> treatments;
+	
+	public List<Symptom> getAskLookSymptoms() {
 		return askLookSymptoms;
 	}
-
-	public void setAskLookSymptoms(Map<String, String> askLookSymptoms) {
+	
+	public void setAskLookSymptoms(List<Symptom> askLookSymptoms) {
 		this.askLookSymptoms = askLookSymptoms;
 	}
-
-	public Map<String, String> getClassifications() {
+	
+	public List<Classification> getClassifications() {
 		return classifications;
 	}
-
-	public void setClassifications(Map<String, String> classifications) {
+	
+	public void setClassifications(List<Classification> classifications) {
 		this.classifications = classifications;
 	}
-
+	
 	public Map<String, String> getClassificationTypes() {
 		return classificationTypes;
 	}
@@ -34,12 +35,11 @@ public class CcmCustomReportReferenceCriteria {
 		this.classificationTypes = classificationTypes;
 	}
 
-	public Map<String, Treatment> getTreatments() {
+	public List<Treatment> getTreatments() {
 		return treatments;
 	}
-
-	public void setTreatments(Map<String, Treatment> treatments) {
+	
+	public void setTreatments(List<Treatment> treatments) {
 		this.treatments = treatments;
 	}
-
 }

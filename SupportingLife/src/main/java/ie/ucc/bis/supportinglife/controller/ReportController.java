@@ -1,14 +1,23 @@
 package ie.ucc.bis.supportinglife.controller;
 
 import ie.ucc.bis.supportinglife.controller.interfaces.ReportControllerInf;
+import ie.ucc.bis.supportinglife.report.form.CcmCustomForm;
 import ie.ucc.bis.supportinglife.service.SupportingLifeService;
 import ie.ucc.bis.supportinglife.service.SupportingLifeServiceInf;
 import ie.ucc.bis.supportinglife.service.helper.SupportingLifeRefDataHelperInf;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -41,6 +50,21 @@ public class ReportController implements ReportControllerInf {
 	public ReportController(SupportingLifeService supportingLifeService) {
 		this.supportingLifeService = supportingLifeService;
 	}
+
+	/**
+	 * Specify to the Controller the format which it will receive
+	 * dates
+	 * 
+	 * @param webDataBinder
+	 * 
+	 */
+	@InitBinder
+	public void initBinder(WebDataBinder webDataBinder) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		dateFormat.setLenient(false);
+		webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+	}
+
 	
 	/**
 	 * Returns the selection criteria for the CCM Custom Report
@@ -55,10 +79,12 @@ public class ReportController implements ReportControllerInf {
 		
 		log.info("GET form page for report: " + reportName);
 		
-		model.addAttribute("symptoms", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getAskLookSymptoms());
-		model.addAttribute("classifications", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getClassifications());
-		model.addAttribute("classificationTypes", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getClassificationTypes());
-		model.addAttribute("treatments", SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getTreatments());
+		CcmCustomForm ccmCustomForm = new CcmCustomForm();
+		ccmCustomForm.setSymptoms(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getAskLookSymptoms());
+		ccmCustomForm.setClassifications(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getClassifications());
+		ccmCustomForm.setTreatments(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getTreatments());
+		
+		model.addAttribute("ccmCustomFormBean", ccmCustomForm);
 		
 		// Spring uses InternalResourceViewResolver and returns back report criteria jsp
 		return REPORT_PREFIX + reportName;		
@@ -71,14 +97,15 @@ public class ReportController implements ReportControllerInf {
 	 * 
 	 * @return String
 	 */
-	@RequestMapping(value="/ccm_custom_report", method=RequestMethod.GET, headers="Accept=html/text")
-	public String getCcmCustomReport(ModelMap model) {
+	@RequestMapping(value="/ccm_custom_report", method=RequestMethod.POST, headers="Accept=html/text")
+	public String getCcmCustomReport(@ModelAttribute("ccmCustomFormBean") CcmCustomForm ccmCustomForm, Model model) {
 		final String reportName = "ccm_custom_report";
-		
+			
 		log.info("GET resultset for report: " + reportName);
 		
-		// Spring uses InternalResourceViewResolver and returns back welcome.jsp
-		return"sl_welcome";
+		log.info("CCM Custom Form: " + ccmCustomForm.toString());
+		
+        return "sl_welcome";
 	}
 	
 } // end of class

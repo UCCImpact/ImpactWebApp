@@ -6,8 +6,10 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- JSTL FMT supports time, number and localisation formats. --%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%-- JSTL Functions allow for String manipulation. --%>
+<%-- JSTL functions allow for String manipulation. --%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%-- spring form handling --%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <head>
 	<meta charset="UTF-8"/>

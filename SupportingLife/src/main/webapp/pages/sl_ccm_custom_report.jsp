@@ -52,36 +52,30 @@
 	</div>
 	
 	<!-- CCM report form -->
-	<form method="GET" action="../reports/ccm_custom_report" class="form-horizontal" id="ccm-report-form">
+	<form:form method="POST" action="../reports/ccm_custom_report" modelAttribute="ccmCustomFormBean" class="form-horizontal" id="ccm-report-form">
 		<!-- three columns for user/patient identifier input -->
 		<div class="row">
 			<div id="patient-identifier-container" class="col-lg-6">
 				<div class="control-group">
 					<!-- Number input (max. 8 characters, as per Functional Specification.) -->
-					<label for="national-id" class="control-label">National
-						ID: </label>
+					<form:label for="national-id" class="control-label" path="nationalId">National ID: </form:label>
 					<div class="controls">
-						<input id="national-id" name="national-id" type="text"
-							placeholder="Enter National Id"></input>
+						<form:input type="text" path="nationalId" placeholder="Enter National Id"/>
 					</div>
 				</div>
 	
 				<div class="control-group">
 					<!-- Number input (max. 8 characters, as per Functional Specification.) -->
-					<label for="national-health-id" class="control-label">National
-						Health ID: </label>
+					<form:label for="national-health-id" class="control-label" path="nationalHealthId">National	Health ID: </form:label>
 					<div class="controls">
-						<input id="national-health-id" name="national-health-id"
-							type="text" placeholder="Enter National Health Id"></input>
+						<form:input type="text"	path="nationalHealthId" placeholder="Enter National Health Id"/>
 					</div>
 				</div>
 	
 				<div class="control-group">
-					<label for="hsa-user-id" class="control-label">HSA User
-						ID: </label>
+					<form:label for="hsa-user-id" class="control-label" path="hsaUserId">HSA User ID: </form:label>
 					<div class="controls">
-						<input id="hsa-user-id" name="hsa-user-id" type="text"
-							placeholder="Enter HSA User Id"></input>
+						<form:input type="text"	path="hsaUserId" placeholder="Enter HSA User Id"/>
 					</div>
 				</div>
 			</div>
@@ -90,21 +84,17 @@
 			<div id="assessment-date-container" class="col-lg-6">
 				<div class="control-group">
 					<!-- assessment date range -->
-					<label for="assessment-date-from" class="control-label">From:
-					</label>
+					<form:label for="assessment-date-from" class="control-label" path="assessmentDateFrom">From: </form:label>
 					<div class="controls">
-						<input id="assessment-date-from" name="assessment-date-from"
-							class="assessment-datepicker" type="text"
-							data-format="dd-MM-yyyy" placeholder="Assessment Date From" />
+						<form:input class="assessment-datepicker"
+							data-format="dd-MM-yyyy" path="assessmentDateFrom" placeholder="Assessment Date From" />
 					</div>
 				</div>
 				<div class="control-group">
-					<label for="assessment-date-to" class="control-label">To:
-					</label>
+					<form:label for="assessment-date-to" class="control-label" path="assessmentDateTo">To: </form:label>
 					<div class="controls">
-						<input id="assessment-date-to" name="assessment-date-to"
-							class="assessment-datepicker" type="text"
-							data-format="dd-MM-yyyy" placeholder="Assessment Date To" />
+						<form:input class="assessment-datepicker"
+							data-format="dd-MM-yyyy" path="assessmentDateTo" placeholder="Assessment Date To" />
 					</div>
 				</div>
 			</div>
@@ -124,18 +114,19 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="symptom" items="${symptoms}">
+						<c:forEach items="${ccmCustomFormBean.symptoms}" var="symptom" varStatus="status">
 							<tr>
 								<td>${symptom.value}</td>
-								<td class="symptom-checkbox-column"><input type="checkbox"
-									value="${symptom.key}"></td>
+								<td class="symptom-checkbox-column">
+									<form:checkbox path="symptoms[${status.index}].checked"/>
+								</td>
+								<form:input type="hidden" path="symptoms[${status.index}].key" value="${symptom.key}"/>
+								<form:input type="hidden" path="symptoms[${status.index}].value" value="${symptom.value}"/>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 			</div>
-	
-	
 	
 			<!-- classification list -->
 			<div id="classification-list" class="col-lg-6 sl-table-container">
@@ -147,11 +138,14 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="classification" items="${classifications}">
+						<c:forEach items="${ccmCustomFormBean.classifications}" var="classification" varStatus="status">
 							<tr>
 								<td>${classification.value}</td>
-								<td class="classification-checkbox-column"><input
-									type="checkbox" value="${classification.key}"></td>
+								<td class="classification-checkbox-column">
+									<form:checkbox path="classifications[${status.index}].checked"/>
+								</td>
+								<form:input type="hidden" path="classifications[${status.index}].key" value="${classification.key}"/>
+								<form:input type="hidden" path="classifications[${status.index}].value" value="${classification.value}"/>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -172,12 +166,15 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="treatment" items="${treatments}">
+						<c:forEach items="${ccmCustomFormBean.treatments}" var="treatment" varStatus="status">
 							<tr>
-								<td>${treatment.value.treatment}</td>
-								<td>${treatment.value.associatedClassification}</td>
-								<td class="treatment-checkbox-column"><input
-									type="checkbox" value="${treatment.key}"></td>
+								<td>${treatment.value}</td>
+								<td>${treatment.associatedClassification}</td>
+								<td class="treatment-checkbox-column">
+									<form:checkbox path="treatments[${status.index}].checked"/>
+								</td>
+								<form:input type="hidden" path="treatments[${status.index}].key" value="${treatment.key}"/>
+								<form:input type="hidden" path="treatments[${status.index}].value" value="${treatment.value}"/>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -189,7 +186,7 @@
 			<button id="submit-button" type="submit" class="btn btn-success">Submit</button>
 			<button id="reset-button" type="reset" class="btn">Reset</button>
 		</div>
-	</form>
+	</form:form>
 </div><!--  END: report-ccm-container -->
 
 

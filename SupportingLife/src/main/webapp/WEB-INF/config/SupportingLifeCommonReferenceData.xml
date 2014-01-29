@@ -1,138 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
 		http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context-3.2.xsd
 		http://www.springframework.org/schema/mvc
-		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
-
+		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+ 
 	<!-- =================================================================================== -->
 	<!-- **** SPRINGIFIED REFERENCE DATA												**** -->
 	<!-- =================================================================================== -->
 
-	<bean id="treatmentBean" class="ie.ucc.bis.supportinglife.reference.Treatment"/>
-
 	<bean name="ccmCustomReportReferenceCriteria" class="ie.ucc.bis.supportinglife.reference.CcmCustomReportReferenceCriteria">
 		<property name="askLookSymptoms">
-			<map>
-				<entry key="COUGH_SYMPTOM">
-					<value>Cough</value>
-				</entry>
-				<entry key="DIARRHOEA_SYMPTOM">
-					<value>Diarrhoea (Loose Stools)</value>
-				</entry>
-				<entry key="BLOOD_IN_STOOL_SYMPTOM">
-					<value>Blood in stool</value>
-				</entry>
-				<entry key="FEVER_SYMPTOM">
-					<value>Fever (reported or now)</value>
-				</entry>
-				<entry key="CONVULSIONS_SYMPTOM">
-					<value>Convulsions</value>
-				</entry>
-				<entry key="DIFFICULTY_DRINKING_OR_FEEDING_SYMPTOM">
-					<value>Difficulty drinking or feeding</value>
-				</entry>
-				<entry key="NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING_SYMPTOM">
-					<value>Not able to drink or feed anything</value>
-				</entry>
-				<entry key="VOMITING_SYMPTOM">
-					<value>Vomiting</value>
-				</entry>
-				<entry key="VOMITS_EVERYTHING_SYMPTOM">
-					<value>Vomits everything</value>
-				</entry>
-				<entry key="RED_EYES_SYMPTOM">
-					<value>Red Eyes</value>
-				</entry>
-				<entry key="DIFFICULTY_IN_SEEING_SYMPTOM">
-					<value>Difficulty in seeing</value>
-				</entry>
-				<entry key="OTHER_PROBLEMS_SYMPTOM">
-					<value>Other problems</value>
-				</entry>
-				<entry key="CHEST_INDRAWING_SYMPTOM">
-					<value>Chest indrawing</value>
-				</entry>
-				<entry key="FAST_BREATHING_SYMPTOM">
-					<value>Fast breathing</value>
-				</entry>
-				<entry key="VERY_SLEEPY_OR_UNCONSCIOUS_SYMPTOM">
-					<value>Very sleepy or unconscious</value>
-				</entry>
-				<entry key="PALMAR_PALLOR_SYMPTOM">
-					<value>Palmar pallor</value>
-				</entry>
-				<entry key="MUAC_TAPE_COLOUR_SYMPTOM">
-					<value>Muac tape colour</value>
-				</entry>
-				<entry key="SWELLING_OF_BOTH_FEET_SYMPTOM">
-					<value>Swelling of both feet</value>
-				</entry>
-			</map>
+			<list>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="COUGH_SYMPTOM"/>
+					<property name="value" value="Cough"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="DIARRHOEA_SYMPTOM"/>
+					<property name="value" value="Diarrhoea (Loose Stools)"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="BLOOD_IN_STOOL_SYMPTOM"/>
+					<property name="value" value="Blood in stool"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="FEVER_SYMPTOM"/>
+					<property name="value" value="Fever (reported or now)"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="CONVULSIONS_SYMPTOM"/>
+					<property name="value" value="Convulsions"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="DIFFICULTY_DRINKING_OR_FEEDING_SYMPTOM"/>
+					<property name="value" value="Difficulty drinking or feeding"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING_SYMPTOM"/>
+					<property name="value" value="Not able to drink or feed anything"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="VOMITING_SYMPTOM"/>
+					<property name="value" value="Vomiting"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="VOMITS_EVERYTHING_SYMPTOM"/>
+					<property name="value" value="Vomits everything"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="RED_EYES_SYMPTOM"/>
+					<property name="value" value="Red Eyes"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="DIFFICULTY_IN_SEEING_SYMPTOM"/>
+					<property name="value" value="Difficulty in seeing"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="OTHER_PROBLEMS_SYMPTOM"/>
+					<property name="value" value="Other problems"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="CHEST_INDRAWING_SYMPTOM"/>
+					<property name="value" value="Chest indrawing"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="FAST_BREATHING_SYMPTOM"/>
+					<property name="value" value="Fast breathing"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="VERY_SLEEPY_OR_UNCONSCIOUS_SYMPTOM"/>
+					<property name="value" value="Very sleepy or unconscious"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="PALMAR_PALLOR_SYMPTOM"/>
+					<property name="value" value="Palmar pallor"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="MUAC_TAPE_COLOUR_SYMPTOM"/>
+					<property name="value" value="Muac tape colour"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+					<property name="key" value="SWELLING_OF_BOTH_FEET_SYMPTOM"/>
+					<property name="value" value="Swelling of both feet"/>
+					<property name="checked" value="false"/>
+				</bean>
+			</list>
 		</property>
 		<property name="classifications">
-			<map>
-				<entry key="CCM_COUGH_FOR_21_DAYS_OR_MORE_CLASSIFICATION">
-					<value>Cough for 21 days or more</value>
-				</entry>
-				<entry key="CCM_DIARRHOEA_FOR_14_DAYS_OR_MORE_CLASSIFICATION">
-					<value>Diarrhoea for 14 days or more</value>
-				</entry>
-				<entry key="CCM_BLOOD_IN_STOOL_CLASSIFICATION">
-					<value>Blood in stool</value>
-				</entry>
-				<entry key="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_CLASSIFICATION">
-					<value>Diarrhoea (less than 14 days AND no blood in stool)</value>
-				</entry>
-				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_CLASSIFICATION">
-					<value>Fever for last 7 days</value>
-				</entry>
-				<entry key="CCM_FEVER_FOR_LESS_THAN_7_DAYS_CLASSIFICATION">
-					<value>Fever (less than 7 days)</value>
-				</entry>
-				<entry key="CCM_CONVULSIONS_CLASSIFICATION">
-					<value>Convulsions</value>
-				</entry>
-				<entry key="CCM_NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING_CLASSIFICATION">
-					<value>Not Able to Drink or Feed Anything</value>
-				</entry>
-				<entry key="CCM_VOMITS_EVERYTHING_CLASSIFICATION">
-					<value>Vomits Everything</value>
-				</entry>
-				<entry key="CCM_RED_EYE_FOR_4_DAYS_OR_MORE_CLASSIFICATION">
-					<value>Red Eye for 4 Days or more</value>
-				</entry>
-				<entry key="CCM_RED_EYE_WITH_VISUAL_PROBLEMS_CLASSIFICATION">
-					<value>Red Eye with Visual Problems</value>
-				</entry>
-				<entry key="CCM_RED_EYE_LESS_THAN_4_DAYS_CLASSIFICATION">
-					<value>Red Eye (less than 4 days)</value>
-				</entry>
-				<entry key="CCM_OTHER_PROBLEM_CLASSIFICATION">
-					<value>Other Problem</value>
-				</entry>
-				<entry key="CCM_CHEST_INDRAWING_CLASSIFICATION">
-					<value>Chest Indrawing</value>
-				</entry>
-				<entry key="CCM_FAST_BREATHING_CLASSIFICATION">
-					<value>Fast Breathing</value>
-				</entry>
-				<entry key="CCM_VERY_SLEEPY_OR_UNCONSCIOUS_CLASSIFICATION">
-					<value>Very Sleep or Unconscious</value>
-				</entry>
-				<entry key="CCM_PALMAR_PALLOR_CLASSIFICATION">
-					<value>Palmar Pallor</value>
-				</entry>
-				<entry key="CCM_RED_ON_MUAC_TAPE_CLASSIFICATION">
-					<value>Red on MUAC Tape</value>
-				</entry>
-				<entry key="CCM_SWELLING_OF_BOTH_FEET_CLASSIFICATION">
-					<value>Swelling of Both Feet</value>
-				</entry>
-			</map>
+			<list>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_COUGH_FOR_21_DAYS_OR_MORE_CLASSIFICATION"/>
+					<property name="value" value="Cough for 21 days or more"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_DIARRHOEA_FOR_14_DAYS_OR_MORE_CLASSIFICATION"/>
+					<property name="value" value="Diarrhoea for 14 days or more"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_BLOOD_IN_STOOL_CLASSIFICATION"/>
+					<property name="value" value="Blood in stool"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_CLASSIFICATION"/>
+					<property name="value" value="Diarrhoea (less than 14 days AND no blood in stool)"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_FEVER_FOR_LAST_7_DAYS_CLASSIFICATION"/>
+					<property name="value" value="Fever for last 7 days"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_FEVER_FOR_LESS_THAN_7_DAYS_CLASSIFICATION"/>
+					<property name="value" value="Fever (less than 7 days)"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_CONVULSIONS_CLASSIFICATION"/>
+					<property name="value" value="Convulsions"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING_CLASSIFICATION"/>
+					<property name="value" value="Not Able to Drink or Feed Anything"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_VOMITS_EVERYTHING_CLASSIFICATION"/>
+					<property name="value" value="Vomits Everything"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_RED_EYE_FOR_4_DAYS_OR_MORE_CLASSIFICATION"/>
+					<property name="value" value="Red Eye for 4 Days or more"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_RED_EYE_WITH_VISUAL_PROBLEMS_CLASSIFICATION"/>
+					<property name="value" value="Red Eye with Visual Problems"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_RED_EYE_LESS_THAN_4_DAYS_CLASSIFICATION"/>
+					<property name="value" value="Red Eye (less than 4 days)"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_OTHER_PROBLEM_CLASSIFICATION"/>
+					<property name="value" value="Other Problem"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_CHEST_INDRAWING_CLASSIFICATION"/>
+					<property name="value" value="Chest Indrawing"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_FAST_BREATHING_CLASSIFICATION"/>
+					<property name="value" value="Fast Breathing"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_VERY_SLEEPY_OR_UNCONSCIOUS_CLASSIFICATION"/>
+					<property name="value" value="Very Sleep or Unconscious"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_PALMAR_PALLOR_CLASSIFICATION"/>
+					<property name="value" value="Palmar Pallor"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_RED_ON_MUAC_TAPE_CLASSIFICATION"/>
+					<property name="value" value="Red on MUAC Tape"/>
+					<property name="checked" value="false"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+					<property name="key" value="CCM_SWELLING_OF_BOTH_FEET_CLASSIFICATION"/>
+					<property name="value" value="Swelling of Both Feet"/>
+					<property name="checked" value="false"/>
+				</bean>
+			</list>
 		</property>
+
 		<property name="classificationTypes">
 			<map>
 				<entry key="CCM_DANGER_SIGN_CLASSIFICATION_TYPE">
@@ -145,289 +220,254 @@
 		</property>
 
 		<property name="treatments">
-			<map>
-				<entry key="CCM_DANGER_SIGN_REFER_URGENTLY_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="REFER URGENTLY to health facility"/>
-						<property name="associatedClassification" value="Danger Sign - General Advice"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_DANGER_SIGN_EXPLAIN_REFERRAL_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Explain why child needs to go to health facility"/>
-						<property name="associatedClassification" value="Danger Sign - General Advice"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_DANGER_SIGN_FLUIDS_AND_FEEDING_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Advise to give fluids and continue feeding"/>
-						<property name="associatedClassification" value="Danger Sign - General Advice"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_DIARRHOEA_FOR_14_DAYS_OR_MORE_ORS_SOLUTION_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Begin giving ORS solution immediately"/>
-						<property name="associatedClassification" value="Diarrhoea for 14 days or more"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_DOSE_FOR_LA_NOT_RECOMMENDED_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Dose for LA: Not recommended"/>
-						<property name="associatedClassification" value="Fever for last 7 days"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_DOSE_FOR_LA_ONE_TABLET_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give first dose of LA: 1 tablet"/>
-						<property name="associatedClassification" value="Fever for last 7 days"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_DOSE_FOR_LA_TWO_TABLETS_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give first dose of LA: 2 tablets"/>
-						<property name="associatedClassification" value="Fever for last 7 days"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_CHEST_INDRAWING_ORAL_ANTIBIOTIC_HALF_TABLET_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give first dose of oral antibiotic.
+			<list>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_DANGER_SIGN_REFER_URGENTLY_TREATMENT"/>
+					<property name="value" value="REFER URGENTLY to health facility"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Danger Sign - General Advice"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_DANGER_SIGN_EXPLAIN_REFERRAL_TREATMENT"/>
+					<property name="value" value="Explain why child needs to go to health facility"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Danger Sign - General Advice"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_DANGER_SIGN_FLUIDS_AND_FEEDING_TREATMENT"/>
+					<property name="value" value="Advise to give fluids and continue feeding"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Danger Sign - General Advice"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_DIARRHOEA_FOR_14_DAYS_OR_MORE_ORS_SOLUTION_TREATMENT"/>
+					<property name="value" value="Begin giving ORS solution immediately"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Diarrhoea for 14 days or more"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_FEVER_FOR_LAST_7_DAYS_DOSE_FOR_LA_NOT_RECOMMENDED_TREATMENT"/>
+					<property name="value" value="Dose for LA: Not recommended"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Fever for last 7 days"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_FEVER_FOR_LAST_7_DAYS_DOSE_FOR_LA_ONE_TABLET_TREATMENT"/>
+					<property name="value" value="Give first dose of LA: 1 tablet"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Fever for last 7 days"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_FEVER_FOR_LAST_7_DAYS_DOSE_FOR_LA_TWO_TABLETS_TREATMENT"/>
+					<property name="value" value="Give first dose of LA: 2 tablets"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Fever for last 7 days"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_CHEST_INDRAWING_ORAL_ANTIBIOTIC_HALF_TABLET_TREATMENT"/>
+					<property name="value" value="Give first dose of oral antibiotic.
 														  (Cotrimoxazole adult tablet - 80/400)
 														  Age 2 months up to 12 months: 1/2 tablet"/>
-						<property name="associatedClassification" value="Chest Indrawing"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_CHEST_INDRAWING_ORAL_ANTIBIOTIC_ONE_TABLET_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give first dose of oral antibiotic.
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Chest Indrawing"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_CHEST_INDRAWING_ORAL_ANTIBIOTIC_ONE_TABLET_TREATMENT"/>
+					<property name="value" value="Give first dose of oral antibiotic.
 						    							  (Cotrimoxazole adult tablet - 80/400)
 														  Age 12 months up to 5 years: 1 tablet"/>
-						<property name="associatedClassification" value="Chest Indrawing"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_FAST_BREATHING_AND_DANGER_SIGN_ORAL_ANTIBIOTIC_HALF_TABLET_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give first dose of oral antibiotic (cotrimoxazole adult tablet - 80/400).
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Chest Indrawing"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_FAST_BREATHING_AND_DANGER_SIGN_ORAL_ANTIBIOTIC_HALF_TABLET_TREATMENT"/>
+					<property name="value" value="Give first dose of oral antibiotic (cotrimoxazole adult tablet - 80/400).
 														  Age 2 months up to 12 months: 1/2 tablet"/>
-						<property name="associatedClassification" value="Fast Breathing and Danger Sign"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_FAST_BREATHING_AND_DANGER_SIGN_ORAL_ANTIBIOTIC_ONE_TABLET_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give first dose of oral antibiotic (cotrimoxazole adult tablet - 80/400).
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Fast Breathing and Danger Sign"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_FAST_BREATHING_AND_DANGER_SIGN_ORAL_ANTIBIOTIC_ONE_TABLET_TREATMENT"/>
+					<property name="value" value="Give first dose of oral antibiotic (cotrimoxazole adult tablet - 80/400).
 														  Age 12 months up to 5 years: 1 tablet"/>
-						<property name="associatedClassification" value="Fast Breathing and Danger Sign"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_RED_EYE_FOR_4_DAYS_OR_MORE_ANTIBIOTIC_EYE_OINTMENT_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Apply antibiotic eye ointment"/>
-						<property name="associatedClassification" value="Red Eye for 4 Days or more"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_DANGER_SIGN_KEEP_CHILD_WARM_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Advise to keep child warm, if 'child is NOT hot with fever'"/>
-						<property name="associatedClassification" value="Danger Sign - General Advice"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_DANGER_SIGN_REFERRAL_NOTE_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Write a referral note"/>
-						<property name="associatedClassification" value="Danger Sign - General Advice"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_DANGER_SIGN_TRANSPORTATION_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Arrange transportation and help solve other difficulties in referral"/>
-						<property name="associatedClassification" value="Danger Sign - General Advice"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_DANGER_SIGN_TRANSPORTATION_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Refer child to health facility"/>
-						<property name="associatedClassification" value="Referral"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_REFER_SIGN_REFERRAL_NOTE_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Write referral note"/>
-						<property name="associatedClassification" value="Referral"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_REFER_SIGN_GIVE_ORS_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give ORS"/>
-						<property name="associatedClassification" value="Referral"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_REFER_SIGN_ANTIBIOTIC_OR_ANTIMALARIAL_NEGATIVE_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Do not give antibiotic or antimalarial"/>
-						<property name="associatedClassification" value="Referral"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_SICK_SIGN_HOME_ADVICE_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="TREAT at home and ADVISE on home care"/>
-						<property name="associatedClassification" value="Sick Sign - General Advice"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ORS_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give ORS.
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Fast Breathing and Danger Sign"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_RED_EYE_FOR_4_DAYS_OR_MORE_ANTIBIOTIC_EYE_OINTMENT_TREATMENT"/>
+					<property name="value" value="Apply antibiotic eye ointment"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Red Eye for 4 Days or more"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_DANGER_SIGN_KEEP_CHILD_WARM_TREATMENT"/>
+					<property name="value" value="Advise to keep child warm, if 'child is NOT hot with fever'"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Danger Sign - General Advice"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_DANGER_SIGN_REFERRAL_NOTE_TREATMENT"/>
+					<property name="value" value="Write a referral note"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Danger Sign - General Advice"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_DANGER_SIGN_TRANSPORTATION_TREATMENT"/>
+					<property name="value" value="Arrange transportation and help solve other difficulties in referral"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Danger Sign - General Advice"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_DANGER_SIGN_TRANSPORTATION_TREATMENT"/>
+					<property name="value" value="Refer child to health facility"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Referral"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_REFER_SIGN_REFERRAL_NOTE_TREATMENT"/>
+					<property name="value" value="Write referral note"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Referral"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_REFER_SIGN_GIVE_ORS_TREATMENT"/>
+					<property name="value" value="Give ORS"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Referral"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_REFER_SIGN_ANTIBIOTIC_OR_ANTIMALARIAL_NEGATIVE_TREATMENT"/>
+					<property name="value" value="Do not give antibiotic or antimalarial"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Referral"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_SICK_SIGN_HOME_ADVICE_TREATMENT"/>
+					<property name="value" value="TREAT at home and ADVISE on home care"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Sick Sign - General Advice"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ORS_TREATMENT"/>
+					<property name="value" value="Give ORS.
 							Help caregiver give child ORS solution in front of you until child is no longer thirsty."/>
-						<property name="associatedClassification" value="Diarrhoea less than 14 days and no blood in stool"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_2_ORS_PACKETS_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give caregiver 2 ORS packets to take home.
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Diarrhoea less than 14 days and no blood in stool"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_2_ORS_PACKETS_TREATMENT"/>
+					<property name="value" value="Give caregiver 2 ORS packets to take home.
 								Advise to give as much as child wants, but at least 1/2 cup ORS solution after each loose stool."/>
-						<property name="associatedClassification" value="Diarrhoea less than 14 days and no blood in stool"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ZINC_SUPPLEMENT_HALF_TABLET_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give zinc supplement.
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Diarrhoea less than 14 days and no blood in stool"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ZINC_SUPPLEMENT_HALF_TABLET_TREATMENT"/>
+					<property name="value" value="Give zinc supplement.
 												Give one dose daily for 10 days.
 												Help caregiver to give first dose now
 												Age 2 months up to 6 months: 1/2 tablet (total 5 tabs)"/>
-						<property name="associatedClassification" value="Diarrhoea less than 14 days and no blood in stool"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ZINC_SUPPLEMENT_1_TABLET_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give zinc supplement.
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Diarrhoea less than 14 days and no blood in stool"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_ZINC_SUPPLEMENT_1_TABLET_TREATMENT"/>
+					<property name="value" value="Give zinc supplement.
 												Give one dose daily for 10 days.
 												Help caregiver to give first dose now
 												Age 6 months up to 5 years: 1 tablet (total 10 tabs)"/>
-						<property name="associatedClassification" value="Diarrhoea less than 14 days and no blood in stool"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_FEVER_LESS_THAN_7_DAYS_DOSE_FOR_LA_NOT_RECOMMENDED_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Dose for LA: Not recommended"/>
-						<property name="associatedClassification" value="Fever less than 7 days"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_FEVER_LESS_THAN_7_DAYS_DOSE_FOR_LA_ONE_TABLET_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give LA.
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Diarrhoea less than 14 days and no blood in stool"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_FEVER_LESS_THAN_7_DAYS_DOSE_FOR_LA_NOT_RECOMMENDED_TREATMENT"/>
+					<property name="value" value="Dose for LA: Not recommended"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Fever less than 7 days"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_FEVER_LESS_THAN_7_DAYS_DOSE_FOR_LA_ONE_TABLET_TREATMENT"/>
+					<property name="value" value="Give LA.
 									Help caregiver give first dose now and 2nd dose after 8 hours.Then give dose twice daily for 2 more days.
 									Age 5 months up to 3 years: 1 tablet (total 6 tabs)"/>
-						<property name="associatedClassification" value="Fever less than 7 days"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_FEVER_FOR_LESS_THAN_7_DAYS_DOSE_FOR_LA_TWO_TABLETS_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give LA.
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Fever less than 7 days"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_FEVER_FOR_LESS_THAN_7_DAYS_DOSE_FOR_LA_TWO_TABLETS_TREATMENT"/>
+					<property name="value" value="Give LA.
 									Help caregiver give first dose now and 2nd dose after 8 hours.Then give dose twice daily for 2 more days.
 									Age 3 years up to 5 years: 2 tablet (total 12 tabs)"/>
-						<property name="associatedClassification" value="Fever less than 7 days"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_ITN_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Advise caregiver on use of a ITN"/>
-						<property name="associatedClassification" value="Fever less than 7 days"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_PARACETAMOL_QUARTER_TABLET_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give Paracetamol. Give 4 times a day for 3 days,
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Fever less than 7 days"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_FEVER_FOR_LESS_7_DAYS_ITN_TREATMENT"/>
+					<property name="value" value="Advise caregiver on use of a ITN"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Fever less than 7 days"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_FEVER_FOR_LESS_7_DAYS_PARACETAMOL_QUARTER_TABLET_TREATMENT"/>
+					<property name="value" value="Give Paracetamol. Give 4 times a day for 3 days,
 							Age 2 months up to 3 years: 1/4 tablet (total 3 tabs)"/>
-						<property name="associatedClassification" value="Fever less than 7 days"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_FEVER_FOR_LAST_7_DAYS_PARACETAMOL_HALF_TABLET_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give Paracetamol. Give 4 times a day for 3 days.
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Fever less than 7 days"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_FEVER_FOR_LAST_7_DAYS_PARACETAMOL_HALF_TABLET_TREATMENT"/>
+					<property name="value" value="Give Paracetamol. Give 4 times a day for 3 days.
 							Age 3 years up to 5 years: 1/2 tablet (total 6 tabs)"/>
-						<property name="associatedClassification" value="Fever less than 7 days"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_FAST_BREATHING_ORAL_ANTIBIOTIC_HALF_TABLET_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give oral antibiotic (cotrimoxazole adult tablet - 80/400).
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Fever less than 7 days"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_FAST_BREATHING_ORAL_ANTIBIOTIC_HALF_TABLET_TREATMENT"/>
+					<property name="value" value="Give oral antibiotic (cotrimoxazole adult tablet - 80/400).
 							Give twice daily for 5 days.
 							Help caregiver to give first dose now.
 							Age 2 months up to 12 months: 1/2 tablet (total 5 tabs)"/>
-						<property name="associatedClassification" value="Fast Breathing"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_FAST_BREATHING_ORAL_ANTIBIOTIC_1_TABLET_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Give oral antibiotic (cotrimoxazole adult tablet - 80/400).
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Fast Breathing"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_FAST_BREATHING_ORAL_ANTIBIOTIC_1_TABLET_TREATMENT"/>
+					<property name="value" value="Give oral antibiotic (cotrimoxazole adult tablet - 80/400).
 							Give twice daily for 5 days.
 							Help caregiver to give first dose now.
 							Age 12 months up to 5 years: 1 tablet (total 10 tabs)"/>
-						<property name="associatedClassification" value="Fast Breathing"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_RED_EYE_LESS_THAN_4_DAYS_ANTIBIOTIC_EYE_OINTMENT_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Apply antibiotic eye ointment.
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Fast Breathing"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_RED_EYE_LESS_THAN_4_DAYS_ANTIBIOTIC_EYE_OINTMENT_TREATMENT"/>
+					<property name="value" value="Apply antibiotic eye ointment.
 							Squeeze the size of a grain of rice on each of the inner lower eyelids, three times a day for 3 days"/>
-						<property name="associatedClassification" value="Red eye less than 4 days"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_SICK_SIGN_FLUIDS_AND_FEEDING_ADVICE_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Advise caregiver to give more fluids and continue feeding"/>
-						<property name="associatedClassification" value="Sick Sign - General Advice"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_SICK_SIGN_RETURN_ADVICE_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Advise on when to return. Go to nearest health facility or, if not possible, return immediately if child:
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Red eye less than 4 days"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_SICK_SIGN_FLUIDS_AND_FEEDING_ADVICE_TREATMENT"/>
+					<property name="value" value="Advise caregiver to give more fluids and continue feeding"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Sick Sign - General Advice"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_SICK_SIGN_RETURN_ADVICE_TREATMENT"/>
+					<property name="value" value="Advise on when to return. Go to nearest health facility or, if not possible, return immediately if child:
 							1) Cannot drink
 							2) Becomes Sicker
 							3) Has blood in stool"/>
-						<property name="associatedClassification" value="Sick Sign - General Advice"/>
-					</bean>
-				</entry>
-
-				<entry key="CCM_SICK_SIGN_FOLLOW_UP_THREE_DAYS_TREATMENT">
-					<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
-						<property name="treatment" value="Follow up child in 3 days"/>
-						<property name="associatedClassification" value="Sick Sign - General Advice"/>
-					</bean>
-				</entry>
-			</map>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Sick Sign - General Advice"/>
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.Treatment">
+					<property name="key" value="CCM_SICK_SIGN_FOLLOW_UP_THREE_DAYS_TREATMENT"/>
+					<property name="value" value="Follow up child in 3 days"/>
+					<property name="checked" value="false"/>
+					<property name="associatedClassification" value="Sick Sign - General Advice"/>
+				</bean>
+			</list>
 		</property>
 	</bean>
 

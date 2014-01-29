@@ -52,25 +52,36 @@ $(document).ready(function () {
 	/* 
 	 * add validation criteria to the CCM report
 	 * form
+	 * 
+	 * Note: Spring tagged elements means that Spring will generate 
+	 * 		 an id and an name for the element in the following case:
+	 * 
+	 * 		<form: type="text" path="nationalId" placeholder="Enter National Id"/>
+	 * 				
+	 * 		The following html would be generated:
+	 * 
+	 * 		<form:input id="nationalId" name="nationalId" 
+	 * 				type="text"	path="nationalId" placeholder="Enter National Id"/>		
+	 * 
 	 */
 	$('#ccm-report-form').validate({
 		rules: {
-			"national-id": {
+			"nationalId": {
 				required: false, // this means the field can be left empty
 				digits: true
 			},
-			"national-health-id": {
+			"nationalHealthId": {
 				required: false,
 				digits: true
 			},
-			"hsa-user-id": {
+			"hsaUserId": {
 				required: false,
 				minlength: 8,
 				maxlength: 8
 			}
 		},
 		messages: {
-			"hsa-user-id": {
+			"hsaUserId": {
 				minlength: "HSA User ID is 8 characters"
 			},
 		},
