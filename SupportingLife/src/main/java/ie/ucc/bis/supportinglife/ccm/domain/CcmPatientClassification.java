@@ -34,7 +34,7 @@ public class CcmPatientClassification implements Serializable {
 	
 	// association to sl_ccm_patient_visit table
 	// - a patient visit can have many classifications
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="visit_id")
 	private CcmPatientVisit visit;
 
@@ -44,8 +44,8 @@ public class CcmPatientClassification implements Serializable {
 	private CcmClassification classification;
 	
 	// association to sl_ccm_patient table
-	// - a patient can have many classifications
-	@ManyToOne(cascade = CascadeType.ALL)
+	// - - a patient can have many classification assessments
+	@ManyToOne
     @JoinColumn(name="patient_id")
     private CcmPatient patient;
 		

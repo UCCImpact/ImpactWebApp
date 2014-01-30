@@ -2,14 +2,20 @@ package ie.ucc.bis.supportinglife.ccm.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 /**
  * Domain class capturing a user entity
@@ -56,6 +62,13 @@ public class User implements Serializable {
 	@Column(name="updated_dt")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedDate;
+
+	// association to sl_ccm_patient table
+	// - one user can create many patients 
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="user")
+	@LazyCollection(LazyCollectionOption.FALSE)
+	private Set<CcmPatient> ccmPatientList;
+
 
 	public User() {}
 
@@ -153,6 +166,14 @@ public class User implements Serializable {
 
 	public void setUpdatedDate(Date updatedDate) {
 		this.updatedDate = updatedDate;
+	}
+
+	public Set<CcmPatient> getCcmPatientList() {
+		return ccmPatientList;
+	}
+
+	public void setCcmPatientList(Set<CcmPatient> ccmPatientList) {
+		this.ccmPatientList = ccmPatientList;
 	}	
 	
 }

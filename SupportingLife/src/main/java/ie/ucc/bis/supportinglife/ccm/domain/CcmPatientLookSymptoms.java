@@ -38,8 +38,8 @@ public class CcmPatientLookSymptoms implements Serializable {
 	private CcmPatientVisit visit;
 		
 	// association to sl_ccm_patient table
-	// - a patient can have many assessments
-	@ManyToOne(cascade = CascadeType.ALL)
+	// - a patient can have many 'look' symptom assessments
+	@ManyToOne
     @JoinColumn(name="patient_id")    
     private CcmPatient patient;
 		

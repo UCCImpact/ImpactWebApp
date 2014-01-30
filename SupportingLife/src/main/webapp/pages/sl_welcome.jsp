@@ -20,7 +20,7 @@
 						Empowering Health Care Professionals in the remotest regions of Africa
 					</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button"><i id="android-phone-icon" class="fa fa-mobile"></i>  Download the App</a>
+						<a class="btn btn-lg btn-primary" href="#"><i id="android-phone-icon" class="fa fa-mobile"></i>  Download the App</a>
 					</p>
 				</div>
 			</div>
@@ -34,7 +34,7 @@
 						Patient Record Access <i class="fa fa-arrows-h"></i> Anywhere &amp; Anytime
 					</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Learn More</a>
+						<a class="btn btn-lg btn-primary" href="#">Learn More</a>
 					</p>
 				</div>
 			</div>
@@ -48,7 +48,7 @@
 						Real-Time Tracking of Disease Outbreaks
 					</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Launch Surveillance</a>
+						<a class="btn btn-lg btn-primary" href="#">Launch Surveillance</a>
 					</p>
 				</div>
 			</div>

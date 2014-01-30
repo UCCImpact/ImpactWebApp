@@ -14,6 +14,7 @@
 			<td>HSA Responsible for Assessment</td>
 			<td>CCM User?</td>
 			<td>IMCI User?</td>
+			<td>Classifications</td>
 		</tr>
 		<c:forEach var="patient" items="${patients}">
 			<tr>
@@ -24,6 +25,12 @@
 				<td><c:out value="${patient.user.firstName}"/> <c:out value="${patient.user.surname}"/></td>
 				<td>${patient.user.ccmUser}</td>
 				<td>${patient.user.imciUser}</td>
+				<td>
+					<c:forEach var="patientClassification" items="${patient.ccmPatientClassificationList}">
+						<c:out value="${patientClassification.classification.classificationName}" />
+						<br>						
+					</c:forEach>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

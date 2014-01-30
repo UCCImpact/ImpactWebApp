@@ -2,17 +2,23 @@ package ie.ucc.bis.supportinglife.ccm.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 /**
  * Domain class capturing a CcmPatient entity
@@ -40,8 +46,8 @@ public class CcmPatient implements Serializable {
 	private String nationalHealthId;
 	
 	// association to sl_user table
-	// - one user can create many patients 
-	@ManyToOne(cascade = CascadeType.ALL)
+	// - one user can create many patients
+	@ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="user_id")
     private User user;
 	
@@ -80,7 +86,37 @@ public class CcmPatient implements Serializable {
 	@Column(name="updated_dt")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedDate;
-	 
+	
+	// association to sl_ccm_patient_visit table
+	// - one patient can have many visits
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="patient")
+	@LazyCollection(LazyCollectionOption.FALSE)
+	private Set<CcmPatientVisit> ccmPatientVisitList;
+		
+	// association to sl_ccm_ask_look_symptoms table
+	// - a patient can have many 'ask-look' symptom assessments
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="patient")
+	@LazyCollection(LazyCollectionOption.FALSE)
+	private Set<CcmPatientAskLookSymptoms> ccmPatientAskLookSymptomsList;
+	
+	// association to sl_ccm_patient table
+	// - a patient can have many 'look' symptom assessments
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="patient")
+	@LazyCollection(LazyCollectionOption.FALSE)
+	private Set<CcmPatientLookSymptoms> ccmPatientLookSymptomsList;
+	
+	// association to sl_ccm_patient_classification table
+	// - a patient can have many classification assessments
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="patient")
+	@LazyCollection(LazyCollectionOption.FALSE)
+	private Set<CcmPatientClassification> ccmPatientClassificationList;	
+
+	// association to sl_ccm_patient_treatment table
+	// - a patient can have many treatment assessments
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="patient")
+	@LazyCollection(LazyCollectionOption.FALSE)
+	private Set<CcmPatientTreatment> ccmPatientTreatmentList;		
+	
 	public CcmPatient() {}
 
 	/**
@@ -236,5 +272,45 @@ public class CcmPatient implements Serializable {
 
 	public void setUpdatedDate(Date updatedDate) {
 		this.updatedDate = updatedDate;
+	}
+
+	public Set<CcmPatientVisit> getCcmPatientVisitList() {
+		return ccmPatientVisitList;
+	}
+
+	public void setCcmPatientVisitList(Set<CcmPatientVisit> ccmPatientVisitList) {
+		this.ccmPatientVisitList = ccmPatientVisitList;
+	}
+
+	public Set<CcmPatientAskLookSymptoms> getCcmPatientAskLookSymptomsList() {
+		return ccmPatientAskLookSymptomsList;
+	}
+
+	public void setCcmPatientAskLookSymptomsList(Set<CcmPatientAskLookSymptoms> ccmPatientAskLookSymptomsList) {
+		this.ccmPatientAskLookSymptomsList = ccmPatientAskLookSymptomsList;
+	}
+
+	public Set<CcmPatientLookSymptoms> getCcmPatientLookSymptomsList() {
+		return ccmPatientLookSymptomsList;
+	}
+
+	public void setCcmPatientLookSymptomsList(Set<CcmPatientLookSymptoms> ccmPatientLookSymptomsList) {
+		this.ccmPatientLookSymptomsList = ccmPatientLookSymptomsList;
+	}
+
+	public Set<CcmPatientClassification> getCcmPatientClassificationList() {
+		return ccmPatientClassificationList;
+	}
+
+	public void setCcmPatientClassificationList(Set<CcmPatientClassification> ccmPatientClassificationList) {
+		this.ccmPatientClassificationList = ccmPatientClassificationList;
+	}
+
+	public Set<CcmPatientTreatment> getCcmPatientTreatmentList() {
+		return ccmPatientTreatmentList;
+	}
+
+	public void setCcmPatientTreatmentList(Set<CcmPatientTreatment> ccmPatientTreatmentList) {
+		this.ccmPatientTreatmentList = ccmPatientTreatmentList;
 	}	
 }
