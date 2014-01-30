@@ -1,6 +1,7 @@
 package ie.ucc.bis.supportinglife.ccm.dao;
 
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
+import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit_;
 import ie.ucc.bis.supportinglife.reference.Classification;
 import ie.ucc.bis.supportinglife.reference.Symptom;
 import ie.ucc.bis.supportinglife.reference.Treatment;
@@ -13,6 +14,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import org.springframework.stereotype.Repository;
@@ -75,15 +77,16 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 												List<Classification> selectedClassifications,
 												List<Treatment> selectedTreatments) {
 		
-		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-		CriteriaQuery<CcmPatientVisit> criteriaQuery = criteriaBuilder.createQuery(CcmPatientVisit.class);
-		Root<CcmPatientVisit> root = criteriaQuery.from(CcmPatientVisit.class);
+
+		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+		CriteriaQuery<CcmPatientVisit> query = builder.createQuery(CcmPatientVisit.class);
+		Root<CcmPatientVisit> root = query.from(CcmPatientVisit.class);
 		
-		criteriaQuery.select(root)
-        	.where(criteriaBuilder.and(
-        		criteriaBuilder.equal(root.get("nationalId"), nationalId)));
-		
-	    List<CcmPatientVisit> patientVisitResults = entityManager.createQuery(criteriaQuery).getResultList();
+		Predicate visitDateAfterFrom = builder.greaterThanOrEqualTo(root.get(CcmPatientVisit_.visitDate), assessmentDateFrom);
+		query.where(visitDateAfterFrom);
+			
+	    List<CcmPatientVisit> patientVisitResults = entityManager.createQuery(query).getResultList();
+	    
 	    return patientVisitResults;
 	}
 }

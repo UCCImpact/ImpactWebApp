@@ -26,8 +26,8 @@
 			<tr>
 				<td>${patientVisit.patient.patientId}</td>
 				<td><c:out value="${patientVisit.patient.childFirstName}"/> <c:out value="${patientVisit.patient.childSurname}"/></td>
-				<td>${patientVisit.nationalId}</td>
-				<td>${patientVisit.nationalHealthId}</td>
+				<td>${patientVisit.patient.nationalId}</td>
+				<td>${patientVisit.patient.nationalHealthId}</td>
 				<td>${patientVisit.visitDate}</td>
 			</tr>
 		</c:forEach>
