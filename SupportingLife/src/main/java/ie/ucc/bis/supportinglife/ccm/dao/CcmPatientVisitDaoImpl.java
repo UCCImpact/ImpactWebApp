@@ -6,6 +6,7 @@ import ie.ucc.bis.supportinglife.reference.Classification;
 import ie.ucc.bis.supportinglife.reference.Symptom;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -82,8 +83,18 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 		CriteriaQuery<CcmPatientVisit> query = builder.createQuery(CcmPatientVisit.class);
 		Root<CcmPatientVisit> root = query.from(CcmPatientVisit.class);
 		
+		// This list will contain all Predicates (where clauses)
+		List<Predicate> criteriaList = new ArrayList<Predicate>();
+
+		
+		// retrieve only those records where the patient assessment date is later than the 'Assessment Date From' field
 		Predicate visitDateAfterFrom = builder.greaterThanOrEqualTo(root.get(CcmPatientVisit_.visitDate), assessmentDateFrom);
-		query.where(visitDateAfterFrom);
+		criteriaList.add(visitDateAfterFrom);
+		// retrieve only those records where the patient assessment date is earlier than the 'Assessment Date To' field
+		Predicate visitDateBeforeTo = builder.lessThanOrEqualTo(root.get(CcmPatientVisit_.visitDate), assessmentDateTo);
+		criteriaList.add(visitDateBeforeTo);
+		
+		query.where(builder.and(criteriaList.toArray(new Predicate[0])));
 			
 	    List<CcmPatientVisit> patientVisitResults = entityManager.createQuery(query).getResultList();
 	    

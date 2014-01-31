@@ -44,7 +44,7 @@ public class CcmPatientVisit implements Serializable {
     @JoinColumn(name="patient_id")
     private CcmPatient patient;
 		
-	@Column(name="visit_dt")
+	@Column(name="visit_dt") 
 	@Temporal(TemporalType.DATE)
 	private Date visitDate;
 	

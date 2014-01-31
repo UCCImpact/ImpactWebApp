@@ -16,6 +16,7 @@
 		<jpa.version>1.0.1.Final</jpa.version>
 		<hibernate.version>3.5.4-Final</hibernate.version>
 		<hibernate.validator.version>4.2.0.Final</hibernate.validator.version>
+		<hibernate.jpamodelgen.version>4.3.0.Final</hibernate.jpamodelgen.version>
 		<slf4j.version>1.5.6</slf4j.version>
 		<mysql.version>5.1.25</mysql.version>
 		<javax.validation.version>1.0.0.GA</javax.validation.version>
@@ -91,11 +92,11 @@
 			<version>${hibernate.version}</version>
 		</dependency>
 
-		<!-- Static Meta Model Generation -->
+		<!-- Meta Model Generation -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-jpamodelgen</artifactId>
-			<version>1.2.0.Final</version>
+			<version>${hibernate.jpamodelgen.version}</version>
 		</dependency>
 
 		<!-- SLF4j logging -->
