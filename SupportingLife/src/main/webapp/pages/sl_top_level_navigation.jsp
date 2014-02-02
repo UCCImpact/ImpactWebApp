@@ -20,13 +20,13 @@
 						  <span class="icon-bar"></span>
 						</button>		
 						<label class="navbar-brand">Supporting LIFE
-							<br> 
+							<br id="slogan-line-spacing">
 							<i id="bulb-icon" class="fa fa-lightbulb-o"><span id="slogan"> Technology</span></i>
 						</label>
 					</div>
 					
 					<div class="navbar-collapse collapse">
-						<ul class="nav navbar-nav">
+						<ul class="nav navbar-nav pull-right">
 							<li class="active">																						<!-- HOME -->
 								<a href="../greeting/welcome"><i id="home-icon" class="fa fa-home"></i> Home</a>
 							</li>								

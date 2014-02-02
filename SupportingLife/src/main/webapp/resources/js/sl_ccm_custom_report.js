@@ -45,7 +45,7 @@ $(document).ready(function() {
 	});
 
 });
-
+ 
 /* Form Validation */
 $(document).ready(function () {
 
@@ -67,7 +67,7 @@ $(document).ready(function () {
 	$('#ccm-report-form').validate({
 		rules: {
 			"nationalId": {
-				required: true // this means the field cannot be left empty
+				required: false // this means the field can be left empty
 			},
 			"nationalHealthId": {
 				required: false,

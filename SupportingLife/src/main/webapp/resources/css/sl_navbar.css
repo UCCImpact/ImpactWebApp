@@ -27,23 +27,28 @@
 }
 
 .navbar-wrapper .navbar .navbar-header label {
-  font-size: 16px;
+  font-size: 24px;
   color: #ffd700; /* gold */
-  padding-top:5px !important;
+  padding-top:14px !important;
   padding-bottom:0px !important;
 }
 
 /* bulb icon */
 #bulb-icon {
 	color: #ffd700; /* gold */
-	font-size: 16px;
+	font-size: 24px;
 }
 
 /* rethinking technology slogan */
 #slogan {
-	font-size: 14px;
+	font-size: 18px;
 	font-style: italic;
 	bold: false;
+}
+
+/*  remove line break so that slogan lies alongside SL brand */
+#slogan-line-spacing {
+    display: none;
 }
 
 /* home icon */
@@ -54,33 +59,62 @@
 /* -------------------------------------------------- */
 /* RESPONSIVE CSS */
 /* -------------------------------------------------- */
+@media (max-width: 1200px) {
+
+/* At this width, we need to reduce the navbar brand so it 		*/
+/* displays appropriately with the menu bar items which have 	*/
+/* not yet collapsed and are displaying full length 			*/
+
+	.navbar-wrapper .navbar .navbar-header label {
+	  font-size: 18px;
+	  padding-top:5px !important;
+	}
+	
+	/* bulb icon */
+	#bulb-icon {
+		font-size: 14px;
+	}
+	
+	/* rethinking technology slogan */
+	#slogan {
+		font-size: 18px;
+	}
+	
+	/* add a line break so that slogan slips under SL brand */
+	#slogan-line-spacing {
+    	display: block;
+	}
+}
+
 
 @media (min-width: 768px) {
 
   /* Navbar positioning foo */
-  .navbar-wrapper {
-	position: fixed;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 1000;
-  }
-  .navbar-wrapper .container {
-    padding-left:  15px;
-    padding-right: 15px;
-  }
-  .navbar-wrapper .navbar {
-    padding-left:  0;
-    padding-right: 0;
-  }
+ 	.navbar-wrapper {
+		position: fixed;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+  	}
 
-  /* The navbar becomes detached from the top, so we round the corners */
-  .navbar-wrapper .navbar {
- 	margin-bottom: 0px;
-    border-radius: 4px;
-  } 
+	.navbar-wrapper .container {
+    	padding-left:  15px;
+		padding-right: 15px;
+	}
+
+	.navbar-wrapper .navbar {
+		padding-left:  0;
+		padding-right: 0;
+	}
+
+	/* The navbar becomes detached from the top, so we round the corners */
+	.navbar-wrapper .navbar {
+		margin-bottom: 0px;
+		border-radius: 4px;
+	}
 }
 
 
@@ -88,7 +122,12 @@
 /* collapses to the mobile look					*/
 @media (max-width: 768px) {
 	.navbar-wrapper .navbar .navbar-header label {
-	  padding-top: 15px !important;
+	  padding-top: 25px !important;
 	  padding-bottom: 0px !important;
+	}
+	
+	/*  remove line break so that slogan lies alongside SL brand */
+	#slogan-line-spacing {
+    	display: none;
 	}
 }
