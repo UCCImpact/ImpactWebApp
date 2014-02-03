@@ -32,6 +32,9 @@ import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import org.hibernate.Session;
+import org.hibernate.criterion.Example;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -152,7 +155,13 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 		}
 		
 		// 7. selected Symptoms
-		// TODO
+		Session session = entityManager.unwrap(org.hibernate.Session.class);
+		
+//		for (CheckboxFormElement symptom : selectedSymptoms) {
+//			switch (symptom.getKey()) {
+//				CASE "CHEST_INDRAWING" : break;
+//			}
+//		}
 		
 			
 		// 8. selected Classifications
