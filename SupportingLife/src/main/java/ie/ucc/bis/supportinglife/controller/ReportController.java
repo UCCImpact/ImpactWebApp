@@ -81,9 +81,9 @@ public class ReportController implements ReportControllerInf {
 		
 		log.info("GET form page for report: " + reportName);
 		
-//		CcmPatientVisit ccmCustomForm = new CcmPatientVisit();
 		CcmCustomForm ccmCustomForm = new CcmCustomForm();
-		ccmCustomForm.setSymptoms(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getAskLookSymptoms());
+		ccmCustomForm.setLookSymptoms(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getLookSymptoms());
+		ccmCustomForm.setAskLookSymptoms(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getAskLookSymptoms());
 		ccmCustomForm.setClassifications(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getClassifications());
 		ccmCustomForm.setTreatments(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getTreatments());
 		
@@ -115,7 +115,8 @@ public class ReportController implements ReportControllerInf {
 													   ccmCustomForm.getHsaUserId(),
 													   ccmCustomForm.getAssessmentDateFrom(),
 													   ccmCustomForm.getAssessmentDateTo(),
-													   ccmCustomForm.getSymptoms(),
+													   ccmCustomForm.getLookSymptoms(),
+													   ccmCustomForm.getAskLookSymptoms(),
 													   ccmCustomForm.getClassifications(),
 													   ccmCustomForm.getTreatments());
 		

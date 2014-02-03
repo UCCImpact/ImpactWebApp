@@ -1,5 +1,6 @@
 package ie.ucc.bis.supportinglife.report.form;
 
+
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 
@@ -27,7 +28,8 @@ public class CcmCustomForm  {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date assessmentDateTo;
     
-    private List<CheckboxFormElement> symptoms;
+    private List<CheckboxFormElement> lookSymptoms;
+    private List<CheckboxFormElement> askLookSymptoms;    
     private List<CheckboxFormElement> classifications;  
     private List<Treatment> treatments;
     
@@ -71,12 +73,20 @@ public class CcmCustomForm  {
 		this.assessmentDateTo = assessmentDateTo;
 	}
 	
-	public List<CheckboxFormElement> getSymptoms() {
-		return symptoms;
+	public List<CheckboxFormElement> getLookSymptoms() {
+		return lookSymptoms;
 	}
 
-	public void setSymptoms(List<CheckboxFormElement> symptoms) {
-		this.symptoms = symptoms;
+	public void setLookSymptoms(List<CheckboxFormElement> lookSymptoms) {
+		this.lookSymptoms = lookSymptoms;
+	}
+
+	public List<CheckboxFormElement> getAskLookSymptoms() {
+		return askLookSymptoms;
+	}
+
+	public void setAskLookSymptoms(List<CheckboxFormElement> askLookSymptoms) {
+		this.askLookSymptoms = askLookSymptoms;
 	}
 
 	public List<CheckboxFormElement> getClassifications() {
@@ -105,10 +115,16 @@ public class CcmCustomForm  {
         stringBuilder.append("assessment date from: " + getAssessmentDateFrom() + "\n");
         stringBuilder.append("assessment date to: " + getAssessmentDateTo()  + "\n");
         
-        for (CheckboxFormElement symptom : getSymptoms()){
-        	stringBuilder.append("symptom value: " + symptom.getValue() + "\n");
-        	stringBuilder.append("symptom key: " + symptom.getKey() + "\n");
-        	stringBuilder.append("symptom checked: " + symptom.getChecked() + "\n");
+        for (CheckboxFormElement symptom : getLookSymptoms()){
+        	stringBuilder.append("symptom (look) value: " + symptom.getValue() + "\n");
+        	stringBuilder.append("symptom (look) key: " + symptom.getKey() + "\n");
+        	stringBuilder.append("symptom (look) checked: " + symptom.getChecked() + "\n");
+        }
+        
+        for (CheckboxFormElement symptom : getAskLookSymptoms()){
+        	stringBuilder.append("symptom (ask) value: " + symptom.getValue() + "\n");
+        	stringBuilder.append("symptom (ask) key: " + symptom.getKey() + "\n");
+        	stringBuilder.append("symptom (ask) checked: " + symptom.getChecked() + "\n");
         }
         
         for (CheckboxFormElement classification : getClassifications()){

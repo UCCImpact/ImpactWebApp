@@ -1,15 +1,25 @@
 
 package ie.ucc.bis.supportinglife.reference;
 
+
 import java.util.List;
 import java.util.Map;
 
 public class CcmCustomReportReferenceCriteria {
 
+	private List<CheckboxFormElement> lookSymptoms;
 	private List<CheckboxFormElement> askLookSymptoms;
 	private List<CheckboxFormElement> classifications;
 	private Map<String, String> classificationTypes;
 	private List<Treatment> treatments;
+
+	public List<CheckboxFormElement> getLookSymptoms() {
+		return lookSymptoms;
+	}
+	
+	public void setLookSymptoms(List<CheckboxFormElement> lookSymptoms) {
+		this.lookSymptoms = lookSymptoms;
+	}
 	
 	public List<CheckboxFormElement> getAskLookSymptoms() {
 		return askLookSymptoms;

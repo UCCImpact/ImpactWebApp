@@ -82,11 +82,13 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 												String hsaUserId, 
 												Date assessmentDateFrom,
 												Date assessmentDateTo, 
-												List<CheckboxFormElement> symptoms,
+												List<CheckboxFormElement> lookSymptoms,
+												List<CheckboxFormElement> askLookSymptoms,
 												List<CheckboxFormElement> classifications, 
 												List<Treatment> treatments) {
 		// 1. identify symptoms selected by user
-		List<CheckboxFormElement> selectedSymptoms = identifySelectedSymptoms(symptoms);
+		List<CheckboxFormElement> selectedLookSymptoms = identifySelectedSymptoms(lookSymptoms);
+		List<CheckboxFormElement> selectedAskLookSymptoms = identifySelectedSymptoms(askLookSymptoms);
 		
 		// 2. identify classifications selected by user
 		List<CheckboxFormElement> selectedClassifications = identifySelectedClassifications(classifications);
@@ -97,7 +99,8 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		CcmPatientVisitDao patientVisitDao = (CcmPatientVisitDao) getDaoBeans().get("CcmPatientVisitDao");
 		return patientVisitDao.getPatientVisits(nationalId, nationalHealthId,
 											hsaUserId, assessmentDateFrom,
-											assessmentDateTo, selectedSymptoms,
+											assessmentDateTo, selectedLookSymptoms,
+											selectedAskLookSymptoms,
 											selectedClassifications, selectedTreatments);
 	}
 	

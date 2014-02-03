@@ -76,6 +76,10 @@
 					<property name="value" value="Other problems"/>
 					<property name="checked" value="false"/>
 				</bean>
+			</list>
+		</property>
+		<property name="lookSymptoms">
+			<list>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CHEST_INDRAWING_SYMPTOM"/>
 					<property name="value" value="Chest indrawing"/>

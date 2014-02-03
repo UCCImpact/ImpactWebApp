@@ -55,7 +55,8 @@ public interface SupportingLifeServiceInf {
 												String hsaUserId, 
 												Date assessmentDateFrom,
 												Date assessmentDateTo, 
-												List<CheckboxFormElement> symptoms,
+												List<CheckboxFormElement> lookSymptoms,
+												List<CheckboxFormElement> askLookSymptoms,
 												List<CheckboxFormElement> classifications, 
 												List<Treatment> treatments);
 	

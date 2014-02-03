@@ -3,8 +3,11 @@ package ie.ucc.bis.supportinglife.ccm.dao;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmClassification_;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatient;
+import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientAskLookSymptoms;
+import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientAskLookSymptoms_;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification_;
+import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment_;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
@@ -32,9 +35,6 @@ import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import org.hibernate.Session;
-import org.hibernate.criterion.Example;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -91,7 +91,8 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 												String hsaUserId, 
 												Date assessmentDateFrom, 
 												Date assessmentDateTo, 
-												List<CheckboxFormElement> selectedSymptoms,	
+												List<CheckboxFormElement> selectedLookSymptoms,
+												List<CheckboxFormElement> selectedAskLookSymptoms,
 												List<CheckboxFormElement> selectedClassifications,
 												List<Treatment> selectedTreatments) {
 
@@ -115,6 +116,18 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 		/**  Join CcmPatient and User tables	    **/
 		/*********************************************/
 		Join<CcmPatient, User> ccmUserJoin = ccmPatientJoin.join(CcmPatient_.user); // Default is inner
+
+		/*********************************************/
+		/** Join table to handle 'Ask Look Symptoms' */
+		/*********************************************/
+		// join the CcmPatientVisit and the CcmPatientAskLookSymptoms tables
+		Join<CcmPatientVisit, CcmPatientAskLookSymptoms> ccmPatientAskLookSymptomsJoin = patientVisitRoot.join(CcmPatientVisit_.ccmPatientAskLookSymptoms);
+
+		/*********************************************/
+		/**   Join table to handle 'Look Symptoms'   */
+		/*********************************************/
+		// join the CcmPatientVisit and the CcmPatientLookSymptoms tables
+		Join<CcmPatientVisit, CcmPatientLookSymptoms> ccmPatientLookSymptomsJoin = patientVisitRoot.join(CcmPatientVisit_.ccmPatientLookSymptoms);
 		
 		/*********************************************/
 		/**  Join tables to handle classifications  **/
@@ -155,12 +168,12 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 		}
 		
 		// 7. selected Symptoms
-		Session session = entityManager.unwrap(org.hibernate.Session.class);
+//		Session session = entityManager.unwrap(org.hibernate.Session.class);
 		
-//		for (CheckboxFormElement symptom : selectedSymptoms) {
-//			switch (symptom.getKey()) {
-//				CASE "CHEST_INDRAWING" : break;
-//			}
+//		for (CheckboxFormElement askLookSymptom : selectedAskLookSymptoms) {
+			Predicate coughSymptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.cough), true);
+			criteriaList.add(coughSymptomCondition);
+			
 //		}
 		
 			

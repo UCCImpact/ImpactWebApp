@@ -16,6 +16,8 @@ public interface CcmPatientVisitDao extends Dao {
 	public List<CcmPatientVisit> getPatientVisits(String nationalId,
 							String nationalHealthId, String hsaUserId, 
 							Date assessmentDateFrom, Date assessmentDateTo, 
-							List<CheckboxFormElement> selectedSymptoms,	List<CheckboxFormElement> selectedClassifications,
+							List<CheckboxFormElement> selectedLookSymptoms,
+							List<CheckboxFormElement> selectedAskLookSymptoms,
+							List<CheckboxFormElement> selectedClassifications,
 							List<Treatment> selectedTreatments);
 }

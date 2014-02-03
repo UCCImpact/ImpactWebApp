@@ -113,15 +113,27 @@
 							<th>SELECT</th>
 						</tr>
 					</thead>
-					<tbody>
-						<c:forEach items="${ccmCustomFormBean.symptoms}" var="symptom" varStatus="status">
+					<tbody> 
+						<!-- 'Ask Look Symptoms' First -->
+						<c:forEach items="${ccmCustomFormBean.askLookSymptoms}" var="askLookSymptom" varStatus="status">
 							<tr>
-								<td>${symptom.value}</td>
+								<td>${askLookSymptom.value}</td>
 								<td class="symptom-checkbox-column">
-									<form:checkbox path="symptoms[${status.index}].checked"/>
+									<form:checkbox path="askLookSymptoms[${status.index}].checked"/>
 								</td>
-								<form:input type="hidden" path="symptoms[${status.index}].key" value="${symptom.key}"/>
-								<form:input type="hidden" path="symptoms[${status.index}].value" value="${symptom.value}"/>
+								<form:input type="hidden" path="askLookSymptoms[${status.index}].key" value="${askLookSymptom.key}"/>
+								<form:input type="hidden" path="askLookSymptoms[${status.index}].value" value="${askLookSymptom.value}"/>
+							</tr>
+						</c:forEach>
+						<!-- 'Look Symptoms' Second -->
+						<c:forEach items="${ccmCustomFormBean.lookSymptoms}" var="lookSymptom" varStatus="status">
+							<tr>
+								<td>${lookSymptom.value}</td>
+								<td class="symptom-checkbox-column">
+									<form:checkbox path="lookSymptoms[${status.index}].checked"/>
+								</td>
+								<form:input type="hidden" path="lookSymptoms[${status.index}].key" value="${lookSymptom.key}"/>
+								<form:input type="hidden" path="lookSymptoms[${status.index}].value" value="${lookSymptom.value}"/>
 							</tr>
 						</c:forEach>
 					</tbody>
