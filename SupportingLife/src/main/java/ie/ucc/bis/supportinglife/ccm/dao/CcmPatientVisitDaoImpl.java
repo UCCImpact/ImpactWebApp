@@ -23,6 +23,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
@@ -98,37 +99,32 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 		// This list will contain all Predicates (where clauses)
 		List<Predicate> criteriaList = new ArrayList<Predicate>();
 
-		// 1. join the CcmPatientVisit and CcmPatient tables
+		/*********************************************/
+		/**  Join CcmPatientVisit and CcmPatient    **/
+		/*********************************************/
 		Join<CcmPatientVisit, CcmPatient> ccmPatientJoin = patientVisitRoot.join(CcmPatientVisit_.patient); // Default is inner
 
-		// join the CcmPatient and User tables
+		/*********************************************/
+		/**  Join CcmPatient and User tables	    **/
+		/*********************************************/
 		Join<CcmPatient, User> ccmUserJoin = ccmPatientJoin.join(CcmPatient_.user); // Default is inner
+		
+		/*********************************************/
+		/**  Join tables to handle classifications  **/
+		/*********************************************/
 		// join the CcmPatientVisit and the CcmPatientClassification tables
 		Join<CcmPatientVisit, CcmPatientClassification> ccmPatientClassificationJoin = patientVisitRoot.join(CcmPatientVisit_.ccmPatientClassificationList);
 		// join the CcmPatientClassification and CcmClassification tables
 		Join<CcmPatientClassification, CcmClassification> ccmClassificationJoin = ccmPatientClassificationJoin.join(CcmPatientClassification_.classification);
+		
+		// retrieve patient associated with the National Id provided
+		DaoUtils.addEqualCondition(nationalId, builder, criteriaList, ccmPatientJoin, CcmPatient_.nationalId);
 
-	    
-		// 2. retrieve patient associated with the National Id provided
-		if (nationalId != null && !nationalId.isEmpty()) {
-			Predicate nationalIdCondition = 
-					builder.equal(ccmPatientJoin.get(CcmPatient_.nationalId), nationalId);
-			criteriaList.add(nationalIdCondition);
-		}
-
-		// 3. retrieve patient associated with the National Health Id provided
-		if (nationalHealthId != null && !nationalHealthId.isEmpty()) {
-			Predicate nationalHealthIdCondition = 
-					builder.equal(ccmPatientJoin.get(CcmPatient_.nationalHealthId), nationalHealthId);
-			criteriaList.add(nationalHealthIdCondition);
-		}
+		// retrieve patient associated with the National Health Id provided
+		DaoUtils.addEqualCondition(nationalHealthId, builder, criteriaList, ccmPatientJoin, CcmPatient_.nationalHealthId);
 		
 		// 4. retrieve patient associated with the HSA User Id provided
-		if (hsaUserId != null && !hsaUserId.isEmpty()) {
-			Predicate hsaUserIdCondition = 
-					builder.equal(ccmUserJoin.get(User_.userId), hsaUserId);
-			criteriaList.add(hsaUserIdCondition);
-		}
+		DaoUtils.addEqualCondition(hsaUserId, builder, criteriaList, ccmUserJoin, User_.userId);
 		
 		// 5. retrieve only those records where the patient assessment date is later than the 'Assessment Date From' field
 		if (assessmentDateFrom != null) {
@@ -143,16 +139,38 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 		}
 		
 		// 7. selectedClassifications
-		if (selectedClassifications != null) {
+		if (selectedClassifications != null) {		
 			List<String> classificationKeys = new ArrayList<String>();
 			for (Classification selectedClassification : selectedClassifications) {
 				classificationKeys.add(selectedClassification.getKey());
 			}
+	
+	
+
 			criteriaList.add(builder.isTrue(ccmClassificationJoin.get(CcmClassification_.classificationKey).in(classificationKeys)));
+			
+			// avoid duplicates in resultset
+			CriteriaQuery<Long> countQuery = builder.createQuery(Long.class);
+			Root<CcmPatientVisit> classification = countQuery.from(CcmPatientVisit.class);
+			countQuery.where(builder.and(criteriaList.toArray(new Predicate[0])));
+			countQuery.select(builder.count(classification.get(CcmPatientVisit_.visitId)));
+			countQuery.having(builder.equal(builder.count(classification.get(CcmPatientVisit_.visitId)), selectedClassifications.size()));
+
+			
+		    Long count = entityManager.createQuery(countQuery).getSingleResult();
+		    
+		    if (count == 0)
+		    {
+		    	return null;
+		    }
+	
+		//	criteriaList.add(builder.isTrue(ccmClassificationJoin.get(CcmClassification_.classificationKey).in(classificationKeys)));
 		}		
 		
 		// avoid duplicates in resultset
-		query.distinct(true);
+//		query.distinct(true);
+
+//		query.having(builder.equal(builder.count(ccmPatientJoin), selectedClassifications.size()));
 		
 		query.where(builder.and(criteriaList.toArray(new Predicate[0])));
 				
