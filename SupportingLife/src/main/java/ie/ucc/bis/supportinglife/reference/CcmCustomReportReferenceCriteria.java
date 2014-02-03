@@ -6,24 +6,24 @@ import java.util.Map;
 
 public class CcmCustomReportReferenceCriteria {
 
-	private List<Symptom> askLookSymptoms;
-	private List<Classification> classifications;
+	private List<CheckboxFormElement> askLookSymptoms;
+	private List<CheckboxFormElement> classifications;
 	private Map<String, String> classificationTypes;
 	private List<Treatment> treatments;
 	
-	public List<Symptom> getAskLookSymptoms() {
+	public List<CheckboxFormElement> getAskLookSymptoms() {
 		return askLookSymptoms;
 	}
 	
-	public void setAskLookSymptoms(List<Symptom> askLookSymptoms) {
+	public void setAskLookSymptoms(List<CheckboxFormElement> askLookSymptoms) {
 		this.askLookSymptoms = askLookSymptoms;
 	}
 	
-	public List<Classification> getClassifications() {
+	public List<CheckboxFormElement> getClassifications() {
 		return classifications;
 	}
 	
-	public void setClassifications(List<Classification> classifications) {
+	public void setClassifications(List<CheckboxFormElement> classifications) {
 		this.classifications = classifications;
 	}
 	

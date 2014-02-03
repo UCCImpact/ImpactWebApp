@@ -16,92 +16,92 @@
 	<bean name="ccmCustomReportReferenceCriteria" class="ie.ucc.bis.supportinglife.reference.CcmCustomReportReferenceCriteria">
 		<property name="askLookSymptoms">
 			<list>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="COUGH_SYMPTOM"/>
 					<property name="value" value="Cough"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="DIARRHOEA_SYMPTOM"/>
 					<property name="value" value="Diarrhoea (Loose Stools)"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="BLOOD_IN_STOOL_SYMPTOM"/>
 					<property name="value" value="Blood in stool"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="FEVER_SYMPTOM"/>
 					<property name="value" value="Fever (reported or now)"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CONVULSIONS_SYMPTOM"/>
 					<property name="value" value="Convulsions"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="DIFFICULTY_DRINKING_OR_FEEDING_SYMPTOM"/>
 					<property name="value" value="Difficulty drinking or feeding"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING_SYMPTOM"/>
 					<property name="value" value="Not able to drink or feed anything"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="VOMITING_SYMPTOM"/>
 					<property name="value" value="Vomiting"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="VOMITS_EVERYTHING_SYMPTOM"/>
 					<property name="value" value="Vomits everything"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="RED_EYES_SYMPTOM"/>
 					<property name="value" value="Red Eyes"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="DIFFICULTY_IN_SEEING_SYMPTOM"/>
 					<property name="value" value="Difficulty in seeing"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="OTHER_PROBLEMS_SYMPTOM"/>
 					<property name="value" value="Other problems"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CHEST_INDRAWING_SYMPTOM"/>
 					<property name="value" value="Chest indrawing"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="FAST_BREATHING_SYMPTOM"/>
 					<property name="value" value="Fast breathing"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="VERY_SLEEPY_OR_UNCONSCIOUS_SYMPTOM"/>
 					<property name="value" value="Very sleepy or unconscious"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="PALMAR_PALLOR_SYMPTOM"/>
 					<property name="value" value="Palmar pallor"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="MUAC_TAPE_COLOUR_SYMPTOM"/>
 					<property name="value" value="Muac tape colour"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Symptom">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="SWELLING_OF_BOTH_FEET_SYMPTOM"/>
 					<property name="value" value="Swelling of both feet"/>
 					<property name="checked" value="false"/>
@@ -110,97 +110,97 @@
 		</property>
 		<property name="classifications">
 			<list>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_COUGH_FOR_21_DAYS_OR_MORE_CLASSIFICATION"/>
 					<property name="value" value="Cough for 21 days or more"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_DIARRHOEA_FOR_14_DAYS_OR_MORE_CLASSIFICATION"/>
 					<property name="value" value="Diarrhoea for 14 days or more"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_BLOOD_IN_STOOL_CLASSIFICATION"/>
 					<property name="value" value="Blood in stool"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_DIARRHOEA_LESS_THAN_14_DAYS_AND_NO_BLOOD_IN_STOOL_CLASSIFICATION"/>
 					<property name="value" value="Diarrhoea (less than 14 days AND no blood in stool)"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_FEVER_FOR_LAST_7_DAYS_CLASSIFICATION"/>
 					<property name="value" value="Fever for last 7 days"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_FEVER_FOR_LESS_THAN_7_DAYS_CLASSIFICATION"/>
 					<property name="value" value="Fever (less than 7 days)"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_CONVULSIONS_CLASSIFICATION"/>
 					<property name="value" value="Convulsions"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING_CLASSIFICATION"/>
 					<property name="value" value="Not Able to Drink or Feed Anything"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_VOMITS_EVERYTHING_CLASSIFICATION"/>
 					<property name="value" value="Vomits Everything"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_RED_EYE_FOR_4_DAYS_OR_MORE_CLASSIFICATION"/>
 					<property name="value" value="Red Eye for 4 Days or more"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_RED_EYE_WITH_VISUAL_PROBLEMS_CLASSIFICATION"/>
 					<property name="value" value="Red Eye with Visual Problems"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_RED_EYE_LESS_THAN_4_DAYS_CLASSIFICATION"/>
 					<property name="value" value="Red Eye (less than 4 days)"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_OTHER_PROBLEM_CLASSIFICATION"/>
 					<property name="value" value="Other Problem"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_CHEST_INDRAWING_CLASSIFICATION"/>
 					<property name="value" value="Chest Indrawing"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_FAST_BREATHING_CLASSIFICATION"/>
 					<property name="value" value="Fast Breathing"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_VERY_SLEEPY_OR_UNCONSCIOUS_CLASSIFICATION"/>
 					<property name="value" value="Very Sleep or Unconscious"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_PALMAR_PALLOR_CLASSIFICATION"/>
 					<property name="value" value="Palmar Pallor"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_RED_ON_MUAC_TAPE_CLASSIFICATION"/>
 					<property name="value" value="Red on MUAC Tape"/>
 					<property name="checked" value="false"/>
 				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.Classification">
+				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
 					<property name="key" value="CCM_SWELLING_OF_BOTH_FEET_CLASSIFICATION"/>
 					<property name="value" value="Swelling of Both Feet"/>
 					<property name="checked" value="false"/>

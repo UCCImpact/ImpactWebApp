@@ -13,8 +13,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
-import ie.ucc.bis.supportinglife.reference.Classification;
-import ie.ucc.bis.supportinglife.reference.Symptom;
+import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 
 import java.util.ArrayList;
@@ -83,14 +82,14 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 												String hsaUserId, 
 												Date assessmentDateFrom,
 												Date assessmentDateTo, 
-												List<Symptom> symptoms,
-												List<Classification> classifications, 
+												List<CheckboxFormElement> symptoms,
+												List<CheckboxFormElement> classifications, 
 												List<Treatment> treatments) {
 		// 1. identify symptoms selected by user
-		List<Symptom> selectedSymptoms = identifySelectedSymptoms(symptoms);
+		List<CheckboxFormElement> selectedSymptoms = identifySelectedSymptoms(symptoms);
 		
 		// 2. identify classifications selected by user
-		List<Classification> selectedClassifications = identifySelectedClassifications(classifications);
+		List<CheckboxFormElement> selectedClassifications = identifySelectedClassifications(classifications);
 		
 		// 3. identify treatments selected by user
 		List<Treatment> selectedTreatments = identifySelectedTreatments(treatments);
@@ -147,10 +146,10 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	 * 
 	 * @return List<Symptom>
 	 */
-	private List<Symptom> identifySelectedSymptoms(List<Symptom> symptoms) {
-		List<Symptom> symptomsSelected = new ArrayList<Symptom>();
+	private List<CheckboxFormElement> identifySelectedSymptoms(List<CheckboxFormElement> symptoms) {
+		List<CheckboxFormElement> symptomsSelected = new ArrayList<CheckboxFormElement>();
 		
-		for (Symptom symptom : symptoms) {
+		for (CheckboxFormElement symptom : symptoms) {
 			if (symptom.getChecked()) {
 				symptomsSelected.add(symptom);
 			}
@@ -166,10 +165,10 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	 * 
 	 * @return List<Classification>
 	 */
-	private List<Classification> identifySelectedClassifications(List<Classification> classifications) {
-		List<Classification> classificationsSelected = new ArrayList<Classification>();
+	private List<CheckboxFormElement> identifySelectedClassifications(List<CheckboxFormElement> classifications) {
+		List<CheckboxFormElement> classificationsSelected = new ArrayList<CheckboxFormElement>();
 		
-		for (Classification classification : classifications) {
+		for (CheckboxFormElement classification : classifications) {
 			if (classification.getChecked()) {
 				classificationsSelected.add(classification);
 			}

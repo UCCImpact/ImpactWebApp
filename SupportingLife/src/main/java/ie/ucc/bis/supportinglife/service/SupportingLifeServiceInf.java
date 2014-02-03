@@ -6,8 +6,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
-import ie.ucc.bis.supportinglife.reference.Classification;
-import ie.ucc.bis.supportinglife.reference.Symptom;
+import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 
 import java.util.Date;
@@ -56,8 +55,8 @@ public interface SupportingLifeServiceInf {
 												String hsaUserId, 
 												Date assessmentDateFrom,
 												Date assessmentDateTo, 
-												List<Symptom> symptoms,
-												List<Classification> classifications, 
+												List<CheckboxFormElement> symptoms,
+												List<CheckboxFormElement> classifications, 
 												List<Treatment> treatments);
 	
 	

@@ -1,6 +1,6 @@
 package ie.ucc.bis.supportinglife.reference;
 
-public class Classification {
+public class CheckboxFormElement {
 	
 	private String key;
 	private String value;

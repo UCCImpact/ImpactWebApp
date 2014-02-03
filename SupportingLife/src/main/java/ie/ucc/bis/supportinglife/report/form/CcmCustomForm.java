@@ -1,7 +1,6 @@
 package ie.ucc.bis.supportinglife.report.form;
 
-import ie.ucc.bis.supportinglife.reference.Classification;
-import ie.ucc.bis.supportinglife.reference.Symptom;
+import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 
 import java.util.Date;
@@ -28,8 +27,8 @@ public class CcmCustomForm  {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date assessmentDateTo;
     
-    private List<Symptom> symptoms;
-    private List<Classification> classifications;  
+    private List<CheckboxFormElement> symptoms;
+    private List<CheckboxFormElement> classifications;  
     private List<Treatment> treatments;
     
 	public String getNationalId() {
@@ -72,19 +71,19 @@ public class CcmCustomForm  {
 		this.assessmentDateTo = assessmentDateTo;
 	}
 	
-	public List<Symptom> getSymptoms() {
+	public List<CheckboxFormElement> getSymptoms() {
 		return symptoms;
 	}
 
-	public void setSymptoms(List<Symptom> symptoms) {
+	public void setSymptoms(List<CheckboxFormElement> symptoms) {
 		this.symptoms = symptoms;
 	}
 
-	public List<Classification> getClassifications() {
+	public List<CheckboxFormElement> getClassifications() {
 		return classifications;
 	}
 
-	public void setClassifications(List<Classification> classifications) {
+	public void setClassifications(List<CheckboxFormElement> classifications) {
 		this.classifications = classifications;
 	}
 
@@ -106,13 +105,13 @@ public class CcmCustomForm  {
         stringBuilder.append("assessment date from: " + getAssessmentDateFrom() + "\n");
         stringBuilder.append("assessment date to: " + getAssessmentDateTo()  + "\n");
         
-        for (Symptom symptom : getSymptoms()){
+        for (CheckboxFormElement symptom : getSymptoms()){
         	stringBuilder.append("symptom value: " + symptom.getValue() + "\n");
         	stringBuilder.append("symptom key: " + symptom.getKey() + "\n");
         	stringBuilder.append("symptom checked: " + symptom.getChecked() + "\n");
         }
         
-        for (Classification classification : getClassifications()){
+        for (CheckboxFormElement classification : getClassifications()){
         	stringBuilder.append("classification value: " + classification.getValue() + "\n");
         	stringBuilder.append("classification key: " + classification.getKey() + "\n");
         	stringBuilder.append("classification checked: " + classification.getChecked() + "\n");
