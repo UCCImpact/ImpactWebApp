@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -60,6 +61,13 @@ public class CcmPatientVisit implements Serializable {
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private Set<CcmPatientTreatment> ccmPatientTreatmentList;
 	
+	// association to sl_ccm_look_symptoms table
+	@OneToOne(cascade = CascadeType.ALL, mappedBy="visit")
+	private CcmPatientLookSymptoms ccmPatientLookSymptoms;
+	
+	// association to sl_ccm_ask_look_symptoms table
+	@OneToOne(cascade = CascadeType.ALL, mappedBy="visit")
+	private CcmPatientAskLookSymptoms ccmPatientAskLookSymptoms;
 
 	public CcmPatientVisit() {}
 
@@ -114,5 +122,21 @@ public class CcmPatientVisit implements Serializable {
 	public void setCcmPatientTreatmentList(
 			Set<CcmPatientTreatment> ccmPatientTreatmentList) {
 		this.ccmPatientTreatmentList = ccmPatientTreatmentList;
+	}
+
+	public CcmPatientLookSymptoms getCcmPatientLookSymptoms() {
+		return ccmPatientLookSymptoms;
+	}
+
+	public void setCcmPatientLookSymptoms(CcmPatientLookSymptoms ccmPatientLookSymptoms) {
+		this.ccmPatientLookSymptoms = ccmPatientLookSymptoms;
+	}
+
+	public CcmPatientAskLookSymptoms getCcmPatientAskLookSymptoms() {
+		return ccmPatientAskLookSymptoms;
+	}
+
+	public void setCcmPatientAskLookSymptoms(CcmPatientAskLookSymptoms ccmPatientAskLookSymptoms) {
+		this.ccmPatientAskLookSymptoms = ccmPatientAskLookSymptoms;
 	}
 }

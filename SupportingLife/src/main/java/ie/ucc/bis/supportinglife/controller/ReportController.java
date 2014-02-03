@@ -81,6 +81,7 @@ public class ReportController implements ReportControllerInf {
 		
 		log.info("GET form page for report: " + reportName);
 		
+//		CcmPatientVisit ccmCustomForm = new CcmPatientVisit();
 		CcmCustomForm ccmCustomForm = new CcmCustomForm();
 		ccmCustomForm.setSymptoms(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getAskLookSymptoms());
 		ccmCustomForm.setClassifications(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getClassifications());

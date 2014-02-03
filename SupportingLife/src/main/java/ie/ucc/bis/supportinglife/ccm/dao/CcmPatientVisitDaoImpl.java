@@ -256,6 +256,9 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 				filteredResults.add(patientVisit);
 			}
 		}
+		else {
+			filteredResults.add(patientVisit);
+		}
 	}
 	
 	/**
@@ -278,6 +281,9 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 			if (patientClassificationKeys.containsAll(classificationsKeysRequired)) {
 				filteredPatientVisitResults.add(patientVisit);
 			}
+		}
+		else {
+			filteredPatientVisitResults.add(patientVisit);
 		}
 	} // end of filterPatientVisitResultsByClassificationsRequired(..)	
 }
