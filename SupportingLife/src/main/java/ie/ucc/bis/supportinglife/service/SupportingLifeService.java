@@ -153,7 +153,7 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		List<CheckboxFormElement> symptomsSelected = new ArrayList<CheckboxFormElement>();
 		
 		for (CheckboxFormElement symptom : symptoms) {
-			if (symptom.getChecked()) {
+			if (symptom.isChecked()) {
 				symptomsSelected.add(symptom);
 			}
 		}	

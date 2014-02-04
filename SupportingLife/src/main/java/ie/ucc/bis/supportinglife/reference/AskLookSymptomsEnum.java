@@ -1,0 +1,17 @@
+package ie.ucc.bis.supportinglife.reference;
+
+public enum AskLookSymptomsEnum {
+	COUGH, 
+	DIARRHOEA, 
+	BLOOD_IN_STOOL, 
+	FEVER, 
+	CONVULSIONS, 
+	DIFFICULTY_DRINKING_OR_FEEDING,
+	NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING, 
+	VOMITING, 
+	VOMITS_EVERYTHING,
+	RED_EYES, 
+	DIFFICULTY_IN_SEEING, 
+	OTHER_PROBLEMS;
+
+}

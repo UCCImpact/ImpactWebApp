@@ -26,7 +26,7 @@ public class CheckboxFormElement {
 		return isChecked();
 	}
 
-	boolean isChecked() {
+	public boolean isChecked() {
 		return checked;
 	}
 

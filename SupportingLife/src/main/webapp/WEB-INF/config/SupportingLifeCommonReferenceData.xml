@@ -17,62 +17,86 @@
 		<property name="askLookSymptoms">
 			<list>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="COUGH_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.AskLookSymptomsEnum).COUGH.name()}</value>
+					</property>
 					<property name="value" value="Cough"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="DIARRHOEA_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.AskLookSymptomsEnum).DIARRHOEA.name()}</value>
+					</property>
 					<property name="value" value="Diarrhoea (Loose Stools)"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="BLOOD_IN_STOOL_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.AskLookSymptomsEnum).BLOOD_IN_STOOL.name()}</value>
+					</property>
 					<property name="value" value="Blood in stool"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="FEVER_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.AskLookSymptomsEnum).FEVER.name()}</value>
+					</property>
 					<property name="value" value="Fever (reported or now)"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="CONVULSIONS_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.AskLookSymptomsEnum).CONVULSIONS.name()}</value>
+					</property>
 					<property name="value" value="Convulsions"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="DIFFICULTY_DRINKING_OR_FEEDING_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.AskLookSymptomsEnum).DIFFICULTY_DRINKING_OR_FEEDING.name()}</value>
+					</property>
 					<property name="value" value="Difficulty drinking or feeding"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.AskLookSymptomsEnum).NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING.name()}</value>
+					</property>
 					<property name="value" value="Not able to drink or feed anything"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="VOMITING_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.AskLookSymptomsEnum).VOMITING.name()}</value>
+					</property>
 					<property name="value" value="Vomiting"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="VOMITS_EVERYTHING_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.AskLookSymptomsEnum).VOMITS_EVERYTHING.name()}</value>
+					</property>
 					<property name="value" value="Vomits everything"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="RED_EYES_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.AskLookSymptomsEnum).RED_EYES.name()}</value>
+					</property>
 					<property name="value" value="Red Eyes"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="DIFFICULTY_IN_SEEING_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.AskLookSymptomsEnum).DIFFICULTY_IN_SEEING.name()}</value>
+					</property>
 					<property name="value" value="Difficulty in seeing"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="OTHER_PROBLEMS_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.AskLookSymptomsEnum).OTHER_PROBLEMS.name()}</value>
+					</property>
 					<property name="value" value="Other problems"/>
 					<property name="checked" value="false"/>
 				</bean>
@@ -81,32 +105,37 @@
 		<property name="lookSymptoms">
 			<list>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="CHEST_INDRAWING_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.LookSymptomsEnum).CHEST_INDRAWING.name()}</value>
+					</property>
 					<property name="value" value="Chest indrawing"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="FAST_BREATHING_SYMPTOM"/>
-					<property name="value" value="Fast breathing"/>
-					<property name="checked" value="false"/>
-				</bean>
-				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="VERY_SLEEPY_OR_UNCONSCIOUS_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.LookSymptomsEnum).SLEEPY_UNCONSCIOUS.name()}</value>
+					</property>
 					<property name="value" value="Very sleepy or unconscious"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="PALMAR_PALLOR_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.LookSymptomsEnum).PALMAR_PALLOR.name()}</value>
+					</property>
 					<property name="value" value="Palmar pallor"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="MUAC_TAPE_COLOUR_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.LookSymptomsEnum).MUAC_TAPE.name()}</value>
+					</property>
 					<property name="value" value="Muac tape colour"/>
 					<property name="checked" value="false"/>
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.CheckboxFormElement">
-					<property name="key" value="SWELLING_OF_BOTH_FEET_SYMPTOM"/>
+					<property name="key">
+					    <value>#{T(ie.ucc.bis.supportinglife.reference.LookSymptomsEnum).FEET_SWELLING.name()}</value>
+					</property>
 					<property name="value" value="Swelling of both feet"/>
 					<property name="checked" value="false"/>
 				</bean>

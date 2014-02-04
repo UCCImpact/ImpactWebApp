@@ -8,6 +8,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientAskLookSymptoms_;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification_;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
+import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms_;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment_;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
@@ -17,7 +18,9 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmTreatment_;
 import ie.ucc.bis.supportinglife.ccm.domain.User;
 import ie.ucc.bis.supportinglife.ccm.domain.User_;
+import ie.ucc.bis.supportinglife.reference.AskLookSymptomsEnum;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
+import ie.ucc.bis.supportinglife.reference.LookSymptomsEnum;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 
 import java.util.ArrayList;
@@ -167,24 +170,20 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 			criteriaList.add(assessmentDateBeforeCondition);
 		}
 		
-		// 7. selected Symptoms
-//		Session session = entityManager.unwrap(org.hibernate.Session.class);
-		
-//		for (CheckboxFormElement askLookSymptom : selectedAskLookSymptoms) {
-			Predicate coughSymptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.cough), true);
-			criteriaList.add(coughSymptomCondition);
+		// 7. selected 'Ask Look' Symptoms
+		addAskLookSymptomConditions(selectedAskLookSymptoms, builder, criteriaList, ccmPatientAskLookSymptomsJoin);
+
+		// 8. selected 'Look' Symptoms
+		addLookSymptomConditions(selectedLookSymptoms, builder, criteriaList, ccmPatientLookSymptomsJoin);
 			
-//		}
-		
-			
-		// 8. selected Classifications
+		// 9. selected Classifications
 	    Set<String> classificationsKeysRequired = retrieveUserSpecifiedKeys(selectedClassifications);
 		if (classificationsKeysRequired.size() != 0) {				
 			// initially we'll pull back all records which have AT LEAST ONE of the user selected classifications
 			criteriaList.add(builder.isTrue(ccmClassificationJoin.get(CcmClassification_.classificationKey).in(classificationsKeysRequired)));
 		}		
 		
-		// 9. selected treatments
+		// 10. selected treatments
 	    Set<String> treatmentKeysRequired = retrieveUserSpecifiedKeys(selectedTreatments);
 	    if (treatmentKeysRequired.size() != 0){
 			// initially we'll pull back all records which have AT LEAST ONE of the user selected treatments
@@ -198,6 +197,137 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 	    List<CcmPatientVisit> patientVisitResults = entityManager.createQuery(query).getResultList();
 	        
 	    return filterPatientVisitResults(classificationsKeysRequired, treatmentKeysRequired, patientVisitResults);
+	}
+
+
+	/**
+	 * Method to SQL conditions with respect to 'Ask Look' Symptoms depending
+	 * upon user's symptom selections.
+	 * 
+	 *   			'ASK LOOK SYMPTOMS'	
+	 *   1. COUGH							
+	 *   2. DIARRHOEA							
+	 *   3. BLOOD_IN_STOOL
+	 *   4. FEVER			
+	 *   5. CONVULSIONS							
+	 *   6. DIFFICULTY_DRINKING_OR_FEEDING		
+	 *   7. NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING
+	 *   8. VOMITING							
+	 *   9. VOMITS_EVERYTHING					
+	 *   10. RED_EYES								
+	 *   11. DIFFICULTY_IN_SEEING
+	 *   12. OTHER_PROBLEMS
+	 *   
+	 * @param selectedAskLookSymptoms
+	 * @param builder
+	 * @param criteriaList
+	 * @param ccmPatientAskLookSymptomsJoin
+	 * 
+	 */
+	private void addAskLookSymptomConditions(List<CheckboxFormElement> selectedAskLookSymptoms,
+									CriteriaBuilder builder, List<Predicate> criteriaList,
+									Join<CcmPatientVisit, CcmPatientAskLookSymptoms> ccmPatientAskLookSymptomsJoin) {
+		
+		for (CheckboxFormElement askLookSymptom : selectedAskLookSymptoms) {
+			Predicate symptomCondition = null;
+			
+			if (askLookSymptom.getKey().equalsIgnoreCase(AskLookSymptomsEnum.COUGH.name())) {
+				symptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.cough), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (askLookSymptom.getKey().equalsIgnoreCase(AskLookSymptomsEnum.DIARRHOEA.name())) {
+				symptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.diarrhoea), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (askLookSymptom.getKey().equalsIgnoreCase(AskLookSymptomsEnum.BLOOD_IN_STOOL.name())) {
+				symptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.bloodInStool), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (askLookSymptom.getKey().equalsIgnoreCase(AskLookSymptomsEnum.FEVER.name())) {
+				symptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.fever), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (askLookSymptom.getKey().equalsIgnoreCase(AskLookSymptomsEnum.CONVULSIONS.name())) {
+				symptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.convulsions), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (askLookSymptom.getKey().equalsIgnoreCase(AskLookSymptomsEnum.DIFFICULTY_DRINKING_OR_FEEDING.name())) {
+				symptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.difficultyDrinkingOrFeeding), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (askLookSymptom.getKey().equalsIgnoreCase(AskLookSymptomsEnum.NOT_ABLE_TO_DRINK_OR_FEED_ANYTHING.name())) {
+				symptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.unableToDrinkOrFeed), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (askLookSymptom.getKey().equalsIgnoreCase(AskLookSymptomsEnum.VOMITING.name())) {
+				symptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.vomiting), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (askLookSymptom.getKey().equalsIgnoreCase(AskLookSymptomsEnum.VOMITS_EVERYTHING.name())) {
+				symptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.vomitsEverything), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (askLookSymptom.getKey().equalsIgnoreCase(AskLookSymptomsEnum.RED_EYES.name())) {
+				symptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.redEye), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (askLookSymptom.getKey().equalsIgnoreCase(AskLookSymptomsEnum.DIFFICULTY_IN_SEEING.name())) {
+				symptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.difficultySeeing), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (askLookSymptom.getKey().equalsIgnoreCase(AskLookSymptomsEnum.OTHER_PROBLEMS.name())) {
+				symptomCondition = builder.equal(ccmPatientAskLookSymptomsJoin.get(CcmPatientAskLookSymptoms_.otherProblems), true);
+				criteriaList.add(symptomCondition);
+			}
+		}
+	}
+	
+	/**
+	 * Method to SQL conditions with respect to 'Look' Symptoms depending
+	 * upon user's symptom selections.
+	 * 
+	 *   			'LOOK SYMPTOMS'	
+	 *   
+	 *   1. CHEST_INDRAWING												
+	 *   2. SLEEPY_UNCONSCIOUS
+	 *   3. PALMAR_PALLOR			
+	 *   4. MUAC_TAPE							
+	 *   5. FEET_SWELLING
+	 *   
+	 * @param selectedLookSymptoms
+	 * @param builder
+	 * @param criteriaList
+	 * @param ccmPatientLookSymptomsJoin
+	 * 
+	 */
+	private void addLookSymptomConditions(List<CheckboxFormElement> selectedLookSymptoms,
+									CriteriaBuilder builder, List<Predicate> criteriaList,
+									Join<CcmPatientVisit, CcmPatientLookSymptoms> ccmPatientLookSymptomsJoin) {
+		
+		for (CheckboxFormElement lookSymptom : selectedLookSymptoms) {
+			Predicate symptomCondition = null;
+			
+			if (lookSymptom.getKey().equalsIgnoreCase(LookSymptomsEnum.CHEST_INDRAWING.name())) {
+				symptomCondition = builder.equal(ccmPatientLookSymptomsJoin.get(CcmPatientLookSymptoms_.chestIndrawing), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (lookSymptom.getKey().equalsIgnoreCase(LookSymptomsEnum.SLEEPY_UNCONSCIOUS.name())) {
+				symptomCondition = builder.equal(ccmPatientLookSymptomsJoin.get(CcmPatientLookSymptoms_.sleepyUnconscious), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (lookSymptom.getKey().equalsIgnoreCase(LookSymptomsEnum.PALMAR_PALLOR.name())) {
+				symptomCondition = builder.equal(ccmPatientLookSymptomsJoin.get(CcmPatientLookSymptoms_.palmarPallor), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (lookSymptom.getKey().equalsIgnoreCase(LookSymptomsEnum.MUAC_TAPE.name())) {
+				symptomCondition = builder.equal(ccmPatientLookSymptomsJoin.get(CcmPatientLookSymptoms_.muacTapeColour), true);
+				criteriaList.add(symptomCondition);
+			}
+			else if (lookSymptom.getKey().equalsIgnoreCase(LookSymptomsEnum.FEET_SWELLING.name())) {
+				symptomCondition = builder.equal(ccmPatientLookSymptomsJoin.get(CcmPatientLookSymptoms_.swellingBothFeet), true);
+				criteriaList.add(symptomCondition);
+			}
+		}
 	}
 
 
