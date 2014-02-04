@@ -64,24 +64,49 @@ $(document).ready(function () {
 	 * 				type="text"	path="nationalId" placeholder="Enter National Id"/>		
 	 * 
 	 */
+
+	/* 
+	 * Validation method using a regular expression to check value consists
+	 * only of letters and numbers
+	 */
+    $.validator.addMethod("lettersAndDigitsRegex", function(value, element) {
+        return this.optional(element) || /^[a-z0-9]+$/i.test(value);
+    });
+	
 	$('#ccm-report-form').validate({
 		rules: {
-			"nationalId": {
-				required: false // this means the field can be left empty
-			},
-			"nationalHealthId": {
+			"patientId": {
 				required: false,
 				digits: true
 			},
+			"nationalId": {
+				required: false,
+				lettersAndDigitsRegex: true
+			},
+			"nationalHealthId": {
+				required: false,
+				lettersAndDigitsRegex: true
+			},
 			"hsaUserId": {
 				required: false,
+				lettersAndDigitsRegex: true,
 				minlength: 8,
 				maxlength: 8
 			}
 		},
 		messages: {
+			"patientId": {
+				digits: "SL Patient ID is composed of numbers only"
+			},
+			"nationalId": {
+				lettersAndDigitsRegex: "National ID is composed of letters and numbers only"
+			},
+			"nationalHealthId": {
+				lettersAndDigitsRegex: "National Health ID is composed of letters and numbers only"
+			},
 			"hsaUserId": {
-				minlength: "HSA User ID is 8 characters"
+				minlength: "HSA User ID is 8 characters",
+				lettersAndDigitsRegex: "HSA User ID is composed of letters and numbers only"
 			},
 		},
 		unhighlight: function(element, errorClass, validClass) {
@@ -93,6 +118,14 @@ $(document).ready(function () {
 		},
 		success: function (element) {
 			element.addClass('valid').closest('.control-group').removeClass('error').addClass('valid');
+		},
+		errorPlacement: function(error, element) {
+		    if (element.attr("name") == "hsaUserId") {
+		    	error.insertAfter(element.parent("div"));
+		    } 
+		    else {
+		        error.insertAfter(element);
+		    }
 		}
 	});
 });

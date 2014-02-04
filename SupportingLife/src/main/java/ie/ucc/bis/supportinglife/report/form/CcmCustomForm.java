@@ -18,6 +18,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class CcmCustomForm  {
 	
+	private String patientId;
 	private String nationalId;
 	private String nationalHealthId;
 	private String hsaUserId;
@@ -33,6 +34,14 @@ public class CcmCustomForm  {
     private List<CheckboxFormElement> classifications;  
     private List<Treatment> treatments;
     
+	public String getPatientId() {
+		return patientId;
+	}
+
+	public void setPatientId(String patientId) {
+		this.patientId = patientId;
+	}
+
 	public String getNationalId() {
 		return nationalId;
 	}

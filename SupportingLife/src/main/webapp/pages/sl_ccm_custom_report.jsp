@@ -58,6 +58,14 @@
 			<div id="patient-identifier-container" class="col-lg-6">
 				<div class="control-group">
 					<!-- Number input (max. 8 characters, as per Functional Specification.) -->
+					<form:label for="patient-id" class="control-label" path="patientId">SL Patient ID: </form:label>
+					<div class="controls">
+						<form:input type="text" path="patientId" placeholder="Enter SL Patient Id"/>
+					</div>
+				</div>
+			
+				<div class="control-group">
+					<!-- Number input (max. 8 characters, as per Functional Specification.) -->
 					<form:label for="national-id" class="control-label" path="nationalId">National ID: </form:label>
 					<div class="controls">
 						<form:input type="text" path="nationalId" placeholder="Enter National Id"/>
@@ -71,17 +79,16 @@
 						<form:input type="text"	path="nationalHealthId" placeholder="Enter National Health Id"/>
 					</div>
 				</div>
+			</div>
+			<!-- end column -->
 	
+			<div id="right-side-container" class="col-lg-6">
 				<div class="control-group">
 					<form:label for="hsa-user-id" class="control-label" path="hsaUserId">HSA User ID: </form:label>
 					<div class="controls">
 						<form:input type="text"	path="hsaUserId" placeholder="Enter HSA User Id"/>
 					</div>
 				</div>
-			</div>
-			<!-- end column -->
-	
-			<div id="assessment-date-container" class="col-lg-6">
 				<div class="control-group">
 					<!-- assessment date range -->
 					<form:label for="assessment-date-from" class="control-label" path="assessmentDateFrom">From: </form:label>

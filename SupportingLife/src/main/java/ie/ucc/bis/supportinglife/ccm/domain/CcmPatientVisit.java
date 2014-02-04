@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -25,6 +27,17 @@ import org.hibernate.annotations.LazyCollectionOption;
  * 
  * @author TOSullivan
  */
+
+@NamedQueries({@NamedQuery(name="CcmPatientVisit.findPatientVisits", 
+query=	"SELECT PV FROM CcmPatientVisit PV " +
+		"JOIN PV.ccmPatientClassificationList CPC " +
+		"WHERE (:patientId = '' OR PV.patient.patientId = :patientId) " +
+		"AND (:nationalId = '' OR PV.patient.nationalId = :nationalId) " +
+		"AND (:nationalHealthId = '' OR PV.patient.nationalHealthId = :nationalHealthId) " +
+		"AND (:hsaUserId = '' OR PV.user.userId = :hsaUserId) " +
+		"AND (PV.visitDate >= :assessmentDateFrom AND PV.visitDate <= :assessmentDateTo) "
+		)})
+
 @Entity
 @Table(name="sl_ccm_patient_visit")
 public class CcmPatientVisit implements Serializable {
@@ -48,6 +61,12 @@ public class CcmPatientVisit implements Serializable {
 	@Column(name="visit_dt") 
 	@Temporal(TemporalType.DATE)
 	private Date visitDate;
+	
+	// association to sl_user table
+	// - one user can create many patient visits
+	@ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
 	
 	// association to sl_ccm_patient_classification table
 	// - a patient visit can have many classifications
@@ -104,6 +123,14 @@ public class CcmPatientVisit implements Serializable {
 
 	public void setVisitDate(Date visitDate) {
 		this.visitDate = visitDate;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public Set<CcmPatientClassification> getCcmPatientClassificationList() {

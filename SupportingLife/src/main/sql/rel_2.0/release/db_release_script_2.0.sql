@@ -44,7 +44,6 @@ CREATE TABLE IF NOT EXISTS sl_ccm_patient(
 										 	patient_id 			INTEGER(18) NOT NULL AUTO_INCREMENT,
 										 	national_id 		VARCHAR(8),
 										 	national_health_id 	VARCHAR(8),
-    										user_id 			VARCHAR(8),
     										child_first_name 	VARCHAR(50),
     										child_surname 		VARCHAR(50),
     										date_of_birth 		DATE,
@@ -56,8 +55,7 @@ CREATE TABLE IF NOT EXISTS sl_ccm_patient(
     										village_ta 			VARCHAR(50),
     										created_dt 			TIMESTAMP,
     										updated_dt 			TIMESTAMP,
-    										PRIMARY KEY (patient_id),
-                       						FOREIGN KEY (user_id) REFERENCES sl_user(user_id)
+    										PRIMARY KEY (patient_id)
 										  );
 
 -----------------------------------------------------------------------------------------------------------------
@@ -78,8 +76,10 @@ CREATE TABLE IF NOT EXISTS sl_ccm_patient_visit (
     												visit_id 		INTEGER(18) NOT NULL AUTO_INCREMENT,
     												patient_id 		INTEGER(18) NOT NULL,
     												visit_dt 		DATE,
+    												user_id 		VARCHAR(8),
 				    								PRIMARY KEY (visit_id),
-				    								FOREIGN KEY (patient_id) REFERENCES sl_ccm_patient(patient_id)
+				    								FOREIGN KEY (patient_id) REFERENCES sl_ccm_patient(patient_id),
+                       								FOREIGN KEY (user_id) REFERENCES sl_user(user_id)
 												);
 
 												

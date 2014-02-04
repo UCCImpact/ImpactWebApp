@@ -28,16 +28,16 @@ INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname,
 -----------------------------------------------------------------------------------------------------------------
 
 INSERT INTO sl_ccm_patient(patient_id, national_id, national_health_id, 
-							user_id, child_first_name, child_surname, date_of_birth, gender, caregiver_name,
+							child_first_name, child_surname, date_of_birth, gender, caregiver_name,
 							relationship, other_relationship, physical_address, village_ta, created_dt, updated_dt) 
-							VALUES (NULL, "12A", "15F", "hsauser1", "JOHN", "SMITH", STR_TO_DATE('18,05,2009','%d,%m,%Y'), 
+							VALUES (NULL, "12A", "15F", "JOHN", "SMITH", STR_TO_DATE('18,05,2009','%d,%m,%Y'), 
 									"male", "care_giver_name", "MOTHER", NULL, "physical address", "village ta",
 									STR_TO_DATE('13,01,2014','%d,%m,%Y'), STR_TO_DATE('13,01,2014','%d,%m,%Y'));
 										   
 INSERT INTO sl_ccm_patient(patient_id, national_id, national_health_id,
-							user_id, child_first_name, child_surname, date_of_birth, gender, caregiver_name,
+							child_first_name, child_surname, date_of_birth, gender, caregiver_name,
 							relationship, other_relationship, physical_address, village_ta, created_dt, updated_dt) 
-							VALUES (NULL, "16D", "65R", "hsauser1", "JULIE", "SMITH", STR_TO_DATE('20,08,2010','%d,%m,%Y'), 
+							VALUES (NULL, "16D", "65R", "JULIE", "SMITH", STR_TO_DATE('20,08,2010','%d,%m,%Y'), 
 									"female", "care_giver_name", "FATHER", NULL, "physical address", "village ta",
 									 STR_TO_DATE('14,01,2014','%d,%m,%Y'), STR_TO_DATE('14,01,2014','%d,%m,%Y'));
 
@@ -46,8 +46,8 @@ INSERT INTO sl_ccm_patient(patient_id, national_id, national_health_id,
 -- ADD CCM PATIENT VISIT DATA
 -----------------------------------------------------------------------------------------------------------------									 
 								 
-INSERT INTO sl_ccm_patient_visit(visit_id, patient_id, visit_dt) 
-									VALUES (NULL, 1, STR_TO_DATE('15,01,2014','%d,%m,%Y'));
+INSERT INTO sl_ccm_patient_visit(visit_id, patient_id, visit_dt, user_id) 
+									VALUES (NULL, 1, STR_TO_DATE('15,01,2014','%d,%m,%Y'), "hsauser1");
 						
 --*** patient has 'Look' symptoms
 INSERT INTO sl_ccm_look_symptoms(visit_id, patient_id, chest_indrawing, breaths_per_minute, 

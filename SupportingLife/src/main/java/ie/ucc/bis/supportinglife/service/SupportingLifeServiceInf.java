@@ -50,7 +50,8 @@ public interface SupportingLifeServiceInf {
 	 *
 	 */
 
-	public List<CcmPatientVisit> getPatientVisits(String nationalId,
+	public List<CcmPatientVisit> getPatientVisits(String patientId,
+												String nationalId,
 												String nationalHealthId,
 												String hsaUserId, 
 												Date assessmentDateFrom,

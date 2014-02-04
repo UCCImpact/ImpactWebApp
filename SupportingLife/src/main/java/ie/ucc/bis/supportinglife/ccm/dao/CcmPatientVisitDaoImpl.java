@@ -31,6 +31,8 @@ import java.util.Set;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.TemporalType;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -89,7 +91,36 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 	}
 	
 	@Override
-	public List<CcmPatientVisit> getPatientVisits(String nationalId,
+	public List<CcmPatientVisit> getPatientVisitsQuery(String patientId,
+												String nationalId,
+												String nationalHealthId, 
+												String hsaUserId, 
+												Date assessmentDateFrom, 
+												Date assessmentDateTo, 
+												List<CheckboxFormElement> selectedLookSymptoms,
+												List<CheckboxFormElement> selectedAskLookSymptoms,
+												List<CheckboxFormElement> selectedClassifications,
+												List<Treatment> selectedTreatments) {
+
+		List<CcmPatientVisit> patientVisits = new ArrayList<CcmPatientVisit>(); 
+		
+		Query query = entityManager.createNamedQuery("CcmPatientVisit.findPatientVisits")
+												.setParameter("patientId", patientId)
+												.setParameter("nationalId", nationalId)
+												.setParameter("nationalHealthId", nationalHealthId)
+												.setParameter("hsaUserId", hsaUserId)
+										        .setParameter("assessmentDateFrom", assessmentDateFrom, TemporalType.DATE)
+										        .setParameter("assessmentDateTo", assessmentDateTo, TemporalType.DATE);
+		
+		for (Object obj : query.getResultList()) {
+			patientVisits.add((CcmPatientVisit) obj);
+		}
+		return patientVisits;
+	}
+	
+	@Override
+	public List<CcmPatientVisit> getPatientVisits(String patientId,
+												String nationalId,
 												String nationalHealthId, 
 												String hsaUserId, 
 												Date assessmentDateFrom, 
@@ -118,7 +149,7 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 		/*********************************************/
 		/**  Join CcmPatient and User tables	    **/
 		/*********************************************/
-		Join<CcmPatient, User> ccmUserJoin = ccmPatientJoin.join(CcmPatient_.user); // Default is inner
+		Join<CcmPatientVisit, User> ccmUserJoin = patientVisitRoot.join(CcmPatientVisit_.user); // Default is inner
 
 		/*********************************************/
 		/** Join table to handle 'Ask Look Symptoms' */
@@ -147,7 +178,9 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 		Join<CcmPatientVisit, CcmPatientTreatment> ccmPatientTreatmentJoin = patientVisitRoot.join(CcmPatientVisit_.ccmPatientTreatmentList);
 		// join the CcmPatientTreatment and CcmTreatment tables
 		Join<CcmPatientTreatment, CcmTreatment> ccmTreatmentJoin = ccmPatientTreatmentJoin.join(CcmPatientTreatment_.treatment);		
-		
+
+		// retrieve patient associated with the Patient Id provided
+		DaoUtils.addEqualCondition(patientId, builder, criteriaList, ccmPatientJoin, CcmPatient_.patientId);
 		
 		// retrieve patient associated with the National Id provided
 		DaoUtils.addEqualCondition(nationalId, builder, criteriaList, ccmPatientJoin, CcmPatient_.nationalId);

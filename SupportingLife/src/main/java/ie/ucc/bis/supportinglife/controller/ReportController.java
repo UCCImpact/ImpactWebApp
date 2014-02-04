@@ -110,7 +110,8 @@ public class ReportController implements ReportControllerInf {
 
 		// 1. pull back all patient visits which meet the criteria
 		List<CcmPatientVisit> patientVisits = 
-				supportingLifeService.getPatientVisits(ccmCustomForm.getNationalId(),
+				supportingLifeService.getPatientVisits(ccmCustomForm.getPatientId(),
+													   ccmCustomForm.getNationalId(),
 													   ccmCustomForm.getNationalHealthId(),
 													   ccmCustomForm.getHsaUserId(),
 													   ccmCustomForm.getAssessmentDateFrom(),

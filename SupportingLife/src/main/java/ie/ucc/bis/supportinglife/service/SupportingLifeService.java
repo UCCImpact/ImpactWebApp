@@ -77,7 +77,8 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	}
 	
 	@Override
-	public List<CcmPatientVisit> getPatientVisits(String nationalId,
+	public List<CcmPatientVisit> getPatientVisits(String patientId,
+												String nationalId,
 												String nationalHealthId, 
 												String hsaUserId, 
 												Date assessmentDateFrom,
@@ -97,7 +98,7 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		List<Treatment> selectedTreatments = identifySelectedTreatments(treatments);
 
 		CcmPatientVisitDao patientVisitDao = (CcmPatientVisitDao) getDaoBeans().get("CcmPatientVisitDao");
-		return patientVisitDao.getPatientVisits(nationalId, nationalHealthId,
+		return patientVisitDao.getPatientVisits(patientId, nationalId, nationalHealthId,
 											hsaUserId, assessmentDateFrom,
 											assessmentDateTo, selectedLookSymptoms,
 											selectedAskLookSymptoms,

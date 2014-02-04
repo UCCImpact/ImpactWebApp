@@ -105,7 +105,7 @@
 	margin-top: 50px;
 }
 
-/* container for national id, national health id, hsa user id  */
+/* container for sl patient id, national id, national health id  */
 #patient-identifier-container {
 	text-align: left;
 	padding-left: 100px;
@@ -116,13 +116,13 @@
 	 width: 200px;
 }
 
-/* container for assessment date range */
-#assessment-date-container {
-	padding-top: 50px;
+/* container for assessment date range and user id */
+#right-side-container {
+	padding-top: 25px;
 }
 
-#assessment-date-container input,
-#assessment-date-container label {
+#right-side-container input,
+#right-side-container label {
 	text-align: left;
 	width: 200px;
 }
@@ -199,12 +199,13 @@
 /* messages presented to the user					  */
 /* -------------------------------------------------- */
 .error {
-    color:#FF0000;  /* red */
+	color: #FF0000;  /* red */
 }
 
 .valid {
     color:#000000; /* black */
 }
+
 
 /* -------------------------------------------------- */
 /* RESPONSIVE CSS */
@@ -228,14 +229,14 @@
 	}
 
 
-	/* container for assessment date range */
-	#assessment-date-container {
+	/* container for assessment date range and user_id */
+	#right-side-container {
 		text-align: center;
 		padding-left: 0px;
 	}
 	
-	#assessment-date-container input,
-	#assessment-date-container label {
+	#right-side-container input,
+	#right-side-container label {
 		text-align: center;
 	}
 	

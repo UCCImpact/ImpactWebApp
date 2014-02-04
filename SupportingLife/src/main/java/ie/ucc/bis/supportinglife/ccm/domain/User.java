@@ -63,11 +63,11 @@ public class User implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedDate;
 
-	// association to sl_ccm_patient table
+	// association to sl_ccm_patient_visit table
 	// - one user can create many patients 
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="user")
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private Set<CcmPatient> ccmPatientList;
+	private Set<CcmPatientVisit> ccmPatientVisitList;
 
 
 	public User() {}
@@ -168,12 +168,12 @@ public class User implements Serializable {
 		this.updatedDate = updatedDate;
 	}
 
-	public Set<CcmPatient> getCcmPatientList() {
-		return ccmPatientList;
+	public Set<CcmPatientVisit> getCcmPatientVisitList() {
+		return ccmPatientVisitList;
 	}
 
-	public void setCcmPatientList(Set<CcmPatient> ccmPatientList) {
-		this.ccmPatientList = ccmPatientList;
+	public void setCcmPatientVisitList(Set<CcmPatientVisit> ccmPatientVisitList) {
+		this.ccmPatientVisitList = ccmPatientVisitList;
 	}	
 	
 }

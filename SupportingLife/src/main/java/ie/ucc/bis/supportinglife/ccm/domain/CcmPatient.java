@@ -7,11 +7,8 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -44,13 +41,7 @@ public class CcmPatient implements Serializable {
 	
 	@Column(name="national_health_id")
 	private String nationalHealthId;
-	
-	// association to sl_user table
-	// - one user can create many patients
-	@ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="user_id")
-    private User user;
-	
+		
 	@Column(name="child_first_name")
 	private String childFirstName;
 
@@ -135,12 +126,11 @@ public class CcmPatient implements Serializable {
 	 * @param createdDate
 	 * @param updatedDate
 	 */
-	public CcmPatient(User user, String childFirstName, String childSurname, Date birthDate,
+	public CcmPatient(String childFirstName, String childSurname, Date birthDate,
 					String gender, String caregiverName, String relationship, 
 					String otherRelationship, String physicalAddress, String villageTa,
 					Date createdDate, Date updatedDate) {
 		
-		setUser(user);
 		setChildFirstName(childFirstName);
 		setChildSurname(childSurname);
 		setBirthDate(birthDate);
@@ -176,14 +166,6 @@ public class CcmPatient implements Serializable {
 
 	public void setNationalHealthId(String nationalHealthId) {
 		this.nationalHealthId = nationalHealthId;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 
 	public String getChildFirstName() {
