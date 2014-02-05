@@ -22,7 +22,7 @@
 	<script type="text/javascript" src=<c:url value="/js/library/jquery-ui-1.10.4.custom.min.js"/>></script>
 
 	<%--  SL CCM Custom Report Results JS Functionality --%>
-	<%-- <script type="text/javascript" src=<c:url value="/js/sl_ccm_custom_report_results.js"/>></script> --%>
+	<script type="text/javascript" src=<c:url value="/js/sl_ccm_custom_report_results.js"/>></script>
 
 	<%-- Holder renders image placeholders entirely on the client side. --%>
 	<%-- It works both online and offline, and offers a chainable API   --%>

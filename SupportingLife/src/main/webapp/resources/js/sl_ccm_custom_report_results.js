@@ -10,7 +10,5 @@
 
 $(document).ready(function() {
 
-
-	 $('#animationSandbox').addClass('pulse animated')
 });
  

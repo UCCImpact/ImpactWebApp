@@ -124,7 +124,7 @@ public class ReportController implements ReportControllerInf {
 		
 		model.addAttribute("patientVisits", patientVisits);
 		
-        return REPORT_PREFIX + "ccm_test";
+        return REPORT_PREFIX + "ccm_report_results";
 	}
 	
 } // end of class
