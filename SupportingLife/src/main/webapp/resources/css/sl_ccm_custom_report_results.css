@@ -1,0 +1,131 @@
+/* **************************************************************************
+** Filename: sl_ccm_custom_report.css
+** 
+** Styling for CCM Custom Report Results Page.
+**
+** Author: Timothy O' Sullivan
+**
+** Last Updated: 04/02/2014.
+** *************************************************************************/
+
+/* -------------------------------------------------- */
+/* Canvas to maintain visual consistency from 		  */
+/* carousel main screen to reporting screens		  */
+/* -------------------------------------------------- */
+#sl-report-banner {
+	position: relative;
+	border-radius: 4px; /* round corner of rectangle */
+	width: 100%;
+	min-height: 20px;
+	background: #077204;
+}
+
+/* -------------------------------------------------- */
+/* container for entire report form			 		  */
+/* -------------------------------------------------- */
+#report-ccm-container {
+	margin-top: 50px; 
+	text-align: center; /* Centre-align all components, unless overridden individually */
+}
+
+#report-ccm-container h1 {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  padding-bottom: 15px;
+}
+
+/* -------------------------------------------------- */
+/* HEADER ICON STYLING								  */
+/* -------------------------------------------------- */
+/* header icon */
+#header-icon {
+	font-size: 40px;
+}
+
+/*
+#header-icon:hover {
+	color: #077204;
+}
+*/
+
+
+
+
+
+/* -------------------------------------------------- */
+/* Style the tables as follows: 					  */
+/* 													  */
+/* 1. Add a border to all cells						  */
+/* 2. Center the text in the table					  */
+/* 3. Remember, we're also using jQuery Datatables	  */
+/*	  to also initialise the table UI and 			  */
+/*	  functionality									  */
+/* 4. Highlight row background colour an change	      */
+/*	  font colour when selected						  */
+/* -------------------------------------------------- */
+
+.sl-table {
+	text-align: left;
+}
+
+.sl-table > thead > tr > th {
+	text-align: center;
+	font-size: 14px;
+  	font-weight: bold;
+}
+
+.sl-table > thead > tr > td,
+.sl-table > tbody > tr > td,
+.sl-table > tfoot > tr > td {
+	border: 1px solid #bbbbbb;
+	font-size: 12px;
+}
+
+.sl-table > thead > tr > th,
+.sl-table > thead > tr > td {
+	border-bottom-width: 1px;
+}
+
+/* ensure check-boxes are centered */
+.classification-checkbox-column {
+	text-align: center;
+}
+.symptom-checkbox-column {
+	text-align: center;
+}
+.treatment-checkbox-column {
+	text-align: center;
+}
+
+/* highlight row when selected */
+.sl-table > tbody > tr.row_selected td 
+{
+	background-color: #077204;
+	color: #FFFFFF;
+}
+
+
+/* -------------------------------------------------- */
+/* RESPONSIVE CSS */
+/* -------------------------------------------------- */
+
+@media (max-width: 1200px) {
+	
+	#report-ccm-container {
+		margin-top: 50px;
+		text-align: center;
+	}
+}
+
+/* this is the width point at which the navbar 	*/
+/* collapses to the mobile look					*/
+@media (max-width: 768px) {
+	#report-ccm-container {
+		margin-top: 68px; 
+		text-align: center; /* Centre-align all components, unless overridden individually */
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
