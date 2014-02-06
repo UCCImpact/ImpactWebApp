@@ -6,14 +6,13 @@
 	<title>CCM Custom Report Results Page</title>
 	 
 	<%--------------------------------------------- CSS Links -----------------------------------------%>
+	<%-- Custom style for the ccm custom report --%>
+ 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_ccm_custom_report_results.css"/>/>
 
 	<%--  CSS Animation - used for animating Font Awesome icons --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/animate.css"/>/>
 
 	<%--  CSS 'Smoothness' Themeroller theme - used for customising look of datatables --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-1.10.4.custom.css"/>/>
-	
-	<%-- Custom style for the ccm custom report --%>
- 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_ccm_custom_report_results.css"/>/>
      
 </head>

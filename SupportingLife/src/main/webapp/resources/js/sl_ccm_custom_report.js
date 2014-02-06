@@ -134,7 +134,7 @@ $(document).ready(function () {
 /* Table handling */
 $(document).ready(function() {
 	/* Add a click handler to the rows - this could be used as a callback */
-	$(".sl-table tbody tr").click(function(event) {
+	$('.sl-table tbody tr').click(function(event) {
 		if ($(this).hasClass('row_selected')) {
 			$(this).removeClass('row_selected');
 			$(this).closest('tr').find('[type=checkbox]').prop('checked', false); /* toggle the checkbox on the row off */
@@ -159,7 +159,7 @@ $(document).ready(function() {
 
 	/* show plus-icon when panel minimised */
 	/* show minus-icon when panel maximised */
-	$(".report-note-title").click(function() {
+	$('.report-note-title').click(function() {
 		$(this).find('i').toggleClass('fa-plus-square fa-minus-square');
     });
 

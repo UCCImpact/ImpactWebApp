@@ -21,7 +21,7 @@
 }
 
 /* -------------------------------------------------- */
-/* container for entire report form			 		  */
+/* container for entire report   			 		  */
 /* -------------------------------------------------- */
 #report-ccm-container {
 	margin-top: 50px; 
@@ -36,11 +36,17 @@
   padding-bottom: 15px;
 }
 
+#report-ccm-container h4 {
+  color: #077204;
+  font-weight: bold;
+  text-align: center;
+}
+
 /* -------------------------------------------------- */
 /* HEADER ICON STYLING								  */
 /* -------------------------------------------------- */
 /* header icon */
-#header-icon {
+.header-icon {
 	font-size: 40px;
 	color: #077204;
 }
@@ -57,8 +63,9 @@
 /*	  font colour when selected						  */
 /* -------------------------------------------------- */
 
-.sl-table {
-	text-align: left;
+#patient-visit-list {
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 .sl-table > thead > tr > th {
@@ -79,23 +86,43 @@
 	border-bottom-width: 1px;
 }
 
-/* ensure check-boxes are centered */
-.classification-checkbox-column {
-	text-align: center;
-}
-.symptom-checkbox-column {
-	text-align: center;
-}
-.treatment-checkbox-column {
-	text-align: center;
-}
-
 /* highlight row when selected */
 .sl-table > tbody > tr.row_selected td 
 {
 	background-color: #077204;
 	color: #FFFFFF;
 }
+
+/************************************************/
+/* 				SYMPTOM TABLES 					*/
+/************************************************/
+/* Symtom Indicator Icons */
+.indicator-icon {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 36px;
+}
+
+/* show negative indicators in red */
+.negative-indicator-icon {
+	color: red;
+}
+
+/* show positive indicators in green */
+.positive-indicator-icon {
+	color: #077204;
+}
+
+#breaths-per-minute-cell {
+	text-align: center;
+	font-size: 36px;
+  	font-weight: bold;
+}
+
+
+/************************************************/
+/* 		'ASK-LOOK' SYMPTOM TABLE 				*/
+/************************************************/
 
 
 /* -------------------------------------------------- */
