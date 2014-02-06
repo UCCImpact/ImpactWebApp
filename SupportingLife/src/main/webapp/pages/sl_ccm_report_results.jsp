@@ -52,6 +52,30 @@
 						<td>${patientVisit.patient.nationalHealthId}</td>
 						<td>
 							${patientVisit.visitDate}
+							
+							<!-- ask-look (part 1) symptoms associated with patient visit -->
+							<input type="hidden" name="child-problems-symptom" id="child-problems-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.problem}"/>
+							<input type="hidden" name="cough-symptom" id="cough-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.cough}"/>
+							<input type="hidden" name="cough-duration-symptom" id="cough-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.coughDuration}"/>
+							<input type="hidden" name="diarrhoea-symptom" id="diarrhoea-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.diarrhoea}"/>
+							<input type="hidden" name="diarrhoea-duration-symptom" id="diarrhoea-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.diarrhoeaDuration}"/>
+							<input type="hidden" name="blood-in-stool-symptom" id="blood-in-stool-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.bloodInStool}"/>
+							<input type="hidden" name="fever-symptom" id="fever-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.fever}"/>
+							<input type="hidden" name="fever-duration-symptom" id="fever-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.feverDuration}"/>							
+							<input type="hidden" name="convulsions-symptom" id="convulsions-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.convulsions}"/>
+
+							<!-- ask-look (part 2) symptoms associated with patient visit -->
+							<input type="hidden" name="difficulty-drinking-symptom" id="difficulty-drinking-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.difficultyDrinkingOrFeeding}"/>
+							<input type="hidden" name="not-able-to-drink-symptom" id="not-able-to-drink-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.unableToDrinkOrFeed}"/>
+							<input type="hidden" name="vomiting-symptom" id="vomiting-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.vomiting}"/>
+							<input type="hidden" name="vomits-everything-symptom" id="vomits-everything-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.vomitsEverything}"/>
+							<input type="hidden" name="red-eye-symptom" id="red-eye-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.redEye}"/>
+							<input type="hidden" name="red-eye-duration-symptom" id="red-eye-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.redEyeDuration}"/>
+							<input type="hidden" name="difficulty-seeing-symptom" id="difficulty-seeing-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.difficultySeeing}"/>
+							<input type="hidden" name="difficulty-seeing-duration-symptom" id="difficulty-seeing-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.difficultySeeingDuration}"/>
+							<input type="hidden" name="other-problems-symptom" id="other-problems-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.otherProblems}"/>
+																				
+							<!-- look symptoms associated with patient visit -->
 							<input type="hidden" name="chest-indrawing-symptom" id="chest-indrawing-symptom" value="${patientVisit.ccmPatientLookSymptoms.chestIndrawing}"/>
 							<input type="hidden" name="breaths-per-minute-symptom" id="breaths-per-minute-symptom" value="${patientVisit.ccmPatientLookSymptoms.breathsPerMinute}"/>
 							<input type="hidden" name="sleepy-unconscious-symptom" id="sleepy-unconscious-symptom" value="${patientVisit.ccmPatientLookSymptoms.sleepyUnconscious}"/>
@@ -64,6 +88,108 @@
 			</tbody>
 		</table>
 	</div> <!-- end 'patient-visit-list' -->
+
+	<!-- 'ask-look' (part 1) symptom list -->
+	<div id="ask-look-symptom-list-one" class="col-lg-12 sl-table-container">
+		<h4>'ASK-LOOK' SYMPTOMS (Part 1)</h4>
+		<table id="ask-look-symptom-table-one" class="table-hover sl-table display">
+			<thead>
+				<tr>
+					<th>CHILD'S PROBLEMS</th>
+					<th>COUGH</th>
+					<th>COUGH DURATION</th>
+					<th>DIARRHOEA</th>
+					<th>DIARRHOEA DURATION</th>
+					<th>BLOOD IN STOOL</th>
+					<th>FEVER</th>
+					<th>FEVER DURATION</th>
+					<th>CONVULSIONS</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="child-problems-cell">
+						<i class="indicator-icon"></i>
+					</td>
+					<td id="cough-cell">
+						<i class="indicator-icon"></i>
+					</td>
+					<td id="cough-duration-cell">
+						&nbsp;
+					</td>
+					<td id="diarrhoea-cell">
+						<i class="indicator-icon"></i>
+					</td>
+					<td id="diarrhoea-duration-cell">
+						&nbsp;
+					</td>
+					<td id="blood-in-stool-cell">
+						<i class="indicator-icon"></i>
+					</td>
+					<td id="fever-cell">
+						<i class="indicator-icon"></i>
+					</td>
+					<td id="fever-duration-cell">
+						&nbsp;
+					</td>
+					<td id="convulsions-cell">
+						<i class="indicator-icon"></i>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div> <!-- end 'ask-look-symptom-list-one' -->
+	
+	<!-- 'ask-look' (part 2) symptom list -->
+	<div id="ask-look-symptom-list-two" class="col-lg-12 sl-table-container">
+		<h4>'ASK-LOOK' SYMPTOMS (Part 2)</h4>
+		<table id="ask-look-symptom-table-two" class="table-hover sl-table display">
+			<thead>
+				<tr>
+					<th>DIFFICULTY DRINKING OR FEEDING</th>
+					<th>NOT ABLE TO DRINK OR FEED</th>
+					<th>VOMITING</th>
+					<th>VOMITS EVERYTHING</th>
+					<th>RED EYE</th>
+					<th>RED EYE DURATION</th>
+					<th>DIFFICULTY IN SEEING</th>
+					<th>DIFFICULTY IN SEEING DURATION</th>
+					<th>OTHER PROBLEMS</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="difficulty-drinking-cell">
+						<i class="indicator-icon"></i>
+					</td>
+					<td id="not-able-to-drink-cell">
+						<i class="indicator-icon"></i>
+					</td>
+					<td id="vomiting-cell">
+						<i class="indicator-icon"></i>
+					</td>
+					<td id="vomits-everything-cell">
+						<i class="indicator-icon"></i>
+					</td>
+					<td id="red-eye-cell">
+						<i class="indicator-icon"></i>
+					</td>
+					<td id="red-eye-duration-cell">
+						&nbsp;
+					</td>
+					<td id="difficulty-seeing-cell">
+						<i class="indicator-icon"></i>
+					</td>
+					<td id="difficulty-seeing-duration-cell">
+						&nbsp;
+					</td>
+					<td id="other-problems-cell">
+						<i class="indicator-icon"></i>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div> <!-- end 'ask-look-symptom-list-two' -->
 
 	<!-- look symptom list -->
 	<div id="look-symptom-list" class="col-lg-12 sl-table-container">
@@ -85,7 +211,7 @@
 						<i class="indicator-icon"></i>
 					</td>
 					<td id="breaths-per-minute-cell">
-						<i class="indicator-icon"></i>
+						&nbsp;
 					</td>
 					<td id="sleepy-unconscious-cell">
 						<i class="indicator-icon"></i>

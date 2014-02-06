@@ -63,7 +63,7 @@
 /*	  font colour when selected						  */
 /* -------------------------------------------------- */
 
-#patient-visit-list {
+.sl-table-container {
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
@@ -98,9 +98,8 @@
 /************************************************/
 /* Symtom Indicator Icons */
 .indicator-icon {
-	padding-top: 5px;
-	padding-bottom: 5px;
-	font-size: 36px;
+	font-size: 30px;
+	padding-bottom: 2px;
 }
 
 /* show negative indicators in red */
@@ -113,17 +112,55 @@
 	color: #077204;
 }
 
-#breaths-per-minute-cell {
+
+/************************************************/
+/* 		'ASK-LOOK' SYMPTOM (PART 1) TABLE 		*/
+/************************************************/
+/* textual description cell */
+#child-problems-cell {
+	font-family: 'Nothing You Could Do', Arial;
+	text-align: left;
+	color: #000000;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+/* cells that will contain a number */
+#red-eye-duration-cell,
+#difficulty-seeing-duration-cell {
 	text-align: center;
-	font-size: 36px;
-  	font-weight: bold;
+	font-size: 30px;
+	padding-bottom: 2px;
+  	font-weight: bold;	
 }
 
 
 /************************************************/
-/* 		'ASK-LOOK' SYMPTOM TABLE 				*/
+/* 		'ASK-LOOK' SYMPTOM (PART 2) TABLE 		*/
 /************************************************/
 
+/* cell that will contain a number */
+#breaths-per-minute-cell {
+	text-align: center;
+	font-size: 30px;
+	padding-bottom: 2px;
+  	font-weight: bold;	
+}
+
+
+/************************************************/
+/* 		'LOOK' SYMPTOM TABLE 					*/
+/************************************************/
+
+/* cells that will contain a number */
+#cough-duration-cell,
+#diarrhoea-duration-cell,
+#fever-duration-cell {
+	text-align: center;
+	font-size: 30px;
+	padding-bottom: 2px;
+  	font-weight: bold;	
+}
 
 /* -------------------------------------------------- */
 /* RESPONSIVE CSS */
