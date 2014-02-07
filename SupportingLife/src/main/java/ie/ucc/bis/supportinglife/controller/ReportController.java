@@ -3,11 +3,13 @@ package ie.ucc.bis.supportinglife.controller;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.controller.interfaces.ReportControllerInf;
 import ie.ucc.bis.supportinglife.report.form.CcmCustomForm;
+import ie.ucc.bis.supportinglife.report.form.Tag;
 import ie.ucc.bis.supportinglife.service.SupportingLifeService;
 import ie.ucc.bis.supportinglife.service.SupportingLifeServiceInf;
 import ie.ucc.bis.supportinglife.service.helper.SupportingLifeRefDataHelperInf;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +24,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/reports")
@@ -67,6 +71,28 @@ public class ReportController implements ReportControllerInf {
 		webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
 	}
 
+	
+	/**
+	 * XXXXXX
+	 * 
+	 * @param model
+	 * 
+	 * @return String
+	 */
+	@RequestMapping(value="/getNationalHealthIdTags", method=RequestMethod.GET)
+	public @ResponseBody List<Tag> getNationalHealthIdTags(@RequestParam String tagName) {
+		
+		log.info("GET National Health ID Tags");
+		
+		List<Tag> resultTags = new ArrayList<Tag>();
+	
+		resultTags.add(new Tag(1, "123456"));
+		resultTags.add(new Tag(2, "ABCDEF"));
+		resultTags.add(new Tag(3, "AB12EF"));
+		resultTags.add(new Tag(4, "F34780"));
+				
+		return resultTags;		
+	}
 	
 	/**
 	 * Returns the selection criteria for the CCM Custom Report
