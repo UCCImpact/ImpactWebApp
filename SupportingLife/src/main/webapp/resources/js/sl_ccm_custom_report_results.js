@@ -61,34 +61,37 @@ function displaySymptomText(symptomCell, textToDisplay) {
 /**	Desc: Responsible for rendering postive or negative **/
 /**		  icons for the Look symptoms 					**/
 /**														**/
+/** Param: patientVisitRow 	(row selected by user)		**/
+/**														**/
 /*********************************************************/
-function renderLookSymptoms() {
+function renderLookSymptoms(patientVisitRow) {
 	// obtain symptoms associated with patient visit
 	// chest indrawing symptom
-	var symptom = $('#chest-indrawing-symptom').val();
+	var symptom = $(patientVisitRow).children().find('input.chest-indrawing-symptom').val();
 	var tableCellElement = $('#chest-indrawing-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 	
 	// breaths per minute symptom
-	displaySymptomText($('#breaths-per-minute-cell'), $('#breaths-per-minute-symptom').val());
+	symptom = $(patientVisitRow).children().find('input.breaths-per-minute-symptom').val();
+	displaySymptomText($('#breaths-per-minute-cell'), symptom);
 
 	// sleepy unconscious symptom
-	symptom = $('#sleepy-unconscious-symptom').val();
+	symptom = $(patientVisitRow).children().find('input.sleepy-unconscious-symptom').val();
 	tableCellElement = $('#sleepy-unconscious-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 	
 	// palmar pallor symptom
-	symptom = $('#palmar-pallor-symptom').val();
+	symptom = $(patientVisitRow).children().find('input.palmar-pallor-symptom').val();
 	tableCellElement = $('#palmar-pallor-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 
 	// muac tape colour symptom
-	symptom = $('#muac-tape-colour-symptom').val();
+	symptom = $(patientVisitRow).children().find('input.muac-tape-colour-symptom').val();
 	tableCellElement = $('#muac-tape-colour-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 
 	// swelling feet symptom
-	symptom = $('#swelling-feet-symptom').val();
+	symptom = $(patientVisitRow).children().find('input.swelling-feet-symptom').val();
 	tableCellElement = $('#swelling-feet-cell');
 	displaySymptomIcon(tableCellElement, symptom);	
 }
@@ -99,43 +102,49 @@ function renderLookSymptoms() {
 /**	Desc: Responsible for rendering postive or negative **/
 /**		  icons for the 'Ask Look' (Part 1) symptoms 	**/
 /**														**/
+/** Param: patientVisitRow 	(row selected by user)		**/
+/**														**/
 /*********************************************************/
-function renderAskLookGroupOneSymptoms() {
+function renderAskLookGroupOneSymptoms(patientVisitRow) {
 	// obtain symptoms associated with patient visit
 	// child problems symptom
-	displaySymptomText($('#child-problems-cell'), $('#child-problems-symptom').val());
+	var symptom = $(patientVisitRow).children().find('input.child-problems-symptom').val();
+	displaySymptomText($('#child-problems-cell'), symptom);
 	
 	// cough symptom
-	var symptom = $('#cough-symptom').val();
+	symptom = $(patientVisitRow).children().find('input.cough-symptom').val();
 	var tableCellElement = $('#cough-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 
 	// cough duration symptom
-	displaySymptomText($('#cough-duration-cell'), $('#cough-duration-symptom').val());
+	symptom = $(patientVisitRow).children().find('input.cough-duration-symptom').val();
+	displaySymptomText($('#cough-duration-cell'), symptom);
 
 	// diarrhoea symptom
-	symptom = $('#diarrhoea-symptom').val();
+	symptom = $(patientVisitRow).children().find('input.diarrhoea-symptom').val();
 	tableCellElement = $('#diarrhoea-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 	
 	// diarrhoea duration symptom
-	displaySymptomText($('#diarrhoea-duration-cell'), $('#diarrhoea-duration-symptom').val());
+	symptom = $(patientVisitRow).children().find('input.diarrhoea-duration-symptom').val();
+	displaySymptomText($('#diarrhoea-duration-cell'), symptom);
 	
 	// blood in stool symptom
-	symptom = $('#blood-in-stool-symptom').val();
+	symptom = $(patientVisitRow).children().find('input.blood-in-stool-symptom').val();
 	tableCellElement = $('#blood-in-stool-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 
 	// fever symptom
-	symptom = $('#fever-symptom').val();
+	symptom = $(patientVisitRow).children().find('input.fever-symptom').val();
 	tableCellElement = $('#fever-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 	
 	// fever duration symptom
-	displaySymptomText($('#fever-duration-cell'), $('#fever-duration-symptom').val());
+	symptom = $(patientVisitRow).children().find('input.fever-duration-symptom').val();
+	displaySymptomText($('#fever-duration-cell'), symptom);
 
 	// convulsions symptom
-	symptom = $('#convulsions-symptom').val();
+	symptom = $(patientVisitRow).children().find('input.convulsions-symptom').val();
 	tableCellElement = $('#convulsions-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 }
@@ -146,47 +155,53 @@ function renderAskLookGroupOneSymptoms() {
 /**	Desc: Responsible for rendering postive or negative **/
 /**		  icons for the 'Ask Look' (Part 2) symptoms 	**/
 /**														**/
+/** Param: patientVisitRow 	(row selected by user)		**/
+/**														**/
 /*********************************************************/
-function renderAskLookGroupTwoSymptoms() {
+function renderAskLookGroupTwoSymptoms(patientVisitRow) {
 	// obtain symptoms associated with patient visit
 	// difficulty drinking symptom
-	var symptom = $('#difficulty-drinking-symptom').val();
+
+	var symptom = $(patientVisitRow).children().find('input.difficulty-drinking-symptom').val();
 	var tableCellElement = $('#difficulty-drinking-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 	
 	// not able to drink symptom
-	symptom = $('#not-able-to-drink-symptom').val();
+	symptom = $(patientVisitRow).children().find('input.not-able-to-drink-symptom').val();
 	tableCellElement = $('#not-able-to-drink-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 
 	// vomiting symptom
-	var symptom = $('#vomiting-symptom').val();
-	var tableCellElement = $('#vomiting-cell');
+	symptom = $(patientVisitRow).children().find('input.vomiting-symptom').val();
+	tableCellElement = $('#vomiting-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 
 	// vomits everything symptom
-	symptom = $('#vomits-everything-symptom').val();
+	symptom = $(patientVisitRow).children().find('input.vomits-everything-symptom').val();
 	tableCellElement = $('#vomits-everything-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 	
 	// red eye symptom
-	var symptom = $('#red-eye-symptom').val();
-	var tableCellElement = $('#red-eye-cell');
+	symptom = $(patientVisitRow).children().find('input.red-eye-symptom').val();
+	tableCellElement = $('#red-eye-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 	
 	// red eye duration symptom
-	displaySymptomText($('#red-eye-duration-cell'), $('#red-eye-duration-symptom').val());
+	symptom = $(patientVisitRow).children().find('input.red-eye-duration-symptom').val();
+	displaySymptomText($('#red-eye-duration-cell'), symptom);
 
 	// difficulty seeing symptom
-	symptom = $('#difficulty-seeing-symptom').val();
+	symptom = $(patientVisitRow).children().find('input.difficulty-seeing-symptom').val();
 	tableCellElement = $('#difficulty-seeing-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 	
 	// difficulty seeing duration symptom
-	displaySymptomText($('#difficulty-seeing-duration-cell'), $('#difficulty-seeing-duration-symptom').val());
+	symptom = $(patientVisitRow).children().find('input.difficulty-seeing-duration-symptom').val();
+	displaySymptomText($('#difficulty-seeing-duration-cell'), symptom);
 
 	// other problems symptom
-	displaySymptomText($('#other-problems-cell'), $('#other-problems-symptom').val());
+	symptom = $(patientVisitRow).children().find('input.other-problems-symptom').val();
+	displaySymptomText($('#other-problems-cell'), symptom);
 }
 
 
@@ -203,27 +218,20 @@ $(document).ready(function() {
 			$(this).closest('tr').find('[type=checkbox]').prop('checked', false); /* toggle the checkbox on the row off */
 		}
 		else {
+			// need to firstly unhighlight all other rows
+			$(this).closest('tr').siblings().removeClass('row_selected');
+			// now highlight selected row
 			$(this).addClass('row_selected');
-			$(this).closest('tr').find('[type=checkbox]').prop('checked', true); /* toggle the checkbox on the row on */
+
+			/* Now we need to use this row to ensure that the:			*/
+			/*		1. 'Ask-Look (Part 1) Symptoms table is populated	*/
+			/*		2. 'Ask-Look (Part 2) Symptoms table is populated	*/
+			/*		3. 'Look' Symptoms table is populated				*/
+			renderLookSymptoms($(this));
+			renderAskLookGroupOneSymptoms($(this));
+			renderAskLookGroupTwoSymptoms($(this));		
 		}
 	});
-	
-	
-	/**************************************/
-	/**  POPULATING DEPENDENT TABLES     **/
-	/**************************************/
-	/* Add a click handler to the rows of the 'Patient Visit Table' */
-	/* such that:													*/
-	/*			1. 'Ask-Look (Part 1) Symptoms table is populated	*/
-	/*			2. 'Ask-Look (Part 2) Symptoms table is populated	*/
-	/*			3. 'Look' Symptoms table is populated				*/
-	
-	$('#patient-visit-table tbody tr').click(function(event) {	
-		renderLookSymptoms();
-		renderAskLookGroupOneSymptoms();
-		renderAskLookGroupTwoSymptoms();
-	});	
-	
 	
 	
 	/* initialise the 'Patient Visits' table */

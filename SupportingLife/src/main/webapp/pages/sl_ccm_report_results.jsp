@@ -50,38 +50,38 @@
 							<c:out value="${patientVisit.patient.childSurname}" /></td>
 						<td>${patientVisit.patient.nationalId}</td>
 						<td>${patientVisit.patient.nationalHealthId}</td>
-						<td>
+						<td class="dependantData">
 							${patientVisit.visitDate}
 							
 							<!-- ask-look (part 1) symptoms associated with patient visit -->
-							<input type="hidden" name="child-problems-symptom" id="child-problems-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.problem}"/>
-							<input type="hidden" name="cough-symptom" id="cough-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.cough}"/>
-							<input type="hidden" name="cough-duration-symptom" id="cough-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.coughDuration}"/>
-							<input type="hidden" name="diarrhoea-symptom" id="diarrhoea-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.diarrhoea}"/>
-							<input type="hidden" name="diarrhoea-duration-symptom" id="diarrhoea-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.diarrhoeaDuration}"/>
-							<input type="hidden" name="blood-in-stool-symptom" id="blood-in-stool-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.bloodInStool}"/>
-							<input type="hidden" name="fever-symptom" id="fever-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.fever}"/>
-							<input type="hidden" name="fever-duration-symptom" id="fever-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.feverDuration}"/>							
-							<input type="hidden" name="convulsions-symptom" id="convulsions-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.convulsions}"/>
+							<input type="hidden" class="child-problems-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.problem}"/>
+							<input type="hidden" class="cough-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.cough}"/>
+							<input type="hidden" class="cough-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.coughDuration}"/>
+							<input type="hidden" class="diarrhoea-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.diarrhoea}"/>
+							<input type="hidden" class="diarrhoea-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.diarrhoeaDuration}"/>
+							<input type="hidden" class="blood-in-stool-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.bloodInStool}"/>
+							<input type="hidden" class="fever-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.fever}"/>
+							<input type="hidden" class="fever-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.feverDuration}"/>							
+							<input type="hidden" class="convulsions-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.convulsions}"/>
 
 							<!-- ask-look (part 2) symptoms associated with patient visit -->
-							<input type="hidden" name="difficulty-drinking-symptom" id="difficulty-drinking-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.difficultyDrinkingOrFeeding}"/>
-							<input type="hidden" name="not-able-to-drink-symptom" id="not-able-to-drink-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.unableToDrinkOrFeed}"/>
-							<input type="hidden" name="vomiting-symptom" id="vomiting-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.vomiting}"/>
-							<input type="hidden" name="vomits-everything-symptom" id="vomits-everything-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.vomitsEverything}"/>
-							<input type="hidden" name="red-eye-symptom" id="red-eye-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.redEye}"/>
-							<input type="hidden" name="red-eye-duration-symptom" id="red-eye-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.redEyeDuration}"/>
-							<input type="hidden" name="difficulty-seeing-symptom" id="difficulty-seeing-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.difficultySeeing}"/>
-							<input type="hidden" name="difficulty-seeing-duration-symptom" id="difficulty-seeing-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.difficultySeeingDuration}"/>
-							<input type="hidden" name="other-problems-symptom" id="other-problems-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.otherProblems}"/>
+							<input type="hidden" class="difficulty-drinking-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.difficultyDrinkingOrFeeding}"/>
+							<input type="hidden" class="not-able-to-drink-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.unableToDrinkOrFeed}"/>
+							<input type="hidden" class="vomiting-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.vomiting}"/>
+							<input type="hidden" class="vomits-everything-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.vomitsEverything}"/>
+							<input type="hidden" class="red-eye-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.redEye}"/>
+							<input type="hidden" class="red-eye-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.redEyeDuration}"/>
+							<input type="hidden" class="difficulty-seeing-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.difficultySeeing}"/>
+							<input type="hidden" class="difficulty-seeing-duration-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.difficultySeeingDuration}"/>
+							<input type="hidden" class="other-problems-symptom" value="${patientVisit.ccmPatientAskLookSymptoms.otherProblems}"/>
 																				
 							<!-- look symptoms associated with patient visit -->
-							<input type="hidden" name="chest-indrawing-symptom" id="chest-indrawing-symptom" value="${patientVisit.ccmPatientLookSymptoms.chestIndrawing}"/>
-							<input type="hidden" name="breaths-per-minute-symptom" id="breaths-per-minute-symptom" value="${patientVisit.ccmPatientLookSymptoms.breathsPerMinute}"/>
-							<input type="hidden" name="sleepy-unconscious-symptom" id="sleepy-unconscious-symptom" value="${patientVisit.ccmPatientLookSymptoms.sleepyUnconscious}"/>
-							<input type="hidden" name="palmar-pallor-symptom" id="palmar-pallor-symptom" value="${patientVisit.ccmPatientLookSymptoms.palmarPallor}"/>
-							<input type="hidden" name="muac-tape-colour-symptom" id="muac-tape-colour-symptom" value="${patientVisit.ccmPatientLookSymptoms.muacTapeColour}"/>
-							<input type="hidden" name="swelling-feet-symptom" id="swelling-feet-symptom" value="${patientVisit.ccmPatientLookSymptoms.swellingBothFeet}"/>
+							<input type="hidden" class="chest-indrawing-symptom" value="${patientVisit.ccmPatientLookSymptoms.chestIndrawing}"/>
+							<input type="hidden" class="breaths-per-minute-symptom" value="${patientVisit.ccmPatientLookSymptoms.breathsPerMinute}"/>
+							<input type="hidden" class="sleepy-unconscious-symptom" value="${patientVisit.ccmPatientLookSymptoms.sleepyUnconscious}"/>
+							<input type="hidden" class="palmar-pallor-symptom" value="${patientVisit.ccmPatientLookSymptoms.palmarPallor}"/>
+							<input type="hidden" class="muac-tape-colour-symptom" value="${patientVisit.ccmPatientLookSymptoms.muacTapeColour}"/>
+							<input type="hidden" class="swelling-feet-symptom" value="${patientVisit.ccmPatientLookSymptoms.swellingBothFeet}"/>
 						</td>
 					</tr>
 				</c:forEach>
