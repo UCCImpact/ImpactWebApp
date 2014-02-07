@@ -32,6 +32,28 @@ function displaySymptomIcon(tableCellElement, symptomCondition) {
 	}
 }
 
+/*********************************************************/
+/**	Function: displaySymptomText						**/
+/**														**/
+/**	Desc: Responsible for showing the textual output    **/
+/**		  related to a patient symptom in either the    **/
+/**		  the 'look' or the 'ask + look' symptom tables **/
+/**														**/
+/** Param: symptomCell									**/
+/** 	   textToDisplay								**/
+/**														**/
+/*********************************************************/
+function displaySymptomText(symptomCell, textToDisplay) {
+	
+	if (textToDisplay === '') {
+		$(symptomCell).html('&nbsp;');
+	}
+	else {
+		$(symptomCell).text(textToDisplay);
+	}
+}
+
+
 
 /*********************************************************/
 /**	Function: renderLookSymptoms						**/
@@ -48,8 +70,7 @@ function renderLookSymptoms() {
 	displaySymptomIcon(tableCellElement, symptom);
 	
 	// breaths per minute symptom
-	symptom = $('#breaths-per-minute-symptom').val();
-	$('#breaths-per-minute-cell').text(symptom);
+	displaySymptomText($('#breaths-per-minute-cell'), $('#breaths-per-minute-symptom').val());
 
 	// sleepy unconscious symptom
 	symptom = $('#sleepy-unconscious-symptom').val();
@@ -82,17 +103,15 @@ function renderLookSymptoms() {
 function renderAskLookGroupOneSymptoms() {
 	// obtain symptoms associated with patient visit
 	// child problems symptom
-	var symptom = $('#child-problems-symptom').val();
-	$('#child-problems-cell').text(symptom);
+	displaySymptomText($('#child-problems-cell'), $('#child-problems-symptom').val());
 	
 	// cough symptom
-	symptom = $('#cough-symptom').val();
+	var symptom = $('#cough-symptom').val();
 	var tableCellElement = $('#cough-cell');
 	displaySymptomIcon(tableCellElement, symptom);
 
 	// cough duration symptom
-	var symptom = $('#cough-duration-symptom').val();
-	$('#cough-duration-cell').text(symptom);;
+	displaySymptomText($('#cough-duration-cell'), $('#cough-duration-symptom').val());
 
 	// diarrhoea symptom
 	symptom = $('#diarrhoea-symptom').val();
@@ -100,8 +119,7 @@ function renderAskLookGroupOneSymptoms() {
 	displaySymptomIcon(tableCellElement, symptom);
 	
 	// diarrhoea duration symptom
-	var symptom = $('#diarrhoea-duration-symptom').val();
-	$('#diarrhoea-duration-cell').text(symptom);
+	displaySymptomText($('#diarrhoea-duration-cell'), $('#diarrhoea-duration-symptom').val());
 	
 	// blood in stool symptom
 	symptom = $('#blood-in-stool-symptom').val();
@@ -114,8 +132,7 @@ function renderAskLookGroupOneSymptoms() {
 	displaySymptomIcon(tableCellElement, symptom);
 	
 	// fever duration symptom
-	var symptom = $('#fever-duration-symptom').val();
-	('#fever-duration-cell').text(symptom);
+	displaySymptomText($('#fever-duration-cell'), $('#fever-duration-symptom').val());
 
 	// convulsions symptom
 	symptom = $('#convulsions-symptom').val();
@@ -158,8 +175,7 @@ function renderAskLookGroupTwoSymptoms() {
 	displaySymptomIcon(tableCellElement, symptom);
 	
 	// red eye duration symptom
-	symptom = $('#red-eye-duration-symptom').val();
-	$('#red-eye-duration-cell').text(symptom);
+	displaySymptomText($('#red-eye-duration-cell'), $('#red-eye-duration-symptom').val());
 
 	// difficulty seeing symptom
 	symptom = $('#difficulty-seeing-symptom').val();
@@ -167,12 +183,10 @@ function renderAskLookGroupTwoSymptoms() {
 	displaySymptomIcon(tableCellElement, symptom);
 	
 	// difficulty seeing duration symptom
-	var symptom = $('#difficulty-seeing-duration-symptom').val();
-	$('#difficulty-seeing-duration-cell').text(symptom);
+	displaySymptomText($('#difficulty-seeing-duration-cell'), $('#difficulty-seeing-duration-symptom').val());
 
 	// other problems symptom
-	symptom = $('#other-problems-symptom').val();
-	$('#other-problems-cell').text(symptom);
+	displaySymptomText($('#other-problems-cell'), $('#other-problems-symptom').val());
 }
 
 

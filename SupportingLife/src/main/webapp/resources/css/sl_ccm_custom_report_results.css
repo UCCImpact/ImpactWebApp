@@ -120,10 +120,15 @@
 #child-problems-cell {
 	font-family: 'Nothing You Could Do', Arial;
 	text-align: left;
+	font-weight: bold;
 	color: #000000;
 	font-size: 12px;
 	line-height: 14px;
 }
+
+/************************************************/
+/* 		'ASK-LOOK' SYMPTOM (PART 2) TABLE 		*/
+/************************************************/
 
 /* cells that will contain a number */
 #red-eye-duration-cell,
@@ -133,11 +138,6 @@
 	padding-bottom: 2px;
   	font-weight: bold;	
 }
-
-
-/************************************************/
-/* 		'ASK-LOOK' SYMPTOM (PART 2) TABLE 		*/
-/************************************************/
 
 /* cell that will contain a number */
 #breaths-per-minute-cell {

@@ -115,13 +115,11 @@
 						<i class="indicator-icon"></i>
 					</td>
 					<td id="cough-duration-cell">
-						&nbsp;
 					</td>
 					<td id="diarrhoea-cell">
 						<i class="indicator-icon"></i>
 					</td>
 					<td id="diarrhoea-duration-cell">
-						&nbsp;
 					</td>
 					<td id="blood-in-stool-cell">
 						<i class="indicator-icon"></i>
@@ -130,7 +128,6 @@
 						<i class="indicator-icon"></i>
 					</td>
 					<td id="fever-duration-cell">
-						&nbsp;
 					</td>
 					<td id="convulsions-cell">
 						<i class="indicator-icon"></i>
@@ -175,13 +172,11 @@
 						<i class="indicator-icon"></i>
 					</td>
 					<td id="red-eye-duration-cell">
-						&nbsp;
 					</td>
 					<td id="difficulty-seeing-cell">
 						<i class="indicator-icon"></i>
 					</td>
 					<td id="difficulty-seeing-duration-cell">
-						&nbsp;
 					</td>
 					<td id="other-problems-cell">
 						<i class="indicator-icon"></i>
@@ -211,7 +206,6 @@
 						<i class="indicator-icon"></i>
 					</td>
 					<td id="breaths-per-minute-cell">
-						&nbsp;
 					</td>
 					<td id="sleepy-unconscious-cell">
 						<i class="indicator-icon"></i>
@@ -229,10 +223,6 @@
 			</tbody>
 		</table>
 	</div> <!-- end 'look-symptom-list' -->
-
-
-
-
 
 
 </div> <!--  END: report-ccm-container -->
