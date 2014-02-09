@@ -46,7 +46,7 @@ function displaySymptomIcon(tableCellElement, symptomCondition) {
 function displaySymptomText(symptomCell, textToDisplay) {
 	
 	if (textToDisplay === '') {
-		$(symptomCell).html('&nbsp;');
+		$(symptomCell).html('-');
 	}
 	else {
 		$(symptomCell).text(textToDisplay);

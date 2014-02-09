@@ -83,6 +83,10 @@ $(document).ready(function () {
 				required: false,
 				lettersAndDigitsRegex: true
 			},
+			"nationalHealthId": {
+				required: false,
+				lettersAndDigitsRegex: true
+			},
 			"hsaUserId": {
 				required: false,
 				lettersAndDigitsRegex: true,
@@ -97,7 +101,9 @@ $(document).ready(function () {
 			"nationalId": {
 				lettersAndDigitsRegex: "National ID is composed of letters and numbers only"
 			},
-
+			"nationalHealthId": {
+				lettersAndDigitsRegex: "National Health ID is composed of letters and numbers only"
+			},
 			"hsaUserId": {
 				minlength: "HSA User ID is 8 characters",
 				lettersAndDigitsRegex: "HSA User ID is composed of letters and numbers only"
@@ -156,23 +162,37 @@ $(document).ready(function() {
 	$('.report-note-title').click(function() {
 		$(this).find('i').toggleClass('fa-plus-square fa-minus-square');
     });
-	
-	
-	$('#nationalHealthId').autocomplete({
-		serviceUrl: '${pageContext.request.contextPath}/reports/getNationalHealthIdTags',
-		paramName: "tagName",
-		delimiter: ",",
-		transformResult: function(response) {
+});
 
-			return {      	
-				//must convert json to javascript object before process
-				suggestions: $.map($.parseJSON(response), function(item) {
 
-					return { value: item.tagName, data: item.id };
-				})
-
-			};
-		}
-	});
-
+/* Patient Identifier Lookups (Using AJAX) */
+$(document).ready(function() { 
+    $('#nationalHealthId').autocomplete({
+    	source : function(request, response) {
+    		$.ajax( {
+    			url : '../reports/getFilteredNationalHealthIds',
+    			datatype : 'json',
+    			data : {term : request.term},
+    			success : function(data) {
+    				response($.map(data.nationalHealthIds, function(item) {
+    					return {
+    						label : item,
+    						value : item
+    					}
+    				}));
+    			}
+    		});
+    	},
+    	minLength : 1,
+    	focus: function (event, ui) {
+    		$(event.target).val(ui.item.label);
+    		return false;
+    	},
+    	open : function() {
+    		$(this).removeClass('ui-corner-all').addClass('ui-corner-top');
+    	},
+    	close : function() {
+    		$(this).removeClass('ui-corner-top').addClass('ui-corner-all');
+    	}
+    });
 });

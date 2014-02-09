@@ -25,6 +25,7 @@ public interface SupportingLifeServiceInf {
 	public CcmPatient getPatientById(long id);
 	public List<CcmPatient> getAllPatients();
 	public List<CcmPatient> getAllPatientsByFirstName(String firstName);
+	public List<CcmPatient> getAllPatientsByNationalHealthIdFilter(String nationalHealthIdFilter);
 	
 	/*******************************************************************************/
 	/*********************************Patient Visits********************************/
@@ -77,4 +78,5 @@ public interface SupportingLifeServiceInf {
 	/*******************************Patient Treatments******************************/
 	/*******************************************************************************/	
 	public List<CcmPatientTreatment> getPatientTreatmentsByVisit(CcmPatientVisit ccmPatientVisit);
+
 }

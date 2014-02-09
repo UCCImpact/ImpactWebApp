@@ -35,9 +35,9 @@
 			<thead>
 				<tr>
 					<th>PATIENT ID</th>
+					<th>PATIENT NAME</th>
 					<th>NATIONAL ID</th>
 					<th>NATIONAL HEALTH ID</th>
-					<th>PATIENT NAME</th>
 					<th>PATIENT VISIT DATE</th>
 				</tr>
 			</thead>

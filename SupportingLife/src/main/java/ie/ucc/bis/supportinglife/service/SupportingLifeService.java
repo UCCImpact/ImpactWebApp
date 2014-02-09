@@ -50,6 +50,12 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	}
 	
 	@Override
+	public List<CcmPatient> getAllPatientsByNationalHealthIdFilter(String nationalHealthIdFilter) {
+		CcmPatientDao patientDao = (CcmPatientDao) getDaoBeans().get("CcmPatientDao");
+		return patientDao.getAllPatientsByNationalHealthIdFilter(nationalHealthIdFilter);
+	}
+	
+	@Override
 	public void addPatient(CcmPatient patient) {
 		CcmPatientDao patientDao = (CcmPatientDao) getDaoBeans().get("CcmPatientDao");
 		patientDao.addPatient(patient);

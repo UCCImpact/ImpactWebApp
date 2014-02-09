@@ -13,7 +13,7 @@
 	<%--			  2. BOOTSTRAP JS FILES  			 										 --%>
 	
 	<%-- jQuery Source file --%>
-	<script type="text/javascript" src=<c:url value="/js/library/jquery-1.10.2.min.js"/> charset="utf-8"></script>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery-1.10.2.js"/> charset="utf-8"></script>
 
 	<%--  JQuery Datatables --%>
 	<script type="text/javascript" src=<c:url value="/js/library/jquery.dataTables.js"/>></script>

@@ -98,8 +98,9 @@
 /************************************************/
 /* Symtom Indicator Icons */
 .indicator-icon {
-	font-size: 30px;
 	padding-bottom: 2px;
+    text-shadow: 2px 2px 2px #ccc;
+    font-size: 2.5em;
 }
 
 /* show negative indicators in red */

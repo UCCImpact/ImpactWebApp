@@ -1,9 +1,9 @@
 package ie.ucc.bis.supportinglife.controller;
 
+import ie.ucc.bis.supportinglife.ccm.domain.CcmPatient;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.controller.interfaces.ReportControllerInf;
 import ie.ucc.bis.supportinglife.report.form.CcmCustomForm;
-import ie.ucc.bis.supportinglife.report.form.Tag;
 import ie.ucc.bis.supportinglife.service.SupportingLifeService;
 import ie.ucc.bis.supportinglife.service.SupportingLifeServiceInf;
 import ie.ucc.bis.supportinglife.service.helper.SupportingLifeRefDataHelperInf;
@@ -11,7 +11,9 @@ import ie.ucc.bis.supportinglife.service.helper.SupportingLifeRefDataHelperInf;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,25 +75,28 @@ public class ReportController implements ReportControllerInf {
 
 	
 	/**
-	 * XXXXXX
+	 * Returns National Health Id's filtered according to the user's search term
 	 * 
 	 * @param model
 	 * 
 	 * @return String
 	 */
-	@RequestMapping(value="/getNationalHealthIdTags", method=RequestMethod.GET)
-	public @ResponseBody List<Tag> getNationalHealthIdTags(@RequestParam String tagName) {
+	@RequestMapping(value="/getFilteredNationalHealthIds", method=RequestMethod.GET)
+	@ResponseBody
+	public Map<String, List<String>> filterNationalHealthIds(@RequestParam String term) {		
+		log.info("GET National Health IDs");
+
+		Map<String, List<String>> results = new HashMap<String, List<String>>();
+		List<CcmPatient> patients = supportingLifeService.getAllPatientsByNationalHealthIdFilter(term);
+		List<String> nationalHealthIds = new ArrayList<String>();
 		
-		log.info("GET National Health ID Tags");
-		
-		List<Tag> resultTags = new ArrayList<Tag>();
+		for (CcmPatient patient : patients) {
+			nationalHealthIds.add(patient.getNationalHealthId());
+		}
 	
-		resultTags.add(new Tag(1, "123456"));
-		resultTags.add(new Tag(2, "ABCDEF"));
-		resultTags.add(new Tag(3, "AB12EF"));
-		resultTags.add(new Tag(4, "F34780"));
-				
-		return resultTags;		
+		results.put("nationalHealthIds", nationalHealthIds);
+		
+		return results;		
 	}
 	
 	/**
