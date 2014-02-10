@@ -6,13 +6,12 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-@RequestMapping("/greeting")
+@RequestMapping("/welcome")
 public class BaseController {
 	
 	@Autowired
@@ -20,22 +19,10 @@ public class BaseController {
 	
 	Logger log = Logger.getLogger(BaseController.class); 
 	
-	@RequestMapping("/welcome")
+	@RequestMapping(method = RequestMethod.GET, headers="Accept=html/text")
 	public String welcome(ModelMap model) {
-		model.addAttribute("message", "Supporting LIFE - Welcome");
-		
+	
 		// Spring uses InternalResourceViewResolver and returns back welcome.jsp
 		return"sl_welcome";
 	}
-	
-	
-	@RequestMapping(value="/{name}", method = RequestMethod.GET)
-	public String welcomeName(@PathVariable String name, ModelMap model) {
-		log.info("GET API called for name : " + name);
-		
-		model.addAttribute("message", "Supporting LIFE - Welcome " + name);
-
-		// Spring uses InternalResourceViewResolver and returns back welcome.jsp
-		return"sl_welcome";		
-	}	
 }
