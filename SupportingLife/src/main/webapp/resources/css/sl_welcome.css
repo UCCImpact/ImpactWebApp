@@ -71,27 +71,11 @@
   padding-right: 15px;
 }
 
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.marketing h2 {
-  font-weight: normal;
-}
-.marketing .col-lg-4 p {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-/* -------------------------------------------------- */
-/* MARKETING CONTENT */
-/* -------------------------------------------------- */
-
-/* Pad the edges of the mobile views a bit */
-.marketing {
-  padding-left: 15px;
-  padding-right: 15px;
+.marketing h3 {
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
 }
 
 /* Center align the text within the three columns below the carousel */
@@ -99,12 +83,11 @@
   text-align: center;
   margin-bottom: 20px;
 }
-.marketing h2 {
-  font-weight: normal;
-}
+
 .marketing .col-lg-4 p {
   margin-left: 10px;
   margin-right: 10px;
+  font-size: 14px;
 }
 
 /* -------------------------------------------------- */
@@ -119,18 +102,23 @@
   letter-spacing: -1px;
 }
 
-/* -------------------------------------------------- */
-/* Create modifier classes to facilitate manipulation 
-   of glyphicon size */
-/* -------------------------------------------------- */
-.glyphicon {
-    font-size: 30px; 
+.featurette h1 {
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
 }
-.glyphicon-2x{
-    font-size: 60px; 
+
+.featurette h3 {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
 }
-.glyphicon-5x{
-    font-size: 150px; 
+
+.featurette p {
+  font-size: 14px;
+  text-align: justify;
 }
 
 /* -------------------------------------------------- */
@@ -156,6 +144,18 @@
 /* healthcare icon */
 #healthcare-icon {
 	font-size: 150px;
+}
+
+/* github icon */
+#github-icon {
+	padding-top: 50px;
+	text-align: center;
+	font-size: 250px;
+	color: #777;
+}
+
+#github-icon:hover {
+	color:  #077204;
 }
 
  -------------------------------------------------- */

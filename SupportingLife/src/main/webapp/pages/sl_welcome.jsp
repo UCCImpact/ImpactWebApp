@@ -74,20 +74,20 @@
 		<div class="col-lg-4">
 			<i id="medic-icon" class="fa fa-user-md"></i>
 			<h3>Enhance Productivity</h3>
-			<p>Improve productivity of medical professionals through reducing the administrative
+			<p class="lead">Improve productivity of medical professionals through reducing the administrative
 			   overhead of performing patient assessments.</p>
 		</div>
 		<div class="col-lg-4">
 			<i id="healthcare-icon" class="fa fa-plus-square"></i>
 			<h3>Improve Diagnosis</h3>
-			<p>Enhance the accuracy of diagnoses and health outcomes by utilising automated, rigorous 
+			<p class="lead">Enhance the accuracy of diagnoses and health outcomes by utilising automated, rigorous 
 			   and robust decision support systems.
 			</p>
 		</div>
 		<div class="col-lg-4">
 			<i id="globe-icon" class="fa fa-globe"></i>
 			<h3>Increase Care Coordination</h3>
-			<p>Decrease the fragmentation of care by integrating and organising patient health records
+			<p class="lead">Decrease the fragmentation of care by integrating and organising patient health records
 			   and providing immediate distribution to authorised care providers.
 			</p>
 		</div>
@@ -99,18 +99,32 @@
 
 	<div class="row featurette">
 		<div class="col-md-7">
-			<h2 class="featurette-heading">
-				First featurette heading. <span class="text-muted">It'll blow
-					your mind.</span>
-			</h2>
-			<p class="lead">Donec ullamcorper nulla non metus auctor
-				fringilla. Vestibulum id ligula porta felis euismod semper. Praesent
-				commodo cursus magna, vel scelerisque nisl consectetur. Fusce
-				dapibus, tellus ac cursus commodo.</p>
+			<h1 class="featurette-heading">Join the Coding Adventure!</h1>
+			<h3>
+				<span class="text-muted">Technologies we love to use</span>
+			</h3>
+			<br>
+			<p class="lead">
+			Supporting LIFE is an entirely open source project which hopes to make a substantial difference in the remotest parts of Africa.  
+			Supporting LIFE comprises of mobile and web-based architectural solutions. We develop in Java for android-based devices to create dynamic and robust 
+			decision-making tools to assist medical professionals. 
+			<br><br>
+			We use Restful web services to communicate medical records to our web servers running on Amazon EC2 instances. Our middle-tier is constructed using 
+			the Spring framework, JPA and Maven. The web-based front-end uses HTML 5.0, Bootstrap, JQuery, Ajax, and a little bit of CSS 3.0 animation thrown in. 
+			<br><br>
+			We're big fans of automated testing, and especially Jenkins, to test the logical sanity of  our android and middle-tier solutions!
+			If any of the above sounds interesting, we're always excited in hearing from individuals who would like to help us out!.
+			</p>
 		</div>
 		<div class="col-md-5">
-			<img class="featurette-image img-responsive"
-				data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+			<a href="https://github.com/timothyosullivan">
+				<i id="github-icon" class="fa fa-github"></i>
+				<br>
+				<span class="text-muted">
+					Follow us on GitHub!
+				</span>
+				
+			</a>
 		</div>
 	</div>
 
@@ -130,24 +144,6 @@
 				fringilla. Vestibulum id ligula porta felis euismod semper. Praesent
 				commodo cursus magna, vel scelerisque nisl consectetur. Fusce
 				dapibus, tellus ac cursus commodo.</p>
-		</div>
-	</div>
-
-	<hr class="featurette-divider">
-
-	<div class="row featurette">
-		<div class="col-md-7">
-			<h2 class="featurette-heading">
-				And lastly, this one. <span class="text-muted">Checkmate.</span>
-			</h2>
-			<p class="lead">Donec ullamcorper nulla non metus auctor
-				fringilla. Vestibulum id ligula porta felis euismod semper. Praesent
-				commodo cursus magna, vel scelerisque nisl consectetur. Fusce
-				dapibus, tellus ac cursus commodo.</p>
-		</div>
-		<div class="col-md-5">
-			<img class="featurette-image img-responsive"
-				data-src="holder.js/500x500/auto" alt="Generic placeholder image">
 		</div>
 	</div>
 
