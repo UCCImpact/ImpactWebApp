@@ -106,13 +106,14 @@
 			<br>
 			<p class="lead">
 			Supporting LIFE is an entirely open source project which hopes to make a substantial difference in the remotest parts of Africa.  
-			Supporting LIFE comprises of mobile and web-based architectural solutions. We develop in Java for android-based devices to create dynamic and robust 
-			decision-making tools to assist medical professionals. 
+			Supporting LIFE uses mobile and web-based architectural solutions. We develop in Java for android-based devices to create dynamic and robust 
+			decision-making tools to assist medical professionals out in the field. 
 			<br><br>
-			We use Restful web services to communicate medical records to our web servers running on Amazon EC2 instances. Our middle-tier is constructed using 
-			the Spring framework, JPA and Maven. The web-based front-end uses HTML 5.0, Bootstrap, JQuery, Ajax, and a little bit of CSS 3.0 animation thrown in. 
+			We use RESTful web services to coordinate medical data flow to our web servers running on Amazon EC2 instances. Our middle-tier is constructed using 
+			the Spring framework, JPA and Maven. The web-based front-end uses HTML 5.0, Bootstrap, JQuery, Ajax, with a little bit of CSS 3.0 animation thrown in
+			for good measure. 
 			<br><br>
-			We're big fans of automated testing, and especially Jenkins, to test the logical sanity of  our android and middle-tier solutions!
+			We're big fans of automated testing, and especially Jenkins, to ensure the logical sanity of  our android and middle-tier solutions!
 			If any of the above sounds interesting, we're always excited in hearing from individuals who would like to help us out!.
 			</p>
 		</div>
@@ -137,7 +138,7 @@
 		</div>
 		<div class="col-md-7">
 			<h2 class="featurette-heading">
-				Oh yeah, it's that good. <span class="text-muted">See for
+				Knowledge Base &amp; Software Release Videos . <span class="text-muted">See for
 					yourself.</span>
 			</h2>
 			<p class="lead">Donec ullamcorper nulla non metus auctor
