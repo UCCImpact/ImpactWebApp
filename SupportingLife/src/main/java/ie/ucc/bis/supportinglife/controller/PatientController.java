@@ -1,5 +1,6 @@
 package ie.ucc.bis.supportinglife.controller;
 
+import ie.ucc.bis.supportinglife.android.domain.Patient;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatient;
 import ie.ucc.bis.supportinglife.controller.interfaces.PatientControllerInf;
 import ie.ucc.bis.supportinglife.service.SupportingLifeService;
@@ -8,14 +9,10 @@ import ie.ucc.bis.supportinglife.service.SupportingLifeServiceInf;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindException;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -101,16 +98,14 @@ public class PatientController implements PatientControllerInf {
 	 * @param response
 	 * 
 	 * @return @ResponseBody
-	 * @throws BindException 
 	 */
 	@RequestMapping(value="/add", method=RequestMethod.POST,  produces={"application/json"}, consumes={"application/json"})
 	@ResponseStatus(HttpStatus.CREATED)
-	public @ResponseBody CcmPatient addPatientForAndroid(@Valid @RequestBody CcmPatient patient, BindingResult result) throws BindException {
-		if(result.hasErrors()) {
-			throw new BindException(result);
-		}
+	public @ResponseBody Patient addPatientForAndroid(@RequestBody String childFirstName) {
 		
-		supportingLifeService.addPatient(patient);
-		return patient;
-	}	
+		return new Patient();
+		
+	//	supportingLifeService.addPatient(patient);
+	//	return patient;
+	}
 } // end of class

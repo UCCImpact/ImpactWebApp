@@ -18,5 +18,5 @@ public interface PatientControllerInf {
 	public String getAllPatientsForBrowser(ModelMap model) throws SQLException;
 	public String getAllPatientsByFirstName(@PathVariable String firstName, ModelMap model);
 	public @ResponseBody CcmPatient getPatientForAndroid(@PathVariable("id") long id);
-	public @ResponseBody CcmPatient addPatientForAndroid(@Valid @RequestBody CcmPatient patient, BindingResult result) throws BindException;
+//	public @ResponseBody CcmPatient addPatientForAndroid(@Valid @RequestBody CcmPatient patient, BindingResult result) throws BindException;
 }
