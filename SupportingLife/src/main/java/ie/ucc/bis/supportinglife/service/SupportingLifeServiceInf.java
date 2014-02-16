@@ -6,6 +6,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
+import ie.ucc.bis.supportinglife.communication.PatientAssessmentComms;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 
@@ -20,8 +21,9 @@ public interface SupportingLifeServiceInf {
 
 	/*******************************************************************************/
 	/***********************************Patients************************************/
-	/*******************************************************************************/
-	public void addPatient(CcmPatient patient);
+	/**
+	 * @return *****************************************************************************/
+	public Long addPatient(PatientAssessmentComms patientAssessment);
 	public CcmPatient getPatientById(long id);
 	public List<CcmPatient> getAllPatients();
 	public List<CcmPatient> getAllPatientsByFirstName(String firstName);

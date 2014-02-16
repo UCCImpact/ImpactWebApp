@@ -2,6 +2,7 @@ package ie.ucc.bis.supportinglife.ccm.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -142,6 +143,9 @@ public class CcmPatient implements Serializable {
 		setVillageTa(villageTa);
 		setCreatedDate(createdDate);
 		setUpdatedDate(updatedDate);
+		
+		Set<CcmPatientVisit> patientVisitList = new HashSet<CcmPatientVisit>();
+		setCcmPatientVisitList(patientVisitList);
 	}
 
 	public Long getPatientId() {

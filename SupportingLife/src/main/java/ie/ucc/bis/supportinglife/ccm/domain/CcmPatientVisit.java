@@ -90,6 +90,10 @@ public class CcmPatientVisit implements Serializable {
 
 	public CcmPatientVisit() {}
 
+	public CcmPatientVisit(Date visitDate) {
+		setVisitDate(visitDate);
+	}
+	
 	/**
 	 * Constructor
 	 * 

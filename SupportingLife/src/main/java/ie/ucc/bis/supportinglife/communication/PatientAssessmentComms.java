@@ -1,10 +1,9 @@
-package ie.ucc.bis.supportinglife.android.domain;
+package ie.ucc.bis.supportinglife.communication;
 
 import java.io.Serializable;
-import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -12,16 +11,12 @@ import java.util.List;
  * @author timothyosullivan
  */
 
-public class Patient implements Serializable {
+public class PatientAssessmentComms implements Serializable {
 	
 	/**
 	 * Generated Serial ID
 	 */
-	private static final long serialVersionUID = -2797010621438060267L;
-
-
-	
-	private int id;
+	private static final long serialVersionUID = -3143569878394681227L;
 	
 	private String hsaUserId;
 	private String nationalId;
@@ -65,75 +60,64 @@ public class Patient implements Serializable {
 	private boolean cannotTreatProblem;
 	private String cannotTreatProblemDetails;
 	
-	// Classification and Treatment Diagnostics
-	private List<Diagnostic> diagnostics;
+	// classifications
+	private Map<String, String> classifications;
 	
-	public Patient() {
-		setDiagnostics(new ArrayList<Diagnostic>());
+	// treatments
+	private Map<String, String> treatments;
+	
+	public PatientAssessmentComms() {
 	}
 	
-	public Patient(Integer id, String hsaUserId, String nationalId, String nationalHealthId, 
-					String childFirstName, String childSurname, String birthDate,
+	public PatientAssessmentComms(String hsaUserId, String nationalId, String nationalHealthId, 
+					String childFirstName, String childSurname, Date birthDate,
 					String gender, String caregiverName, String relationship, String physicalAddress,
-					String villageTa, String visitDate, String chestIndrawing, Integer breathsPerMinute,
-					String sleepyUnconscious, String palmarPallor, String muacTapeColour, 
-					String swellingBothFeet, String problem, String cough, Integer coughDuration,
-					String diarrhoea, Integer diarrhoeaDuration, String bloodInStool, String fever,
-					Integer feverDuration, String convulsions, String difficultyDrinkingOrFeeding,
-					String unableToDrinkOrFeed, String vomiting, String vomitsEverything,
-					String redEye, Integer redEyeDuration, String difficultySeeing,
-					Integer difficultySeeingDuration, String cannotTreatProblem, 
+					String villageTa, Date visitDate, Boolean chestIndrawing, Integer breathsPerMinute,
+					Boolean sleepyUnconscious, Boolean palmarPallor, String muacTapeColour, 
+					Boolean swellingBothFeet, String problem, Boolean cough, Integer coughDuration,
+					Boolean diarrhoea, Integer diarrhoeaDuration, Boolean bloodInStool, Boolean fever,
+					Integer feverDuration, Boolean convulsions, Boolean difficultyDrinkingOrFeeding,
+					Boolean unableToDrinkOrFeed, Boolean vomiting, Boolean vomitsEverything,
+					Boolean redEye, Integer redEyeDuration, Boolean difficultySeeing,
+					Integer difficultySeeingDuration, Boolean cannotTreatProblem, 
 					String cannotTreatProblemDetails) {
 		
-		setId(id);
 		setHsaUserId(hsaUserId);
 		setNationalId(nationalId);
 		setNationalHealthId(nationalHealthId);
 		setChildFirstName(childFirstName);
 		setChildSurname(childSurname);
+		setBirthDate(birthDate);
 		setGender(gender);
 		setCaregiverName(caregiverName);
 		setRelationship(relationship);
 		setPhysicalAddress(physicalAddress);
 		setVillageTa(villageTa);
-		setChestIndrawing(Boolean.valueOf(chestIndrawing));
+		setVisitDate(visitDate);
+		setChestIndrawing(chestIndrawing);
 		setBreathsPerMinute(breathsPerMinute);
-		setSleepyUnconscious(Boolean.valueOf(sleepyUnconscious));
-		setPalmarPallor(Boolean.valueOf(palmarPallor));
+		setSleepyUnconscious(sleepyUnconscious);
+		setPalmarPallor(palmarPallor);
 		setMuacTapeColour(muacTapeColour);
-		setDiarrhoea(Boolean.valueOf(diarrhoea));
+		setDiarrhoea(diarrhoea);
 		setDiarrhoeaDuration(diarrhoeaDuration);
-		setBloodInStool(Boolean.valueOf(bloodInStool));
-		setFever(Boolean.valueOf(fever));
+		setBloodInStool(bloodInStool);
+		setFever(fever);
 		setFeverDuration(feverDuration);
-		setConvulsions(Boolean.valueOf(convulsions));
-		setDifficultyDrinkingOrFeeding(Boolean.valueOf(difficultyDrinkingOrFeeding));
-		setUnableToDrinkOrFeed(Boolean.valueOf(unableToDrinkOrFeed));
-		setVomiting(Boolean.valueOf(vomiting));
-		setVomitsEverything(Boolean.valueOf(vomitsEverything));
-		setRedEye(Boolean.valueOf(redEye));
+		setConvulsions(convulsions);
+		setDifficultyDrinkingOrFeeding(difficultyDrinkingOrFeeding);
+		setUnableToDrinkOrFeed(unableToDrinkOrFeed);
+		setVomiting(vomiting);
+		setVomitsEverything(vomitsEverything);
+		setRedEye(redEye);
 		setRedEyeDuration(redEyeDuration);
-		setDifficultySeeing(Boolean.valueOf(difficultySeeing));
+		setDifficultySeeing(difficultySeeing);
 		setDifficultySeeingDuration(difficultySeeingDuration);
-		setCannotTreatProblem(Boolean.valueOf(cannotTreatProblem));
+		setCannotTreatProblem(cannotTreatProblem);
 		setCannotTreatProblemDetails(cannotTreatProblemDetails);
-				
-//		try {
-//			setBirthDate(DateHandlerUtils.parseDate(birthDate));
-//			setVisitDate(DateHandlerUtils.parseDate(visitDate));
-//		} catch (ParseException e) {
-//			e.printStackTrace();
-//		}
 		
-		setDiagnostics(new ArrayList<Diagnostic>());
-	}
-	
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
+		setClassifications(new HashMap<String, String>());
+		setTreatments(new HashMap<String, String> ());
 	}
 
 	public String getHsaUserId() {
@@ -432,11 +416,19 @@ public class Patient implements Serializable {
 		this.cannotTreatProblemDetails = cannotTreatProblemDetails;
 	}
 
-	public List<Diagnostic> getDiagnostics() {
-		return diagnostics;
+	public Map<String, String> getClassifications() {
+		return classifications;
 	}
 
-	public void setDiagnostics(List<Diagnostic> diagnostics) {
-		this.diagnostics = diagnostics;
-	}	
+	public void setClassifications(Map<String, String> classifications) {
+		this.classifications = classifications;
+	}
+
+	public Map<String, String> getTreatments() {
+		return treatments;
+	}
+
+	public void setTreatments(Map<String, String> treatments) {
+		this.treatments = treatments;
+	}
 }

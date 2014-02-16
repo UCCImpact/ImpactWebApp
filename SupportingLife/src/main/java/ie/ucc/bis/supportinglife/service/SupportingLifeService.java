@@ -13,6 +13,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
+import ie.ucc.bis.supportinglife.communication.PatientAssessmentComms;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 
@@ -56,9 +57,35 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	}
 	
 	@Override
-	public void addPatient(CcmPatient patient) {
+	public Long addPatient(PatientAssessmentComms patientAssessment) {
+		
+		CcmPatient ccmPatient = new CcmPatient(patientAssessment.getChildFirstName(), patientAssessment.getChildSurname(),
+										patientAssessment.getBirthDate(), patientAssessment.getGender(),
+										patientAssessment.getCaregiverName(), patientAssessment.getRelationship(),
+										"OTHER RELATIONSHIP - REMOVE", patientAssessment.getPhysicalAddress(),
+										patientAssessment.getVillageTa(), null, null);
+		
+		CcmPatientVisit ccmPatientVisit = new CcmPatientVisit(ccmPatient, patientAssessment.getVisitDate());
+
+		ccmPatientVisit.setCcmPatientLookSymptoms(new CcmPatientLookSymptoms(ccmPatientVisit, ccmPatient, patientAssessment.isChestIndrawing(),
+							patientAssessment.getBreathsPerMinute(), patientAssessment.isSleepyUnconscious(), patientAssessment.isPalmarPallor(),
+							patientAssessment.getMuacTapeColour(), patientAssessment.isSwellingBothFeet()));
+				
+		// TODO Fix 'Other Problems' boolean - needs to be added to DB and DAO
+		ccmPatientVisit.setCcmPatientAskLookSymptoms(new CcmPatientAskLookSymptoms(ccmPatientVisit, ccmPatient, patientAssessment.getProblem(), 
+							patientAssessment.isCough(), patientAssessment.getCoughDuration(), patientAssessment.isDiarrhoea(),
+							patientAssessment.getDiarrhoeaDuration(), patientAssessment.isBloodInStool(), patientAssessment.isFever(),
+							patientAssessment.getFeverDuration(), patientAssessment.isConvulsions(), patientAssessment.isDifficultyDrinkingOrFeeding(),
+							patientAssessment.isUnableToDrinkOrFeed(), patientAssessment.isVomiting(), patientAssessment.isVomitsEverything(),
+							patientAssessment.isRedEye(), patientAssessment.getRedEyeDuration(), patientAssessment.isDifficultySeeing(),
+							patientAssessment.getDifficultySeeingDuration(), patientAssessment.getCannotTreatProblemDetails()));
+		
+		ccmPatient.getCcmPatientVisitList().add(ccmPatientVisit);
+		
+		
 		CcmPatientDao patientDao = (CcmPatientDao) getDaoBeans().get("CcmPatientDao");
-		patientDao.addPatient(patient);
+		Long slPatientId = patientDao.addPatient(ccmPatient);
+		return slPatientId;
 	}
 	
 	/*******************************************************************************/

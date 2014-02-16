@@ -1,6 +1,5 @@
 package ie.ucc.bis.supportinglife.controller;
 
-import ie.ucc.bis.supportinglife.android.domain.Patient;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatient;
 import ie.ucc.bis.supportinglife.controller.interfaces.PatientControllerInf;
 import ie.ucc.bis.supportinglife.service.SupportingLifeService;
@@ -10,15 +9,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 @RequestMapping("/patients")
@@ -90,22 +86,4 @@ public class PatientController implements PatientControllerInf {
 		return supportingLifeService.getPatientById(id);
 	}
 		
-	/**
-	 * Adds the patient record (JSON Request)
-	 * 
-	 * @param patient
-	 * @param result
-	 * @param response
-	 * 
-	 * @return @ResponseBody
-	 */
-	@RequestMapping(value="/add", method=RequestMethod.POST,  produces={"application/json"}, consumes={"application/json"})
-	@ResponseStatus(HttpStatus.CREATED)
-	public @ResponseBody Patient addPatientForAndroid(@RequestBody String childFirstName) {
-		
-		return new Patient();
-		
-	//	supportingLifeService.addPatient(patient);
-	//	return patient;
-	}
 } // end of class
