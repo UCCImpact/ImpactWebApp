@@ -124,11 +124,14 @@ public class CcmPatient implements Serializable {
 	 * @param createdDate
 	 * @param updatedDate
 	 */
-	public CcmPatient(String childFirstName, String childSurname, Date birthDate,
-					String gender, String caregiverName, String relationship, 
+	public CcmPatient(String nationalId, String nationalHealthId, String childFirstName, 
+					String childSurname, Date birthDate, String gender,
+					String caregiverName, String relationship, 
 					String physicalAddress, String villageTa,
 					Date createdDate, Date updatedDate) {
 		
+		setNationalId(nationalId);
+		setNationalHealthId(nationalHealthId);
 		setChildFirstName(childFirstName);
 		setChildSurname(childSurname);
 		setBirthDate(birthDate);

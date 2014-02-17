@@ -2,6 +2,7 @@ package ie.ucc.bis.supportinglife.ccm.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -90,19 +91,26 @@ public class CcmPatientVisit implements Serializable {
 
 	public CcmPatientVisit() {}
 
-	public CcmPatientVisit(Date visitDate) {
-		setVisitDate(visitDate);
-	}
-	
 	/**
 	 * Constructor
 	 * 
 	 * @param patient
 	 * @param visitDate
+	 * @param hsaUser
+	 * 
 	 */
-	public CcmPatientVisit(CcmPatient patient, Date visitDate) {	
+	public CcmPatientVisit(CcmPatient patient, Date visitDate, User hsaUser) {	
 		setPatient(patient);
 		setVisitDate(visitDate);
+		setUser(hsaUser);
+		
+		// initialise the classifications associated with this patient visit
+		Set<CcmPatientClassification> ccmPatientClassifications = new HashSet<CcmPatientClassification>();
+		setCcmPatientClassificationList(ccmPatientClassifications);
+		
+		// initialise the treatments associated with this patient visit
+		Set<CcmPatientTreatment> ccmPatientTreatments = new HashSet<CcmPatientTreatment>();
+		setCcmPatientTreatmentList(ccmPatientTreatments);
 	}
 
 	public Long getVisitId() {

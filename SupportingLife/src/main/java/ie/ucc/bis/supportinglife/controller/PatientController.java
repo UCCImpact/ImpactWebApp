@@ -14,7 +14,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/patients")
@@ -72,18 +71,5 @@ public class PatientController implements PatientControllerInf {
 		
 		// Spring uses InternalResourceViewResolver and returns back patients.jsp
 		return "patients";		
-	}
-		
-	/**
-	 * Returns the requested patient record (JSON Request)
-	 * 
-	 * @param id
-	 * @param model
-	 * @return
-	 */
-	@RequestMapping(value="/{id}", method=RequestMethod.GET, headers="Accept=application/json")
-	public @ResponseBody CcmPatient getPatientForAndroid(@PathVariable("id") long id) {
-		return supportingLifeService.getPatientById(id);
-	}
-		
+	}	
 } // end of class

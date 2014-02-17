@@ -24,7 +24,7 @@
 
 	<div class="animated fadeInDown">
 		<h1>
-			CCM Results <i class="header-icon fa fa-clipboard"></i>
+			CCM Records <i class="header-icon fa fa-clipboard"></i>
 		</h1>
 	</div>
 

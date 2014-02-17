@@ -41,8 +41,7 @@ public class CcmTreatment implements Serializable {
 	 * @param classificationId
 	 * @param name
 	 */
-	public CcmTreatment(Long treatmentId, String treatmentKey, String description) {
-		setTreatmentId(treatmentId);
+	public CcmTreatment(String treatmentKey, String description) {
 		setTreatmentKey(treatmentKey);
 		setDescription(description);
 	}

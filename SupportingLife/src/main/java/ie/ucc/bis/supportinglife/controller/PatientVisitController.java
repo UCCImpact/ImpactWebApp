@@ -112,7 +112,7 @@ public class PatientVisitController implements PatientVisitControllerInf {
 	@ResponseStatus(HttpStatus.CREATED)
 	public @ResponseBody Long addPatientAssessmentForAndroid(@RequestBody PatientAssessmentComms patientAssessment) {
 		
-		Long patientId = supportingLifeService.addPatient(patientAssessment);
+		Long patientId = supportingLifeService.addPatientVisit(patientAssessment);
 	
 		return patientId;
 	}

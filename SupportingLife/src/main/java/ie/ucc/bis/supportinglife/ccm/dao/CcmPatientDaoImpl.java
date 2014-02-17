@@ -22,11 +22,6 @@ public class CcmPatientDaoImpl implements CcmPatientDao {
 	
 	@PersistenceContext
 	private EntityManager entityManager;
-	
-	@Override
-	public CcmPatient getPatientById(long id) {
-		return entityManager.find(CcmPatient.class, id);
-	}
 
 	@Override
 	public Long addPatient(CcmPatient patient) {
@@ -38,6 +33,36 @@ public class CcmPatientDaoImpl implements CcmPatientDao {
 	}
 
 	@Override
+	public CcmPatient getPatientByNationalId(String nationalId) {
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+		CriteriaQuery<CcmPatient> criteriaQuery = criteriaBuilder.createQuery(CcmPatient.class);
+		Root<CcmPatient> root = criteriaQuery.from(CcmPatient.class);
+		
+		criteriaQuery.select(root)
+        	.where(criteriaBuilder.and(
+        		criteriaBuilder.equal(root.get(CcmPatient_.nationalId), nationalId)));
+		
+		CcmPatient patientResult = entityManager.createQuery(criteriaQuery).getSingleResult();
+	    
+	    return patientResult;			
+	}
+	
+	@Override
+	public CcmPatient getPatientByNationalHealthId(String nationalHealthId) {
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+		CriteriaQuery<CcmPatient> criteriaQuery = criteriaBuilder.createQuery(CcmPatient.class);
+		Root<CcmPatient> root = criteriaQuery.from(CcmPatient.class);
+		
+		criteriaQuery.select(root)
+        	.where(criteriaBuilder.and(
+        		criteriaBuilder.equal(root.get(CcmPatient_.nationalHealthId), nationalHealthId)));
+		
+		CcmPatient patientResult = entityManager.createQuery(criteriaQuery).getSingleResult();
+	    
+	    return patientResult;			
+	}
+	
+	@Override
 	public List<CcmPatient> getAllPatientsByFirstName(String childFirstName) {
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<CcmPatient> criteriaQuery = criteriaBuilder.createQuery(CcmPatient.class);
@@ -45,7 +70,7 @@ public class CcmPatientDaoImpl implements CcmPatientDao {
 		
 		criteriaQuery.select(root)
         	.where(criteriaBuilder.and(
-        		criteriaBuilder.equal(root.get("childFirstName"), childFirstName)));
+        		criteriaBuilder.equal(root.get(CcmPatient_.childFirstName), childFirstName)));
 		List<CcmPatient> patientResults = entityManager.createQuery(criteriaQuery).getResultList();
 	    
 	    return patientResults;				

@@ -41,8 +41,7 @@ public class CcmClassification implements Serializable {
 	 * @param classificationId
 	 * @param name
 	 */
-	public CcmClassification(Long classificationId, String classificationKey, String classificationName) {
-		setClassificationId(classificationId);
+	public CcmClassification(String classificationKey, String classificationName) {
 		setClassificationKey(classificationKey);
 		setClassificationName(classificationName);
 	}

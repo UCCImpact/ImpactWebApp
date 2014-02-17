@@ -6,6 +6,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
+import ie.ucc.bis.supportinglife.ccm.domain.User;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentComms;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
@@ -18,20 +19,26 @@ import java.util.List;
  *
  */
 public interface SupportingLifeServiceInf {
+	
+	/*******************************************************************************/
+	/************************************Users**************************************/
+	/*******************************************************************************/
+	public User getUserByUserId(String userId);
 
 	/*******************************************************************************/
 	/***********************************Patients************************************/
-	/**
-	 * @return *****************************************************************************/
-	public Long addPatient(PatientAssessmentComms patientAssessment);
-	public CcmPatient getPatientById(long id);
+	/*******************************************************************************/
 	public List<CcmPatient> getAllPatients();
+	public CcmPatient getPatientByNationalId(String nationalId);
+	public CcmPatient getPatientByNationalHealthId(String nationalHealthId);
 	public List<CcmPatient> getAllPatientsByFirstName(String firstName);
 	public List<CcmPatient> getAllPatientsByNationalHealthIdFilter(String nationalHealthIdFilter);
 	
 	/*******************************************************************************/
 	/*********************************Patient Visits********************************/
 	/*******************************************************************************/
+	
+	public Long addPatientVisit(PatientAssessmentComms patientAssessment);
 	public CcmPatientVisit getPatientVisitbyVisitId(long visitId);
 	public List<CcmPatientVisit> getPatientVisitsbyPatientId(long patientId);
 	public List<CcmPatientVisit> getAllPatientVisits();
