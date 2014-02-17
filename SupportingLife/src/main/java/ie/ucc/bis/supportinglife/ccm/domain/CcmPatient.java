@@ -62,9 +62,6 @@ public class CcmPatient implements Serializable {
 	@Column(name="relationship")
 	private String relationship;
 	
-	@Column(name="other_relationship")
-	private String otherRelationship;
-	
 	@Column(name="physical_address")
 	private String physicalAddress;
 	
@@ -129,7 +126,7 @@ public class CcmPatient implements Serializable {
 	 */
 	public CcmPatient(String childFirstName, String childSurname, Date birthDate,
 					String gender, String caregiverName, String relationship, 
-					String otherRelationship, String physicalAddress, String villageTa,
+					String physicalAddress, String villageTa,
 					Date createdDate, Date updatedDate) {
 		
 		setChildFirstName(childFirstName);
@@ -138,7 +135,6 @@ public class CcmPatient implements Serializable {
 		setGender(gender);
 		setCaregiverName(caregiverName);
 		setRelationship(relationship);
-		setOtherRelationship(otherRelationship);
 		setPhysicalAddress(physicalAddress);
 		setVillageTa(villageTa);
 		setCreatedDate(createdDate);
@@ -218,14 +214,6 @@ public class CcmPatient implements Serializable {
 
 	public void setRelationship(String relationship) {
 		this.relationship = relationship;
-	}
-
-	public String getOtherRelationship() {
-		return otherRelationship;
-	}
-
-	public void setOtherRelationship(String otherRelationship) {
-		this.otherRelationship = otherRelationship;
 	}
 
 	public String getPhysicalAddress() {

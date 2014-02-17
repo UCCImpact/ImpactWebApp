@@ -62,7 +62,7 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		CcmPatient ccmPatient = new CcmPatient(patientAssessment.getChildFirstName(), patientAssessment.getChildSurname(),
 										patientAssessment.getBirthDate(), patientAssessment.getGender(),
 										patientAssessment.getCaregiverName(), patientAssessment.getRelationship(),
-										"OTHER RELATIONSHIP - REMOVE", patientAssessment.getPhysicalAddress(),
+										patientAssessment.getPhysicalAddress(),
 										patientAssessment.getVillageTa(), null, null);
 		
 		CcmPatientVisit ccmPatientVisit = new CcmPatientVisit(ccmPatient, patientAssessment.getVisitDate());
