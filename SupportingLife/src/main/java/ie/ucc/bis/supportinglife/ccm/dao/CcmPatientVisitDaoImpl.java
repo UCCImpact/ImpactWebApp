@@ -166,18 +166,32 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 		/*********************************************/
 		/**  Join tables to handle classifications  **/
 		/*********************************************/
-		// join the CcmPatientVisit and the CcmPatientClassification tables
-		Join<CcmPatientVisit, CcmPatientClassification> ccmPatientClassificationJoin = patientVisitRoot.join(CcmPatientVisit_.ccmPatientClassificationList);
-		// join the CcmPatientClassification and CcmClassification tables
-		Join<CcmPatientClassification, CcmClassification> ccmClassificationJoin = ccmPatientClassificationJoin.join(CcmPatientClassification_.classification);
+	    Set<String> classificationsKeysRequired = retrieveUserSpecifiedKeys(selectedClassifications);
+	    // only join if there are classifications specified by the user in the criteria form
+		if (classificationsKeysRequired.size() != 0) {
+			// join the CcmPatientVisit and the CcmPatientClassification tables
+			Join<CcmPatientVisit, CcmPatientClassification> ccmPatientClassificationJoin = patientVisitRoot.join(CcmPatientVisit_.ccmPatientClassificationList);
+			// join the CcmPatientClassification and CcmClassification tables
+			Join<CcmPatientClassification, CcmClassification> ccmClassificationJoin = ccmPatientClassificationJoin.join(CcmPatientClassification_.classification);
+			
+			// initially we'll pull back all records which have AT LEAST ONE of the user selected classifications
+			criteriaList.add(builder.isTrue(ccmClassificationJoin.get(CcmClassification_.classificationKey).in(classificationsKeysRequired)));
+		}
 
 		/*********************************************/
 		/**    Join tables to handle treatments     **/
 		/*********************************************/
-		// join the CcmPatientVisit and the CcmPatientTreatment tables
-		Join<CcmPatientVisit, CcmPatientTreatment> ccmPatientTreatmentJoin = patientVisitRoot.join(CcmPatientVisit_.ccmPatientTreatmentList);
-		// join the CcmPatientTreatment and CcmTreatment tables
-		Join<CcmPatientTreatment, CcmTreatment> ccmTreatmentJoin = ccmPatientTreatmentJoin.join(CcmPatientTreatment_.treatment);		
+		Set<String> treatmentKeysRequired = retrieveUserSpecifiedKeys(selectedTreatments);
+	    // only join if there are treatments specified by the user in the criteria form		
+		if (treatmentKeysRequired.size() != 0) {
+			// join the CcmPatientVisit and the CcmPatientTreatment tables
+			Join<CcmPatientVisit, CcmPatientTreatment> ccmPatientTreatmentJoin = patientVisitRoot.join(CcmPatientVisit_.ccmPatientTreatmentList);
+			// join the CcmPatientTreatment and CcmTreatment tables
+			Join<CcmPatientTreatment, CcmTreatment> ccmTreatmentJoin = ccmPatientTreatmentJoin.join(CcmPatientTreatment_.treatment);
+			
+			// initially we'll pull back all records which have AT LEAST ONE of the user selected treatments
+			criteriaList.add(builder.isTrue(ccmTreatmentJoin.get(CcmTreatment_.treatmentKey).in(treatmentKeysRequired)));
+		}
 
 		// retrieve patient associated with the Patient Id provided
 		DaoUtils.addEqualCondition(patientId, builder, criteriaList, ccmPatientJoin, CcmPatient_.patientId);
@@ -208,20 +222,6 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 
 		// 8. selected 'Look' Symptoms
 		addLookSymptomConditions(selectedLookSymptoms, builder, criteriaList, ccmPatientLookSymptomsJoin);
-			
-		// 9. selected Classifications
-	    Set<String> classificationsKeysRequired = retrieveUserSpecifiedKeys(selectedClassifications);
-		if (classificationsKeysRequired.size() != 0) {				
-			// initially we'll pull back all records which have AT LEAST ONE of the user selected classifications
-			criteriaList.add(builder.isTrue(ccmClassificationJoin.get(CcmClassification_.classificationKey).in(classificationsKeysRequired)));
-		}		
-		
-		// 10. selected treatments
-	    Set<String> treatmentKeysRequired = retrieveUserSpecifiedKeys(selectedTreatments);
-	    if (treatmentKeysRequired.size() != 0){
-			// initially we'll pull back all records which have AT LEAST ONE of the user selected treatments
-			criteriaList.add(builder.isTrue(ccmTreatmentJoin.get(CcmTreatment_.treatmentKey).in(treatmentKeysRequired)));	    	    	
-	    }
 		
 		// avoid duplicates in resultset
 		query.distinct(true);	

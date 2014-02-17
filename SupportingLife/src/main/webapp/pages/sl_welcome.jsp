@@ -99,6 +99,59 @@
 
 	<div class="row featurette">
 		<div class="col-md-7">
+			<h2 class="featurette-heading">
+				Knowledge Base &amp; Software Release Videos . <span class="text-muted">See for
+					yourself.</span>
+			</h2>
+			<p class="lead">Donec ullamcorper nulla non metus auctor
+				fringilla. Vestibulum id ligula porta felis euismod semper. Praesent
+				commodo cursus magna, vel scelerisque nisl consectetur. Fusce
+				dapibus, tellus ac cursus commodo.</p>
+		</div>
+		<div class="col-md-5">
+			<div id="videoCarousel" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+					<div class="item active">
+						<div class="container">
+							<div class="carousel-caption">		
+								<h3>Initial Software Release</h3>
+							</div>
+						</div>
+						<iframe height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen src="//www.youtube.com/embed/G6TLIgKuB9I?feature=player_detailpage"></iframe>
+					</div> <!-- end of active item -->
+					<div class="item">
+						<div class="container">
+							<div class="carousel-caption">
+								<h3>Second Software Release</h3>
+							</div>
+						</div>
+						<iframe height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen src="//www.youtube.com/embed/RZiRm17b-3c?feature=player_detailpage"></iframe>
+					</div> <!-- end of item -->
+				</div> <!-- end of carousel inner --> 
+				<a class="left carousel-control" href="#videoCarousel" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a> 
+				<a class="right carousel-control" href="#videoCarousel" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div> <!-- end of video carousel slide -->
+		</div> <!-- end of col-md-5 -->
+	</div>
+
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+		<div class="col-md-5">
+			<a href="https://github.com/timothyosullivan">
+				<i id="github-icon" class="fa fa-github"></i>
+				<br>
+				<span class="text-muted">
+					Follow us on GitHub!
+				</span>
+				
+			</a>
+		</div>
+		<div class="col-md-7">
 			<h1 class="featurette-heading">Join the Coding Adventure!</h1>
 			<h3>
 				<span class="text-muted">Technologies we love to use</span>
@@ -116,35 +169,6 @@
 			We're big fans of automated testing, and especially Jenkins, to ensure the logical sanity of  our android and middle-tier solutions!
 			If any of the above sounds interesting, we're always excited in hearing from individuals who would like to help us out!.
 			</p>
-		</div>
-		<div class="col-md-5">
-			<a href="https://github.com/timothyosullivan">
-				<i id="github-icon" class="fa fa-github"></i>
-				<br>
-				<span class="text-muted">
-					Follow us on GitHub!
-				</span>
-				
-			</a>
-		</div>
-	</div>
-
-	<hr class="featurette-divider">
-
-	<div class="row featurette">
-		<div class="col-md-5">
-			<img class="featurette-image img-responsive"
-				data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-		</div>
-		<div class="col-md-7">
-			<h2 class="featurette-heading">
-				Knowledge Base &amp; Software Release Videos . <span class="text-muted">See for
-					yourself.</span>
-			</h2>
-			<p class="lead">Donec ullamcorper nulla non metus auctor
-				fringilla. Vestibulum id ligula porta felis euismod semper. Praesent
-				commodo cursus magna, vel scelerisque nisl consectetur. Fusce
-				dapibus, tellus ac cursus commodo.</p>
 		</div>
 	</div>
 

@@ -38,7 +38,8 @@
 									<li><a href="reports/ccm_custom_report_form">CCM Custom Report</a></li>
 									<li class="divider"></li>
 									<li class="dropdown-header">Pre-defined Reports</li>
-									<li><a href="#">Pre-defined Report 1</a></li>
+									<li><a href="#">Village Register</a></li>
+									<li><a href="#">Form 1A</a></li>
 									<li class="divider"></li>
 									<li class="dropdown-header">Usage Analytics</li>
 									<li><a href="#">Android App Analytics</a></li>
