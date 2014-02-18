@@ -18,6 +18,9 @@ public class PatientAssessmentComms implements Serializable {
 	 */
 	private static final long serialVersionUID = -3143569878394681227L;
 	
+	// device generated patient assessment id
+	private String deviceGeneratedAssessmentId;
+	
 	// General Patient Details
 	private String hsaUserId;
 	private String nationalId;
@@ -128,6 +131,14 @@ public class PatientAssessmentComms implements Serializable {
 		
 		setClassifications(new HashMap<String, String>());
 		setTreatments(new HashMap<String, String> ());
+	}
+
+	public String getDeviceGeneratedAssessmentId() {
+		return deviceGeneratedAssessmentId;
+	}
+
+	public void setDeviceGeneratedAssessmentId(String deviceGeneratedAssessmentId) {
+		this.deviceGeneratedAssessmentId = deviceGeneratedAssessmentId;
 	}
 
 	public String getHsaUserId() {
