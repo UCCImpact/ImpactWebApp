@@ -73,7 +73,7 @@ public class PatientAssessmentComms implements Serializable {
 	public PatientAssessmentComms() {
 	}
 	
-	public PatientAssessmentComms(String hsaUserId, String nationalId, String nationalHealthId, 
+	public PatientAssessmentComms(String deviceGeneratedAssessmentId, String hsaUserId, String nationalId, String nationalHealthId, 
 					String childFirstName, String childSurname, Date birthDate,
 					String gender, String caregiverName, String relationship, String physicalAddress,
 					String villageTa, Date visitDate, Boolean chestIndrawing, Integer breathsPerMinute,
@@ -85,6 +85,8 @@ public class PatientAssessmentComms implements Serializable {
 					Boolean redEye, Integer redEyeDuration, Boolean difficultySeeing,
 					Integer difficultySeeingDuration, Boolean cannotTreatProblem, 
 					String cannotTreatProblemDetails) {
+		
+		setDeviceGeneratedAssessmentId(deviceGeneratedAssessmentId);
 		
 		// General Patient Details
 		setHsaUserId(hsaUserId);
