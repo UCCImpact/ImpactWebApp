@@ -17,3 +17,7 @@
  	
 	<%-- jQuery Source file --%>
 	<script type="text/javascript" src=<c:url value="/js/library/jquery-1.10.2.js"/> charset="utf-8"></script>
+	
+
+	<%--  SL Welcome Page JS Functionality --%>
+	<script type="text/javascript" src=<c:url value="/js/sl_welcome.js"/>></script>

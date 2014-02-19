@@ -109,7 +109,7 @@
 				dapibus, tellus ac cursus commodo.</p>
 		</div>
 		<div class="col-md-5">
-			<div id="videoCarousel" class="carousel slide" data-ride="carousel">
+			<div id="videoCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
 				<div class="carousel-inner">
 					<div class="item active">
 						<div class="container">
@@ -117,7 +117,7 @@
 								<h3>Initial Software Release</h3>
 							</div>
 						</div>
-						<iframe height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen src="//www.youtube.com/embed/G6TLIgKuB9I?feature=player_detailpage"></iframe>
+						<iframe height="200" src="//www.youtube.com/embed/G6TLIgKuB9I?feature=player_detailpage"></iframe>
 					</div> <!-- end of active item -->
 					<div class="item">
 						<div class="container">
@@ -125,7 +125,7 @@
 								<h3>Second Software Release</h3>
 							</div>
 						</div>
-						<iframe height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen src="//www.youtube.com/embed/RZiRm17b-3c?feature=player_detailpage"></iframe>
+						<iframe height="200" src="//www.youtube.com/embed/RZiRm17b-3c?feature=player_detailpage"></iframe>
 					</div> <!-- end of item -->
 				</div> <!-- end of carousel inner --> 
 				<a class="left carousel-control" href="#videoCarousel" data-slide="prev">
