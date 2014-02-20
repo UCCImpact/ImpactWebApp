@@ -18,6 +18,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.User;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentComms;
+import ie.ucc.bis.supportinglife.communication.PatientAssessmentResponseComms;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 import ie.ucc.bis.supportinglife.utilities.DateUtilities;
@@ -123,7 +124,7 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	
 	@Override
 	@Transactional
-	public Long addPatientVisit(PatientAssessmentComms patientAssessment) {
+	public PatientAssessmentResponseComms addPatientVisit(PatientAssessmentComms patientAssessment) {
 		
 		// 1. retrieve or create 'patient' instance
 		CcmPatient ccmPatient = obtainCcmPatientReference(patientAssessment);
@@ -132,9 +133,10 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		List<User> hsaUsers = getUserByUserId(patientAssessment.getHsaUserId());
 		
 		// 3. create 'patient visit' instance
-		CcmPatientVisit ccmPatientVisit = new CcmPatientVisit(ccmPatient, patientAssessment.getVisitDate(), hsaUsers.get(0));
+		CcmPatientVisit ccmPatientVisit = new CcmPatientVisit(ccmPatient, patientAssessment.getDeviceGeneratedAssessmentId(),
+				patientAssessment.getVisitDate(), hsaUsers.get(0));
 
-		// 4. configurre the 'Look' symptoms
+		// 4. configure the 'Look' symptoms
 		ccmPatientVisit.setCcmPatientLookSymptoms(new CcmPatientLookSymptoms(ccmPatientVisit, ccmPatient, patientAssessment.isChestIndrawing(),
 							patientAssessment.getBreathsPerMinute(), patientAssessment.isSleepyUnconscious(), patientAssessment.isPalmarPallor(),
 							patientAssessment.getMuacTapeColour(), patientAssessment.isSwellingBothFeet()));
@@ -163,8 +165,15 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		
 		// 9. add the patient record to the DB
 		CcmPatientDao patientDao = (CcmPatientDao) getDaoBeans().get("CcmPatientDao");
-		Long slPatientId = patientDao.addPatient(ccmPatient);
-		return slPatientId;
+		patientDao.addPatient(ccmPatient);
+		
+		// 10. construct 'communication response' for reply to device
+		PatientAssessmentResponseComms assessmentResponse = new PatientAssessmentResponseComms(patientAssessment.getDeviceGeneratedAssessmentId(), 
+																	ccmPatientVisit.getVisitId(), ccmPatient.getPatientId(), ccmPatient.getNationalId(), 
+																	ccmPatient.getNationalHealthId(), ccmPatient.getChildFirstName(), 
+																	ccmPatient.getChildSurname());
+		
+		return assessmentResponse;
 	}
 	
 	

@@ -25,12 +25,10 @@ public class CcmPatientDaoImpl implements CcmPatientDao {
 	private EntityManager entityManager;
 
 	@Override
-	public Long addPatient(CcmPatient patient) {
+	public void addPatient(CcmPatient patient) {		
 		entityManager.persist(patient);
 		// save to DB
 		entityManager.flush();
-		
-		return patient.getPatientId();
 	}
 
 	@Override

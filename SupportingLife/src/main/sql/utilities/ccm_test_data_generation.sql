@@ -69,11 +69,11 @@ INSERT INTO sl_ccm_patient(patient_id, national_id, national_health_id,
 -- ADD CCM PATIENT VISIT DATA
 -----------------------------------------------------------------------------------------------------------------									 
 								 
-INSERT INTO sl_ccm_patient_visit(visit_id, patient_id, visit_dt, user_id) 
-									VALUES (NULL, 1, STR_TO_DATE('15,01,2014','%d,%m,%Y'), "hsauser1");
+INSERT INTO sl_ccm_patient_visit(visit_id, device_generated_id, patient_id, visit_dt, user_id) 
+									VALUES (NULL, "", 1, STR_TO_DATE('15,01,2014','%d,%m,%Y'), "hsauser1");
 									
-INSERT INTO sl_ccm_patient_visit(visit_id, patient_id, visit_dt, user_id) 
-									VALUES (NULL, 2, STR_TO_DATE('01,02,2014','%d,%m,%Y'), "hsauser1");
+INSERT INTO sl_ccm_patient_visit(visit_id, device_generated_id, patient_id, visit_dt, user_id) 
+									VALUES (NULL, "", 2, STR_TO_DATE('01,02,2014','%d,%m,%Y'), "hsauser1");
 						
 --*** patient 1 'Look' symptoms
 INSERT INTO sl_ccm_look_symptoms(visit_id, patient_id, chest_indrawing, breaths_per_minute, 

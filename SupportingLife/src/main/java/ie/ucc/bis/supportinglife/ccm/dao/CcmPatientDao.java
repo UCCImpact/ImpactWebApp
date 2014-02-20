@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CcmPatientDao extends Dao {
 
-	public Long addPatient(CcmPatient patient);
+	public void addPatient(CcmPatient patient);
 
 	public List<CcmPatient> getAllPatients();
 	public List<CcmPatient> getPatientByNationalId(String nationalId);

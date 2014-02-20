@@ -53,6 +53,9 @@ public class CcmPatientVisit implements Serializable {
 	@GeneratedValue
 	private Long visitId;
 	
+	@Column(name="device_generated_id")
+	private String deviceGeneratedId;
+	
 	// association to sl_ccm_patient table
 	// - one patient can have many visits 
 	@ManyToOne
@@ -95,12 +98,14 @@ public class CcmPatientVisit implements Serializable {
 	 * Constructor
 	 * 
 	 * @param patient
+	 * @param deviceGeneratedId 
 	 * @param visitDate
 	 * @param hsaUser
 	 * 
 	 */
-	public CcmPatientVisit(CcmPatient patient, Date visitDate, User hsaUser) {	
+	public CcmPatientVisit(CcmPatient patient, String deviceGeneratedId, Date visitDate, User hsaUser) {	
 		setPatient(patient);
+		setDeviceGeneratedId(deviceGeneratedId);
 		setVisitDate(visitDate);
 		setUser(hsaUser);
 		
@@ -119,6 +124,14 @@ public class CcmPatientVisit implements Serializable {
 
 	public void setVisitId(Long visitId) {
 		this.visitId = visitId;
+	}
+
+	public String getDeviceGeneratedId() {
+		return deviceGeneratedId;
+	}
+
+	public void setDeviceGeneratedId(String deviceGeneratedId) {
+		this.deviceGeneratedId = deviceGeneratedId;
 	}
 
 	public CcmPatient getPatient() {

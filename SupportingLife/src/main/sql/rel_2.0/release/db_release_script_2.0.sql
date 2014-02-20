@@ -41,19 +41,19 @@ TRUNCATE TABLE sl_user;
 -----------------------------------------------------------------------------------------------------------------
 USE supportinglifedb;
 CREATE TABLE IF NOT EXISTS sl_ccm_patient(
-										 	patient_id 			INTEGER(18) NOT NULL AUTO_INCREMENT,
-										 	national_id 		VARCHAR(8),
-										 	national_health_id 	VARCHAR(8),
-    										child_first_name 	VARCHAR(50),
-    										child_surname 		VARCHAR(50),
-    										date_of_birth 		DATE,
-    										gender 				VARCHAR(6),
-    										caregiver_name 		VARCHAR(100),
-    										relationship 		VARCHAR(50),
-    										physical_address 	VARCHAR(250),
-    										village_ta 			VARCHAR(50),
-    										created_dt 			TIMESTAMP,
-    										updated_dt 			TIMESTAMP,
+										 	patient_id 				INTEGER(18) NOT NULL AUTO_INCREMENT,
+										 	national_id 			VARCHAR(8),
+										 	national_health_id 		VARCHAR(8),
+    										child_first_name 		VARCHAR(50),
+    										child_surname 			VARCHAR(50),
+    										date_of_birth 			DATE,
+    										gender 					VARCHAR(6),
+    										caregiver_name 			VARCHAR(100),
+    										relationship 			VARCHAR(50),
+    										physical_address 		VARCHAR(250),
+    										village_ta 				VARCHAR(50),
+    										created_dt 				TIMESTAMP,
+    										updated_dt 				TIMESTAMP,
     										PRIMARY KEY (patient_id)
 										  );
 
@@ -72,10 +72,11 @@ TRUNCATE TABLE sl_ccm_patient;
 -----------------------------------------------------------------------------------------------------------------
 USE supportinglifedb;
 CREATE TABLE IF NOT EXISTS sl_ccm_patient_visit (
-    												visit_id 		INTEGER(18) NOT NULL AUTO_INCREMENT,
-    												patient_id 		INTEGER(18) NOT NULL,
-    												visit_dt 		DATE,
-    												user_id 		VARCHAR(8),
+    												visit_id 				INTEGER(18) NOT NULL AUTO_INCREMENT,
+    												device_generated_id		VARCHAR(250),
+    												patient_id 				INTEGER(18) NOT NULL,
+    												visit_dt 				DATE,
+    												user_id 				VARCHAR(8),
 				    								PRIMARY KEY (visit_id),
 				    								FOREIGN KEY (patient_id) REFERENCES sl_ccm_patient(patient_id),
                        								FOREIGN KEY (user_id) REFERENCES sl_user(user_id)

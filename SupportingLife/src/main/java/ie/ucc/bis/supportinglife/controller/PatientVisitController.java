@@ -6,6 +6,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentComms;
+import ie.ucc.bis.supportinglife.communication.PatientAssessmentResponseComms;
 import ie.ucc.bis.supportinglife.controller.interfaces.PatientVisitControllerInf;
 import ie.ucc.bis.supportinglife.service.SupportingLifeService;
 import ie.ucc.bis.supportinglife.service.SupportingLifeServiceInf;
@@ -110,11 +111,11 @@ public class PatientVisitController implements PatientVisitControllerInf {
 	 */
 	@RequestMapping(value="/add", method=RequestMethod.POST,  produces={"application/json"}, consumes={"application/json"})
 	@ResponseStatus(HttpStatus.CREATED)
-	public @ResponseBody Long addPatientAssessmentForAndroid(@RequestBody PatientAssessmentComms patientAssessment) {
+	public @ResponseBody PatientAssessmentResponseComms addPatientAssessmentForAndroid(@RequestBody PatientAssessmentComms patientAssessment) {
 		
-		Long patientId = supportingLifeService.addPatientVisit(patientAssessment);
+		PatientAssessmentResponseComms assessmentResponse = supportingLifeService.addPatientVisit(patientAssessment);
 	
-		return patientId;
+		return assessmentResponse;
 	}
 	
 } // end of class
