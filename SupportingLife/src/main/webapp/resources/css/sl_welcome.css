@@ -128,7 +128,6 @@
 #videoCarousel  {
 	height: 300px;
 	margin-bottom: 0px;
-	background-color: #777;
 }
 
 #videoCarousel .carousel-inner .item {
@@ -136,10 +135,6 @@
 	padding-bottom: 50px;
 	margin-bottom: 0px;
 	height: 300px;
-}
-
-#videoCarousel .item:hover {
-	background-color: #077204;
 }
 
 #videoCarousel .carousel-caption {
