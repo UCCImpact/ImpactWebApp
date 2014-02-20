@@ -3,6 +3,7 @@ package ie.ucc.bis.supportinglife.ccm.dao;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatient;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatient_;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -33,7 +34,7 @@ public class CcmPatientDaoImpl implements CcmPatientDao {
 	}
 
 	@Override
-	public CcmPatient getPatientByNationalId(String nationalId) {
+	public List<CcmPatient> getPatientByNationalId(String nationalId) {
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<CcmPatient> criteriaQuery = criteriaBuilder.createQuery(CcmPatient.class);
 		Root<CcmPatient> root = criteriaQuery.from(CcmPatient.class);
@@ -42,13 +43,14 @@ public class CcmPatientDaoImpl implements CcmPatientDao {
         	.where(criteriaBuilder.and(
         		criteriaBuilder.equal(root.get(CcmPatient_.nationalId), nationalId)));
 		
-		CcmPatient patientResult = entityManager.createQuery(criteriaQuery).getSingleResult();
+		List<CcmPatient> patientResults = new ArrayList<CcmPatient>();
+		patientResults = entityManager.createQuery(criteriaQuery).getResultList();
 	    
-	    return patientResult;			
+	    return patientResults;			
 	}
 	
 	@Override
-	public CcmPatient getPatientByNationalHealthId(String nationalHealthId) {
+	public List<CcmPatient> getPatientByNationalHealthId(String nationalHealthId) {
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<CcmPatient> criteriaQuery = criteriaBuilder.createQuery(CcmPatient.class);
 		Root<CcmPatient> root = criteriaQuery.from(CcmPatient.class);
@@ -57,9 +59,10 @@ public class CcmPatientDaoImpl implements CcmPatientDao {
         	.where(criteriaBuilder.and(
         		criteriaBuilder.equal(root.get(CcmPatient_.nationalHealthId), nationalHealthId)));
 		
-		CcmPatient patientResult = entityManager.createQuery(criteriaQuery).getSingleResult();
+		List<CcmPatient> patientResults = new ArrayList<CcmPatient>();		
+		patientResults = entityManager.createQuery(criteriaQuery).getResultList();
 	    
-	    return patientResult;			
+	    return patientResults;			
 	}
 	
 	@Override
@@ -71,7 +74,9 @@ public class CcmPatientDaoImpl implements CcmPatientDao {
 		criteriaQuery.select(root)
         	.where(criteriaBuilder.and(
         		criteriaBuilder.equal(root.get(CcmPatient_.childFirstName), childFirstName)));
-		List<CcmPatient> patientResults = entityManager.createQuery(criteriaQuery).getResultList();
+		
+		List<CcmPatient> patientResults = new ArrayList<CcmPatient>();
+		patientResults = entityManager.createQuery(criteriaQuery).getResultList();
 	    
 	    return patientResults;				
 	}
@@ -84,7 +89,9 @@ public class CcmPatientDaoImpl implements CcmPatientDao {
 					
 		criteriaQuery.select(root);
 	    TypedQuery<CcmPatient> typedQuery = entityManager.createQuery(criteriaQuery);
-	    List<CcmPatient> patientResults = typedQuery.getResultList();		
+	    
+	    List<CcmPatient> patientResults = new ArrayList<CcmPatient>();
+	    patientResults = typedQuery.getResultList();		
 		return patientResults;
 	}
 
@@ -101,7 +108,8 @@ public class CcmPatientDaoImpl implements CcmPatientDao {
 		
 		criteriaQuery.where(criteriaBuilder.and(nationalHealthIdCompareCondition));
 		
-		List<CcmPatient> patientResults = entityManager.createQuery(criteriaQuery).getResultList();
+		List<CcmPatient> patientResults = new ArrayList<CcmPatient>();
+		patientResults = entityManager.createQuery(criteriaQuery).getResultList();
 	       
 	    return patientResults;	
 	}

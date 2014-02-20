@@ -9,8 +9,8 @@ public interface CcmPatientDao extends Dao {
 	public Long addPatient(CcmPatient patient);
 
 	public List<CcmPatient> getAllPatients();
-	public CcmPatient getPatientByNationalId(String nationalId);
-	public CcmPatient getPatientByNationalHealthId(String nationalHealthId);
+	public List<CcmPatient> getPatientByNationalId(String nationalId);
+	public List<CcmPatient> getPatientByNationalHealthId(String nationalHealthId);
 	public List<CcmPatient> getAllPatientsByFirstName(String firstName);
 	public List<CcmPatient> getAllPatientsByNationalHealthIdFilter(String nationalHealthIdFilter);
 }

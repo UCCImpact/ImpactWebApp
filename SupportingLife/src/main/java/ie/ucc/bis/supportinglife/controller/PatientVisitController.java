@@ -76,25 +76,25 @@ public class PatientVisitController implements PatientVisitControllerInf {
 	public String getPatientVisitForBrowser(@PathVariable long visitId, ModelMap model) {
 		
 		// 1. pull back the specific details on the visit
-		CcmPatientVisit patientVisit = supportingLifeService.getPatientVisitbyVisitId(visitId);
+		List<CcmPatientVisit> patientVisits = supportingLifeService.getPatientVisitbyVisitId(visitId);
 		
-		model.addAttribute("patientVisit", patientVisit);
+		model.addAttribute("patientVisit", patientVisits.get(0));
 		
 		// 2. pull back the 'look' assessment symptom data
-		CcmPatientLookSymptoms patientLookSymptoms = supportingLifeService.getLookSymptomsByVisit(patientVisit);
-		model.addAttribute("patientLookSymptoms", patientLookSymptoms);
+		List<CcmPatientLookSymptoms> patientLookSymptoms = supportingLifeService.getLookSymptomsByVisit(patientVisits.get(0));
+		model.addAttribute("patientLookSymptoms", patientLookSymptoms.get(0));
 		
 		// 3. pull back the 'ask look' assessment symptom data
-		CcmPatientAskLookSymptoms patientAskLookSymptoms = supportingLifeService.getAskLookSymptomsByVisit(patientVisit);
-		model.addAttribute("patientAskLookSymptoms", patientAskLookSymptoms);
+		List<CcmPatientAskLookSymptoms> patientAskLookSymptoms = supportingLifeService.getAskLookSymptomsByVisit(patientVisits.get(0));
+		model.addAttribute("patientAskLookSymptoms", patientAskLookSymptoms.get(0));
 		
 		// 4. pull back the determined classifications associated with this assessment 
-		List<CcmPatientClassification> patientClassifications = supportingLifeService.getPatientClassificationsByVisit(patientVisit);
-		model.addAttribute("patientClassifications", patientClassifications);
+		List<CcmPatientClassification> patientClassifications = supportingLifeService.getPatientClassificationsByVisit(patientVisits.get(0));
+		model.addAttribute("patientClassifications", patientClassifications.get(0));
 
 		// 5. pull back the treatments associated with this assessment 
-		List<CcmPatientTreatment> patientTreatments = supportingLifeService.getPatientTreatmentsByVisit(patientVisit);
-		model.addAttribute("patientTreatments", patientTreatments);
+		List<CcmPatientTreatment> patientTreatments = supportingLifeService.getPatientTreatmentsByVisit(patientVisits.get(0));
+		model.addAttribute("patientTreatments", patientTreatments.get(0));
 		
 		// Spring uses InternalResourceViewResolver and returns back patient_visit.jsp
 		return "patient_visit";		

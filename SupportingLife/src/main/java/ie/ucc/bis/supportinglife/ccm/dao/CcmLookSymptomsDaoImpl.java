@@ -3,6 +3,9 @@ package ie.ucc.bis.supportinglife.ccm.dao;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -18,7 +21,7 @@ public class CcmLookSymptomsDaoImpl implements CcmLookSymptomsDao {
 	private EntityManager entityManager;
 	
 	@Override
-	public CcmPatientLookSymptoms getLookSymptomsByVisit(CcmPatientVisit ccmPatientVisit) {
+	public List<CcmPatientLookSymptoms> getLookSymptomsByVisit(CcmPatientVisit ccmPatientVisit) {
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<CcmPatientLookSymptoms> criteriaQuery = criteriaBuilder.createQuery(CcmPatientLookSymptoms.class);
 		Root<CcmPatientLookSymptoms> root = criteriaQuery.from(CcmPatientLookSymptoms.class);
@@ -27,7 +30,8 @@ public class CcmLookSymptomsDaoImpl implements CcmLookSymptomsDao {
         	.where(criteriaBuilder.and(
         		criteriaBuilder.equal(root.get("visit"), ccmPatientVisit)));
 
-		CcmPatientLookSymptoms patientLookSymptomsResult = entityManager.createQuery(criteriaQuery).getSingleResult();
-	    return patientLookSymptomsResult;	
+		List<CcmPatientLookSymptoms> patientLookSymptomsResults = new ArrayList<CcmPatientLookSymptoms>();
+		patientLookSymptomsResults = entityManager.createQuery(criteriaQuery).getResultList();
+	    return patientLookSymptomsResults;	
 	}
 }

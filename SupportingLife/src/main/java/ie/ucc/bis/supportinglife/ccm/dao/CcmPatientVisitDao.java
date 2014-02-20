@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface CcmPatientVisitDao extends Dao {
 	
-	public CcmPatientVisit getPatientVisitbyVisitId(long visitId);
+	public List<CcmPatientVisit> getPatientVisitbyVisitId(long visitId);
 	public List<CcmPatientVisit> getPatientVisitsByPatientId(long patientId);
 	public List<CcmPatientVisit> getAllPatientVisits();
 	

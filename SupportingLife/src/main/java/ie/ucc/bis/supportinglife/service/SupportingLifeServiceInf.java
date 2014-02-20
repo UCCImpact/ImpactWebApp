@@ -23,14 +23,14 @@ public interface SupportingLifeServiceInf {
 	/*******************************************************************************/
 	/************************************Users**************************************/
 	/*******************************************************************************/
-	public User getUserByUserId(String userId);
+	public List<User> getUserByUserId(String userId);
 
 	/*******************************************************************************/
 	/***********************************Patients************************************/
 	/*******************************************************************************/
 	public List<CcmPatient> getAllPatients();
-	public CcmPatient getPatientByNationalId(String nationalId);
-	public CcmPatient getPatientByNationalHealthId(String nationalHealthId);
+	public List<CcmPatient> getPatientByNationalId(String nationalId);
+	public List<CcmPatient> getPatientByNationalHealthId(String nationalHealthId);
 	public List<CcmPatient> getAllPatientsByFirstName(String firstName);
 	public List<CcmPatient> getAllPatientsByNationalHealthIdFilter(String nationalHealthIdFilter);
 	
@@ -39,7 +39,7 @@ public interface SupportingLifeServiceInf {
 	/*******************************************************************************/
 	
 	public Long addPatientVisit(PatientAssessmentComms patientAssessment);
-	public CcmPatientVisit getPatientVisitbyVisitId(long visitId);
+	public List<CcmPatientVisit> getPatientVisitbyVisitId(long visitId);
 	public List<CcmPatientVisit> getPatientVisitsbyPatientId(long patientId);
 	public List<CcmPatientVisit> getAllPatientVisits();
 
@@ -75,8 +75,8 @@ public interface SupportingLifeServiceInf {
 	/*******************************************************************************/
 	/*********************************Patient Symptoms******************************/
 	/*******************************************************************************/
-	public CcmPatientLookSymptoms getLookSymptomsByVisit(CcmPatientVisit ccmPatientVisit);
-	public CcmPatientAskLookSymptoms getAskLookSymptomsByVisit(CcmPatientVisit ccmPatientVisit);
+	public List<CcmPatientLookSymptoms> getLookSymptomsByVisit(CcmPatientVisit ccmPatientVisit);
+	public List<CcmPatientAskLookSymptoms> getAskLookSymptomsByVisit(CcmPatientVisit ccmPatientVisit);
 	
 	/*******************************************************************************/
 	/******************************Patient Classifications**************************/

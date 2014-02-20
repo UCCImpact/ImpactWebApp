@@ -62,7 +62,7 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 
 
 	@Override
-	public CcmPatientVisit getPatientVisitbyVisitId(long visitId) {
+	public List<CcmPatientVisit> getPatientVisitbyVisitId(long visitId) {
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<CcmPatientVisit> criteriaQuery = criteriaBuilder.createQuery(CcmPatientVisit.class);
 		Root<CcmPatientVisit> root = criteriaQuery.from(CcmPatientVisit.class);
@@ -71,8 +71,9 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
         	.where(criteriaBuilder.and(
         		criteriaBuilder.equal(root.get("visitId"), visitId)));
 
-	    CcmPatientVisit patientVisitResult = entityManager.createQuery(criteriaQuery).getSingleResult();
-	    return patientVisitResult;
+		List<CcmPatientVisit> patientVisitResults = new ArrayList<CcmPatientVisit>();
+		patientVisitResults = entityManager.createQuery(criteriaQuery).getResultList();
+	    return patientVisitResults;
 	}
 
 
