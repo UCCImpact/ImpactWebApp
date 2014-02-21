@@ -31,7 +31,7 @@
 	<!-- patient visits list -->
 	<div id="patient-visit-list" class="col-lg-12 sl-table-container">
 		<h4>PATIENT VISITS</h4>
-		<table id="patient-visit-table" class="table-hover sl-table display">
+		<table id="patient-visit-table" class="table-hover table-striped sl-table">
 			<thead>
 				<tr>
 					<th>PATIENT ID</th>
@@ -92,7 +92,7 @@
 	<!-- 'ask-look' (part 1) symptom list -->
 	<div id="ask-look-symptom-list-one" class="col-lg-12 sl-table-container">
 		<h4>'ASK-LOOK' SYMPTOMS (Part 1)</h4>
-		<table id="ask-look-symptom-table-one" class="table-hover sl-table display">
+		<table id="ask-look-symptom-table-one" class="table-hover table-striped sl-table">
 			<thead>
 				<tr>
 					<th>CHILD'S PROBLEMS</th>
@@ -140,7 +140,7 @@
 	<!-- 'ask-look' (part 2) symptom list -->
 	<div id="ask-look-symptom-list-two" class="col-lg-12 sl-table-container">
 		<h4>'ASK-LOOK' SYMPTOMS (Part 2)</h4>
-		<table id="ask-look-symptom-table-two" class="table-hover sl-table display">
+		<table id="ask-look-symptom-table-two" class="table-hover table-striped sl-table">
 			<thead>
 				<tr>
 					<th>DIFFICULTY DRINKING OR FEEDING</th>
@@ -189,7 +189,7 @@
 	<!-- look symptom list -->
 	<div id="look-symptom-list" class="col-lg-12 sl-table-container">
 		<h4>LOOK SYMPTOMS</h4>
-		<table id="look-symptom-table" class="table-hover sl-table display">
+		<table id="look-symptom-table" class="table-hover table-striped sl-table">
 			<thead>
 				<tr>
 					<th>CHEST INDRAWING</th>

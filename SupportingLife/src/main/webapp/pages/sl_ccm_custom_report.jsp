@@ -113,7 +113,7 @@
 	
 			<!-- symptom list -->
 			<div id="symptom-list" class="col-lg-6 sl-table-container">
-				<table id="symptom-table" class="table-hover sl-table display">
+				<table id="symptom-table" class="table-hover table-striped sl-table">
 					<thead>
 						<tr>
 							<th>SYMPTOM</th>
@@ -149,7 +149,7 @@
 	
 			<!-- classification list -->
 			<div id="classification-list" class="col-lg-6 sl-table-container">
-				<table id="classification-table" class="table-hover sl-table display">
+				<table id="classification-table" class="table-hover table-striped sl-table">
 					<thead>
 						<tr>
 							<th>CLASSIFICATION</th>
@@ -176,7 +176,7 @@
 		<!-- treatment list -->
 		<div id="checkbox-list-container" class="row">
 			<div id="treatment-list" class="col-lg-12 sl-table-container">
-				<table id="treatment-table" class="table-hover sl-table display">
+				<table id="treatment-table" class="table-hover table-striped sl-table">
 					<thead>
 						<tr>
 							<th>TREATMENT</th>
