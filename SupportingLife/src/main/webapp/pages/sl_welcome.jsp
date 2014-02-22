@@ -92,21 +92,24 @@
 			</p>
 		</div>
 	</div>
-
+ 
 <!-- =========================================== FEATURETTES ================================================= -->
 
 	<hr class="featurette-divider">
 
 	<div class="row featurette">
 		<div class="col-md-7">
-			<h2 class="featurette-heading">
-				Knowledge Base &amp; Software Release Videos . <span class="text-muted">See for
-					yourself.</span>
-			</h2>
-			<p class="lead">Donec ullamcorper nulla non metus auctor
-				fringilla. Vestibulum id ligula porta felis euismod semper. Praesent
-				commodo cursus magna, vel scelerisque nisl consectetur. Fusce
-				dapibus, tellus ac cursus commodo.</p>
+			<h1 class="featurette-heading">Software Release Videos</h1>
+			<h3 class="featurette-heading">
+				<span class="text-muted">See the tools we're delivering for yourself</span>
+			</h3>
+			<br>
+			<p class="lead">
+				Supporting LIFE is an entirely open source project which hopes to make a substantial difference in the remotest parts of Africa.  
+				<br><br>
+				We follow an agile scrum-based development methodology aiming to deliver frequent and regular software updates throughout the 
+				development lifecycle. Track our progress, as well as sneak previews!, by checking out our latest release videos.
+			</p>
 		</div>
 		<div class="col-md-5">
 			<div id="videoCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
@@ -137,20 +140,10 @@
 			</div> <!-- end of video carousel slide -->
 		</div> <!-- end of col-md-5 -->
 	</div>
-
+ 
 	<hr class="featurette-divider">
 
 	<div class="row featurette">
-		<div class="col-md-5">
-			<a href="https://github.com/timothyosullivan">
-				<i id="github-icon" class="fa fa-github"></i>
-				<br>
-				<span class="text-muted">
-					Follow us on GitHub!
-				</span>
-				
-			</a>
-		</div>
 		<div class="col-md-7">
 			<h1 class="featurette-heading">Join the Coding Adventure!</h1>
 			<h3>
@@ -158,9 +151,49 @@
 			</h3>
 			<br>
 			<p class="lead">
-			Supporting LIFE is an entirely open source project which hopes to make a substantial difference in the remotest parts of Africa.  
 			Supporting LIFE uses mobile and web-based architectural solutions. We develop in Java for android-based devices to create dynamic and robust 
-			decision-making tools to assist medical professionals out in the field. 
+			decision-making tools to assist medical professionals out in the field.
+			<br><br>
+			We use RESTful web services to coordinate medical data flow to our web servers running on Amazon EC2 instances. Our middle-tier is constructed using 
+			the Spring framework, JPA and Maven. The web-based front-end uses HTML 5.0, Bootstrap, JQuery, Ajax, with a little bit of CSS 3.0 animation thrown in
+			for good measure. 
+			<br><br>
+			We're big fans of automated testing, and especially Jenkins, to ensure the logical sanity of  our android and middle-tier solutions!
+			If any of the above sounds interesting, we're always excited in hearing from individuals who would like to help us out!.
+			</p>
+		</div>
+		<div class="col-md-5">
+			<a href="https://github.com/timothyosullivan">
+				<i id="github-icon" class="fa fa-github"></i>
+				<br>
+				<span class="text-muted">
+					Follow us on GitHub!
+				</span>		
+			</a>
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+		<div class="col-md-5">
+			<a href="https://github.com/timothyosullivan">
+				<i id="book-icon" class="fa fa-book"></i>
+				<br>
+				<span class="text-muted">
+					Check out our Knowledge Repository
+				</span>
+			</a>
+		</div>
+		<div class="col-md-7">
+			<h1 class="featurette-heading">Technology Knowledge Base</h1>
+			<h3>
+				<span class="text-muted">Knowledge at your finger tips</span>
+			</h3>
+			<br>
+			<p class="lead">
+			Supporting LIFE uses mobile and web-based architectural solutions. We develop in Java for android-based devices to create dynamic and robust 
+			decision-making tools to assist medical professionals out in the field.
 			<br><br>
 			We use RESTful web services to coordinate medical data flow to our web servers running on Amazon EC2 instances. Our middle-tier is constructed using 
 			the Spring framework, JPA and Maven. The web-based front-end uses HTML 5.0, Bootstrap, JQuery, Ajax, with a little bit of CSS 3.0 animation thrown in
