@@ -195,7 +195,7 @@ CREATE TABLE IF NOT EXISTS sl_ccm_look_symptoms (
     												breaths_per_minute 	INTEGER(4),
     												sleepy_unconscious 	TINYINT(1),
     												palmar_pallor	 	TINYINT(1),
-    												muac_tape_colour 	VARCHAR(7),
+    												muac_tape_colour 	VARCHAR(30),
     												swelling_both_feet 	TINYINT(1),
     												PRIMARY KEY (id),
 				    								FOREIGN KEY (visit_id) REFERENCES sl_ccm_patient_visit(visit_id),
