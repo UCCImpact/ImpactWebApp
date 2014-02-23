@@ -1,0 +1,32 @@
+/* Icon for Knowlege-base Bulb */
+/* ref. site for icon: http://www.flaticon.com/ */
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.eot");
+	src: url("flaticon.eot#iefix") format("embedded-opentype"),
+	url("/SupportingLife//images/fonts/icon_knowledge.ttf") format("truetype");
+}
+
+.flaticon-idea:before,
+.flaticon-idea:after {
+	font-family: Flaticon;
+	line-height:5px;
+	text-align: center;
+	font-size: 280px;
+	font-style: normal;
+	display: inline-block;
+	padding-top: 160px;
+}
+
+.flaticon-idea:before {
+	content: "\e000";	
+}
+
+/* bulb icon */
+#knowledge-bulb-icon {
+	color: #777;
+}
+
+#knowledge-bulb-icon:hover {
+	color:  #077204;
+}

@@ -177,8 +177,8 @@
 
 	<div class="row featurette">
 		<div class="col-md-5">
-			<a href="https://github.com/timothyosullivan">
-				<i id="book-icon" class="fa fa-book"></i>
+			<a href="http://supportinglife.github.io/">
+				<i id="knowledge-bulb-icon" class="fa flaticon-idea"></i>
 				<br>
 				<span class="text-muted">
 					Check out our Knowledge Repository

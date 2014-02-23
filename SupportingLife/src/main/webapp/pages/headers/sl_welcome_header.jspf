@@ -9,4 +9,7 @@
 	<%-- Custom style for the welcome page  --%>
     <link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_welcome.css"/>/>
     
+	<%-- CSS Favicon - Knowledge Base (lit bulb)  --%>
+    <link rel="stylesheet" type="text/css" href=<c:url value="/css/library/icon_knowledge.css"/>/>
+    
 </head>
