@@ -192,15 +192,12 @@
 			</h3>
 			<br>
 			<p class="lead">
-			Supporting LIFE uses mobile and web-based architectural solutions. We develop in Java for android-based devices to create dynamic and robust 
-			decision-making tools to assist medical professionals out in the field.
+			Supporting LIFE has a rich technological knowledge base to help adopters understand our approach and to reduce time to uptake.
 			<br><br>
-			We use RESTful web services to coordinate medical data flow to our web servers running on Amazon EC2 instances. Our middle-tier is constructed using 
-			the Spring framework, JPA and Maven. The web-based front-end uses HTML 5.0, Bootstrap, JQuery, Ajax, with a little bit of CSS 3.0 animation thrown in
-			for good measure. 
+			Our knowledge base provides clear guidelines on how to build and contribute to the Supporting LIFE codebase. It also shows those who are just
+			interested in using the app, how to get up and running quickly.
 			<br><br>
-			We're big fans of automated testing, and especially Jenkins, to ensure the logical sanity of  our android and middle-tier solutions!
-			If any of the above sounds interesting, we're always excited in hearing from individuals who would like to help us out!.
+			For anyone who would like to see where our technological journey will take us, there is a product roadmap of up and coming features.
 			</p>
 		</div>
 	</div>
