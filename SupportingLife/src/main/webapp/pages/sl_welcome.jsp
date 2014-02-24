@@ -34,7 +34,7 @@
 						Patient Record Access <i class="fa fa-arrows-h"></i> Anywhere &amp; Anytime
 					</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#">Learn More</a>
+						<a class="btn btn-lg btn-primary unimplemented-feature" href="#">Learn More</a>
 					</p>
 				</div>
 			</div>
@@ -48,7 +48,7 @@
 						Real-Time Tracking of Disease Outbreaks
 					</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#">Launch Surveillance</a>
+						<a class="btn btn-lg btn-primary unimplemented-feature" href="#">Launch Surveillance</a>
 					</p>
 				</div>
 			</div>
