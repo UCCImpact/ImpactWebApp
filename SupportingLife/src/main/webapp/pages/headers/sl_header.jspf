@@ -36,4 +36,3 @@
 	
  	<%-- footer CSS --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_footer.css"/>/>
- 	

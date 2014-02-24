@@ -9,7 +9,6 @@
 		<div class="container">
 			<div class="navbar navbar-inverse navbar-static-top">
 				<div class="container">
-					
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						  <span class="icon-bar"></span>
@@ -28,14 +27,14 @@
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav pull-right">
 							<li class="active">																						<!-- HOME -->
-								<a href="../welcome"><i id="home-icon" class="fa fa-home"></i> Home</a>
+								<a href="${pageContext.request.contextPath}/welcome"><i id="home-icon" class="fa fa-home"></i> Home</a>
 							</li>								
 
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Reporting<b class="caret"></b></a>		<!-- REPORTING -->
 								<ul class="dropdown-menu">
 									<li class="dropdown-header">Custom Reports</li>							
-									<li><a href="reports/ccm_custom_report_form">CCM Custom Report</a></li>
+									<li><a href="${pageContext.request.contextPath}/reports/ccm_custom_report_form">CCM Custom Report</a></li>
 									<li class="divider"></li>
 									<li class="dropdown-header">Pre-defined Reports</li>
 									<li><a href="#">Village Register</a></li>
