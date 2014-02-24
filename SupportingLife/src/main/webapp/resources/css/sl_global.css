@@ -26,3 +26,20 @@ body {
   color: #5a5a5a;
   text-align: center;
 }
+
+/* General tool-tip styling */
+.tooltip.top .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-color: #5a5a5a; /* grey */
+  border-width: 0 5px 5px;
+}
+
+.disabled > a {
+	color: white;
+}
+
+.dropdown-menu > .disabled > a {
+	color: #333333;
+}

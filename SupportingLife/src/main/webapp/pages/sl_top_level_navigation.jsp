@@ -37,32 +37,34 @@
 									<li><a href="${pageContext.request.contextPath}/reports/ccm_custom_report_form">CCM Custom Report</a></li>
 									<li class="divider"></li>
 									<li class="dropdown-header">Pre-defined Reports</li>
-									<li><a href="#">Village Register</a></li>
-									<li><a href="#">Form 1A</a></li>
+									
+									<li class="disabled"><a href="#" class="unimplemented-feature">Village Register</a></li>
+											
+									<li class="disabled"><a href="#" class="unimplemented-feature">Form 1A</a></li>
 									<li class="divider"></li>
 									<li class="dropdown-header">Usage Analytics</li>
-									<li><a href="#">Android App Analytics</a></li>
+									<li class="disabled"><a href="#" class="unimplemented-feature">Android App Analytics</a></li>
 								</ul>
 							</li> <!-- END: REPORTING -->
 
-							<li><a data-toggle="tab" href="#contact">Surveillance</a></li>											<!-- SURVEILLANCE -->
+							<li class="disabled"><a data-toggle="tab" href="#contact" class="unimplemented-feature">Surveillance</a></li>			<!-- SURVEILLANCE -->
 							
-							<li><a data-toggle="tab" href="#contact">Training</a></li>												<!-- TRAINING -->
+							<li class="disabled"><a data-toggle="tab" href="#contact" class="unimplemented-feature">Training</a></li>				<!-- TRAINING -->
 							
 		
 							<li class="dropdown">																					<!-- ADMIN -->
 								<a href="#" class="dropdown-toggle"	data-toggle="dropdown">Admin<b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-header">User Management</li>
-									<li><a href="#">Register User</a></li>
-									<li><a href="#">Modify User</a></li>
+									<li class="disabled"><a href="#" class="unimplemented-feature">Register User</a></li>
+									<li class="disabled"><a href="#" class="unimplemented-feature">Modify User</a></li>
 									<li class="divider"></li>
 									<li class="dropdown-header">Account Settings</li>
-									<li><a href="#">View Account</a></li>
+									<li class="disabled"><a href="#" class="unimplemented-feature">View Account</a></li>
 								</ul>
 							</li> <!-- END: ADMIN -->
 							
-							<li><a  data-toggle="tab" href="#about">About</a></li>													<!-- ABOUT -->
+							<li class="disabled"><a  data-toggle="tab" href="#about" class="unimplemented-feature">About</a></li>					<!-- ABOUT -->
 							
 						</ul>
 					</div>

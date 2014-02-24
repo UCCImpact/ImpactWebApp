@@ -27,7 +27,6 @@
  	<%-- FontAwesome CSS --%>
  	<link rel='stylesheet' type='text/css' href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
-
  	<%-- SL Global CSS --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_global.css"/>/>
 	 	
