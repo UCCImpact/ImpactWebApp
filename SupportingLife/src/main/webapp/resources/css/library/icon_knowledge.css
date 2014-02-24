@@ -4,7 +4,7 @@
 	font-family: "Flaticon";
 	src: url("flaticon.eot");
 	src: url("flaticon.eot#iefix") format("embedded-opentype"),
-	url("/SupportingLife//images/fonts/icon_knowledge.ttf") format("truetype");
+	url("../../../images/fonts/icon_knowledge.ttf") format("truetype");
 }
 
 .flaticon-idea:before,
