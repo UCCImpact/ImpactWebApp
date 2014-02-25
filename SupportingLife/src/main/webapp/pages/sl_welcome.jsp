@@ -20,7 +20,11 @@
 						Empowering Health Care Professionals in the remotest regions of Africa
 					</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#"><i id="android-phone-icon" class="fa fa-mobile"></i>  Download the App</a>
+						<a class="btn btn-lg btn-primary" target="_blank"
+								href="https://sourceforge.net/projects/supportinglife/files/SupportingLifeAndroid.apk/download">
+							<i id="android-phone-icon" class="fa fa-mobile">
+							</i>  Download the App
+						</a>
 					</p>
 				</div>
 			</div>
