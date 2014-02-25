@@ -29,6 +29,7 @@ public class CcmPatientDaoImpl implements CcmPatientDao {
 		entityManager.persist(patient);
 		// save to DB
 		entityManager.flush();
+		entityManager.clear();
 	}
 
 	@Override

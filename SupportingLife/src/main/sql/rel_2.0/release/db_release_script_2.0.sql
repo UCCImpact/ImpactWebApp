@@ -54,6 +54,8 @@ CREATE TABLE IF NOT EXISTS sl_ccm_patient(
     										village_ta 				VARCHAR(50),
     										created_dt 				TIMESTAMP,
     										updated_dt 				TIMESTAMP,
+    										INDEX national_id_index (national_id),
+    										INDEX national_health_id_index (national_health_id),
     										PRIMARY KEY (patient_id)
 										  );
 
@@ -100,6 +102,7 @@ CREATE TABLE IF NOT EXISTS sl_ccm_classification (
     												classification_id 			INTEGER(18) NOT NULL AUTO_INCREMENT,
     												classification_key			VARCHAR(250),
     												classification_name			VARCHAR(1000),
+    												INDEX classification_index (classification_key),
 				    								PRIMARY KEY (classification_id)
 												 );
 
@@ -121,6 +124,7 @@ CREATE TABLE IF NOT EXISTS sl_ccm_patient_classification (
     												visit_id 			INTEGER(18) NOT NULL,
     												patient_id 			INTEGER(18) NOT NULL,
     												classification_id 	INTEGER(18) NOT NULL,
+    												INDEX patient_classification_index (patient_id, classification_id),
     												PRIMARY KEY (id),
 				    								FOREIGN KEY (visit_id) REFERENCES sl_ccm_patient_visit(visit_id),
 				    								FOREIGN KEY (patient_id) REFERENCES sl_ccm_patient(patient_id),
@@ -145,6 +149,7 @@ CREATE TABLE IF NOT EXISTS sl_ccm_treatment (
     											treatment_id 		INTEGER(18) NOT NULL AUTO_INCREMENT,
     											treatment_key		VARCHAR(250),
     											description 		VARCHAR(1000),
+    											INDEX treatment_index (treatment_key),
 				    							PRIMARY KEY (treatment_id)
 											 );
 
@@ -167,6 +172,7 @@ CREATE TABLE IF NOT EXISTS sl_ccm_patient_treatment (
     												visit_id 		INTEGER(18) NOT NULL,
     												patient_id 		INTEGER(18) NOT NULL,
     												treatment_id 	INTEGER(18) NOT NULL,
+    												INDEX patient_treatment_index (patient_id, treatment_id),
     												PRIMARY KEY (id),
 				    								FOREIGN KEY (visit_id) REFERENCES sl_ccm_patient_visit(visit_id),
 				    								FOREIGN KEY (patient_id) REFERENCES sl_ccm_patient(patient_id),
