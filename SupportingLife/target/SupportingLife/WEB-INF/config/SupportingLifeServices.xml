@@ -11,15 +11,21 @@
 		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
 	<!-- =================================================================================== -->
-	<!-- **** SPRINGIFIED SERVICES														**** -->
+	<!-- **** SUPPORTING LIFE SERVICES													**** -->
 	<!-- =================================================================================== -->
 
-	<bean id="SupportingLifeServiceBean" class="ie.ucc.bis.service.SupportingLifeService">
-	    
+	<!-- Validation support (e.g. @Valid) notatation requires a validator bean be added to the 
+		 context -->
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+	
+	<bean id="SupportingLifeServiceBean" class="ie.ucc.bis.supportinglife.service.SupportingLifeService">
+		<property name="daoBeans">
+		    <ref bean="daoMapBean"/>
+		</property>
 	</bean>
-
+	
 	<!-- =================================================================================== -->
-	<!-- **** End of SPRINGIFIED SERVICES												**** -->
+	<!-- **** END OF SUPPORTING LIFE SERVICES											**** -->
 	<!-- =================================================================================== -->
     		
 </beans>
