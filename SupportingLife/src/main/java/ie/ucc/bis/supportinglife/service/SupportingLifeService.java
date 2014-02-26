@@ -39,7 +39,7 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	/************************************Users**************************************/
 	/*******************************************************************************/
 	@Override
-	public List<User> getUserByUserId(String userId) {
+	public User getUserByUserId(String userId) {
 		UserDao userDao = (UserDao) getDaoBeans().get("UserDao");
 		return userDao.getUserByUserId(userId);
 	}	
@@ -55,15 +55,15 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	}
 	
 	@Override
-	public List<CcmPatient> getPatientByNationalId(String nationalId) {
+	public Long getPatientIdByNationalId(String nationalId) {
 		CcmPatientDao patientDao = (CcmPatientDao) getDaoBeans().get("CcmPatientDao");
-		return patientDao.getPatientByNationalId(nationalId);
+		return patientDao.getPatientIdByNationalId(nationalId);
 	}
 	
 	@Override
-	public List<CcmPatient> getPatientByNationalHealthId(String nationalHealthId) {
+	public Long getPatientByNationalHealthId(String nationalHealthId) {
 		CcmPatientDao patientDao = (CcmPatientDao) getDaoBeans().get("CcmPatientDao");
-		return patientDao.getPatientByNationalHealthId(nationalHealthId);
+		return patientDao.getPatientIdByNationalHealthId(nationalHealthId);
 	}
 	
 	@Override
@@ -73,9 +73,9 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	}
 	
 	@Override
-	public List<CcmPatient> getAllPatientsByNationalHealthIdFilter(String nationalHealthIdFilter) {
+	public List<String> getAllPatientsByNationalHealthIdFilter(String nationalHealthIdFilter) {
 		CcmPatientDao patientDao = (CcmPatientDao) getDaoBeans().get("CcmPatientDao");
-		return patientDao.getAllPatientsByNationalHealthIdFilter(nationalHealthIdFilter);
+		return patientDao.getFilteredNationalHealthIds(nationalHealthIdFilter);
 	}
 
 	/**
@@ -88,34 +88,39 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	 */
 	private CcmPatient obtainCcmPatientReference(PatientAssessmentComms patientAssessment) {
 		
+		CcmPatient ccmPatient = null;
 		Date currentDate = DateUtilities.getTodaysDate();
-		List<CcmPatient> ccmPatients = new ArrayList<CcmPatient>();
+		Long patientId = null;
 		
 		// check national id
 		if (patientAssessment.getNationalId() != null) {
-			ccmPatients = getPatientByNationalId(patientAssessment.getNationalId());
+			patientId = getPatientIdByNationalId(patientAssessment.getNationalId());
 		}
-		
+			
 		// check national health id
-		if (ccmPatients.isEmpty() && patientAssessment.getNationalHealthId() != null) {
-			ccmPatients = getPatientByNationalHealthId(patientAssessment.getNationalHealthId());
+		if (patientId != null && patientAssessment.getNationalHealthId() != null) {
+			patientId = getPatientByNationalHealthId(patientAssessment.getNationalHealthId());
 		}
 		
 		// if no luck finding reference, create new instance
-		if (ccmPatients.isEmpty()) {
-			CcmPatient ccmPatient = new CcmPatient(patientAssessment.getNationalId(), patientAssessment.getNationalHealthId(),
+		if (patientId == null) {
+			ccmPatient = new CcmPatient(patientAssessment.getNationalId(), patientAssessment.getNationalHealthId(),
 					patientAssessment.getChildFirstName(), patientAssessment.getChildSurname(),
 					patientAssessment.getBirthDate(), patientAssessment.getGender(),
 					patientAssessment.getCaregiverName(), patientAssessment.getRelationship(),
 					patientAssessment.getPhysicalAddress(),
 					patientAssessment.getVillageTa(), currentDate, currentDate);
-			return ccmPatient;
+			
+			// need to persist this new ccmPatient instance to obtain a valid 'patient_id'
+			CcmPatientDao patientDao = (CcmPatientDao) getDaoBeans().get("CcmPatientDao");
+			patientDao.addPatient(ccmPatient);
 		}
 		else {
-			// already exisits so just need to update the 'updated' field
-			ccmPatients.get(0).setUpdatedDate(currentDate);
-			return ccmPatients.get(0);
-		}	
+			// already exists so just need to update the 'updated' field
+			ccmPatient = new CcmPatient();
+			ccmPatient.setPatientId(patientId);
+		}
+		return ccmPatient;
 	}
 	
 	/*******************************************************************************/
@@ -130,44 +135,46 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		CcmPatient ccmPatient = obtainCcmPatientReference(patientAssessment);
 		
 		// 2. retrieve reference to HSA user
-		List<User> hsaUsers = getUserByUserId(patientAssessment.getHsaUserId());
+		User hsaUser = new User();
+		hsaUser.setUserId(patientAssessment.getHsaUserId());
 		
 		// 3. create 'patient visit' instance
 		CcmPatientVisit ccmPatientVisit = new CcmPatientVisit(ccmPatient, patientAssessment.getDeviceGeneratedAssessmentId(),
-				patientAssessment.getVisitDate(), hsaUsers.get(0));
-
-		// 4. configure the 'Look' symptoms
-		ccmPatientVisit.setCcmPatientLookSymptoms(new CcmPatientLookSymptoms(ccmPatientVisit, ccmPatient, patientAssessment.isChestIndrawing(),
+				patientAssessment.getVisitDate(), hsaUser);
+		
+		// 4. create the 'Look' symptoms
+		CcmPatientLookSymptoms ccmPatientLookSymptoms = new CcmPatientLookSymptoms(ccmPatientVisit, ccmPatient, patientAssessment.isChestIndrawing(),
 							patientAssessment.getBreathsPerMinute(), patientAssessment.isSleepyUnconscious(), patientAssessment.isPalmarPallor(),
-							patientAssessment.getMuacTapeColour(), patientAssessment.isSwellingBothFeet()));
+							patientAssessment.getMuacTapeColour(), patientAssessment.isSwellingBothFeet());
 				
-		// 5. configure the 'Ask + Look' symptoms
-		ccmPatientVisit.setCcmPatientAskLookSymptoms(new CcmPatientAskLookSymptoms(ccmPatientVisit, ccmPatient, patientAssessment.getProblem(), 
+		// 5. create the 'Ask + Look' symptoms
+		CcmPatientAskLookSymptoms ccmPatientAskLookSymptoms = new CcmPatientAskLookSymptoms(ccmPatientVisit, ccmPatient, patientAssessment.getProblem(), 
 							patientAssessment.isCough(), patientAssessment.getCoughDuration(), patientAssessment.isDiarrhoea(),
 							patientAssessment.getDiarrhoeaDuration(), patientAssessment.isBloodInStool(), patientAssessment.isFever(),
 							patientAssessment.getFeverDuration(), patientAssessment.isConvulsions(), patientAssessment.isDifficultyDrinkingOrFeeding(),
 							patientAssessment.isUnableToDrinkOrFeed(), patientAssessment.isVomiting(), patientAssessment.isVomitsEverything(),
 							patientAssessment.isRedEye(), patientAssessment.getRedEyeDuration(), patientAssessment.isDifficultySeeing(),
-							patientAssessment.getDifficultySeeingDuration(), patientAssessment.getCannotTreatProblemDetails()));
+							patientAssessment.getDifficultySeeingDuration(), patientAssessment.getCannotTreatProblemDetails());
 		
-		// 6. associate the patient with the patient visit
-		ccmPatient.getCcmPatientVisitList().add(ccmPatientVisit);
-		
-		// 7. associate the classifications with the patient visit
+		// associate the symptoms with the patient visit
+		ccmPatientVisit.setCcmPatientLookSymptoms(ccmPatientLookSymptoms);
+		ccmPatientVisit.setCcmPatientAskLookSymptoms(ccmPatientAskLookSymptoms);
+				
+		// 6. associate the classifications with the patient visit
 		for (Map.Entry<String, String> entry : patientAssessment.getClassifications().entrySet()) {
 			ccmPatientVisit.getCcmPatientClassificationList().add(new CcmPatientClassification(ccmPatientVisit, new CcmClassification(entry.getKey(), entry.getValue()), ccmPatient));
 		}
 		
-		// 8. associate the treatments with the patient visit
+		// 7. associate the treatments with the patient visit
 		for (Map.Entry<String, String> entry : patientAssessment.getTreatments().entrySet()) {
 			ccmPatientVisit.getCcmPatientTreatmentList().add(new CcmPatientTreatment(ccmPatientVisit, new CcmTreatment(entry.getKey(), entry.getValue()), ccmPatient));
 		}
 		
-		// 9. add the patient record to the DB
-		CcmPatientDao patientDao = (CcmPatientDao) getDaoBeans().get("CcmPatientDao");
-		patientDao.addPatient(ccmPatient);
-		
-		// 10. construct 'communication response' for reply to device
+		// 8. add the CcmPatientVisit record to the DB
+		CcmPatientVisitDao patientVisitDao = (CcmPatientVisitDao) getDaoBeans().get("CcmPatientVisitDao");
+		patientVisitDao.addPatientVisit(ccmPatientVisit);
+						
+		// 9. construct 'communication response' for reply to device
 		PatientAssessmentResponseComms assessmentResponse = new PatientAssessmentResponseComms(patientAssessment.getDeviceGeneratedAssessmentId(), 
 																	ccmPatientVisit.getVisitId(), ccmPatient.getPatientId(), ccmPatient.getNationalId(), 
 																	ccmPatient.getNationalHealthId(), ccmPatient.getChildFirstName(), 

@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Tuple;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -29,38 +30,49 @@ public class CcmPatientDaoImpl implements CcmPatientDao {
 		entityManager.persist(patient);
 		// save to DB
 		entityManager.flush();
-	}
-
-	@Override
-	public List<CcmPatient> getPatientByNationalId(String nationalId) {
-		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-		CriteriaQuery<CcmPatient> criteriaQuery = criteriaBuilder.createQuery(CcmPatient.class);
-		Root<CcmPatient> root = criteriaQuery.from(CcmPatient.class);
-		
-		criteriaQuery.select(root)
-        	.where(criteriaBuilder.and(
-        		criteriaBuilder.equal(root.get(CcmPatient_.nationalId), nationalId)));
-		
-		List<CcmPatient> patientResults = new ArrayList<CcmPatient>();
-		patientResults = entityManager.createQuery(criteriaQuery).getResultList();
-	    
-	    return patientResults;			
+		entityManager.clear();
 	}
 	
 	@Override
-	public List<CcmPatient> getPatientByNationalHealthId(String nationalHealthId) {
+	public Long getPatientIdByNationalId(String nationalId) {
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-		CriteriaQuery<CcmPatient> criteriaQuery = criteriaBuilder.createQuery(CcmPatient.class);
+		CriteriaQuery<Tuple> criteriaQuery = criteriaBuilder.createTupleQuery();
 		Root<CcmPatient> root = criteriaQuery.from(CcmPatient.class);
-		
-		criteriaQuery.select(root)
+
+		criteriaQuery.multiselect(root.get(CcmPatient_.patientId))
+        	.where(criteriaBuilder.and(
+        		criteriaBuilder.equal(root.get(CcmPatient_.nationalId), nationalId)));
+
+		List<Tuple> resultSet = entityManager.createQuery(criteriaQuery).getResultList();
+	   	
+		if (resultSet.size() != 0) {	
+			return (Long) resultSet.get(0).get(0);
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	@Override
+	public Long getPatientIdByNationalHealthId(String nationalHealthId) {
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+		CriteriaQuery<Tuple> criteriaQuery = criteriaBuilder.createTupleQuery();
+		Root<CcmPatient> root = criteriaQuery.from(CcmPatient.class);
+
+		criteriaQuery.multiselect(root.get(CcmPatient_.patientId))
         	.where(criteriaBuilder.and(
         		criteriaBuilder.equal(root.get(CcmPatient_.nationalHealthId), nationalHealthId)));
-		
-		List<CcmPatient> patientResults = new ArrayList<CcmPatient>();		
-		patientResults = entityManager.createQuery(criteriaQuery).getResultList();
-	    
-	    return patientResults;			
+
+		List<Tuple> resultSet = entityManager.createQuery(criteriaQuery).getResultList();
+	   	
+		if (resultSet.size() != 0) {	
+			return (Long) resultSet.get(0).get(0);
+		}
+		else
+		{
+			return null;
+		}		
 	}
 	
 	@Override
@@ -94,22 +106,26 @@ public class CcmPatientDaoImpl implements CcmPatientDao {
 	}
 
 	@Override
-	public List<CcmPatient> getAllPatientsByNationalHealthIdFilter(String nationalHealthIdFilter) {
+	public List<String> getFilteredNationalHealthIds(String nationalHealthIdFilter) {
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-		CriteriaQuery<CcmPatient> criteriaQuery = criteriaBuilder.createQuery(CcmPatient.class);
-		Root<CcmPatient> ccmPatientRoot = criteriaQuery.from(CcmPatient.class);
+		CriteriaQuery<Tuple> criteriaQuery = criteriaBuilder.createTupleQuery();
+		Root<CcmPatient> root = criteriaQuery.from(CcmPatient.class);
+		
+		criteriaQuery.multiselect(root.get(CcmPatient_.nationalHealthId));
 		
 		// add wildcards to national health id filter to pick up as many matches as possible
 		nationalHealthIdFilter =  nationalHealthIdFilter + WILDCARD;
-		
-		Predicate nationalHealthIdCompareCondition = criteriaBuilder.like(ccmPatientRoot.get(CcmPatient_.nationalHealthId), nationalHealthIdFilter);
-		
+		Predicate nationalHealthIdCompareCondition = criteriaBuilder.like(root.get(CcmPatient_.nationalHealthId), nationalHealthIdFilter);
 		criteriaQuery.where(criteriaBuilder.and(nationalHealthIdCompareCondition));
-		
-		List<CcmPatient> patientResults = new ArrayList<CcmPatient>();
-		patientResults = entityManager.createQuery(criteriaQuery).getResultList();
-	       
-	    return patientResults;	
-	}
 
+		List<Tuple> resultSet = entityManager.createQuery(criteriaQuery).getResultList();
+		
+		List<String> nationalHealthIds = new ArrayList<String>();
+		
+		for (Tuple tupleResult : resultSet) {
+			nationalHealthIds.add((String)tupleResult.get(0));
+		}
+		
+		return nationalHealthIds;
+	}
 }

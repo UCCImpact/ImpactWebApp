@@ -49,6 +49,15 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 	private EntityManager entityManager;
 	
 	@Override
+	public void addPatientVisit(CcmPatientVisit patientVisit) {		
+		entityManager.persist(patientVisit);
+		// save to DB
+		entityManager.flush();
+		entityManager.clear();
+	}
+
+	
+	@Override
 	public List<CcmPatientVisit> getAllPatientVisits() {
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<CcmPatientVisit> criteriaQuery = criteriaBuilder.createQuery(CcmPatientVisit.class);

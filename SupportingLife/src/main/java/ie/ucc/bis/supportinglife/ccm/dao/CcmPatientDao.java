@@ -6,11 +6,13 @@ import java.util.List;
 
 public interface CcmPatientDao extends Dao {
 
+	// to add a new patient
 	public void addPatient(CcmPatient patient);
-
+	
 	public List<CcmPatient> getAllPatients();
-	public List<CcmPatient> getPatientByNationalId(String nationalId);
-	public List<CcmPatient> getPatientByNationalHealthId(String nationalHealthId);
+	public Long getPatientIdByNationalId(String nationalId);
+	public Long getPatientIdByNationalHealthId(String nationalHealthId);
 	public List<CcmPatient> getAllPatientsByFirstName(String firstName);
-	public List<CcmPatient> getAllPatientsByNationalHealthIdFilter(String nationalHealthIdFilter);
+	
+	public List<String> getFilteredNationalHealthIds(String nationalHealthIdFilter);
 }

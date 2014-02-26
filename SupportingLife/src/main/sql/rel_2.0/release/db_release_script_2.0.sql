@@ -54,7 +54,9 @@ CREATE TABLE IF NOT EXISTS sl_ccm_patient(
     										village_ta 				VARCHAR(50),
     										created_dt 				TIMESTAMP,
     										updated_dt 				TIMESTAMP,
-    										PRIMARY KEY (patient_id)
+    										PRIMARY KEY (patient_id),
+    										INDEX national_id_index (national_id),
+    										INDEX national_health_id_index (national_health_id)
 										  );
 
 -----------------------------------------------------------------------------------------------------------------

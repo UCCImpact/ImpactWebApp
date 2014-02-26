@@ -1,6 +1,5 @@
 package ie.ucc.bis.supportinglife.controller;
 
-import ie.ucc.bis.supportinglife.ccm.domain.CcmPatient;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.controller.interfaces.ReportControllerInf;
 import ie.ucc.bis.supportinglife.report.form.CcmCustomForm;
@@ -9,7 +8,6 @@ import ie.ucc.bis.supportinglife.service.SupportingLifeServiceInf;
 import ie.ucc.bis.supportinglife.service.helper.SupportingLifeRefDataHelperInf;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -87,12 +85,7 @@ public class ReportController implements ReportControllerInf {
 		log.info("GET National Health IDs");
 
 		Map<String, List<String>> results = new HashMap<String, List<String>>();
-		List<CcmPatient> patients = supportingLifeService.getAllPatientsByNationalHealthIdFilter(term);
-		List<String> nationalHealthIds = new ArrayList<String>();
-		
-		for (CcmPatient patient : patients) {
-			nationalHealthIds.add(patient.getNationalHealthId());
-		}
+		List<String> nationalHealthIds = supportingLifeService.getAllPatientsByNationalHealthIdFilter(term);
 	
 		results.put("nationalHealthIds", nationalHealthIds);
 		

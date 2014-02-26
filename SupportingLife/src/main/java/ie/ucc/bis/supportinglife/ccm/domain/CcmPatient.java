@@ -129,7 +129,7 @@ public class CcmPatient implements Serializable {
 					String caregiverName, String relationship, 
 					String physicalAddress, String villageTa,
 					Date createdDate, Date updatedDate) {
-		
+
 		setNationalId(nationalId);
 		setNationalHealthId(nationalHealthId);
 		setChildFirstName(childFirstName);

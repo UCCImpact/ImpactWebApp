@@ -24,16 +24,16 @@ public interface SupportingLifeServiceInf {
 	/*******************************************************************************/
 	/************************************Users**************************************/
 	/*******************************************************************************/
-	public List<User> getUserByUserId(String userId);
+	public User getUserByUserId(String userId);
 
 	/*******************************************************************************/
 	/***********************************Patients************************************/
 	/*******************************************************************************/
 	public List<CcmPatient> getAllPatients();
-	public List<CcmPatient> getPatientByNationalId(String nationalId);
-	public List<CcmPatient> getPatientByNationalHealthId(String nationalHealthId);
+	public Long getPatientIdByNationalId(String nationalId);
+	public Long getPatientByNationalHealthId(String nationalHealthId);
 	public List<CcmPatient> getAllPatientsByFirstName(String firstName);
-	public List<CcmPatient> getAllPatientsByNationalHealthIdFilter(String nationalHealthIdFilter);
+	public List<String> getAllPatientsByNationalHealthIdFilter(String nationalHealthIdFilter);
 	
 	/*******************************************************************************/
 	/*********************************Patient Visits********************************/
