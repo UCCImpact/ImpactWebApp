@@ -17,7 +17,7 @@
 				<div class="carousel-caption">		
 					<h1>Supporting LIFE</h1>
 					<p>
-						Empowering Health Care Professionals in the remotest regions of Africa
+						Empowering Health Care Providers in the remotest regions of Africa
 					</p>
 					<p>
 						<a class="btn btn-lg btn-primary" target="_blank"
@@ -33,9 +33,9 @@
 			<img data-src="holder.js/900x500/auto/#077204:#7a7a7a/text: ">
 			<div class="container">
 				<div class="carousel-caption">
-					<h2>Electronic Patient Records</h2>
+					<h2>Electronic Health Record</h2>
 					<p>
-						Patient Record Access <i class="fa fa-arrows-h"></i> Anywhere &amp; Anytime
+						Health Record Access <i class="fa fa-arrows-h"></i> Anywhere &amp; Anytime
 					</p>
 					<p>
 						<a class="btn btn-lg btn-primary unimplemented-feature" href="#">Learn More</a>
@@ -49,7 +49,7 @@
 				<div class="carousel-caption">
 					<h2>Disease Outbreak Surveillance</h2>
 					<p>
-						Real-Time Tracking of Disease Outbreaks
+						Real-Time Tracking of Disease Outbreaks in rural districts of Africa
 					</p>
 					<p>
 						<a class="btn btn-lg btn-primary unimplemented-feature" href="#">Launch Surveillance</a>
@@ -78,20 +78,21 @@
 		<div class="col-lg-4">
 			<i id="medic-icon" class="fa fa-user-md"></i>
 			<h3>Enhance Productivity</h3>
-			<p class="lead">Improve productivity of medical professionals through reducing the administrative
-			   overhead of performing patient assessments.</p>
+			<p class="lead">Improve productivity of medical provider by increasing adherence to clinical
+				guidelines and reducing administrative overhead of performing patient assessments.
+			</p>
 		</div>
 		<div class="col-lg-4">
 			<i id="healthcare-icon" class="fa fa-plus-square"></i>
-			<h3>Improve Diagnosis</h3>
-			<p class="lead">Enhance the accuracy of diagnoses and health outcomes by utilising automated, rigorous 
+			<h3>Improve Healthcare Services</h3>
+			<p class="lead">Enhance the accuracy of diagnoses, treatment and health outcomes by utilising automated, rigorous 
 			   and robust decision support systems.
 			</p>
 		</div>
 		<div class="col-lg-4">
 			<i id="globe-icon" class="fa fa-globe"></i>
 			<h3>Increase Care Coordination</h3>
-			<p class="lead">Decrease the fragmentation of care by integrating and organising patient health records
+			<p class="lead">Decrease the fragmentation of care by integrating and organising electronic health records
 			   and providing immediate distribution to authorised care providers.
 			</p>
 		</div>
@@ -121,18 +122,42 @@
 					<div class="item active">
 						<div class="container">
 							<div class="carousel-caption">		
-								<h3>Initial Software Release</h3>
+								<h3>Latest Software Release (SL 2.0)</h3>
 							</div>
 						</div>
-						<iframe height="200" src="//www.youtube.com/embed/G6TLIgKuB9I?feature=player_detailpage"></iframe>
+						<iframe height="200" src="//www.youtube.com/embed/l-ZCJyhlpX4" allowfullscreen></iframe>
 					</div> <!-- end of active item -->
+					<div class="item ">
+						<div class="container">
+							<div class="carousel-caption">		
+								<h3>Health Record Data Management</h3>
+							</div>
+						</div>
+						<iframe height="200" src="//www.youtube.com/embed/Q0ay6UMF0I4" allowfullscreen></iframe>
+					</div> <!-- end of item -->
+					<div class="item">
+						<div class="container">
+							<div class="carousel-caption">		
+								<h3>App Installation Guidelines (SL 2.0)</h3>
+							</div>
+						</div>
+						<iframe height="200" src="//www.youtube.com/embed/EdQ4sPKLmiE" allowfullscreen></iframe>
+					</div> <!-- end of item -->
 					<div class="item">
 						<div class="container">
 							<div class="carousel-caption">
-								<h3>Second Software Release</h3>
+								<h3>Interim Software Release (SL 1.1)</h3>
 							</div>
 						</div>
-						<iframe height="200" src="//www.youtube.com/embed/RZiRm17b-3c?feature=player_detailpage"></iframe>
+						<iframe height="200" src="//www.youtube.com/embed/RZiRm17b-3c" allowfullscreen></iframe>
+					</div> <!-- end of item -->
+					<div class="item">
+						<div class="container">
+							<div class="carousel-caption">		
+								<h3>Initial Software Release (SL 1.0)</h3>
+							</div>
+						</div>
+						<iframe height="200" src="//www.youtube.com/embed/G6TLIgKuB9I" allowfullscreen></iframe>
 					</div> <!-- end of item -->
 				</div> <!-- end of carousel inner --> 
 				<a class="left carousel-control" href="#videoCarousel" data-slide="prev">
@@ -167,7 +192,7 @@
 			</p>
 		</div>
 		<div class="col-md-5">
-			<a href="https://github.com/timothyosullivan">
+			<a href="https://github.com/timothyosullivan" target="_blank">
 				<i id="github-icon" class="fa fa-github"></i>
 				<br>
 				<span class="text-muted">
@@ -181,7 +206,7 @@
 
 	<div class="row featurette">
 		<div class="col-md-5">
-			<a href="http://supportinglife.github.io/">
+			<a href="http://supportinglife.github.io/" target="_blank">
 				<i id="knowledge-bulb-icon" class="fa flaticon-idea"></i>
 				<br>
 				<span class="text-muted">
