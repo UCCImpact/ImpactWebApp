@@ -63,7 +63,7 @@ public class CcmPatientVisit implements Serializable {
     private CcmPatient patient;
 		
 	@Column(name="visit_dt") 
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date visitDate;
 	
 	// association to sl_user table

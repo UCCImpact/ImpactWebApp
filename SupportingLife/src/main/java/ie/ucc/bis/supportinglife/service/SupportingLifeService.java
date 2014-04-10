@@ -89,7 +89,7 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	private CcmPatient obtainCcmPatientReference(PatientAssessmentComms patientAssessment) {
 		
 		CcmPatient ccmPatient = null;
-		Date currentDate = DateUtilities.getTodaysDate();
+		Date currentDate = DateUtilities.getTodaysDate(PatientAssessmentComms.DATE_TIME_CUSTOM_FORMAT);
 		Long patientId = null;
 		
 		// check national id

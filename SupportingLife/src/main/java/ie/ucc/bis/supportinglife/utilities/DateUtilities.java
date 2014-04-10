@@ -13,8 +13,7 @@ import java.util.Locale;
  * @author timothyosullivan
  */
 public class DateUtilities {
-	
-	private static final String DATE_TIME_CUSTOM_FORMAT = "dd MMMM yyyy";
+
 	private static final Locale LOCALE = Locale.UK;
 
 	
@@ -24,9 +23,9 @@ public class DateUtilities {
 	 * @return String - TimeStamp in milliseconds
 	 * 
 	 */
-	public static Date getTodaysDate() {
+	public static Date getTodaysDate(String slDateFormat) {
 		Calendar cal = Calendar.getInstance(Locale.UK);
-		SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_TIME_CUSTOM_FORMAT, LOCALE);
+		SimpleDateFormat dateFormat = new SimpleDateFormat(slDateFormat, LOCALE);
 		Date todayDate = null;
 		
 		try {
