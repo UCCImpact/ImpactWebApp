@@ -60,6 +60,10 @@ public class User implements Serializable {
 	@Column(name="updated_dt")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedDate;
+	
+	@Column(name="registered_dt")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date registeredDate;
 
 	// association to sl_ccm_patient_visit table
 	// - one user can create many patients 
@@ -83,7 +87,7 @@ public class User implements Serializable {
 	 * @param updatedDate
 	 */
 	public User(String password, boolean ccmUser, boolean imciUser, String firstName,
-				String surname, String role, Date createdDate, Date updatedDate) {
+				String surname, String role, Date createdDate, Date updatedDate, Date registeredDate) {
 		setPassword(password);
 		setCcmUser(ccmUser);
 		setImciUser(imciUser);
@@ -92,6 +96,7 @@ public class User implements Serializable {
 		setRole(role);
 		setCreatedDate(createdDate);
 		setUpdatedDate(updatedDate);
+		setRegisteredDate(registeredDate);
 	}
 
 	public String getUserId() {
@@ -164,6 +169,14 @@ public class User implements Serializable {
 
 	public void setUpdatedDate(Date updatedDate) {
 		this.updatedDate = updatedDate;
+	}
+
+	public Date getRegisteredDate() {
+		return registeredDate;
+	}
+
+	public void setRegisteredDate(Date registeredDate) {
+		this.registeredDate = registeredDate;
 	}
 
 	public Set<CcmPatientVisit> getCcmPatientVisitList() {

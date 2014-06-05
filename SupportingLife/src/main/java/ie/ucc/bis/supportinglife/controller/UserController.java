@@ -47,16 +47,10 @@ public class UserController implements UserControllerInf {
 	@RequestMapping(value="/register", method=RequestMethod.POST,  produces={"application/json"}, consumes={"application/json"})
 	@ResponseStatus(HttpStatus.CREATED)
 	public @ResponseBody Boolean registerUser(@RequestBody UserAuthenticationComms userDetails) {
-		
-//		Boolean registrationResponse = supportingLifeService.registerUser(userDetails);
+
 		// TODO Record the deviceId associated with the user if their details are authenticated
-	
-		if (userDetails.getHsaUserId().equalsIgnoreCase("tim")){
-			return true;
-		}
-		else {
-			return false;
-		}
+		Boolean registrationResponse = supportingLifeService.registerUser(userDetails);
+		return registrationResponse;
 	}
 	
 } // end of class

@@ -1,5 +1,5 @@
 -----------------------------------------------------------------------------------------------------------------
--- SUPPORTING LIFE RELEASE 2.0 RELEASE SCRIPT
+-- SUPPORTING LIFE RELEASE 3.0 RELEASE SCRIPT
 -----------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------
@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS sl_user (
     								role 			VARCHAR(10),
     								created_dt 		TIMESTAMP,
     								updated_dt 		TIMESTAMP,
+    								registered_dt 	TIMESTAMP,
     								PRIMARY KEY (user_id)
 									);
 

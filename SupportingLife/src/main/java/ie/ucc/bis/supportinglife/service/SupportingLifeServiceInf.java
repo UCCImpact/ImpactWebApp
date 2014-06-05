@@ -9,6 +9,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.ccm.domain.User;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentComms;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentResponseComms;
+import ie.ucc.bis.supportinglife.communication.UserAuthenticationComms;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 
@@ -25,6 +26,7 @@ public interface SupportingLifeServiceInf {
 	/************************************Users**************************************/
 	/*******************************************************************************/
 	public User getUserByUserId(String userId);
+	public Boolean registerUser(UserAuthenticationComms userDetails);
 
 	/*******************************************************************************/
 	/***********************************Patients************************************/

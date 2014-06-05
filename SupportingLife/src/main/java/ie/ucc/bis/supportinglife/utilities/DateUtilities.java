@@ -15,6 +15,7 @@ import java.util.Locale;
 public class DateUtilities {
 
 	private static final Locale LOCALE = Locale.UK;
+	public static final String DATE_TIME_CUSTOM_FORMAT = "dd MMMM yyyy HH:mm";
 
 	
 	/**

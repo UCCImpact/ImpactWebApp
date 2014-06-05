@@ -19,6 +19,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.User;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentComms;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentResponseComms;
+import ie.ucc.bis.supportinglife.communication.UserAuthenticationComms;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 import ie.ucc.bis.supportinglife.utilities.DateUtilities;
@@ -43,6 +44,17 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		UserDao userDao = (UserDao) getDaoBeans().get("UserDao");
 		return userDao.getUserByUserId(userId);
 	}	
+	
+	@Override
+	public Boolean registerUser(UserAuthenticationComms userDetails) {
+		UserDao userDao = (UserDao) getDaoBeans().get("UserDao");
+		boolean authenticatedUser = userDao.authenticateUser(userDetails.getHsaUserId(), userDetails.getPassword());
+		if (authenticatedUser) {
+			// user authenticated so record user registration
+			userDao.registerUser(getUserByUserId(userDetails.getHsaUserId()));
+		}
+		return authenticatedUser;
+	}
 	
 	/*******************************************************************************/
 	/***********************************Patients************************************/
