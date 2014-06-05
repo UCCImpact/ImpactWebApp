@@ -11,11 +11,12 @@ CREATE DATABASE IF NOT EXISTS supportinglifedb;
 -------------------------------------*********************************-------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 -- CREATE CCM-RELATED TABLE: sl_user
+-- (note: password column is case sensitive for additional security)
 -----------------------------------------------------------------------------------------------------------------
 USE supportinglifedb;
 CREATE TABLE IF NOT EXISTS sl_user (
     								user_id 		VARCHAR(8) NOT NULL,
-    								password 		VARCHAR(250),
+    								password 		VARCHAR(250) COLLATE latin1_general_cs,
     								ccm_user 		TINYINT(1),
     								imci_user 		TINYINT(1),
     								first_name 		VARCHAR(50),

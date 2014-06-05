@@ -45,7 +45,7 @@
 	<beans profile="development">
 		<bean id="supportingLifeDataSource" class="org.apache.commons.dbcp.BasicDataSource">
 			<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-			<property name="url" value="jdbc:mysql://localhost:3306/supportinglifedb"/>
+			<property name="url" value="jdbc:mysql://localhost:3306/supportinglifedb?zeroDateTimeBehavior=convertToNull"/>
 			<property name="username" value="supporting_user"/>
 			<property name="password" value="supporting_pw_14"/>
 			<property name="validationQuery" value="/* ping */ SELECT 1"/>

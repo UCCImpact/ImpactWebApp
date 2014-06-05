@@ -42,7 +42,7 @@ public class UserDaoImpl implements UserDao {
 			return false;
 		}
 		else {
-			return true;				
+			return true;
 		}
 	}
 

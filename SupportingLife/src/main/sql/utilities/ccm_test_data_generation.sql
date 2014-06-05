@@ -20,139 +20,139 @@ DELETE FROM sl_user;
 -----------------------------------------------------------------------------------------------------------------
 
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("HSAUSER1", "password", 1, 0, "SELEMI", "FUIAMA", "HSA_USER",
-							STR_TO_DATE('14,01,2014','%d,%m,%Y'), STR_TO_DATE('14,01,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('14,01,2014','%d,%m,%Y'), STR_TO_DATE('14,01,2014','%d,%m,%Y'));
 					
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("audgrace", "audgrace", 1, 0, "Audrey", "Grace", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("bchiramb", "bchiramb", 1, 0, "Baxter", "Griphin Chirambo", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("bandsson", "bandsson", 1, 0, "Bo", "Andersson", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("deirryan", "deirryan", 1, 0, "Deirdre", "Ryan", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 					
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("dnyirong", "dnyirong", 1, 0, "Dominic", "Nyirongo", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 				
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("engaland", "engaland", 1, 0, "Emmanuel", "Ngalande", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("fredadam", "fredadam", 1, 0, "Frederic", "Adam", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("jmueller", "jmueller", 1, 0, "Jeanette", "Mueller", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);				
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));				
 
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("jenhsieh", "jenhsieh", 1, 0, "Jenny", "Hsieh", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("jgallagh", "jgallagh", 1, 0, "Joe", "Gallagher", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("jodonogh", "jodonogh", 1, 0, "John", "O Donoghue", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("josephwu", "josephwu", 1, 0, "Joseph", "Wu", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("laurdaly", "laurdaly", 1, 0, "Laura", "Daly", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("mthompsn", "mthompsn", 1, 0, "Matthew", "Thompson", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("nchimbat", "nchimbat", 1, 0, "Nathaniel", "Chimbatata", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("natwamba", "natwamba", 1, 0, "Nathalis", "Wamba", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);							
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));							
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("nholmber", "nholmber", 1, 0, "Nicklas", "Holmberg", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("oddsteen", "oddsteen", 1, 0, "Odd", "Steen", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("scastell", "scastell", 1, 0, "Sarah", "Castelli", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("swoodrth", "swoodrth", 1, 0, "Simon", "Woodworth", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("soconnor", "soconnor", 1, 0, "Siobhan", "O Connor", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("scarlson", "scarlson", 1, 0, "Sven", "Carlsson", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("tosulliv", "tosulliv", 1, 0, "Tim", "O Sullivan", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
 							
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("tkawonga", "tkawonga", 1, 0, "Tiwonge", "Kawonga", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);							
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));							
 
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("vichardy", "vichardy", 1, 0, "Victoria", "Hardy", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);							
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));							
 
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
-					created_dt, updated_dt, registered_dt) 
+					created_dt, updated_dt) 
 					VALUES ("yoconnor", "yoconnor", 1, 0, "Yvonne", "O Connor", "HSA_USER",
-							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'), NULL);		
+							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));		
 							
 							
 -----------------------------------------------------------------------------------------------------------------

@@ -35,6 +35,7 @@ public class User implements Serializable {
 	@Column(name="user_id")
 	private String userId;
 	
+	/* password column is case sensitive */
 	@Column(name="password")
 	private String password;
 
