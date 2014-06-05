@@ -1,6 +1,7 @@
 package ie.ucc.bis.supportinglife.communication;
 
 import java.io.Serializable;
+import java.util.Locale;
 
 
 /** 
@@ -17,11 +18,14 @@ public class UserAuthenticationComms implements Serializable {
 	// User Details
 	private String hsaUserId;
 	private String password;
+	private Boolean authenticated;
 
 	public UserAuthenticationComms() {}
 
 	public UserAuthenticationComms(String hsaUserId, String password) {
-		setHsaUserId(hsaUserId);
+		// convert user id to lowercase to avoid case-sensitivity 
+		// however password is case sensitive 
+		setHsaUserId(hsaUserId.toLowerCase(Locale.UK));
 		setPassword(password);
 	}
 
@@ -39,5 +43,13 @@ public class UserAuthenticationComms implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Boolean getAuthenticated() {
+		return authenticated;
+	}
+
+	public void setAuthenticated(Boolean authenticated) {
+		this.authenticated = authenticated;
 	}
 }
