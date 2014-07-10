@@ -122,10 +122,10 @@
 					<div class="item active">
 						<div class="container">
 							<div class="carousel-caption">		
-								<h3>Latest Software Release (SL 2.0)</h3>
+								<h3>Latest Software Release (SL 3.0)</h3>
 							</div>
 						</div>
-						<iframe height="200" src="//www.youtube.com/embed/l-ZCJyhlpX4" allowfullscreen></iframe>
+						<iframe height="200" src="//www.youtube.com/embed/n4iDDow6pxc" allowfullscreen></iframe>
 					</div> <!-- end of active item -->
 					<div class="item ">
 						<div class="container">
@@ -138,10 +138,18 @@
 					<div class="item">
 						<div class="container">
 							<div class="carousel-caption">		
-								<h3>App Installation Guidelines (SL 2.0)</h3>
+								<h3>App Installation Guidelines (SL 3.0)</h3>
 							</div>
 						</div>
-						<iframe height="200" src="//www.youtube.com/embed/EdQ4sPKLmiE" allowfullscreen></iframe>
+						<iframe height="200" src="//www.youtube.com/embed/GFRJ1mzw0mY" allowfullscreen></iframe>
+					</div> <!-- end of item -->
+					<div class="item">
+						<div class="container">
+							<div class="carousel-caption">		
+								<h3>Second Software Release (SL 2.0)</h3>
+							</div>
+						</div>
+						<iframe height="200" src="//www.youtube.com/embed/l-ZCJyhlpX4" allowfullscreen></iframe>
 					</div> <!-- end of item -->
 					<div class="item">
 						<div class="container">

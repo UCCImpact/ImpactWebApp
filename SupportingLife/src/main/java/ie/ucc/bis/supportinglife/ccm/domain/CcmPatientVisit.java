@@ -92,6 +92,10 @@ public class CcmPatientVisit implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL, mappedBy="visit")
 	private CcmPatientAskLookSymptoms ccmPatientAskLookSymptoms;
 
+	// association to sl_ccm_assessment_analytics table
+	@OneToOne(cascade = CascadeType.ALL, mappedBy="visit")
+	private CcmAssessmentAnalytics ccmAssessmentAnalytics;
+	
 	public CcmPatientVisit() {}
 
 	/**
@@ -190,5 +194,14 @@ public class CcmPatientVisit implements Serializable {
 
 	public void setCcmPatientAskLookSymptoms(CcmPatientAskLookSymptoms ccmPatientAskLookSymptoms) {
 		this.ccmPatientAskLookSymptoms = ccmPatientAskLookSymptoms;
+	}
+
+	public CcmAssessmentAnalytics getCcmAssessmentAnalytics() {
+		return ccmAssessmentAnalytics;
+	}
+
+	public void setCcmAssessmentAnalytics(
+			CcmAssessmentAnalytics ccmAssessmentAnalytics) {
+		this.ccmAssessmentAnalytics = ccmAssessmentAnalytics;
 	}
 }
