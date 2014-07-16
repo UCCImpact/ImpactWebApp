@@ -264,6 +264,8 @@ CREATE TABLE IF NOT EXISTS sl_ccm_assessment_analytics (
     												visit_id 						INTEGER(18) NOT NULL,
     												breath_counter_used 			TINYINT(1),
     												breath_full_time_assessment 	TINYINT(1),
+    												latitude_location 				VARCHAR(30),
+    												longitude_location 				VARCHAR(30),
     												PRIMARY KEY (id),
 				    								FOREIGN KEY (visit_id) REFERENCES sl_ccm_patient_visit(visit_id)
 												);

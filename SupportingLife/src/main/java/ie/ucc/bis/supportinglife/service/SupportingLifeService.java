@@ -185,7 +185,7 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		
 		// 8. create the 'assessment analytics' record
 		CcmAssessmentAnalytics ccmAssessmentAnalytics = new CcmAssessmentAnalytics(ccmPatientVisit, patientAssessment.isBreathCounterUsed(), 
-				patientAssessment.isBreathFullTimeAssessment());
+				patientAssessment.isBreathFullTimeAssessment(), patientAssessment.getLatitudeLocation(), patientAssessment.getLongitudeLocation());
 		
 		// associate the assessment analytics with the patient visit
 		ccmPatientVisit.setCcmAssessmentAnalytics(ccmAssessmentAnalytics);

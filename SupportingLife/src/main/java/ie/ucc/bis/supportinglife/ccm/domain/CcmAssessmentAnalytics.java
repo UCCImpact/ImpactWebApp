@@ -44,6 +44,12 @@ public class CcmAssessmentAnalytics implements Serializable {
 	// was a full timer assessment (i.e. 60 seconds) applied when using breath counter
 	@Column(name="breath_full_time_assessment", columnDefinition = "TINYINT(1)")
 	private boolean breathFullTimeAssessment;
+	
+	@Column(name="latitude_location")
+	private String latitude;
+	
+	@Column(name="longitude_location")
+	private String longitude;
 		 
 	public CcmAssessmentAnalytics() {}
 
@@ -53,12 +59,16 @@ public class CcmAssessmentAnalytics implements Serializable {
 	 * @param visit
 	 * @param breathCounterUsed
 	 * @param breathFullTimeAssessment
+	 * @param longitudeLocation 
+	 * @param latitudeLocation 
 	 * 
 	 */
-	public CcmAssessmentAnalytics(CcmPatientVisit visit, boolean breathCounterUsed, boolean breathFullTimeAssessment) {	
+	public CcmAssessmentAnalytics(CcmPatientVisit visit, boolean breathCounterUsed, boolean breathFullTimeAssessment, String latitude, String longitude) {	
 		setVisit(visit);
 		setBreathCounterUsed(breathCounterUsed);
 		setBreathFullTimeAssessment(breathFullTimeAssessment);
+		setLatitude(latitude);
+		setLongitude(longitude);
 	}
 
 	public Long getId() {
@@ -91,5 +101,21 @@ public class CcmAssessmentAnalytics implements Serializable {
 
 	public void setBreathFullTimeAssessment(boolean breathFullTimeAssessment) {
 		this.breathFullTimeAssessment = breathFullTimeAssessment;
+	}
+
+	public String getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 }
