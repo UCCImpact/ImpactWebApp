@@ -1,6 +1,6 @@
 <%-- sl_ccm_custom_report.jsp --%>
 <%-- CCM Custom Report Generation Page. --%>
-<%-- Author: Timothy O' Sullivan, James Flynn --%>
+<%-- Author: Timothy O'Sullivan --%>
 <%-- Last Updated: 26/01/2014. --%>
 
 <%--  Include SL Header --%>

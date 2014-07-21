@@ -1,0 +1,19 @@
+<%-- sl_surveillance_footer.jspf --%>
+<%-- SL Disease Surveillance Footer, containing JS references --%>
+<%-- author: Timothy O' Sullivan --%>
+<%-- Last Updated: 21/07/2014 --%>
+
+ 	<%----------------------------------------- JS References -----------------------------------------%>
+ 	<%-- Placed at the end of the document so the pages load faster --%>
+ 	
+	<%-- NOTE: NEEDED TO ORDER JS FILES IN THE FOLLOWING ORDER AS OTHERWISE WAS GETTING CONFLICT --%>
+	<%-- 	   JQUERY AND BOOTSTRAP WITH THE DATEPICKER: 										 --%>
+	<%-- 	   ORDER: 				 															 --%>
+	<%--			  1. JQUERY		 															 --%>
+	<%--			  2. BOOTSTRAP JS FILES  			 										 --%>
+	
+	<%-- jQuery Source file --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery-1.10.2.js"/> charset="utf-8"></script>
+		
+	<%--  SL Surveillance JS Functionality --%>
+	<script type="text/javascript" src=<c:url value="/js/sl_surveillance.js"/>></script>

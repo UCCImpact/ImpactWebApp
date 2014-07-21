@@ -1,0 +1,15 @@
+<%-- sl_surveillance_header.jspf --%>
+<%-- Header for SL Disease Surveillance --%>
+<%-- author: Timothy O Sullivan --%>
+<%-- Last Updated: 21/07/2014. --%>
+	 
+	<title>SL Disease Surveillance</title>
+	 
+	<%--------------------------------------------- CSS Links -----------------------------------------%>	
+	<%--  CSS JQuery UI --%>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-1.10.4.custom.css"/>/>
+
+	<%-- Custom style for the SL surveillance --%>
+ 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_surveillance.css"/>/>
+     
+</head>

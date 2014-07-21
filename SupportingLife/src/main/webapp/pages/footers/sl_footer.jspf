@@ -41,10 +41,10 @@
 
 <%----------------------------------------- JS References -----------------------------------------%>
  	<%-- Placed at the end of the document so the pages load faster --%>
- 	
- 	<%-- NavBar ToolTip Handling JavaScript --%>
-	<script type="text/javascript" src=<c:url value="/js/sl_tooltip.js"/>></script>
- 	
+
+ 	<%-- NavBar General Handling JavaScript --%>
+	<script type="text/javascript" src=<c:url value="/js/sl_navbar.js"/>></script> 	
+ 	 	
 	<%-- Bootstrap core JavaScript --%>
 	<script type="text/javascript" src=<c:url value="/js/library/bootstrap.min.js"/>></script>
 
