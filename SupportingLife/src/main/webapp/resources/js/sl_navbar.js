@@ -8,7 +8,16 @@
  ** Last Updated: 21/07/2014.
  ** *************************************************************************/
 
-/* NavBar 'Active' Display handling */
+/* NavBar 'Active' Display handling - Part 1 */
+/* Fix for bug SL-138 - 'Home' header button remains active when the 'Reporting' drop down menu is active. */
+$(function() {
+	$('.navbar-nav .dropdown').click(function(event) {
+		$(this).siblings().removeClass('active');
+		$(this).addClass('active');
+	});
+});	
+
+/* NavBar 'Active' Display handling - Part 2 */
 $(document).ready(function () {
     // dealing with second level sub-menu e.g. 'CCM Custom Report' Navigation Bar Selection
 	$('a[href="' + this.location.pathname + '"]').parent().parent().parent().siblings().removeClass('active');
