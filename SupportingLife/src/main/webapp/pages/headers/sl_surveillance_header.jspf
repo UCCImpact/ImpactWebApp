@@ -7,7 +7,13 @@
 	 
 	<%--------------------------------------------- CSS Links -----------------------------------------%>	
 	<%--  CSS JQuery UI --%>
-	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-1.10.4.custom.css"/>/>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-theme.css"/>/>
+
+	<%-- style for the custom multi-select (i.e. checkbox) dropdown --%>
+ 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery.multiselect.css"/>/>
+
+	<%-- style for the custom multi-select filter (i.e. checkbox) dropdown --%>
+ 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery.multiselect.filter.css"/>/>
 
 	<%-- Custom style for the SL surveillance --%>
  	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_surveillance.css"/>/>

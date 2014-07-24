@@ -1,6 +1,7 @@
 package ie.ucc.bis.supportinglife.service;
 
 import ie.ucc.bis.supportinglife.ccm.dao.CcmAskLookSymptomsDao;
+import ie.ucc.bis.supportinglife.ccm.dao.CcmAssessmentAnalyticsDao;
 import ie.ucc.bis.supportinglife.ccm.dao.CcmLookSymptomsDao;
 import ie.ucc.bis.supportinglife.ccm.dao.CcmPatientClassificationDao;
 import ie.ucc.bis.supportinglife.ccm.dao.CcmPatientDao;
@@ -23,6 +24,7 @@ import ie.ucc.bis.supportinglife.communication.PatientAssessmentResponseComms;
 import ie.ucc.bis.supportinglife.communication.UserAuthenticationComms;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
+import ie.ucc.bis.supportinglife.surveillance.SurveillanceRecord;
 import ie.ucc.bis.supportinglife.utilities.DateUtilities;
 
 import java.util.ArrayList;
@@ -283,6 +285,17 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		CcmPatientTreatmentDao patientTreatmentDao = (CcmPatientTreatmentDao) getDaoBeans().get("CcmPatientTreatmentDao");
 		return patientTreatmentDao.getPatientTreatmentsByVisit(ccmPatientVisit);				
 	}
+
+	
+	/*******************************************************************************/
+	/*******************************Disease Surveillance****************************/
+	/*******************************************************************************/
+	@Override
+	public List<SurveillanceRecord> getSurveillanceRecords() {
+		CcmAssessmentAnalyticsDao surveillanceDao = (CcmAssessmentAnalyticsDao) getDaoBeans().get("CcmAssessmentAnalyticsDao");
+		return surveillanceDao.getSurveillanceRecords();	
+	}
+	
 	
 	/*******************************************************************************/
 	/*********************************Utility Methods*******************************/
@@ -344,8 +357,6 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		}	
 		return treatmentsSelected;
 	}
-
-	
 	
 	/*******************************************************************************/
 	/*********************************Getters/Setters*******************************/

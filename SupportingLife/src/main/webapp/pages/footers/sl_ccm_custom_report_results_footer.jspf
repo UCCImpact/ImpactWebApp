@@ -18,7 +18,7 @@
 	<%--  JQuery Datatables --%>
 	<script type="text/javascript" src=<c:url value="/js/library/jquery.dataTables.js"/>></script>
 	
-	<%--  jQuery Themeroller theme - used for customising look of datatables --%>
+	<%--  jQuery UI - used for customising look of datatables --%>
 	<script type="text/javascript" src=<c:url value="/js/library/jquery-ui-1.10.4.custom.min.js"/>></script>
 
 	<%--  SL CCM Custom Report Results JS Functionality --%>

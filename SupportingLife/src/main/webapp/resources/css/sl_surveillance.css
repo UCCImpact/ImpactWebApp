@@ -24,6 +24,10 @@
   padding-bottom: 15px;
 }
 
+#surveillance-map {
+	height: 500px;
+}
+
 /* -------------------------------------------------- */
 /* Canvas to maintain visual consistency from 		  */
 /* carousel main screen to reporting screens		  */
@@ -34,6 +38,25 @@
 	width: 100%;
 	min-height: 20px;
 	background: #077204;
+}
+
+/* -------------------------------------------------- */
+/* Header and footer wrapper on surveillance map	  */
+/* -------------------------------------------------- */
+#sl-surveillance-map-separator {
+	position: relative;
+	border-radius: 4px; /* round corner of rectangle */
+	width: 100%;
+	min-height: 20px;
+	background: #077204;
+}
+
+/* -------------------------------------------------- */
+/* User selection criteria for surveillance map		  */
+/* -------------------------------------------------- */
+#surveillance-selection-criteria {
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
 
 /* -------------------------------------------------- */

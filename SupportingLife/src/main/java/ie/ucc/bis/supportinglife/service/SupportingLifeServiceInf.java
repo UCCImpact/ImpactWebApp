@@ -12,6 +12,7 @@ import ie.ucc.bis.supportinglife.communication.PatientAssessmentResponseComms;
 import ie.ucc.bis.supportinglife.communication.UserAuthenticationComms;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
+import ie.ucc.bis.supportinglife.surveillance.SurveillanceRecord;
 
 import java.util.Date;
 import java.util.List;
@@ -91,4 +92,8 @@ public interface SupportingLifeServiceInf {
 	/*******************************************************************************/	
 	public List<CcmPatientTreatment> getPatientTreatmentsByVisit(CcmPatientVisit ccmPatientVisit);
 
+	/*******************************************************************************/
+	/*******************************Disease Surveillance****************************/
+	/*******************************************************************************/
+	public List<SurveillanceRecord> getSurveillanceRecords();
 }

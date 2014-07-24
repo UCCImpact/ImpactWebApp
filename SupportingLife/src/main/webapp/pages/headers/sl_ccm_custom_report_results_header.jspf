@@ -16,6 +16,6 @@
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/animate.css"/>/>
 
 	<%--  CSS 'Smoothness' Themeroller theme - used for customising look of datatables --%>
-	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-1.10.4.custom.css"/>/>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-theme.css"/>/>
      
 </head>

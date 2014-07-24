@@ -309,3 +309,12 @@ INSERT INTO sl_ccm_patient_treatment(visit_id, patient_id, treatment_id)
 												   (2, 2, 11),
 												   (2, 2, 12);
 
+-----------------------------------------------------------------------------------------------------------------
+-- ADD CCM ASSESSMENT ANALYTICS DATA
+-----------------------------------------------------------------------------------------------------------------									 
+								 
+INSERT INTO sl_ccm_assessment_analytics(visit_id, breath_counter_used, breath_full_time_assessment, latitude_location, longitude_location) 
+									VALUES (1, 1, 0, "51.8926846", "-8.490176");
+									
+INSERT INTO sl_ccm_assessment_analytics(visit_id, breath_counter_used, breath_full_time_assessment, latitude_location, longitude_location) 
+									VALUES (2, 1, 0, "53.9426846", "-6.490155");

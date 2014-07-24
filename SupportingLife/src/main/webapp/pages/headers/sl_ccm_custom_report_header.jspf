@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/datepicker.css"/>/>
 	
 	<%--  CSS JQuery UI --%>
-	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-1.10.4.custom.css"/>/>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-theme.css"/>/>
 
 	<%-- Custom style for the ccm custom report --%>
  	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_ccm_custom_report.css"/>/>

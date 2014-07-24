@@ -22,6 +22,7 @@
 	<bean id="CcmAskLookSymptomsDaoBean" class="ie.ucc.bis.supportinglife.ccm.dao.CcmAskLookSymptomsDaoImpl"/>
 	<bean id="CcmPatientClassificationDaoBean" class="ie.ucc.bis.supportinglife.ccm.dao.CcmPatientClassificationDaoImpl"/>
 	<bean id="CcmPatientTreatmentDaoBean" class="ie.ucc.bis.supportinglife.ccm.dao.CcmPatientTreatmentDaoImpl"/>
+	<bean id="CcmAssessmentAnalyticsDaoBean" class="ie.ucc.bis.supportinglife.ccm.dao.CcmAssessmentAnalyticsDaoImpl"/>
 	
 	<!-- =================================================================================== -->
 	<!-- **** END OF SUPPORTING LIFE DAOs												**** -->
@@ -35,6 +36,7 @@
 		<entry key="CcmAskLookSymptomsDao" value-ref="CcmAskLookSymptomsDaoBean"/>
 		<entry key="CcmPatientClassificationDao" value-ref="CcmPatientClassificationDaoBean"/>
 		<entry key="CcmPatientTreatmentDao" value-ref="CcmPatientTreatmentDaoBean"/>
+		<entry key="CcmAssessmentAnalyticsDao" value-ref="CcmAssessmentAnalyticsDaoBean"/>
 	</util:map>
 
 </beans>
