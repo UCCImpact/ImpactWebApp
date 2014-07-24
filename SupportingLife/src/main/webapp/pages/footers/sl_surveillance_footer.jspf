@@ -31,3 +31,6 @@
 	
 	<%--  SL Surveillance JS Functionality --%>
 	<script type="text/javascript" src=<c:url value="/js/sl_surveillance.js"/>></script>
+	
+	<%--  Bootstrap Datepicker --%>
+	<script type="text/javascript" src=<c:url value="/js/library/bootstrap_datepicker.js"/>></script>

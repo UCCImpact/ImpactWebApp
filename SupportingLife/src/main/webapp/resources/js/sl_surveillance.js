@@ -16,6 +16,16 @@ $(document).ready(function() {
 	// initialize filtering on the classification checkbox drop-down
 	$('#surveillance-classifications').multiselect().multiselectfilter();
 
+	/* initialises jQuery UI datepicker functionality */
+	/*												  */
+	/* Note: Don't allow user to pick a future date	  */
+	/*  	 beyond today							  */
+	/*												  */
+	$('.assessment-datepicker').datepicker({
+		format: 'dd-mm-yyyy',
+		endDate: '+0d'
+	});
+	
 	// initialise map
 	var myLatLng = new google.maps.LatLng(51.8926846, -8.490176);
 	surveillanceMap.init('#surveillance-map', myLatLng, 4);

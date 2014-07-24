@@ -42,19 +42,27 @@
        </div>
       </div>
 
-	<div id="surveillance-selection-criteria" class="row">
-		<div class="col-lg-6">
-			<select id="surveillance-classifications" multiple="multiple">
-				<c:forEach items="${classifications}" var="classification" varStatus="status">
-					<option value="${classification.key}">${classification.value}</option>
-				</c:forEach>
-			</select>
-		</div>
-		<div class="col-lg-6">
-		</div>
-	</div>
-
 	<div class="form-actions">
+		<div id="surveillance-selection-criteria" class="row">
+			<div class="col-lg-6">
+				<select id="surveillance-classifications" multiple="multiple">
+					<c:forEach items="${classifications}" var="classification"
+						varStatus="status">
+						<option value="${classification.key}">${classification.value}</option>
+					</c:forEach>
+				</select>
+			</div>
+			<div>
+				<div class="col-lg-3">
+					<!-- assessment date range -->
+					From: <input class="assessment-datepicker" data-format="dd-MM-yyyy" placeholder="Assessment Date From" />
+				</div>
+				<div class="col-lg-3">
+					To:	<input class="assessment-datepicker" data-format="dd-MM-yyyy" placeholder="Assessment Date To" />
+				</div>
+			</div>
+		</div>
+
 		<button id="submit-button" class="btn btn-success">Submit</button>
 	</div>
 
