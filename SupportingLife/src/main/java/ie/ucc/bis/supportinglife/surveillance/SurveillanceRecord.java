@@ -14,18 +14,27 @@ public class SurveillanceRecord implements Serializable {
 	 */
 	private static final long serialVersionUID = 2323662119607857234L;
 
-	private String classificationName;
+	private String patientId;
+	private String assessmentDate;
 	private String latitude;
 	private String longitude;
+	
+	public String getPatientId() {
+		return patientId;
+	}
 
-	public String getClassificationName() {
-		return classificationName;
+	public void setPatientId(String patientId) {
+		this.patientId = patientId;
 	}
-	
-	public void setClassificationName(String classificationName) {
-		this.classificationName = classificationName;
+
+	public String getAssessmentDate() {
+		return assessmentDate;
 	}
-	
+
+	public void setAssessmentDate(String assessmentDate) {
+		this.assessmentDate = assessmentDate;
+	}
+
 	public String getLatitude() {
 		return latitude;
 	}
@@ -40,5 +49,21 @@ public class SurveillanceRecord implements Serializable {
 	
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
-	}	
+	}
+	
+	@Override
+	public boolean equals(Object other) {
+		if (getLongitude().equalsIgnoreCase(((SurveillanceRecord) other).getLongitude()) && getLatitude().equalsIgnoreCase(((SurveillanceRecord) other).getLatitude())) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	@Override
+    public int hashCode() {
+		return ((Double) (Double.valueOf(getLatitude()) * Double.valueOf(getLongitude()))).intValue();
+	}
+	
 }

@@ -7,9 +7,11 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification_;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit_;
+import ie.ucc.bis.supportinglife.communication.SurveillanceRequestComms;
 import ie.ucc.bis.supportinglife.surveillance.SurveillanceRecord;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -44,7 +46,7 @@ public class CcmAssessmentAnalyticsDaoImpl implements CcmAssessmentAnalyticsDao 
 	}
 
 	@Override
-	public List<SurveillanceRecord> getSurveillanceRecords() {
+	public List<SurveillanceRecord> getSurveillanceRecords(SurveillanceRequestComms surveillanceRequestComms) {
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 		// Create criteria query and pass the value object which needs to be populated as result
 		CriteriaQuery<CcmPatientVisit> query = criteriaBuilder.createQuery(CcmPatientVisit.class);
@@ -60,7 +62,7 @@ public class CcmAssessmentAnalyticsDaoImpl implements CcmAssessmentAnalyticsDao 
 		Join<CcmPatientClassification, CcmClassification> ccmClassificationJoin = ccmPatientClassificationJoin.join(CcmPatientClassification_.classification);
 		
 		// initially we'll pull back all records which have AT LEAST ONE of the user selected classifications
-		criteriaList.add(criteriaBuilder.isTrue(ccmClassificationJoin.get(CcmClassification_.classificationKey).in("CCM_BLOOD_IN_STOOL_CLASSIFICATION")));
+		criteriaList.add(criteriaBuilder.isTrue(ccmClassificationJoin.get(CcmClassification_.classificationKey).in(surveillanceRequestComms.getClassificationKeys())));
 		
 		query.distinct(true);	
 		query.where(criteriaBuilder.and(criteriaList.toArray(new Predicate[0])));
@@ -73,8 +75,9 @@ public class CcmAssessmentAnalyticsDaoImpl implements CcmAssessmentAnalyticsDao 
 		    	SurveillanceRecord dataRecord = new SurveillanceRecord();
 		    	String classificationKey = patientClassification.getClassification().getClassificationKey();
 		    	
-		    	if (classificationKey.equalsIgnoreCase("CCM_BLOOD_IN_STOOL_CLASSIFICATION")) {
-			    	dataRecord.setClassificationName(patientClassification.getClassification().getClassificationName());
+		    	if (containsEqualsIgnoreCase(surveillanceRequestComms.getClassificationKeys(), classificationKey)) {
+			    	dataRecord.setPatientId(String.valueOf(patientVisit.getPatient().getPatientId()));
+			    	dataRecord.setAssessmentDate(patientVisit.getVisitDate().toString());
 	
 			    	dataRecord.setLatitude(patientVisit.getCcmAssessmentAnalytics().getLatitude());
 			    	dataRecord.setLongitude(patientVisit.getCcmAssessmentAnalytics().getLongitude());
@@ -89,5 +92,14 @@ public class CcmAssessmentAnalyticsDaoImpl implements CcmAssessmentAnalyticsDao 
 	    	}
 	    }
 	    return surveillanceRecords;
+	}
+	
+	private boolean containsEqualsIgnoreCase(Collection<String> stringCollection, String searchString) {
+		for (String elementString : stringCollection) {
+			if (searchString.equalsIgnoreCase(elementString)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

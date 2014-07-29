@@ -21,6 +21,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.User;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentComms;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentResponseComms;
+import ie.ucc.bis.supportinglife.communication.SurveillanceRequestComms;
 import ie.ucc.bis.supportinglife.communication.UserAuthenticationComms;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
@@ -28,9 +29,12 @@ import ie.ucc.bis.supportinglife.surveillance.SurveillanceRecord;
 import ie.ucc.bis.supportinglife.utilities.DateUtilities;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.springframework.transaction.annotation.Transactional;
 
@@ -291,10 +295,51 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	/*******************************Disease Surveillance****************************/
 	/*******************************************************************************/
 	@Override
-	public List<SurveillanceRecord> getSurveillanceRecords() {
+	public List<SurveillanceRecord> getSurveillanceRecords(SurveillanceRequestComms surveillanceRequestComms) {	
 		CcmAssessmentAnalyticsDao surveillanceDao = (CcmAssessmentAnalyticsDao) getDaoBeans().get("CcmAssessmentAnalyticsDao");
-		return surveillanceDao.getSurveillanceRecords();	
+		List<SurveillanceRecord> daoSurveillanceRecords = surveillanceDao.getSurveillanceRecords(surveillanceRequestComms);
+		
+		// check for any duplicated coordinates and modify slightly so
+		// they each are displayed on the browser map
+		return modifyDuplicatedCoordinates(daoSurveillanceRecords);
 	}
+	
+	
+	/**
+	 * Responsible for examining a group of surveillance records and determining whether
+	 * any duplicates exist. A duplicate is identified as having the same longitude and
+	 * latitude coordinate values.
+	 * 
+	 * Duplicate records have their coordinate values manipulated slightly by an offset.
+	 * This is ensure they are assigned their own marker on the map.
+	 * 
+	 * @param originalRecords
+	 * @return modifiedRecords
+	 */
+	private List<SurveillanceRecord> modifyDuplicatedCoordinates(Collection<SurveillanceRecord> originalRecords) {
+		final List<SurveillanceRecord> modifiedRecords = new ArrayList<SurveillanceRecord>();
+
+		@SuppressWarnings("serial")
+		Set<SurveillanceRecord> surveillanceSet = new HashSet<SurveillanceRecord>() {
+			@Override
+			public boolean add(SurveillanceRecord element) {
+				if (contains(element)) {
+					Double latitude = Double.valueOf(element.getLatitude()) + ((Math.random()*10)/10000); // minor adjustment only
+					Double longitude = Double.valueOf(element.getLongitude()) + ((Math.random()*10)/10000); // minor adjustment only
+					element.setLatitude(Double.toString(latitude));
+					element.setLongitude(Double.toString(longitude));
+				}
+				modifiedRecords.add(element);
+				return super.add(element);
+			}
+		};
+
+		for (SurveillanceRecord record : originalRecords) {
+			surveillanceSet.add(record);
+		}
+		return modifiedRecords;
+	}
+	
 	
 	
 	/*******************************************************************************/

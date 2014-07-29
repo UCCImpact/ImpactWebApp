@@ -44,7 +44,8 @@
 
 	<div class="form-actions">
 		<div id="surveillance-selection-criteria" class="row">
-			<div class="col-lg-6">
+			<div class="col-lg-12">
+				<h4>Outbreak Classifications</h4>
 				<select id="surveillance-classifications" multiple="multiple">
 					<c:forEach items="${classifications}" var="classification"
 						varStatus="status">
@@ -53,17 +54,19 @@
 				</select>
 			</div>
 			<div>
-				<div class="col-lg-3">
+				<div class="col-lg-6">
 					<!-- assessment date range -->
-					From: <input class="assessment-datepicker" data-format="dd-MM-yyyy" placeholder="Assessment Date From" />
+					<h4>Surveillance Start</h4>
+					<input id="surveillanceDateStart" class="assessment-datepicker" data-format="dd-MM-yyyy" placeholder="Surveillance End Date" />
 				</div>
-				<div class="col-lg-3">
-					To:	<input class="assessment-datepicker" data-format="dd-MM-yyyy" placeholder="Assessment Date To" />
+				<div class="col-lg-6">
+					<h4>Surveillance End</h4>
+					<input id="surveillanceDateEnd" class="assessment-datepicker" data-format="dd-MM-yyyy" placeholder="Surveillance Start Date" />
 				</div>
 			</div>
 		</div>
 
-		<button id="submit-button" class="btn btn-success">Submit</button>
+		<button id="submit-button" class="btn btn-success">Conduct Surveillance</button>
 	</div>
 
 </div><!--  END: surveillance-container -->

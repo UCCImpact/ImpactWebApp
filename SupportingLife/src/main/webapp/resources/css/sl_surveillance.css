@@ -55,8 +55,16 @@
 /* User selection criteria for surveillance map		  */
 /* -------------------------------------------------- */
 #surveillance-selection-criteria {
+	border-radius: 6px; /* round corner of rectangle */
+	border-color: #077204;
+	border-width: 1.75px;
+	border-style: solid;
+	padding-bottom: 10px;
+	padding-top: 10px;
 	margin-top: 25px;
 	margin-bottom: 25px;
+	margin-right: 25px;
+	margin-left: 25px;
 }
 
 /* -------------------------------------------------- */
