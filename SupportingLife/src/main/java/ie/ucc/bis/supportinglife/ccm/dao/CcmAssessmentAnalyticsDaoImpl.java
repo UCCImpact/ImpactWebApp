@@ -52,9 +52,27 @@ public class CcmAssessmentAnalyticsDaoImpl implements CcmAssessmentAnalyticsDao 
 		CriteriaQuery<CcmPatientVisit> query = criteriaBuilder.createQuery(CcmPatientVisit.class);
 		// Specify to criteria query which tables/entities you want to fetch
 		Root<CcmPatientVisit> patientVisitRoot = query.from(CcmPatientVisit.class);
-		
+			
 		// This list will contain all Predicates (where clauses)
 		List<Predicate> criteriaList = new ArrayList<Predicate>();
+		
+		///////
+		
+		// retrieve only those records for patient visits where the date is later than the 'Surveillance Start' field
+		if (surveillanceRequestComms.getStartSurveillanceDate() != null) {
+			Predicate assessmentDateFromCondition = criteriaBuilder.greaterThanOrEqualTo(patientVisitRoot.get(CcmPatientVisit_.visitDate), 
+														surveillanceRequestComms.getStartSurveillanceDate());
+			criteriaList.add(assessmentDateFromCondition);
+		}
+		
+		// 6. retrieve only those records for patient visits where the date is earlier than the 'Surveillance End' field
+		if (surveillanceRequestComms.getEndSurveillanceDate() != null) {
+			Predicate assessmentDateBeforeCondition = criteriaBuilder.lessThanOrEqualTo(patientVisitRoot.get(CcmPatientVisit_.visitDate), 
+															surveillanceRequestComms.getEndSurveillanceDate());
+			criteriaList.add(assessmentDateBeforeCondition);
+		}
+		
+		////////
 		
 		// join the CcmPatientVisit and the CcmPatientClassification tables
 		Join<CcmPatientVisit, CcmPatientClassification> ccmPatientClassificationJoin = patientVisitRoot.join(CcmPatientVisit_.ccmPatientClassificationList);

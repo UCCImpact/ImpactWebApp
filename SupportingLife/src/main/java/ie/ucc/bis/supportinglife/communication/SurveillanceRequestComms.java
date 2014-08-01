@@ -2,6 +2,7 @@ package ie.ucc.bis.supportinglife.communication;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -17,8 +18,8 @@ public class SurveillanceRequestComms implements Serializable {
 	private static final long serialVersionUID = -3121899756496109163L;
 
 	private List<String> classificationKeys;
-	private String startSurveillanceDate;
-	private String endSurveillanceDate;
+	private Date startSurveillanceDate;
+	private Date endSurveillanceDate;
 
 
 	public SurveillanceRequestComms() {
@@ -33,19 +34,19 @@ public class SurveillanceRequestComms implements Serializable {
 		this.classificationKeys = classificationKeys;
 	}
 
-	public String getStartSurveillanceDate() {
+	public Date getStartSurveillanceDate() {
 		return startSurveillanceDate;
 	}
 
-	public void setStartSurveillanceDate(String startSurveillanceDate) {
+	public void setStartSurveillanceDate(Date startSurveillanceDate) {
 		this.startSurveillanceDate = startSurveillanceDate;
 	}
 
-	public String getEndSurveillanceDate() {
+	public Date getEndSurveillanceDate() {
 		return endSurveillanceDate;
 	}
 
-	public void setEndSurveillanceDate(String endSurveillanceDate) {
+	public void setEndSurveillanceDate(Date endSurveillanceDate) {
 		this.endSurveillanceDate = endSurveillanceDate;
 	}
 }

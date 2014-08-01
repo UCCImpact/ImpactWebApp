@@ -297,11 +297,18 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	@Override
 	public List<SurveillanceRecord> getSurveillanceRecords(SurveillanceRequestComms surveillanceRequestComms) {	
 		CcmAssessmentAnalyticsDao surveillanceDao = (CcmAssessmentAnalyticsDao) getDaoBeans().get("CcmAssessmentAnalyticsDao");
-		List<SurveillanceRecord> daoSurveillanceRecords = surveillanceDao.getSurveillanceRecords(surveillanceRequestComms);
 		
-		// check for any duplicated coordinates and modify slightly so
-		// they each are displayed on the browser map
-		return modifyDuplicatedCoordinates(daoSurveillanceRecords);
+		// check if at least a single classification has been passed through
+		if (surveillanceRequestComms.getClassificationKeys().size() > 0) {	
+			List<SurveillanceRecord> daoSurveillanceRecords = surveillanceDao.getSurveillanceRecords(surveillanceRequestComms);
+			
+			// check for any duplicated coordinates and modify slightly so
+			// they each are displayed on the browser map
+			return modifyDuplicatedCoordinates(daoSurveillanceRecords);
+		}
+		else {
+			return null;
+		}
 	}
 	
 	

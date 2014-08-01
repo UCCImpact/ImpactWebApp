@@ -67,6 +67,35 @@
 	margin-left: 25px;
 }
 
+#surveillance-start-container {
+	border-radius: 6px; /* round corner of rectangle */
+	border-color: #077204;
+	border-width: 1.75px;
+	border-style: solid;
+	margin-bottom: 15px;
+	margin-top: 20px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align:center;
+}
+
+#surveillance-end-container {
+	border-radius: 6px; /* round corner of rectangle */
+	border-color: #077204;
+	border-width: 1.75px;
+	border-style: solid;
+	margin-bottom: 15px;
+	margin-top: 20px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align:center;
+}
+
+
 /* -------------------------------------------------- */
 /* RESPONSIVE CSS */
 /* -------------------------------------------------- */
