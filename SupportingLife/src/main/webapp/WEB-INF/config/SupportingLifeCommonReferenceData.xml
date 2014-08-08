@@ -508,7 +508,25 @@
 		<property name="uccTeamMembers">
 			<list>
 				<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
-					<property name="name" value="Dr Timothy O'Sullivan" />
+					<property name="name" value="Dr Ciara Heavin" />
+					<property name="bio" value="bio bio bio and some more bio" />
+					<property name="linkedIn" value="/testurl/" />
+					<property name="imageRef" value="images/team-members/CH.jpg" />
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
+					<property name="name" value="Dr Joe Gallagher" />
+					<property name="bio" value="bio bio bio and some more bio" />
+					<property name="linkedIn" value="/testurl/" />
+					<property name="imageRef" value="" />
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
+					<property name="name" value="Dr Yvonne O' Connor" />
+					<property name="bio" value="bio bio bio and some more bio" />
+					<property name="linkedIn" value="/testurl/" />
+					<property name="imageRef" value="images/team-members/YOC.jpg" />
+				</bean>
+				<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
+					<property name="name" value="Dr Timothy O' Sullivan" />
 					<property name="bio" value="bio bio bio and some more bio" />
 					<property name="linkedIn" value="/testurl/" />
 					<property name="imageRef" value="images/team-members/TOS.jpg" />

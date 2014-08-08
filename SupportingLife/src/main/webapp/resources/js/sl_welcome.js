@@ -122,6 +122,7 @@ function configureTeamMembersAccordion() {
 	$( "#accordion" ).accordion({
 		event: "click hoverintent",
 		collapsible: true,
+		active: false,
 		icons: icons,
 		heightStyle: "content"	// allows the accordion panels to keep their native height
 	});
