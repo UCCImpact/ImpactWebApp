@@ -9,7 +9,7 @@
 ** *************************************************************************/
 
 /* -------------------------------------------------- */
-/* CUSTOMIZE THE CAROUSEL */
+/* CUSTOMIZE THE CAROUSEL 							  */
 /* -------------------------------------------------- */
 
 /* Carousel base class */
@@ -97,22 +97,24 @@
 
 /* Thin out the marketing headings */
 
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
+.featurette h1 {
+  font-size: 40px;
+  font-weight: 400;
   letter-spacing: -1px;
+  line-height: 1;
 }
 
-.featurette h1 {
-  font-size: 25px;
-  font-weight: bold;
+.featurette h2 {
+  font-size: 20px;
+  font-weight: 300;
+  color: #077204;
   letter-spacing: -1px;
   line-height: 1;
 }
 
 .featurette h3 {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 300;
   letter-spacing: -1px;
   line-height: 1;
 }
@@ -193,8 +195,23 @@
 	color:  #077204;
 }
 
+/* -------------------------------------------------- */
+/* TEAM MAP 										  */
+/* -------------------------------------------------- */
 
- -------------------------------------------------- */
+#team-map {
+	height: 380px;
+}
+
+/* -------------------------------------------------- */
+/* TEAM MEMBERS										  */
+/* -------------------------------------------------- */
+#team-members {
+	width: 100%;
+    margin: 0 auto;
+}
+
+/* -------------------------------------------------- */
 /* RESPONSIVE CSS */
 /* -------------------------------------------------- */
 

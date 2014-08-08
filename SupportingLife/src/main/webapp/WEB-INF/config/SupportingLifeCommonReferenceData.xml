@@ -504,6 +504,18 @@
 		</property>
 	</bean>
 
+	<bean name="teamMembers" class="ie.ucc.bis.supportinglife.reference.TeamMembers">
+		<property name="uccTeamMembers">
+			<list>
+				<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
+					<property name="name" value="Dr Timothy O'Sullivan" />
+					<property name="bio" value="bio bio bio and some more bio" />
+					<property name="linkedIn" value="/testurl/" />
+					<property name="imageRef" value="images/team-members/TOS.jpg" />
+				</bean>
+			</list>
+		</property>
+	</bean>
 
 	<bean name="SupportingLifeRefDataHelper" class="ie.ucc.bis.supportinglife.service.helper.SupportingLifeRefDataHelper">
 		<property name="ccmCustomReportReferenceCriteria" ref="ccmCustomReportReferenceCriteria"/>
@@ -521,6 +533,7 @@
 				</entry>
 			</map>
 		</property>
+		<property name="teamMembers" ref="teamMembers"/>
 	</bean>
 
 </beans>

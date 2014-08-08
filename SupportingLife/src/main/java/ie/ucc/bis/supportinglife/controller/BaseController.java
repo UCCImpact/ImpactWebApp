@@ -21,6 +21,9 @@ public class BaseController {
 	
 	@RequestMapping(method = RequestMethod.GET, headers="Accept=html/text")
 	public String welcome(ModelMap model) {
+		
+		// pull back the team members detail for the welcome page
+		model.addAttribute("teamMembers", SupportingLifeRefDataHelper.getTeamMembers());
 	
 		// Spring uses InternalResourceViewResolver and returns back welcome.jsp
 		return"sl_welcome";
