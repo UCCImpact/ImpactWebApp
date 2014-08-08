@@ -12,6 +12,8 @@
 var myLatLng = new google.maps.LatLng(32.485701, 15.651460); // North Africa (Sudan) - used for centering team map
 var teamMap = {map: null, bounds: null};
 var markers = [];
+var redMapIcon = {path: google.maps.SymbolPath.CIRCLE, scale: 5, fillColor: 'red', fillOpacity: 0.8, strokeWeight: 1};
+var blueMapIcon = {path: google.maps.SymbolPath.CIRCLE, scale: 5, fillColor: 'blue', fillOpacity: 0.8, strokeWeight: 1};
 
 var teamInstitutions = { 
 			'UoW': 		{'name': 'University of Washington', 'longitude': -122.303574, 'latitude': 47.655519},
@@ -83,13 +85,7 @@ teamMap.placeLocationMarkers = function() {
 				
 			var marker = new google.maps.Marker({position: point,
 											 	map: teamMap.map,
-											 	icon: {
-										            path: google.maps.SymbolPath.CIRCLE,
-										            scale: 5,
-										            fillColor: 'red',
-										            fillOpacity: 0.8,
-										            strokeWeight: 1
-										        }});
+											 	icon: redMapIcon});
 	
 			// have tool-tip bubble appear on user click event
 			var infoWindow = new google.maps.InfoWindow();
@@ -104,12 +100,17 @@ teamMap.placeLocationMarkers = function() {
 	}
 
 function bindInfoWindow(marker, map, infoWindow, html, Ltitle) { 
-    google.maps.event.addListener(marker, 'mouseover', function() {
+    
+	google.maps.event.addListener(marker, 'mouseover', function() {
+ //   	marker.setAnimation(google.maps.Animation.BOUNCE);
+    	marker.setIcon(blueMapIcon);
     	infoWindow.setContent(html); 
     	infoWindow.open(map, marker); 
-
     });
+    
     google.maps.event.addListener(marker, 'mouseout', function() {
+  //  	marker.setAnimation(null);
+    	marker.setIcon(redMapIcon);
     	infoWindow.close();
     }); 
 }
