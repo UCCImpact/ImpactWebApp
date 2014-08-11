@@ -204,11 +204,17 @@
 }
 
 /* -------------------------------------------------- */
-/* TEAM MEMBERS										  */
+/* TEAM MEMBER PARTNER ACCORDION					  */
 /* -------------------------------------------------- */
-#team-members {
-	width: 100%;
-    margin: 0 auto;
+
+#team-member-accordion img {
+	width: 100px;
+	height: 100px;
+	background-size: cover;
+	display: block;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
 }
 
 /* -------------------------------------------------- */

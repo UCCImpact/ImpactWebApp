@@ -527,22 +527,22 @@
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 					<property name="name" value="Dr Timothy O' Sullivan" />
-					<property name="bio" value="Dr. Timothy O’Sullivan \n
-												Senior Software Engineer \n
-												B.Sc, M.Sc, MBA, PhD \n \n
+					<property name="bio" value="Dr. Timothy O' Sullivan 
+												Senior Software Engineer
+												B.Sc, M.Sc, MBA, PhD
 
-												Dr. Timothy O'Sullivan is the Senior Software Engineer \n
-												on the FP7 Supporting Life project. His research interests \n
-												include context-aware systems, mobile computing, agent-based \n
-												systems, and cloud computing. He received a BSc in Computer \n
-												Science from Cork Institute of Technology in 1999, an MSc in \n
-												Computer Networks in 2001 and a PhD in Computer Science in 2005, \n
-												both from University College Cork, Ireland. In 2011, he received \n
-												an MBA in Engineering Management from Manchester Business School, \n
-												University of Manchester, UK. He has published in a number of \n 
-												national and international journals and conference proceedings. \n
-												Timothy has over ten years industrial experience working in senior \n
-												engineering and team leading roles in the fields of investment \n
+												Dr. Timothy O' Sullivan is the Senior Software Engineer 
+												on the FP7 Supporting Life project. His research interests 
+												include context-aware systems, mobile computing, agent-based 
+												systems, and cloud computing. He received a BSc in Computer 
+												Science from Cork Institute of Technology in 1999, an MSc in 
+												Computer Networks in 2001 and a PhD in Computer Science in 2005, 
+												both from University College Cork, Ireland. In 2011, he received 
+												an MBA in Engineering Management from Manchester Business School, 
+												University of Manchester, UK. He has published in a number of 
+												national and international journals and conference proceedings. 
+												Timothy has over ten years industrial experience working in senior 
+												engineering and team leading roles in the fields of investment 
 												banking, industrial automation, and telecommunications." />
 					<property name="linkedIn" value="/testurl/" />
 					<property name="imageRef" value="images/team-members/TOS.jpg" />

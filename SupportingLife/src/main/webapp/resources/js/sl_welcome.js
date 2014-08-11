@@ -43,11 +43,7 @@ $(document).ready(function() {
 			$('#videoCarousel .carousel-inner').children().css('background-color', '#777'); /* Grey */
 		}
 	);
-	
-	// initialise the 'team members' horizontal accordion
-	$('#team-members').liteAccordion({theme: 'basic',
-									  rounded: true});
-	
+				
 	// initialise 'team members' accordion
 	configureTeamMembersAccordion();
 	
@@ -119,7 +115,15 @@ function bindInfoWindow(marker, map, infoWindow, html, Ltitle) {
 function configureTeamMembersAccordion() {
 	var icons = {header: "ui-icon-circle-arrow-e", activeHeader: "ui-icon-circle-arrow-s"};
 
-	$( "#accordion" ).accordion({
+	$( "#partner-accordion" ).accordion({
+		event: "click hoverintent",
+		collapsible: true,
+		active: false,
+		icons: icons,
+		heightStyle: "content"	// allows the accordion panels to keep their native height
+	});
+	
+	$('#team-member-accordion').accordion({
 		event: "click hoverintent",
 		collapsible: true,
 		active: false,

@@ -278,24 +278,17 @@
 	<div class="row featurette">
 		<div class="col-md-12">
 			<h1>Meet The Team</h1>
-			<div id="accordion">
+			<div id="partner-accordion">
 				<h3>University College Cork, Ireland</h3>
 				<div>
-					<div id="team-members">
-						<ol>
-							<c:forEach items="${teamMembers.uccTeamMembers}" var="teamMember">
-								<li>
-									<h2>
-										<span>${teamMember.name}</span>
-									</h2>
-									<div>
-										<img alt="" src="${teamMember.imageRef}"/>
-										<h2>Bio</h2>
-										<p>${teamMember.bio}</p>
-									</div>
-								</li>
-							</c:forEach>
-						</ol>
+					<div id="team-member-accordion">
+						<c:forEach items="${teamMembers.uccTeamMembers}" var="teamMember">
+							<h4>${teamMember.name}</h4>
+							<div>
+								<img alt="${teamMember.name}" src="${teamMember.imageRef}"/>
+								<p>${teamMember.bio}</p>
+							</div>
+						</c:forEach>
 					</div>
 				</div>
 				<h3>University of Washington, United States</h3>
