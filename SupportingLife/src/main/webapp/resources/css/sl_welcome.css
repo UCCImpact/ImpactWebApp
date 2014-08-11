@@ -215,7 +215,10 @@
 	border-radius: 100px;
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
-}
+	/*this filter is for Firefox for SVG image, NOT working for other image format (yet)*/
+	filter: grayscale(1);
+	/*this filter is for Webkit browser, for any image format (probably)*/
+	-webkit-filter: grayscale(1);}
 
 /* -------------------------------------------------- */
 /* RESPONSIVE CSS */
