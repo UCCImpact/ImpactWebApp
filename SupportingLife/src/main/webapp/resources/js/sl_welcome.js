@@ -14,23 +14,20 @@ var teamMap = {map: null, bounds: null};
 var markers = [];
 var redMapIcon = {path: google.maps.SymbolPath.CIRCLE, scale: 5, fillColor: 'red', fillOpacity: 0.8, strokeWeight: 1};
 var blueMapIcon = {path: google.maps.SymbolPath.CIRCLE, scale: 5, fillColor: 'blue', fillOpacity: 0.8, strokeWeight: 1};
-
 var teamInstitutions = { 
-			'UoW': 		{'name': 'University of Washington', 'longitude': -122.303574, 'latitude': 47.655519},
-			'UCC': 		{'name': 'University College Cork', 'longitude': -8.492860, 'latitude': 51.892332},
-			'Lund': 	{'name': 'Lund University', 'longitude': 13.203547, 'latitude': 55.712132},
-			'Mzuzu': 	{'name': 'Mzuzu University', 'longitude': 33.995486, 'latitude': -11.421107},
-			'Lin': 		{'name': 'Luke International Norway', 'longitude': 34.022605, 'latitude': -11.460536},
-			'Ungweru': 	{'name': 'Ungweru', 'longitude': 34.002336, 'latitude': -11.426776},
-			'Acc': 		{'name': 'Accelopment', 'longitude': 8.557988, 'latitude': 47.354077},
-			'ICL': 		{'name': 'Imperial College London', 'longitude': -0.174845, 'latitude': 51.498993}};
+			'UoW': 		{'name': 'University of Washington', 'accordionPos' : 1, 'logo' : 'images/partners/washington-university-logo.png', 'logoHeight' : '60px', 'logoWidth' : '60px', 'longitude': -122.303574, 'latitude': 47.655519},
+			'UCC': 		{'name': 'University College Cork', 'accordionPos' : 0, 'logo' : 'images/partners/university-college-cork-logo.png', 'logoHeight' : '60px', 'logoWidth' : '60px', 'longitude': -8.492860, 'latitude': 51.892332},
+			'Lund': 	{'name': 'Lund University', 'accordionPos' : 5, 'logo' : 'images/partners/lund-university-logo.png', 'logoHeight' : '60px', 'logoWidth' : '60px', 'longitude': 13.203547, 'latitude': 55.712132},
+			'Mal': 		{'name': 'Malawi Partners', 'accordionPos' : 3, 'logo' : 'images/partners/malawi-flag.png', 'logoHeight' : '60px', 'logoWidth' : '60px', 'longitude': 33.995486, 'latitude': -11.421107},
+			'Acc': 		{'name': '', 'accordionPos' : 4, 'logo' : 'images/partners/accelopment-logo.png', 'logoHeight' : '120px', 'logoWidth' : '120px', 'longitude': 8.557988, 'latitude': 47.354077},
+			'ICL': 		{'name': '', 'accordionPos' : 2, 'logo' : 'images/partners/imperial-college-london-logo.png', 'logoHeight' : '120px', 'logoWidth' : '120px', 'longitude': -0.174845, 'latitude': 51.498993}};
 
 $(document).ready(function() {
 	
 	// initialise map - using coordinate values of Lilongwe, Malawi
 	teamMap.init('#team-map', myLatLng, 4);
 	teamMap.placeLocationMarkers();
-
+	
 	/* Responsible for highlighting the background colour of  
 	 * all child elements of video carousel on a hover event
 	 */
@@ -62,8 +59,8 @@ teamMap.init = function(selector, latLng, initialZoomLevel) {
 	
 	var mapOptions = {zoom:initialZoomLevel, center: latLng, mapTypeId: google.maps.MapTypeId.ROADMAP, minZoom: 2, maxZoom: 14, styles: mapStyle}
 	this.map = new google.maps.Map($(selector)[0], mapOptions);
-	this.bounds = new google.maps.LatLngBounds();
-	}
+	this.bounds = new google.maps.LatLngBounds();	
+}
 
 /* loads in consortium partner coordinate data to place a series of location markers on the map */
 teamMap.placeLocationMarkers = function() {
@@ -85,9 +82,12 @@ teamMap.placeLocationMarkers = function() {
 	
 			// have tool-tip bubble appear on user click event
 			var infoWindow = new google.maps.InfoWindow();
-			var popUpComment = '<strong>' + institution['name'] + '</strong>';
 						
-			bindInfoWindow(marker, teamMap.map, infoWindow, popUpComment);
+			var popUpComment = '<img height=' 
+								+ institution['logoHeigth'] + ' width=' + institution['logoWidth'] + ' src=' +  
+								institution['logo'] + '/> <br> ' + '<strong>' + institution['name'] + '</strong>';
+									
+			bindInfoWindow(marker, teamMap.map, infoWindow, popUpComment, institution['accordionPos']);
 			
 			// fit the map to the markers
 			teamMap.map.fitBounds(teamMap.bounds);
@@ -95,27 +95,34 @@ teamMap.placeLocationMarkers = function() {
 		teamMap.map.panTo(myLatLng);
 	}
 
-function bindInfoWindow(marker, map, infoWindow, html, Ltitle) { 
+function bindInfoWindow(marker, map, infoWindow, html, accordionPos) { 
     
 	google.maps.event.addListener(marker, 'mouseover', function() {
- //   	marker.setAnimation(google.maps.Animation.BOUNCE);
     	marker.setIcon(blueMapIcon);
     	infoWindow.setContent(html); 
     	infoWindow.open(map, marker); 
     });
     
     google.maps.event.addListener(marker, 'mouseout', function() {
-  //  	marker.setAnimation(null);
     	marker.setIcon(redMapIcon);
     	infoWindow.close();
     }); 
+    
+    google.maps.event.addListener(marker, 'click', function() {
+    	$(".partner-accordion").accordion({ active: accordionPos });
+        $('html, body').animate({
+            scrollTop: $(".partner-accordion").offset().top
+        }, 2000);
+    }); 
+    
+    
 }
 
 //initialise 'team members' accordion
 function configureTeamMembersAccordion() {
 	var icons = {header: "ui-icon-circle-arrow-e", activeHeader: "ui-icon-circle-arrow-s"};
 
-	$( "#partner-accordion" ).accordion({
+	$('.partner-accordion').accordion({
 		event: "click hoverintent",
 		collapsible: true,
 		active: false,
@@ -123,7 +130,7 @@ function configureTeamMembersAccordion() {
 		heightStyle: "content"	// allows the accordion panels to keep their native height
 	});
 	
-	$('#team-member-accordion').accordion({
+	$('.team-member-accordion').accordion({
 		event: "click hoverintent",
 		collapsible: true,
 		active: false,

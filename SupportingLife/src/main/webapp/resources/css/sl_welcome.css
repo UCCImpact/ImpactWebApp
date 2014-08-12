@@ -203,15 +203,24 @@
 	height: 380px;
 }
 
+/* prevents scrollbars on google map pop-up */
+.gm-style-iw {
+   overflow: hidden !important; 
+   line-height: 1.5;
+}
+
 /* -------------------------------------------------- */
 /* TEAM MEMBER PARTNER ACCORDION					  */
 /* -------------------------------------------------- */
 
-#team-member-header img {
+.team-member-header img {
 	float: left;
 	margin-top: 40px;
 	margin-bottom: 10px;
 	margin-left: 10px;
+	
+	height: 130px;
+	width: 100px;
 	
 	/* rounded corners */
     background: #FFFFFF;
@@ -226,16 +235,20 @@
 	-webkit-filter: grayscale(1);
 }
 
-#team-member-header .fa-user {
+.team-member-header .fa-user {
 	float: left;
 	margin-top: 40px;
 	margin-bottom: 10px;
 	margin-left: 10px;
-	
 	font-size: 100px;
 }
 
-#team-member-body .fa-linkedin-square {
+.team-member-body .header-text {
+	text-align: left;
+	margin-top: 40px;
+}
+
+.team-member-body .fa-linkedin-square {
 	float: left;
 	font-size: 30px;
 	padding-right: 10px;
@@ -243,18 +256,18 @@
 	transition: all 0.2s ease-in-out;
 }
 
-#team-member-body .fa-linkedin-square:hover {
+.team-member-body .fa-linkedin-square:hover {
 	opacity: .7;
 }
 
-#team-member-body .flaticon-research-profile {
+.team-member-body .flaticon-research-profile {
 	float: left;
 	font-size: 30px;
 	color: red;
 	transition: all 0.2s ease-in-out;
 }
 
-#team-member-body .flaticon-research-profile:hover {
+.team-member-body .flaticon-research-profile:hover {
 	opacity: .7;
 }
 

@@ -4,7 +4,7 @@
 	font-family: "Flaticon";
 	src: url("flaticon.eot");
 	src: url("flaticon.eot#iefix") format("embedded-opentype"),
-	url("../../../images/fonts/icon_knowledge.ttf") format("truetype");
+	url("../../../images/fonts/sl-welcome.ttf") format("truetype");
 }
 
 .flaticon-idea:before,
@@ -12,14 +12,15 @@
 	font-family: Flaticon;
 	line-height:5px;
 	text-align: center;
-	font-size: 280px;
+	font-size: 210px;
 	font-style: normal;
 	display: inline-block;
-	padding-top: 160px;
+	padding-top: 140px;
+	margin-bottom: 10px;
 }
 
 .flaticon-idea:before {
-	content: "\e000";	
+	content: "\e001";	
 }
 
 /* bulb icon */

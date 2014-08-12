@@ -4,13 +4,13 @@ import java.util.List;
 
 public class TeamMembers {
 
-	private List<TeamMember> uccTeamMembers;
+	private List<PartnerGroup> partnerGroups;
 
-	public List<TeamMember> getUccTeamMembers() {
-		return uccTeamMembers;
+	public List<PartnerGroup> getPartnerGroups() {
+		return partnerGroups;
 	}
 
-	public void setUccTeamMembers(List<TeamMember> uccTeamMembers) {
-		this.uccTeamMembers = uccTeamMembers;
+	public void setPartnerGroups(List<PartnerGroup> partnerGroups) {
+		this.partnerGroups = partnerGroups;
 	}
 }

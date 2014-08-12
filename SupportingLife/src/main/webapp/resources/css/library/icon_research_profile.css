@@ -4,7 +4,7 @@
 	font-family: "Flaticon";
 	src: url("flaticon.eot");
 	src: url("flaticon.eot#iefix") format("embedded-opentype"),
-	url("../../../images/fonts/icon_research_profile.ttf") format("truetype");
+	url("../../../images/fonts/sl-welcome.ttf") format("truetype");
 }
 
 .flaticon-research-profile:before,
@@ -14,5 +14,5 @@
 }
 
 .flaticon-research-profile:before {
-	content: "\e000";	
+	content: "\e000";
 }

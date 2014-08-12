@@ -16,7 +16,7 @@
     <%-- i.e. team member profiles --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-theme.css"/>/>
     
-    <%-- CSS Favicon - Research Profile (bools with magnifying glass)  --%>
+    <%-- CSS Favicon - Research Profile (books with magnifying glass)  --%>
     <link rel="stylesheet" type="text/css" href=<c:url value="/css/library/icon_research_profile.css"/>/>
         
 </head>

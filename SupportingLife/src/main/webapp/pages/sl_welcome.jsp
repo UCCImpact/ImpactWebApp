@@ -236,9 +236,10 @@
 
 	<div class="row featurette">
 		<div class="col-md-5">
-			<a href="http://supportinglife.github.io/" target="_blank"> <i
-				id="knowledge-bulb-icon" class="fa flaticon-idea"></i> <br> <span
-				class="text-muted"> Check out our Knowledge Repository </span>
+			<a href="http://supportinglife.github.io/" target="_blank">
+				<i id="knowledge-bulb-icon" class="fa flaticon-idea"></i>
+				<br><br><br>
+				<span class="text-muted"> Check out our Knowledge Repository </span>
 			</a>
 		</div>
 		<div class="col-md-7">
@@ -278,89 +279,47 @@
 	<div class="row featurette">
 		<div class="col-md-12">
 			<h1>Meet The Team</h1>
-			<div id="partner-accordion">
-				<h3>University College Cork, Ireland</h3>
-				<div>
-					<div id="team-member-accordion">
-						<c:forEach items="${teamMembers.uccTeamMembers}" var="teamMember">
-							<h4>${teamMember.name}</h4>
-							<div>
-								<div id="team-member-header" class="col-md-12">
-									<div class="col-md-2">
+			<div class="partner-accordion">
+				<c:forEach items="${teamMembers.partnerGroups}" var="partnerGroup">
+					<h3>${partnerGroup.partnerName}</h3>
+					<div>
+						<div class="team-member-accordion">
+							<c:forEach items="${partnerGroup.teamMembers}" var="teamMember">
+								<h4>${teamMember.name}</h4>
+								<div class="col-md-12">
+									<div class="team-member-header col-md-2">
 										<c:choose>
 											<c:when test="${teamMember.photoPresent}">
-												<img alt="${teamMember.name}" src="${teamMember.imageRef}"/>
+												<img alt="${teamMember.name}" src="${teamMember.imageRef}" />
 											</c:when>
 											<c:otherwise>
 												<i id="team-member-default-icon" class="fa fa-user"></i>
-    										</c:otherwise>
+											</c:otherwise>
 										</c:choose>
 									</div>
-									<div id="team-member-body" class="col-md-10">
-										<h4>${teamMember.name}</h4>
-										<h5>${teamMember.qualifications}</h5>
-										<h5>${teamMember.role}</h5>
+									<div class="team-member-body col-md-10">
+										<div class="header-text">
+											<h4>${teamMember.name}</h4>
+											<h5>${teamMember.qualifications}</h5>
+											<h5>${teamMember.role}</h5>
+										</div>
 										<p>${teamMember.bio}</p>
 										<c:if test="${teamMember.linkedInProfilePresent}">
-											<a href="${teamMember.linkedInUrl}" target="_blank"> <i
-												id="team-member-linkedin" class="fa fa-linkedin-square"></i>
+											<a href="${teamMember.linkedInUrl}" target="_blank">
+												<i	class="fa fa-linkedin-square"></i>
 											</a>
 										</c:if>
 										<c:if test="${teamMember.researchProfilePresent}">
-											<a href="${teamMember.researchUrl}" target="_blank"> <i
-												id="team-member-linkedin" class="fa flaticon-research-profile"></i>
+											<a href="${teamMember.researchUrl}" target="_blank">
+												<i class="fa flaticon-research-profile"></i>
 											</a>
-										</c:if>										
+										</c:if>
 									</div>
 								</div>
-							</div>
-						</c:forEach>
+							</c:forEach>
+						</div>
 					</div>
-				</div>
-				<h3>University of Washington, United States</h3>
-				<div>
-					<p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum
-						sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet,
-						mauris turpis porttitor velit, faucibus interdum tellus libero ac
-						justo. Vivamus non quam. In suscipit faucibus urna.</p>
-				</div>
-				<h3>Imperial College London, United Kingdom</h3>
-				<div>
-					<p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum
-						sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet,
-						mauris turpis porttitor velit, faucibus interdum tellus libero ac
-						justo. Vivamus non quam. In suscipit faucibus urna.</p>
-				</div>
-				<h3>Malawi Partners</h3>
-				<div>
-					<p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
-						Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in
-						pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac
-						felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam
-						nisi, eu iaculis leo purus venenatis dui.</p>
-					<ul>
-						<li>List item one</li>
-						<li>List item two</li>
-						<li>List item three</li>
-					</ul>
-				</div>
-				<h3>Accelopment, Switzerland</h3>
-				<div>
-					<p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum
-						sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet,
-						mauris turpis porttitor velit, faucibus interdum tellus libero ac
-						justo. Vivamus non quam. In suscipit faucibus urna.</p>
-				</div>
-				<h3>Lund University, Sweden</h3>
-				<div>
-					<p>Cras dictum. Pellentesque habitant morbi tristique senectus
-						et netus et malesuada fames ac turpis egestas. Vestibulum ante
-						ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-						Curae; Aenean lacinia mauris vel est.</p>
-					<p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim
-						consequat lectus. Class aptent taciti sociosqu ad litora torquent
-						per conubia nostra, per inceptos himenaeos.</p>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>
