@@ -509,29 +509,45 @@
 			<list>
 				<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 					<property name="name" value="Dr Ciara Heavin" />
+					<property name="qualifications" value="" />
+					<property name="role" value="" />
 					<property name="bio" value="bio bio bio and some more bio" />
-					<property name="linkedIn" value="/testurl/" />
+					<property name="photoPresent" value="true"/>
+					<property name="linkedInProfilePresent" value="false"/>
+					<property name="researchProfilePresent" value="true"/>					
+					<property name="linkedInUrl" value="/testurl/" />
+					<property name="researchUrl" value="/testurl/" />
 					<property name="imageRef" value="images/team-members/CH.jpg" />
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
-					<property name="name" value="Dr Joe Gallagher" />
+					<property name="name" value="Dr Joe Gallagher"/>
+					<property name="qualifications" value="" />
+					<property name="role" value="" />
 					<property name="bio" value="bio bio bio and some more bio" />
-					<property name="linkedIn" value="/testurl/" />
+					<property name="photoPresent" value="false"/>
+					<property name="linkedInProfilePresent" value="false"/>
+					<property name="researchProfilePresent" value="false"/>					
+					<property name="linkedInUrl" value="/testurl/" />
+					<property name="researchUrl" value="/testurl/" />
 					<property name="imageRef" value="" />
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 					<property name="name" value="Dr Yvonne O' Connor" />
+					<property name="qualifications" value="" />
+					<property name="role" value="" />
 					<property name="bio" value="bio bio bio and some more bio" />
-					<property name="linkedIn" value="/testurl/" />
+					<property name="photoPresent" value="true"/>
+					<property name="linkedInProfilePresent" value="true"/>
+					<property name="researchProfilePresent" value="true"/>					
+					<property name="linkedInUrl" value="/testurl/" />
+					<property name="researchUrl" value="/testurl/" />
 					<property name="imageRef" value="images/team-members/YOC.jpg" />
 				</bean>
 				<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 					<property name="name" value="Dr Timothy O' Sullivan" />
-					<property name="bio" value="Dr. Timothy O' Sullivan 
-												Senior Software Engineer
-												B.Sc, M.Sc, MBA, PhD
-
-												Dr. Timothy O' Sullivan is the Senior Software Engineer 
+					<property name="qualifications" value="B.Sc, M.Sc, MBA, PhD" />
+					<property name="role" value="Senior Software Engineer" />
+					<property name="bio" value="Dr. Timothy O' Sullivan is the Senior Software Engineer 
 												on the FP7 Supporting Life project. His research interests 
 												include context-aware systems, mobile computing, agent-based 
 												systems, and cloud computing. He received a BSc in Computer 
@@ -544,7 +560,11 @@
 												Timothy has over ten years industrial experience working in senior 
 												engineering and team leading roles in the fields of investment 
 												banking, industrial automation, and telecommunications." />
-					<property name="linkedIn" value="/testurl/" />
+					<property name="photoPresent" value="true"/>
+					<property name="linkedInProfilePresent" value="true"/>
+					<property name="researchProfilePresent" value="false"/>
+					<property name="linkedInUrl" value="https://www.linkedin.com/in/osullivantimothyj" />
+					<property name="researchUrl" value="/testurl/" />
 					<property name="imageRef" value="images/team-members/TOS.jpg" />
 				</bean>
 			</list>

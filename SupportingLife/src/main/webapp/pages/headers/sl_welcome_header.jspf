@@ -9,14 +9,14 @@
 	<%-- Custom style for the welcome page  --%>
     <link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_welcome.css"/>/>
     
-    <%-- Horizontal accordion (for displaying team members)  --%>
+    <%-- CSS Favicon - Knowledge Base (lit bulb)  --%>
     <link rel="stylesheet" type="text/css" href=<c:url value="/css/library/icon_knowledge.css"/>/>
     
     <%-- CSS 'Smoothness' Themeroller theme - used for customising look of vertical accordion --%>
     <%-- i.e. team member profiles --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-theme.css"/>/>
     
-	<%-- CSS Favicon - Knowledge Base (lit bulb)  --%>
-    <link rel="stylesheet" type="text/css" href=<c:url value="/css/library/lite-accordion.css"/>/>
-    
+    <%-- CSS Favicon - Research Profile (bools with magnifying glass)  --%>
+    <link rel="stylesheet" type="text/css" href=<c:url value="/css/library/icon_research_profile.css"/>/>
+        
 </head>

@@ -207,23 +207,60 @@
 /* TEAM MEMBER PARTNER ACCORDION					  */
 /* -------------------------------------------------- */
 
-#team-member-accordion img {
-	width: 100px;
-	height: 100px;
-	background-size: cover;
-	display: block;
-	border-radius: 100px;
-	-webkit-border-radius: 100px;
-	-moz-border-radius: 100px;
+#team-member-header img {
+	float: left;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	
+	/* rounded corners */
+    background: #FFFFFF;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0px 0px 20px #888;
+	
 	/*this filter is for Firefox for SVG image, NOT working for other image format (yet)*/
 	filter: grayscale(1);
 	/*this filter is for Webkit browser, for any image format (probably)*/
-	-webkit-filter: grayscale(1);}
+	-webkit-filter: grayscale(1);
+}
+
+#team-member-header .fa-user {
+	float: left;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	
+	font-size: 100px;
+}
+
+#team-member-body .fa-linkedin-square {
+	float: left;
+	font-size: 30px;
+	padding-right: 10px;
+	color: #007bb6;
+	transition: all 0.2s ease-in-out;
+}
+
+#team-member-body .fa-linkedin-square:hover {
+	opacity: .7;
+}
+
+#team-member-body .flaticon-research-profile {
+	float: left;
+	font-size: 30px;
+	color: red;
+	transition: all 0.2s ease-in-out;
+}
+
+#team-member-body .flaticon-research-profile:hover {
+	opacity: .7;
+}
 
 /* -------------------------------------------------- */
 /* RESPONSIVE CSS */
 /* -------------------------------------------------- */
-
 @media (min-width: 768px) {
 
   /* Remove the edge padding needed for mobile */

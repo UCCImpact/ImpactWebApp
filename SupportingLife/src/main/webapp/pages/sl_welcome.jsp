@@ -285,8 +285,34 @@
 						<c:forEach items="${teamMembers.uccTeamMembers}" var="teamMember">
 							<h4>${teamMember.name}</h4>
 							<div>
-								<img alt="${teamMember.name}" src="${teamMember.imageRef}"/>
-								<p>${teamMember.bio}</p>
+								<div id="team-member-header" class="col-md-12">
+									<div class="col-md-2">
+										<c:choose>
+											<c:when test="${teamMember.photoPresent}">
+												<img alt="${teamMember.name}" src="${teamMember.imageRef}"/>
+											</c:when>
+											<c:otherwise>
+												<i id="team-member-default-icon" class="fa fa-user"></i>
+    										</c:otherwise>
+										</c:choose>
+									</div>
+									<div id="team-member-body" class="col-md-10">
+										<h4>${teamMember.name}</h4>
+										<h5>${teamMember.qualifications}</h5>
+										<h5>${teamMember.role}</h5>
+										<p>${teamMember.bio}</p>
+										<c:if test="${teamMember.linkedInProfilePresent}">
+											<a href="${teamMember.linkedInUrl}" target="_blank"> <i
+												id="team-member-linkedin" class="fa fa-linkedin-square"></i>
+											</a>
+										</c:if>
+										<c:if test="${teamMember.researchProfilePresent}">
+											<a href="${teamMember.researchUrl}" target="_blank"> <i
+												id="team-member-linkedin" class="fa flaticon-research-profile"></i>
+											</a>
+										</c:if>										
+									</div>
+								</div>
 							</div>
 						</c:forEach>
 					</div>
