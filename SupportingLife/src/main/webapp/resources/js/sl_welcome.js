@@ -123,7 +123,7 @@ function configureTeamMembersAccordion() {
 	var icons = {header: "ui-icon-circle-arrow-e", activeHeader: "ui-icon-circle-arrow-s"};
 
 	$('.partner-accordion').accordion({
-		event: "click hoverintent",
+//		event: "click hoverintent",
 		collapsible: true,
 		active: false,
 		icons: icons,
@@ -131,7 +131,7 @@ function configureTeamMembersAccordion() {
 	});
 	
 	$('.team-member-accordion').accordion({
-		event: "click hoverintent",
+//		event: "click hoverintent",
 		collapsible: true,
 		active: false,
 		icons: icons,

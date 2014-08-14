@@ -267,7 +267,7 @@
 	<!-- TEAM MAP -->
 	<div class="row featurette">
 		<div class="col-md-12">
-			<h1>Where We Are</h1>
+			<h1>Team Locations</h1>
 			<div id="team-map"></div>
 		</div>
 	</div>
@@ -300,8 +300,8 @@
 									<div class="team-member-body col-md-10">
 										<div class="header-text">
 											<h4>${teamMember.name}</h4>
-											<h5>${teamMember.qualifications}</h5>
 											<h5>${teamMember.role}</h5>
+											<h6>${teamMember.qualifications}</h6>							
 										</div>
 										<p>${teamMember.bio}</p>
 										<c:if test="${teamMember.linkedInProfilePresent}">

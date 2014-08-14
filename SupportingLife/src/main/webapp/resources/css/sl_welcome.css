@@ -248,6 +248,17 @@
 	margin-top: 40px;
 }
 
+.team-member-body .header-text h5 {
+	color: #007bb6;
+	font-weight: bold;
+}
+
+.team-member-body .header-text h6 {
+	color: #077204;
+	font-weight: bold;
+}
+
+
 .team-member-body .fa-linkedin-square {
 	float: left;
 	font-size: 30px;
