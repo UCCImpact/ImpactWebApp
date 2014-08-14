@@ -15,12 +15,12 @@ var markers = [];
 var redMapIcon = {path: google.maps.SymbolPath.CIRCLE, scale: 5, fillColor: 'red', fillOpacity: 0.8, strokeWeight: 1};
 var blueMapIcon = {path: google.maps.SymbolPath.CIRCLE, scale: 5, fillColor: 'blue', fillOpacity: 0.8, strokeWeight: 1};
 var teamInstitutions = { 
-			'UoW': 		{'name': 'University of Washington', 'accordionPos' : 1, 'logo' : 'images/partners/washington-university-logo.png', 'logoHeight' : '60px', 'logoWidth' : '60px', 'longitude': -122.303574, 'latitude': 47.655519},
-			'UCC': 		{'name': 'University College Cork', 'accordionPos' : 0, 'logo' : 'images/partners/university-college-cork-logo.png', 'logoHeight' : '60px', 'logoWidth' : '60px', 'longitude': -8.492860, 'latitude': 51.892332},
-			'Lund': 	{'name': 'Lund University', 'accordionPos' : 5, 'logo' : 'images/partners/lund-university-logo.png', 'logoHeight' : '60px', 'logoWidth' : '60px', 'longitude': 13.203547, 'latitude': 55.712132},
-			'Mal': 		{'name': 'Malawi Partners', 'accordionPos' : 3, 'logo' : 'images/partners/malawi-flag.png', 'logoHeight' : '60px', 'logoWidth' : '60px', 'longitude': 33.995486, 'latitude': -11.421107},
-			'Acc': 		{'name': '', 'accordionPos' : 4, 'logo' : 'images/partners/accelopment-logo.png', 'logoHeight' : '120px', 'logoWidth' : '120px', 'longitude': 8.557988, 'latitude': 47.354077},
-			'ICL': 		{'name': '', 'accordionPos' : 2, 'logo' : 'images/partners/imperial-college-london-logo.png', 'logoHeight' : '120px', 'logoWidth' : '120px', 'longitude': -0.174845, 'latitude': 51.498993}};
+			'UoW': 		{'name': 'University of Washington', 'accordionPos' : 1, 'logo' : 'images/partners/washington-university-logo.png', 'logoWidth' : '60px', 'longitude': -122.303574, 'latitude': 47.655519},
+			'UCC': 		{'name': 'University College Cork', 'accordionPos' : 0, 'logo' : 'images/partners/university-college-cork-logo.png', 'logoWidth' : '60px', 'longitude': -8.492860, 'latitude': 51.892332},
+			'Lund': 	{'name': 'Lund University', 'accordionPos' : 5, 'logo' : 'images/partners/lund-university-logo.png', 'logoWidth' : '60px', 'longitude': 13.203547, 'latitude': 55.712132},
+			'Mal': 		{'name': 'Malawi Partners', 'accordionPos' : 3, 'logo' : 'images/partners/malawi-flag.png', 'logoWidth' : '60px', 'longitude': 33.995486, 'latitude': -11.421107},
+			'Acc': 		{'name': '', 'accordionPos' : 4, 'logo' : 'images/partners/accelopment-logo.png', 'logoWidth' : '120px', 'longitude': 8.557988, 'latitude': 47.354077},
+			'ICL': 		{'name': '', 'accordionPos' : 2, 'logo' : 'images/partners/imperial-college-london-logo.png', 'logoWidth' : '120px', 'longitude': -0.174845, 'latitude': 51.498993}};
 
 $(document).ready(function() {
 	
@@ -83,8 +83,8 @@ teamMap.placeLocationMarkers = function() {
 			// have tool-tip bubble appear on user click event
 			var infoWindow = new google.maps.InfoWindow();
 						
-			var popUpComment = '<img height=' 
-								+ institution['logoHeigth'] + ' width=' + institution['logoWidth'] + ' src=' +  
+			var popUpComment = '<img height=100%' 
+								+ ' width=' + institution['logoWidth'] + ' src=' +  
 								institution['logo'] + '/> <br> ' + '<strong>' + institution['name'] + '</strong>';
 									
 			bindInfoWindow(marker, teamMap.map, infoWindow, popUpComment, institution['accordionPos']);
