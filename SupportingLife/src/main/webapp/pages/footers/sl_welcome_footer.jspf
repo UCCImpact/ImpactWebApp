@@ -28,6 +28,9 @@
 	
 	<%-- jQuery accordion hover handler --%>
 	<script type="text/javascript" src=<c:url value="/js/library/accordion-hover-handler.js"/> charset="utf-8"></script>
+		
+	<%-- Google+ Media Updates Plugin --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery.kyco.googleplusfeed.js"/> charset="utf-8"></script>
 
 	<%--  SL Welcome Page JS Functionality --%>
 	<script type="text/javascript" src=<c:url value="/js/sl_welcome.js"/>></script>

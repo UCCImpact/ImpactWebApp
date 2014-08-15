@@ -18,5 +18,8 @@
     
     <%-- CSS Favicon - Research Profile (books with magnifying glass)  --%>
     <link rel="stylesheet" type="text/css" href=<c:url value="/css/library/icon_research_profile.css"/>/>
+    
+    <%-- CSS 'Google+' Media Updates Plugin  --%>
+    <link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery.kyco.googleplusfeed.css"/>/>
         
 </head>

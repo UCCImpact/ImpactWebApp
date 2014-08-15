@@ -306,7 +306,7 @@
 										<p>${teamMember.bio}</p>
 										<c:if test="${teamMember.linkedInProfilePresent}">
 											<a href="${teamMember.linkedInUrl}" target="_blank">
-												<i	class="fa fa-linkedin-square"></i>
+												<i class="fa fa-linkedin-square"></i>
 											</a>
 										</c:if>
 										<c:if test="${teamMember.researchProfilePresent}">
@@ -324,6 +324,63 @@
 		</div>
 	</div>
 	<!-- /END MEET THE TEAM -->
+	
+	<hr class="featurette-divider">
+
+	<!-- MEDIA UPDATES -->
+	<div id="fb-root"></div>
+	<div class="row featurette">
+		<div id="social-media-updates" class="col-md-12">
+			<h1>Social Media Updates</h1>
+			<div id="facebook-wrapper" class="col-md-4">
+				<i id="facebook-icon" class="fa fa-facebook-square"></i>
+				<!-- facebook media updates -->
+				<div class="fb-like-box" data-href="https://www.facebook.com/pages/Supporting-LIFE/389448601170394" data-colorscheme="light" 
+						data-show-faces="false" data-header="true" data-stream="true" data-show-border="true">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<i id="google-plus-icon" class="fa fa-google-plus"></i>
+				<div id="google-plus-updates"></div>
+			</div>
+			<div class="col-md-4">
+				<i id="twitter-icon" class="fa fa-twitter"></i>
+				<a class="twitter-timeline" href="https://twitter.com/lifesupporting" data-widget-id="499968069653917696">Tweets by @lifesupporting</a>
+			</div>			
+		</div>
+		
+		<div id="social-media-follow-options" class="col-md-12">
+			<div class="col-md-4"></div>
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<h2>Follow us on</h2>
+				<span id="facebook-follow-icon" class="fa-stack fa-lg social-media-follow-roll">
+		  			<i class="fa fa-circle fa-stack-2x"></i>
+		  			<i class="fa fa-facebook fa-stack-1x"></i>
+				</span>
+				<span id="google-plus-follow-icon" class="fa-stack fa-lg social-media-follow-roll">
+		  			<i class="fa fa-circle fa-stack-2x"></i>
+		  			<i class="fa fa-google-plus fa-stack-1x"></i>
+				</span>
+				<span id="twitter-follow-icon" class="fa-stack fa-lg social-media-follow-roll">
+					<i class="fa fa-circle fa-stack-2x"></i>
+		 			<i class="fa fa-twitter fa-stack-1x"></i>
+				</span>
+			</div>
+		</div>
+		
+	</div>
+	<!-- /END MEDIA UPDATES -->
+	
+	<hr class="featurette-divider">
+
+	<!-- NEWSLETTER / CONTACT US -->
+	<div class="row featurette">
+		<div class="col-md-12">
+			<h1>Newsletter</h1>
+		</div>
+	</div>
+	<!-- /END THE NEWSLETTER / CONTACT US -->
 
 	<hr class="featurette-divider">
 

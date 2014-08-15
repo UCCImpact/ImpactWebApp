@@ -9,6 +9,7 @@
  ** *************************************************************************/
 
 /* map variable stores a reference to the Google Map object */
+var googlePlusApplicationId = '115509461222989389672';
 var myLatLng = new google.maps.LatLng(32.485701, 15.651460); // North Africa (Sudan) - used for centering team map
 var teamMap = {map: null, bounds: null};
 var markers = [];
@@ -44,6 +45,11 @@ $(document).ready(function() {
 	// initialise 'team members' accordion
 	configureTeamMembersAccordion();
 	
+	// initialise 'facebook', 'google+' and 'twitter' updates
+	configureMediaUpdates();	
+	
+	// add event handlers to social media follow icons
+	configureMediaFollowIcons();	
 });
 
 /* initialises the google map with a given center and zoom level */
@@ -137,4 +143,64 @@ function configureTeamMembersAccordion() {
 		icons: icons,
 		heightStyle: "content"	// allows the accordion panels to keep their native height
 	});
+}
+
+function configureMediaUpdates() {
+
+	// configure facebook media feed
+	(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	
+	// configure google+ media updates
+	$('#google-plus-updates').kycoGooglePlusFeed2(googlePlusApplicationId);
+	
+	// configure twitter media feed
+	(function(d,s,id){
+		var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+		if(!d.getElementById(id)){
+			js=d.createElement(s);
+			js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js,fjs);
+		}
+	}(document,"script","twitter-wjs"));
+}
+
+function configureMediaFollowIcons() {
+	$('#facebook-follow-icon').hover(
+			function() 
+			{
+				$('#facebook-follow-icon .fa-facebook').css('color', '#3B5998'); /* facebook - dark blue */
+				$('#facebook-follow-icon .fa-circle').css('color', '#000000'); /* background circle - black */
+			}, 
+			function() {
+				$('#facebook-follow-icon .fa-facebook').css('color', '#ffffff'); /* facebook - white */
+				$('#facebook-follow-icon .fa-circle').css('color', '#5a5a5a'); /* background circle - gray */
+			});
+	
+	$('#google-plus-follow-icon').hover(
+			function() 
+			{
+				$('#google-plus-follow-icon .fa-google-plus').css('color', '#d34836'); /* google+ - red */
+				$('#google-plus-follow-icon .fa-circle').css('color', '#000000'); /* background circle - black */
+			}, 
+			function() {
+				$('#google-plus-follow-icon .fa-google-plus').css('color', '#ffffff'); /* google+ - white */
+				$('#google-plus-follow-icon .fa-circle').css('color', '#5a5a5a'); /* background circle - gray */
+			});
+	
+	$('#twitter-follow-icon').hover(
+		function() 
+		{
+			$('#twitter-follow-icon .fa-twitter').css('color', '#00a0d1'); /* twitter - blue */
+			$('#twitter-follow-icon .fa-circle').css('color', '#000000'); /* background circle - black */
+		}, 
+		function() {
+			$('#twitter-follow-icon .fa-twitter').css('color', '#ffffff'); /* twitter - white */
+			$('#twitter-follow-icon .fa-circle').css('color', '#5a5a5a'); /* background circle - gray */
+		});
 }

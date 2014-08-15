@@ -282,6 +282,101 @@
 	opacity: .7;
 }
 
+
+/* -------------------------------------------------- */
+/* MEDIA UPDATES									  */
+/* -------------------------------------------------- */
+#social-media-updates {
+	margin-bottom: 20px;
+}
+
+/* used to make facebook feed ui responsive */
+#facebook-wrapper * {
+   width: 100% !important;
+}
+
+/* configure fontawesome icons on each of the social media feeds */
+#facebook-icon {
+	text-align: center;
+    font-size: 50px;
+	color: #3B5998;
+}
+
+#google-plus-icon {
+	text-align: center;
+    font-size: 46px;
+	color: #d34836;
+	font-weight: bold;
+	padding-bottom: 4px;
+}
+
+#twitter-icon {
+	text-align: center;
+    font-size: 50px;
+	color: #00a0d1;
+	font-weight: bold;
+}
+
+.twitter-timeline {
+	max-height: 425px;
+}
+
+
+/*****************************************/
+
+#social-media-follow-options {
+	text-align: center;
+	color: #5a5a5a;
+}
+
+.social-media-follow-roll {
+	margin: 10px;
+	border-radius: 50%;
+	-webkit-transition: all ease 0.3s;
+	-moz-transition: all ease 0.3s;
+	-o-transition: all ease 0.3s;
+	-ms-transition: all ease 0.3s;
+	transition: all ease 0.3s;
+}
+
+.social-media-follow-roll:hover {
+	-webkit-transform:rotate(360deg);
+	-moz-transform:rotate(360deg);
+	-o-transform:rotate(360deg);
+	-ms-transform:rotate(360deg);
+	transform:rotate(360deg);
+}
+
+/* facebook follow icon */ 
+#facebook-follow-icon .fa-circle {
+	color: #5a5a5a;
+}
+
+#facebook-follow-icon .fa-facebook {
+	color: white;
+}
+
+/* google+ follow icon */ 
+#google-plus-follow-icon .fa-circle {
+	color: #5a5a5a;
+}
+
+#google-plus-follow-icon .fa-google-plus {
+	color: white;
+}
+
+/* twitter follow icon */ 
+#twitter-follow-icon .fa-circle {
+	color: #5a5a5a;
+}
+
+#twitter-follow-icon .fa-twitter {
+	color: white;
+}
+
+/*****************************************/
+
+
 /* -------------------------------------------------- */
 /* RESPONSIVE CSS */
 /* -------------------------------------------------- */
