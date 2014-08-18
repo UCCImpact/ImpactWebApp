@@ -224,7 +224,7 @@
 				excited in hearing from individuals who would like to help us out!.
 			</p>
 		</div>
-		<div class="col-md-5">
+		<div id="github-icon-container" class="col-md-5">
 			<a href="https://github.com/timothyosullivan" target="_blank"> <i
 				id="github-icon" class="fa fa-github"></i> <br> <span
 				class="text-muted"> Follow us on GitHub! </span>
@@ -235,7 +235,7 @@
 	<hr class="featurette-divider">
 
 	<div class="row featurette">
-		<div class="col-md-5">
+		<div id="knowledge-base-icon-container" class="col-md-5">
 			<a href="http://supportinglife.github.io/" target="_blank">
 				<i id="knowledge-bulb-icon" class="fa flaticon-idea"></i>
 				<br><br><br>
@@ -354,18 +354,24 @@
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
 				<h2>Follow us on</h2>
-				<span id="facebook-follow-icon" class="fa-stack fa-lg social-media-follow-roll">
-		  			<i class="fa fa-circle fa-stack-2x"></i>
-		  			<i class="fa fa-facebook fa-stack-1x"></i>
-				</span>
-				<span id="google-plus-follow-icon" class="fa-stack fa-lg social-media-follow-roll">
-		  			<i class="fa fa-circle fa-stack-2x"></i>
-		  			<i class="fa fa-google-plus fa-stack-1x"></i>
-				</span>
-				<span id="twitter-follow-icon" class="fa-stack fa-lg social-media-follow-roll">
-					<i class="fa fa-circle fa-stack-2x"></i>
-		 			<i class="fa fa-twitter fa-stack-1x"></i>
-				</span>
+				<a href="https://www.facebook.com/pages/Supporting-LIFE/389448601170394" target="_blank">
+					<span id="facebook-follow-icon" class="fa-stack fa-lg social-media-follow-roll">
+			  			<i class="fa fa-circle fa-stack-2x"></i>
+			  			<i class="fa fa-facebook fa-stack-1x"></i>
+					</span>
+				</a>
+				<a href="https://plus.google.com/+SupportinglifeEu/posts" target="_blank">
+					<span id="google-plus-follow-icon" class="fa-stack fa-lg social-media-follow-roll">
+			  			<i class="fa fa-circle fa-stack-2x"></i>
+			  			<i class="fa fa-google-plus fa-stack-1x"></i>
+					</span>
+				</a>
+				<a href="https://twitter.com/lifesupporting" target="_blank">
+					<span id="twitter-follow-icon" class="fa-stack fa-lg social-media-follow-roll">
+						<i class="fa fa-circle fa-stack-2x"></i>
+			 			<i class="fa fa-twitter fa-stack-1x"></i>
+					</span>
+				</a>
 			</div>
 		</div>
 		

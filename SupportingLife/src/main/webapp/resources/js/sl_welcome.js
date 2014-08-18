@@ -89,10 +89,10 @@ teamMap.placeLocationMarkers = function() {
 			// have tool-tip bubble appear on user click event
 			var infoWindow = new google.maps.InfoWindow();
 						
-			var popUpComment = '<img height=100%' 
+			var popUpComment = '<div class="map-scroll-fix">' + '<img' 
 								+ ' width=' + institution['logoWidth'] + ' src=' +  
-								institution['logo'] + '/> <br> ' + '<strong>' + institution['name'] + '</strong>';
-									
+								institution['logo'] + '/> <br> ' + '<strong>' + institution['name'] + '</strong>' + '</div>';
+												
 			bindInfoWindow(marker, teamMap.map, infoWindow, popUpComment, institution['accordionPos']);
 			
 			// fit the map to the markers
@@ -105,7 +105,9 @@ function bindInfoWindow(marker, map, infoWindow, html, accordionPos) {
     
 	google.maps.event.addListener(marker, 'mouseover', function() {
     	marker.setIcon(blueMapIcon);
-    	infoWindow.setContent(html); 
+    	infoWindow.setContent(html);
+    	// forces google maps to recalculate width and height
+    	infoWindow.setContent(infoWindow.getContent()); 
     	infoWindow.open(map, marker); 
     });
     

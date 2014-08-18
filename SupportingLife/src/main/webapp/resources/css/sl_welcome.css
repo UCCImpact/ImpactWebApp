@@ -171,6 +171,16 @@
 	font-size: 150px;
 }
 
+
+/* -------------------------------------------------- */
+/* GitHub - Join the Coding Adventure				  */
+/* -------------------------------------------------- */
+
+/* remove the underline on html links showing when hovering over icons */
+#github-icon-container a {
+    text-decoration: none !important;
+}
+
 /* github icon */
 #github-icon {
 	padding-top: 50px;
@@ -183,30 +193,28 @@
 	color:  #077204;
 }
 
-/* book icon */
-#book-icon {
-	padding-top: 60px;
-	text-align: center;
-	font-size: 190px;
-	color: #777;
-}
+/* -------------------------------------------------- */
+/* Technology Knowledge Base						  */
+/* -------------------------------------------------- */
 
-#book-icon:hover {
-	color:  #077204;
+/* remove the underline on html links showing when hovering over icons */
+#knowledge-base-icon-container a {
+    text-decoration: none !important;
 }
 
 /* -------------------------------------------------- */
 /* TEAM MAP 										  */
 /* -------------------------------------------------- */
-
 #team-map {
 	height: 380px;
 }
 
 /* prevents scrollbars on google map pop-up */
-.gm-style-iw {
-   overflow: hidden !important; 
-   line-height: 1.5;
+.map-scroll-fix {
+	max-height: 90px;
+	overflow: hidden !important;
+	line-height: 1.5;
+	white-space: nowrap;
 }
 
 /* -------------------------------------------------- */
@@ -322,7 +330,13 @@
 }
 
 
-/*****************************************/
+/* -------------------------------------------------- */
+/* SOCIAL MEDIA FOLLOW OPTIONS						  */
+/* -------------------------------------------------- */
+/* remove the underline on html links showing when hovering over icons */
+#social-media-follow-options a {
+    text-decoration: none !important;
+}
 
 #social-media-follow-options {
 	text-align: center;
