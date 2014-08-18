@@ -329,7 +329,6 @@
 	max-height: 425px;
 }
 
-
 /* -------------------------------------------------- */
 /* SOCIAL MEDIA FOLLOW OPTIONS						  */
 /* -------------------------------------------------- */
@@ -388,8 +387,61 @@
 	color: white;
 }
 
-/*****************************************/
+/* -------------------------------------------------- */
+/* FIND OUT MORE (NEWSLETTER / CONTACT US)			  */
+/* -------------------------------------------------- */
 
+/* center the navigation tabs */
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+}
+
+#newsletter-details {
+	background: url("../../images/newsletter-background.png");
+	height: 400px;
+	background-size: 100%; /* size the background image at 100% like any responsive img tag */
+    background-position: top center;
+    background-repeat:no-repeat;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    -webkit-border-radius: 20px;
+}
+
+#newsletter-details div h3 {
+	margin-top: 40px;
+	color: #077204;
+}
+
+#newsletter-details .input-group {
+	margin-bottom: 5px;
+	margin-top: 5px;
+	width: 100%;
+}
+
+#subscribe-button {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+#contact-us-details .input-group {
+	margin-bottom: 5px;
+	margin-top: 5px;
+	width: 100%;
+}
+
+/* size the width of the icon addon to be the same on the 'contact details' form */
+#contact-us-details .input-group-addon {
+	min-width: 50px;
+	font-size: 20px;
+}
 
 /* -------------------------------------------------- */
 /* RESPONSIVE CSS */

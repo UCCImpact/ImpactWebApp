@@ -87,9 +87,7 @@
 			</div>
 		</div>
 	</div>
-
-</div>
-
+	
 	<button id="submit-button" class="btn btn-success">Conduct Surveillance</button>
 </div><!--  END: surveillance-container -->
 
