@@ -404,7 +404,7 @@
 }
 
 #newsletter-details {
-	background: url("../../images/newsletter-background.png");
+	background: url("../../images/find-out-more-background.png");
 	height: 400px;
 	background-size: 100%; /* size the background image at 100% like any responsive img tag */
     background-position: top center;
@@ -426,14 +426,38 @@
 	width: 100%;
 }
 
+/* size the width of the icon addon to be the same on the 'contact details' form */
+#newsletter-details .input-group-addon {
+	min-width: 50px;
+	font-size: 20px;
+}
+
 #subscribe-button {
 	margin-top: 10px;
 	margin-bottom: 20px;
 }
 
-#contact-us-details .input-group {
-	margin-bottom: 5px;
-	margin-top: 5px;
+#contact-us-details {
+	background: url("../../images/find-out-more-background.png");
+	height: 400px;
+	background-size: 100%; /* size the background image at 100% like any responsive img tag */
+    background-position: top center;
+    background-repeat:no-repeat;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    -webkit-border-radius: 20px;
+}
+
+.contact-us-top-level-item {
+	margin-top: 40px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.contact-us-standard-level-item {
+	margin-bottom: 10px;
+	margin-top: 10px;
 	width: 100%;
 }
 
@@ -441,6 +465,11 @@
 #contact-us-details .input-group-addon {
 	min-width: 50px;
 	font-size: 20px;
+}
+
+#contact-us-button {
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
 /* -------------------------------------------------- */

@@ -414,9 +414,9 @@
 				<div class="tab-pane fade" id="contact-us">
 					<div class="form-actions">
 						<div id="contact-us-details" class="row">
-							<div class="col-md-10 col-md-offset-1">
+							<div class="col-md-6 col-md-offset-3">
 								<!-- full name -->
-								<div class="input-group">
+								<div class="input-group contact-us-top-level-item">
 									<span class="input-group-addon">
 										<span class="fa fa-user"></span>
 									</span>
@@ -424,7 +424,7 @@
 								</div>
 				
 								<!-- email address -->
-								<div class="input-group">
+								<div class="input-group contact-us-standard-level-item">
 									<span class="input-group-addon">
 										<span class="fa fa-envelope"></span>
 									</span>
@@ -432,7 +432,7 @@
 								</div>
 			
 								<!-- telephone number -->
-								<div class="input-group">
+								<div class="input-group contact-us-standard-level-item">
 									<span class="input-group-addon">
 										<span class="fa fa-phone"></span>
 									</span>
@@ -440,10 +440,10 @@
 								</div>
 			
 								<!-- comment/message -->
-								<div class="input-group">
+								<div class="input-group contact-us-standard-level-item">
 									<textarea id="contactComment" class="form-control" placeholder="Enter Your Message" rows="5"></textarea>
 								</div>
-								<button id="submit-button" class="btn btn-success">Contact Us</button>
+								<button id="contact-us-button" class="btn btn-success">Contact Us</button>
 							</div>						
 						</div>
 					</div>
