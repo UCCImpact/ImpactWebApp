@@ -11,6 +11,18 @@
 <%-- spring form handling --%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]>
+<html lang="en">
+<![endif]-->
 <head>
 	<meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,9 +52,9 @@
 
 	<%--------------------------------------------- CSS Links -----------------------------------------%>
 	<%-- Bootstrap CSS --%>
- 	<link rel='stylesheet' type='text/css' href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css">
+ 	<link rel='stylesheet' type='text/css' href=<c:url value="/css/library/bootstrap.css"/>/>
  	<%-- FontAwesome CSS --%>
- 	<link rel='stylesheet' type='text/css' href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+ 	<link rel='stylesheet' type='text/css' href=<c:url value="/css/library/font-awesome.min.css"/>/>
 
  	<%-- SL Global CSS --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_global.css"/>/>
@@ -52,3 +64,14 @@
 	
  	<%-- footer CSS --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_footer.css"/>/>
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/oldie.css"/>/>
+	<![endif]-->
+				
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->

@@ -3,16 +3,15 @@
 @font-face {
 	font-family: "Flaticon";
 	src: url("flaticon.eot");
-	src: url("flaticon.eot#iefix") format("embedded-opentype"),
-	url("../../../images/fonts/sl-welcome.ttf") format("truetype");
+	src: url("../../../images/fonts/sl-welcome.eot#iefix") format("embedded-opentype"),
+	     url("../../../images/fonts/sl-welcome.ttf") format("truetype");
 }
 
-.flaticon-research-profile:before,
 .flaticon-research-profile:after {
 	font-family: Flaticon;
 	font-style: normal;
 }
 
-.flaticon-research-profile:before {
+.flaticon-research-profile:after {
 	content: "\e000";
 }

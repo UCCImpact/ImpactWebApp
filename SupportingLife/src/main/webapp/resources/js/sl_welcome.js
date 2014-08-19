@@ -49,7 +49,11 @@ $(document).ready(function() {
 	configureMediaUpdates();	
 	
 	// add event handlers to social media follow icons
-	configureMediaFollowIcons();	
+	configureMediaFollowIcons();
+	
+	// add event handler for handling person contact
+	configurePersonContactHandler();
+
 });
 
 /* initialises the google map with a given center and zoom level */
@@ -131,7 +135,7 @@ function configureTeamMembersAccordion() {
 	var icons = {header: "ui-icon-circle-arrow-e", activeHeader: "ui-icon-circle-arrow-s"};
 
 	$('.partner-accordion').accordion({
-//		event: "click hoverintent",
+		event: "click",
 		collapsible: true,
 		active: false,
 		icons: icons,
@@ -139,7 +143,6 @@ function configureTeamMembersAccordion() {
 	});
 	
 	$('.team-member-accordion').accordion({
-//		event: "click hoverintent",
 		collapsible: true,
 		active: false,
 		icons: icons,
@@ -159,7 +162,21 @@ function configureMediaUpdates() {
 		}(document, 'script', 'facebook-jssdk'));
 	
 	// configure google+ media updates
-	$('#google-plus-updates').kycoGooglePlusFeed2(googlePlusApplicationId);
+    var version = msIeVersion();
+    
+    if (version == 6) {
+    	$('#google-plus-updates').html('not supported in IE6');
+    }
+	else if (version == 7) {
+		$('#google-plus-updates').html('not supported in IE7');
+	}
+	else if (version == 8) {
+		$('#google-plus-updates').html('not supported in IE8');
+	}
+	else
+	{
+		$('#google-plus-updates').kycoGooglePlusFeed2(googlePlusApplicationId);
+	}
 	
 	// configure twitter media feed
 	(function(d,s,id){
@@ -205,4 +222,28 @@ function configureMediaFollowIcons() {
 			$('#twitter-follow-icon .fa-twitter').css('color', '#ffffff'); /* twitter - white */
 			$('#twitter-follow-icon .fa-circle').css('color', '#5a5a5a'); /* background circle - gray */
 		});
+}
+
+function configurePersonContactHandler() {
+	
+	$('#contact-us-button').click(function() {
+	    var person = {
+	        name:$("#contactFullName").val(),
+	        email:$("#contactEmail").val(),
+	        phone:$("#contactPhoneNumber").val(),
+	        comment:$("#contactComment").val()
+	    }
+	
+	    $.ajax({
+	        url: 'welcome/addPersonContact',
+	        headers: { 
+	            'Accept': 'application/json',
+	            'Content-Type': 'application/json' 
+	        },
+	        type: 'post',
+	        dataType: 'json',
+	        success: function (data) {},
+	        data: JSON.stringify(person)
+	    });
+	});
 }

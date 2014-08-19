@@ -27,11 +27,12 @@
 }
 
 .navbar-wrapper .navbar .navbar-header label {
-  font-size: 24px;
+  font-size: 18px;
   color: #ffd700; /* gold */
-  padding-top:14px !important;
+  padding-top:5px !important;
   padding-bottom:0px !important;
 }
+
 
 /* bulb icon */
 #bulb-icon {

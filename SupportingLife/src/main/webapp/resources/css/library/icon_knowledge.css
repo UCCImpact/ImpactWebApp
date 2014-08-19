@@ -3,11 +3,10 @@
 @font-face {
 	font-family: "Flaticon";
 	src: url("flaticon.eot");
-	src: url("flaticon.eot#iefix") format("embedded-opentype"),
-	url("../../../images/fonts/sl-welcome.ttf") format("truetype");
+	src: url("../../../images/fonts/sl-welcome.eot#iefix") format("embedded-opentype"),
+	     url("../../../images/fonts/sl-welcome.ttf") format("truetype");
 }
 
-.flaticon-idea:before,
 .flaticon-idea:after {
 	font-family: Flaticon;
 	line-height:5px;
@@ -19,7 +18,7 @@
 	margin-bottom: 10px;
 }
 
-.flaticon-idea:before {
+.flaticon-idea:after {
 	content: "\e001";	
 }
 

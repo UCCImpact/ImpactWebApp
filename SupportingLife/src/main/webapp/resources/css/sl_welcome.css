@@ -221,6 +221,10 @@
 /* TEAM MEMBER PARTNER ACCORDION					  */
 /* -------------------------------------------------- */
 
+.team-member-accordion .ui-accordion-content {
+	background: #FFFFFF;
+}
+
 .team-member-header img {
 	float: left;
 	margin-top: 40px;

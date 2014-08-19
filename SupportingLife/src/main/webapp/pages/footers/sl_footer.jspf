@@ -43,10 +43,13 @@
  	<%-- Placed at the end of the document so the pages load faster --%>
 
  	<%-- NavBar General Handling JavaScript --%>
-	<script type="text/javascript" src=<c:url value="/js/sl_navbar.js"/>></script> 	
+	<script type="text/javascript" src=<c:url value="/js/sl_navbar.js"/>></script>
+	
+	<%-- SL Global JavaScript --%>
+	<script type="text/javascript" src=<c:url value="/js/sl_global.js"/>></script> 	
  	 	
 	<%-- Bootstrap core JavaScript --%>
 	<script type="text/javascript" src=<c:url value="/js/library/bootstrap.min.js"/>></script>
-
+	
 </body>
 </html>
