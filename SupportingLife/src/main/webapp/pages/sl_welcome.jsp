@@ -286,8 +286,8 @@
 						<div class="team-member-accordion">
 							<c:forEach items="${partnerGroup.teamMembers}" var="teamMember">
 								<h4>${teamMember.name}</h4>
-								<div class="col-md-12">
-									<div class="team-member-header col-md-2">
+								<div>
+									<div class="team-member-header">
 										<c:choose>
 											<c:when test="${teamMember.photoPresent}">
 												<img alt="${teamMember.name}" src="${teamMember.imageRef}" />
@@ -297,7 +297,7 @@
 											</c:otherwise>
 										</c:choose>
 									</div>
-									<div class="team-member-body col-md-10">
+									<div class="team-member-body">
 										<div class="header-text">
 											<h4>${teamMember.name}</h4>
 											<h5>${teamMember.role}</h5>
