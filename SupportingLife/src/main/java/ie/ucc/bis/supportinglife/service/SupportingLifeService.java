@@ -7,6 +7,7 @@ import ie.ucc.bis.supportinglife.ccm.dao.CcmPatientClassificationDao;
 import ie.ucc.bis.supportinglife.ccm.dao.CcmPatientDao;
 import ie.ucc.bis.supportinglife.ccm.dao.CcmPatientTreatmentDao;
 import ie.ucc.bis.supportinglife.ccm.dao.CcmPatientVisitDao;
+import ie.ucc.bis.supportinglife.ccm.dao.ContactsDao;
 import ie.ucc.bis.supportinglife.ccm.dao.Dao;
 import ie.ucc.bis.supportinglife.ccm.dao.UserDao;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmAssessmentAnalytics;
@@ -21,6 +22,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.User;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentComms;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentResponseComms;
+import ie.ucc.bis.supportinglife.communication.PersonContactComms;
 import ie.ucc.bis.supportinglife.communication.SurveillanceRequestComms;
 import ie.ucc.bis.supportinglife.communication.UserAuthenticationComms;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
@@ -345,6 +347,14 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 			surveillanceSet.add(record);
 		}
 		return modifiedRecords;
+	}
+	
+	/*******************************************************************************/
+	/*******************************Contacts/Newsletter*****************************/
+	/*******************************************************************************/		
+	public void addPersonContact(PersonContactComms personContact) {
+		ContactsDao contactsDao = (ContactsDao) getDaoBeans().get("ContactsDao");
+		contactsDao.addPersonContact(personContact);
 	}
 	
 	

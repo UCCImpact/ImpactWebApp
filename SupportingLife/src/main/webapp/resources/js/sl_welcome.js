@@ -228,10 +228,10 @@ function configurePersonContactHandler() {
 	
 	$('#contact-us-button').click(function() {
 	    var person = {
-	        name:$("#contactFullName").val(),
-	        email:$("#contactEmail").val(),
-	        phone:$("#contactPhoneNumber").val(),
-	        comment:$("#contactComment").val()
+	        name:$('#contactFullName').val(),
+	        email:$('#contactEmail').val(),
+	        phone:$('#contactPhoneNumber').val(),
+	        comment:$('#contactComment').val()
 	    }
 	
 	    $.ajax({
@@ -242,8 +242,13 @@ function configurePersonContactHandler() {
 	        },
 	        type: 'post',
 	        dataType: 'json',
-	        success: function (data) {},
-	        data: JSON.stringify(person)
+	        data: JSON.stringify(person),
+	        success: function (response) {
+	            alert("Details saved successfully!!!");
+	        },
+	        error: function (xhr, ajaxOptions, thrownError) {
+	        	alert('unsuccessful');
+	        }
 	    });
 	});
 }

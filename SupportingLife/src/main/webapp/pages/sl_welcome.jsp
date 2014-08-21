@@ -404,7 +404,7 @@
 									<span class="input-group-addon">
 										<span class="fa fa-envelope"></span>
 									</span>
-									<input id="contactEmail" type="email" class="form-control" placeholder="Enter Email"/>
+									<input id="newsletterContactEmail" type="email" class="form-control" placeholder="Enter Email"/>
 								</div>
 								<button id="subscribe-button" class="btn btn-success">Subscribe</button>
 							</div>

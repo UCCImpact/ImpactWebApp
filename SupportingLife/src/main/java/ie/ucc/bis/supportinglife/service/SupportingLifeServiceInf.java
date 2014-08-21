@@ -9,6 +9,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.ccm.domain.User;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentComms;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentResponseComms;
+import ie.ucc.bis.supportinglife.communication.PersonContactComms;
 import ie.ucc.bis.supportinglife.communication.SurveillanceRequestComms;
 import ie.ucc.bis.supportinglife.communication.UserAuthenticationComms;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
@@ -97,4 +98,9 @@ public interface SupportingLifeServiceInf {
 	/*******************************Disease Surveillance****************************/
 	/*******************************************************************************/
 	public List<SurveillanceRecord> getSurveillanceRecords(SurveillanceRequestComms surveillanceRequestComms);
+	
+	/*******************************************************************************/
+	/*******************************Contacts/Newsletter*****************************/
+	/*******************************************************************************/	
+	public void addPersonContact(PersonContactComms personContact);
 }

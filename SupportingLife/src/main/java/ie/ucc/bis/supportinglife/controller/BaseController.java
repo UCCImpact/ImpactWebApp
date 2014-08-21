@@ -1,23 +1,25 @@
 package ie.ucc.bis.supportinglife.controller;
 
 import ie.ucc.bis.supportinglife.communication.PersonContactComms;
+import ie.ucc.bis.supportinglife.service.SupportingLifeServiceInf;
 import ie.ucc.bis.supportinglife.service.helper.SupportingLifeRefDataHelperInf;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 @Controller
 @RequestMapping("/welcome")
 public class BaseController {
+	
+	@Autowired
+	private SupportingLifeServiceInf supportingLifeService;
 	
 	@Autowired
 	private SupportingLifeRefDataHelperInf SupportingLifeRefDataHelper;
@@ -42,12 +44,10 @@ public class BaseController {
 	 * 
 	 * @return @ResponseBody
 	 */
-	@RequestMapping(value="/addPersonContact", method=RequestMethod.POST,  produces={"application/json"}, consumes={"application/json"})
-	@ResponseStatus(HttpStatus.CREATED)
-	public @ResponseBody Boolean addPersonContact(@RequestBody PersonContactComms personContact) {
-
-		System.out.println("here");
+	@RequestMapping(value="/addPersonContact", method=RequestMethod.POST, produces={"application/json"}, consumes={"application/json"})
+	@ResponseBody //this will parse the returned Object to JSONØ
+	public Boolean addPersonContact(@RequestBody PersonContactComms personContact) {
+		supportingLifeService.addPersonContact(personContact);
 		return true;
-		// supportingLifeService.addPersonContact(personContact);
 	}
 }
