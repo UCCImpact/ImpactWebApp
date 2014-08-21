@@ -46,7 +46,6 @@
 /* At this width, we need to reduce the navbar brand so it 		*/
 /* displays appropriately with the menu bar items which have 	*/
 /* not yet collapsed and are displaying full length 			*/
-
 	.navbar-wrapper .navbar .navbar-header label {
 	  font-size: 18px;
 	  padding-top:5px !important;
@@ -77,19 +76,40 @@
 		padding-right: 0;
 	}
 
+	.navbar-nav > li > a {
+		margin-right: 15px;
+		margin-left: 0px;
+	}
+
 	/* The navbar becomes detached from the top, so we round the corners */
 	.navbar-wrapper .navbar {
 		margin-bottom: 0px;
 		border-radius: 4px;
+	}
+
+	.navbar-brand {
+		height: auto;
+	}
+}
+
+/* this is the width point at which the navbar 	*/
+/* collapses to the mobile look					*/
+@media (max-width: 767px) {
+	.navbar-toggle {
+		margin-right: 0px;
 	}
 }
 
 
 /* this is the width point at which the navbar 	*/
 /* collapses to the mobile look					*/
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 	.navbar-wrapper .navbar .navbar-header label {
 	  padding-top: 25px !important;
 	  padding-bottom: 0px !important;
+	}
+	
+	.navbar-wrapper .navbar .navbar-header  {
+		margin-right: 15px;
 	}
 }

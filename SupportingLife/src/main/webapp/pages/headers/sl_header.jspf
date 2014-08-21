@@ -52,7 +52,7 @@
 
 	<%--------------------------------------------- CSS Links -----------------------------------------%>
 	<%-- Bootstrap CSS --%>
- 	<link rel='stylesheet' type='text/css' href=<c:url value="/css/library/bootstrap.css"/>/>
+ 	<link rel='stylesheet' type='text/css' href=<c:url value="/css/library/bootstrap.min.css"/>/>
  	<%-- FontAwesome CSS --%>
  	<link rel='stylesheet' type='text/css' href=<c:url value="/css/library/font-awesome.min.css"/>/>
 
