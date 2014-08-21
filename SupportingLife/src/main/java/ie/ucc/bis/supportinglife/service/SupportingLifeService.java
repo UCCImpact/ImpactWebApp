@@ -357,6 +357,10 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		contactsDao.addPersonContact(personContact);
 	}
 	
+	public void addNewsletterContact(String emailAddress) {
+		ContactsDao contactsDao = (ContactsDao) getDaoBeans().get("ContactsDao");
+		contactsDao.addNewsletterContact(emailAddress);		
+	}
 	
 	
 	/*******************************************************************************/

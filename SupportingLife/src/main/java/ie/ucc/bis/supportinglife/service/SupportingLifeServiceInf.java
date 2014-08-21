@@ -103,4 +103,5 @@ public interface SupportingLifeServiceInf {
 	/*******************************Contacts/Newsletter*****************************/
 	/*******************************************************************************/	
 	public void addPersonContact(PersonContactComms personContact);
+	public void addNewsletterContact(String emailAddress);
 }

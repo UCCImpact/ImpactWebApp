@@ -53,7 +53,16 @@ $(document).ready(function() {
 	
 	// add event handler for handling person contact
 	configurePersonContactHandler();
+	
+	// add event handler for handling newsletter contact
+	configureNewsletterContactHandler();
 
+	// newsletter validation
+	configureNewsletterValidationRules();
+	
+	// contact form validation
+	configureContactFormValidationRules();
+	
 });
 
 /* initialises the google map with a given center and zoom level */
@@ -227,28 +236,198 @@ function configureMediaFollowIcons() {
 function configurePersonContactHandler() {
 	
 	$('#contact-us-button').click(function() {
-	    var person = {
-	        name:$('#contactFullName').val(),
-	        email:$('#contactEmail').val(),
-	        phone:$('#contactPhoneNumber').val(),
-	        comment:$('#contactComment').val()
-	    }
-	
-	    $.ajax({
-	        url: 'welcome/addPersonContact',
-	        headers: { 
-	            'Accept': 'application/json',
-	            'Content-Type': 'application/json' 
-	        },
-	        type: 'post',
-	        dataType: 'json',
-	        data: JSON.stringify(person),
-	        success: function (response) {
-	            alert("Details saved successfully!!!");
-	        },
-	        error: function (xhr, ajaxOptions, thrownError) {
-	        	alert('unsuccessful');
-	        }
-	    });
+		
+		// validate user entered data
+		var valid = $('#contact-us-details').valid();
+		
+		if (valid) {	
+		    var person = {
+		        name:$('#contactFullName').val(),
+		        email:$('#contactEmail').val(),
+		        phone:$('#contactPhoneNumber').val(),
+		        comment:$('#contactComment').val()
+		    }
+		
+		    $.ajax({
+		        url: 'welcome/addPersonContact',
+		        headers: { 
+		            'Accept': 'application/json',
+		            'Content-Type': 'application/json' 
+		        },
+		        type: 'post',
+		        dataType: 'json',
+		        data: JSON.stringify(person),
+		        success: function (response) {
+		        	resetForm($('#contact-us-details'));
+		        	$('#contact-us-button').notify('Thank you for contacting us!', 
+		        			{className: 'success', style: 'bootstrap', autoHideDelay: 2000, showDuration: 300, elementPosition: 'right-middle'});
+		        },
+		        error: function (xhr, ajaxOptions, thrownError) {
+		        	$('#contact-us-button').notify('Contact request communication error', 
+		        			{className: 'error', style: 'bootstrap', autoHideDelay: 2000, showDuration: 300, elementPosition: 'right-middle'});
+		        }
+		    });	    
+		} /* end if */
+	    return false;
 	});
 }
+
+function configureNewsletterContactHandler() {
+	
+	$('#subscribe-button').click(function() {
+		
+		// validate user entered data
+		var valid = $('#newsletter-details').valid();
+		
+		if (valid) {
+		    var emailAddress = $('#newsletterEmailContact').val();
+	
+		    $.ajax({
+		        url: 'welcome/addNewsletterContact',
+		        headers: { 
+		            'Accept': 'application/json',
+		            'Content-Type': 'application/json' 
+		        },
+		        type: 'post',
+		        dataType: 'json',
+		        data: emailAddress,
+		        success: function (response) {
+		        	resetForm($('#newsletter-details'));
+		        	$('#subscribe-button').notify('Subscription request successful!', 
+		        			{className: 'success', style: 'bootstrap', autoHideDelay: 2000, showDuration: 300, elementPosition: 'right-middle'});
+		        },
+		        error: function (xhr, ajaxOptions, thrownError) {
+		        	$('#subscribe-button').notify('Contact request communication error', 
+		        			{className: 'error', style: 'bootstrap', autoHideDelay: 2000, showDuration: 300, elementPosition: 'right-middle'});
+		        }
+		    });
+		} /* end if */
+	    return false;
+	});
+}
+
+function configureNewsletterValidationRules() {
+	/* 
+	 * Validation method using a regular expression to 
+	 * check valid email address
+	 */
+    $.validator.addMethod("emailRegex", function(value, element) {
+    	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return this.optional(element) || re.test(value);
+    });
+	
+	$('#newsletter-details').validate({
+		rules: {
+			'newsletterEmailContact': {
+				required: true,
+				emailRegex: true
+			}
+		},
+		messages: {
+			'newsletterEmailContact': {
+				required: 'Please enter a valid email address',
+				emailRegex: 'Invalid email address'
+			}
+		},
+		unhighlight: function(element, errorClass, validClass) {
+		    $(element).addClass('valid');
+		    $(element).removeClass('error');
+		},
+		highlight: function (element) {
+			$(element).removeClass('valid').addClass('error');
+		},
+		success: function (element) {
+			element.addClass('valid');
+		},
+		errorPlacement: function(error, element) {
+			error.insertAfter(element);
+		}
+	});
+}
+
+function configureContactFormValidationRules() {
+	
+	/* 
+	 * Validation method using a regular expression to 
+	 * check valid email address
+	 */
+    $.validator.addMethod("emailRegex", function(value, element) {
+    	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return this.optional(element) || re.test(value);
+    });
+	
+	/* 
+	 * Validation method using a regular expression to check value consists
+	 * only of letters
+	 */
+    $.validator.addMethod("lettersRegex", function(value, element) {
+        return this.optional(element) || /^[a-z]+$/i.test(value);
+    });
+    
+	/* 
+	 * Validation method using a regular expression to check value consists
+	 * only of numbers
+	 */
+    $.validator.addMethod("numbersRegex", function(value, element) {
+        return this.optional(element) || /^[0-9]+$/i.test(value);
+    });
+    
+	$('#contact-us-details').validate({
+		rules: {
+			'contactFullName': {
+				required: true,
+				lettersRegex: true
+			},
+			'contactEmail': {
+				required: true,
+				emailRegex: true
+			},
+			'contactPhoneNumber': {
+				required: false,
+				numbersRegex: true
+			},
+			'contactComment': {
+				required: true
+			}
+		},
+		messages: {
+			'contactFullName': {
+				required: 'Please enter your name',
+				lettersRegex: 'Name with letters only'
+			},
+			'contactEmail': {
+				required: 'Please enter a valid email address',
+				emailRegex: 'Invalid email address'
+			},
+			'contactPhoneNumber': {
+				numbersRegex: 'Please enter number using digits'
+			},
+			'contactComment': {
+				required: 'Please enter a comment'
+			}
+		},
+		unhighlight: function(element, errorClass, validClass) {
+		    $(element).addClass('valid');
+		    $(element).removeClass('error');
+		},
+		highlight: function (element) {
+			$(element).removeClass('valid').addClass('error');
+		},
+		success: function (element) {
+			element.addClass('valid');
+		},
+		errorPlacement: function(error, element) {
+			error.insertAfter(element);
+		}
+	});
+}
+
+/* utility method to reset input fields of a form */
+function resetForm(formElement) {
+	$(':input', formElement)
+	.not(':button, :submit, :reset, :hidden')
+	.val('')
+	.removeAttr('checked')
+	.removeAttr('selected');
+}
+

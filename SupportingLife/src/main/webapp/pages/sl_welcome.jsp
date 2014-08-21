@@ -385,67 +385,76 @@
 		<div class="col-md-12">
 			<h1>Find Out More</h1>
 			<!-- Tab panes -->
-			<ul id="find-out-more-tabs" class="nav nav-tabs" role="tablist">
+			<ul id="find-out-more-tabs" class="nav nav-tabs">
 				<li class="active">
-					<a href="#newsletter" role="tab" data-toggle="tab">Newsletter</a>
+					<a href="#newsletter" data-toggle="tab">Newsletter</a>
 				</li>
 				<li>
-					<a href="#contact-us" role="tab" data-toggle="tab">Contact Us</a>
+					<a href="#contact-us" data-toggle="tab">Contact Us</a>
 				</li>
 			</ul>
 			<div id="find-out-more-tab-content" class="tab-content">
 				<div class="tab-pane fade in active" id="newsletter">
 					<div class="form-actions">
-						<div id="newsletter-details" class="row">
-							<div class="col-md-6 col-md-offset-3">
-								<h3>Be among the first to know about upcoming features and news</h3>
-								<!-- email address -->
-								<div class="input-group">
-									<span class="input-group-addon">
-										<span class="fa fa-envelope"></span>
-									</span>
-									<input id="newsletterContactEmail" type="email" class="form-control" placeholder="Enter Email"/>
+						<form id="newsletter-details">
+							<div class="row">
+								<div class="col-md-6 col-md-offset-3">
+									<h3>Be among the first to know about upcoming features and news</h3>
+									<!-- email address -->
+									<div class="input-group newsletter-standard-level-item">
+										<span class="input-group-addon">
+											<span class="fa fa-envelope"></span>
+										</span>
+										<input id="newsletterEmailContact" name="newsletterEmailContact" type="email" class="form-control" placeholder="Enter Email"/>
+									</div>
+									<div>
+										<button id="subscribe-button" class="btn btn-success">Subscribe</button>
+									</div>
 								</div>
-								<button id="subscribe-button" class="btn btn-success">Subscribe</button>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>
 				<div class="tab-pane fade" id="contact-us">
 					<div class="form-actions">
-						<div id="contact-us-details" class="row">
-							<div class="col-md-6 col-md-offset-3">
-								<!-- full name -->
-								<div class="input-group contact-us-top-level-item">
-									<span class="input-group-addon">
-										<span class="fa fa-user"></span>
-									</span>
-									<input id="contactFullName" type='text' class="form-control" placeholder="Enter Full Name"/>
-								</div>
+						<form id="contact-us-details">
+							<div class="row">
+								<div class="col-md-6 col-md-offset-3">
+									<h3>Let us know what's on your mind</h3>
+									<!-- full name -->
+									<div class="input-group contact-us-top-level-item">
+										<span class="input-group-addon">
+											<span class="fa fa-user"></span>
+										</span>
+										<input id="contactFullName" name="contactFullName" type='text' class="form-control" placeholder="Enter Full Name"/>
+									</div>
+					
+									<!-- email address -->
+									<div class="input-group contact-us-standard-level-item">
+										<span class="input-group-addon">
+											<span class="fa fa-envelope"></span>
+										</span>
+										<input id="contactEmail" name="contactEmail" type="email" class="form-control" placeholder="Enter Email"/>
+									</div>
 				
-								<!-- email address -->
-								<div class="input-group contact-us-standard-level-item">
-									<span class="input-group-addon">
-										<span class="fa fa-envelope"></span>
-									</span>
-									<input id="contactEmail" type="email" class="form-control" placeholder="Enter Email"/>
-								</div>
-			
-								<!-- telephone number -->
-								<div class="input-group contact-us-standard-level-item">
-									<span class="input-group-addon">
-										<span class="fa fa-phone"></span>
-									</span>
-									<input id="contactPhoneNumber" type="tel" class="form-control" placeholder="Enter Telephone Number"/>
-								</div>
-			
-								<!-- comment/message -->
-								<div class="input-group contact-us-standard-level-item">
-									<textarea id="contactComment" class="form-control" placeholder="Enter Your Message" rows="5"></textarea>
-								</div>
-								<button id="contact-us-button" class="btn btn-success">Contact Us</button>
-							</div>						
-						</div>
+									<!-- telephone number -->
+									<div class="input-group contact-us-standard-level-item">
+										<span class="input-group-addon">
+											<span class="fa fa-phone"></span>
+										</span>
+										<input id="contactPhoneNumber" name="contactPhoneNumber" type="tel" class="form-control" placeholder="Enter Telephone Number"/>
+									</div>
+				
+									<!-- comment/message -->
+									<div class="input-group contact-us-standard-level-item">
+										<textarea id="contactComment" name="contactComment" class="form-control" placeholder="Enter Your Message" rows="5"></textarea>
+									</div>
+									<div>
+										<button id="contact-us-button" class="btn btn-success">Contact Us</button>
+									</div>
+								</div>						
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>

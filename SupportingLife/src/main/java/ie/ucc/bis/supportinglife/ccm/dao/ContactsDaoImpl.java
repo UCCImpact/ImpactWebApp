@@ -1,6 +1,7 @@
 package ie.ucc.bis.supportinglife.ccm.dao;
 
 import ie.ucc.bis.supportinglife.ccm.domain.Contact;
+import ie.ucc.bis.supportinglife.ccm.domain.NewsletterContact;
 import ie.ucc.bis.supportinglife.communication.PersonContactComms;
 
 import javax.persistence.EntityManager;
@@ -20,6 +21,15 @@ public class ContactsDaoImpl implements ContactsDao {
 		Contact contact = new Contact(personContact);
 
 		entityManager.persist(contact);
+		// save to DB
+		entityManager.flush();
+		entityManager.clear();
+	}
+	
+	public void addNewsletterContact(String emailAddress) {
+		NewsletterContact newsletterContact = new NewsletterContact(emailAddress);
+		
+		entityManager.persist(newsletterContact);
 		// save to DB
 		entityManager.flush();
 		entityManager.clear();

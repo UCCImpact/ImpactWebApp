@@ -20,6 +20,9 @@
 	
 	<%--  jQuery UI - used for customising look of horizontal accordion --%>
 	<script type="text/javascript" src=<c:url value="/js/library/jquery-ui-1.10.4.custom.min.js"/>></script>
+	
+	<%--  jQuery Validation --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery.validate.min.js"/>></script>
 
 	<%-- Google Maps API Libary --%>
 	<!-- The 'sensor=false' parameter specifies that we don’t want to use a -->
@@ -28,6 +31,9 @@
 		
 	<%-- Google+ Media Updates Plugin --%>
 	<script type="text/javascript" src=<c:url value="/js/library/jquery.kyco.googleplusfeed.js"/> charset="utf-8"></script>
+	
+	<%--  notify.js - used for providing dynamic notifications on landing page --%>
+	<script type="text/javascript" src=<c:url value="/js/library/notify.min.js"/>></script>
 
 	<%--  SL Welcome Page JS Functionality --%>
 	<script type="text/javascript" src=<c:url value="/js/sl_welcome.js"/>></script>

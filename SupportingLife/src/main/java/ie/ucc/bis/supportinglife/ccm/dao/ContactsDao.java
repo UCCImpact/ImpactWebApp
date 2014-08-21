@@ -4,4 +4,5 @@ import ie.ucc.bis.supportinglife.communication.PersonContactComms;
 
 public interface ContactsDao extends Dao {
 	public void addPersonContact(PersonContactComms personContact);
+	public void addNewsletterContact(String emailAddress);
 }

@@ -37,10 +37,10 @@ public class BaseController {
 	}
 	
 	/**
-	 * Attempts to register a user (JSON Request)
-	 *  - Will initially check their login details authenticate
+	 * Adds a person's contact details who has expressed a contact interest
+	 * on the main SL landing page
 	 * 
-	 * @param UserAuthenticationComms
+	 * @param PersonContactComms
 	 * 
 	 * @return @ResponseBody
 	 */
@@ -48,6 +48,20 @@ public class BaseController {
 	@ResponseBody //this will parse the returned Object to JSONØ
 	public Boolean addPersonContact(@RequestBody PersonContactComms personContact) {
 		supportingLifeService.addPersonContact(personContact);
+		return true;
+	}
+	
+	/**
+	 * Adds a person's email address to the newsletter email list of contacts
+	 * 
+	 * @param String
+	 * 
+	 * @return @ResponseBody
+	 */
+	@RequestMapping(value="/addNewsletterContact", method=RequestMethod.POST, produces={"application/json"}, consumes={"application/json"})
+	@ResponseBody //this will parse the returned Object to JSONØ
+	public Boolean addNewsletterContact(@RequestBody String emailAddress) {
+		supportingLifeService.addNewsletterContact(emailAddress);
 		return true;
 	}
 }

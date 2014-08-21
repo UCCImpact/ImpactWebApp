@@ -27,28 +27,10 @@
 }
 
 .navbar-wrapper .navbar .navbar-header label {
-  font-size: 24px;
+  font-size: 18px;
   color: #ffd700; /* gold */
-  padding-top:14px !important;
+  padding-top:5px !important;
   padding-bottom:0px !important;
-}
-
-/* bulb icon */
-#bulb-icon {
-	color: #ffd700; /* gold */
-	font-size: 24px;
-}
-
-/* rethinking technology slogan */
-#slogan {
-	font-size: 18px;
-	font-style: italic;
-	bold: false;
-}
-
-/*  remove line break so that slogan lies alongside SL brand */
-#slogan-line-spacing {
-    display: none;
 }
 
 /* home icon */
@@ -68,21 +50,6 @@
 	.navbar-wrapper .navbar .navbar-header label {
 	  font-size: 18px;
 	  padding-top:5px !important;
-	}
-	
-	/* bulb icon */
-	#bulb-icon {
-		font-size: 14px;
-	}
-	
-	/* rethinking technology slogan */
-	#slogan {
-		font-size: 18px;
-	}
-	
-	/* add a line break so that slogan slips under SL brand */
-	#slogan-line-spacing {
-    	display: block;
 	}
 }
 
@@ -124,10 +91,5 @@
 	.navbar-wrapper .navbar .navbar-header label {
 	  padding-top: 25px !important;
 	  padding-bottom: 0px !important;
-	}
-	
-	/*  remove line break so that slogan lies alongside SL brand */
-	#slogan-line-spacing {
-    	display: none;
 	}
 }

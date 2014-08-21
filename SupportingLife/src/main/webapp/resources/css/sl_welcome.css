@@ -406,7 +406,7 @@
     float:none;
     display:inline-block;
     *display:inline; /* ie7 fix */
-     zoom:1; /* hasLayout ie7 trigger */
+    zoom:1; /* hasLayout ie7 trigger */
 }
 
 .nav-tabs, .nav-pills {
@@ -442,6 +442,10 @@
 	font-size: 20px;
 }
 
+.newsletter-standard-level-item {
+		white-space:nowrap;
+}
+
 #subscribe-button {
 	margin-top: 10px;
 	margin-bottom: 20px;
@@ -459,16 +463,23 @@
     -webkit-border-radius: 20px;
 }
 
-.contact-us-top-level-item {
+#contact-us-details div h3 {
 	margin-top: 40px;
+	color: #077204;
+}
+
+.contact-us-top-level-item {
+	margin-top: 10px;
 	margin-bottom: 10px;
 	width: 100%;
+	white-space:nowrap;
 }
 
 .contact-us-standard-level-item {
 	margin-bottom: 10px;
 	margin-top: 10px;
 	width: 100%;
+	white-space:nowrap;
 }
 
 /* size the width of the icon addon to be the same on the 'contact details' form */
@@ -480,6 +491,20 @@
 #contact-us-button {
 	margin-top: 10px;
 	margin-bottom: 20px;
+}
+
+/* -------------------------------------------------- */
+/* Customise the colour of the form validation		  */
+/* messages presented to the user					  */
+/* -------------------------------------------------- */
+.error {
+	color: #FF0000;  /* red */
+	padding-top: 5px;
+	padding-left: 3px;
+}
+
+.valid {
+    color:#000000; /* black */
 }
 
 /* -------------------------------------------------- */

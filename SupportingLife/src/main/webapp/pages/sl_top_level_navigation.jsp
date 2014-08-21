@@ -18,10 +18,7 @@
 						  <span class="icon-bar"></span>
 						  <span class="icon-bar"></span>
 						</button>		
-						<label class="navbar-brand">Supporting LIFE
-							<br id="slogan-line-spacing">
-							<i id="bulb-icon" class="fa fa-lightbulb-o"><span id="slogan"> Technology</span></i>
-						</label>
+						<label class="navbar-brand">Supporting LIFE</label>
 					</div>
 					
 					<div class="navbar-collapse collapse">

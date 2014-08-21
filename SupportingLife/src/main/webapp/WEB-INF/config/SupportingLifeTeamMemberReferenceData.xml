@@ -22,19 +22,33 @@
 						<list>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Dr Ciara Heavin" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
+								<property name="qualifications" value="BSc BIS
+																		&lt;br&gt;MSc MIS by Research &#45; The History of Ireland&#39;s Software Industry
+																		&lt;br&gt;PhD &#39;An Investigation of Approaches to Knowledge Management in Small to 
+																		Medium Sized Software Enterprises (SMEs)
+																		&lt;br&gt;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#45; From Knowledge 
+																		Activities to Knowledge Scenarios&#39;" />
+								<property name="role" value="Co&#45;Principal Investigator Supporting LIFE" />
+								<property name="bio" value="Dr Ciara Heavin is a college lecturer and a senior researcher in Business Information Systems
+															and co-director of the BSc Business Information Systems, UCC. She lectures systems analysis 
+															and design, web development (HTML 5.0, CSS, JavaScript and PHP), data modelling, database development
+															and opportunity assessment and recognition in high technology firms. Research interests include 
+															the development of ICT industries, primarily focusing on Ireland's software industry specifically 
+															investigating knowledge management (KM) in software SMEs. More recently, she has undertaken funded 
+															research in the investigation, development and implementation of innovative technology solutions in 
+															Healthcare systems. Reviewer for a number of top journals and conferences and a member of three 
+															conference organising committees, Ciara is Managing Editor of the Journal of Decision Systems since 
+															November 2011." />
 								<property name="photoPresent" value="true" />
-								<property name="linkedInProfilePresent" value="false" />
+								<property name="linkedInProfilePresent" value="true" />
 								<property name="researchProfilePresent" value="true" />
-								<property name="linkedInUrl" value="/testurl/" />
-								<property name="researchUrl" value="/testurl/" />
+								<property name="linkedInUrl" value="https://www.linkedin.com/pub/ciara-heavin/46/153/3b7" />
+								<property name="researchUrl" value="http://research.ucc.ie/profiles/B004/cheavin" />
 								<property name="imageRef" value="images/team-members/CH.jpg" />
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Dr Joe Gallagher"/>
-								<property name="qualifications" value="" />
+								<property name="qualifications" value="BSc BIS" />
 								<property name="role" value="" />
 								<property name="bio" value="to be added..." />
 								<property name="photoPresent" value="false"/>
