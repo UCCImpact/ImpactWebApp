@@ -86,14 +86,14 @@
 		<div class="col-lg-4">
 			<i id="healthcare-icon" class="fa fa-plus-square"></i>
 			<h3>Clinical Impact</h3>
-			<p class="lead">Enhances the accuracy of diagnoses, treatment and
+			<p class="lead">Improves the accuracy of diagnoses, treatment and
 				health outcomes by utilising automated, rigorous and robust decision
 				support systems.</p>
 		</div>
 		<div class="col-lg-4">
 			<i id="research-icon" class="fa fa-cubes"></i>
 			<h3>Research</h3>
-			<p class="lead">Understands the impact of the technology from a user and
+			<p class="lead">Investigates the impact of the technology from a user and
 							community perspective.</p>
 		</div>
 	</div>
