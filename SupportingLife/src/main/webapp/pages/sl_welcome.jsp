@@ -75,26 +75,26 @@
 
 	<!-- Three columns of text below the carousel -->
 	<div class="row">
+		<h1>What We Do</h1>
 		<div class="col-lg-4">
-			<i id="medic-icon" class="fa fa-user-md"></i>
-			<h3>Enhance Productivity</h3>
-			<p class="lead">Improve productivity of medical provider by
-				increasing adherence to clinical guidelines and reducing
-				administrative overhead of performing patient assessments.</p>
+			<i id="mobile-icon" class="fa fa-cogs"></i>
+			<h3>Technological</h3>
+			<p class="lead">Enhances user productivity, improves
+							healthcare services and increases care
+							coordination.</p>
 		</div>
 		<div class="col-lg-4">
 			<i id="healthcare-icon" class="fa fa-plus-square"></i>
-			<h3>Improve Healthcare Services</h3>
-			<p class="lead">Enhance the accuracy of diagnoses, treatment and
+			<h3>Clinical Impact</h3>
+			<p class="lead">Enhances the accuracy of diagnoses, treatment and
 				health outcomes by utilising automated, rigorous and robust decision
 				support systems.</p>
 		</div>
 		<div class="col-lg-4">
-			<i id="globe-icon" class="fa fa-globe"></i>
-			<h3>Increase Care Coordination</h3>
-			<p class="lead">Decrease the fragmentation of care by integrating
-				and organising electronic health records and providing immediate
-				distribution to authorised care providers.</p>
+			<i id="research-icon" class="fa fa-cubes"></i>
+			<h3>Research</h3>
+			<p class="lead">Understands the impact of the technology from a user and
+							community perspective.</p>
 		</div>
 	</div>
 
@@ -103,6 +103,7 @@
 	<hr class="featurette-divider">
 
 	<div class="row featurette">
+		<h1>Technology</h1>
 		<div class="col-md-7">
 			<h2>Software Release Videos</h2>
 			<h3>
@@ -118,6 +119,14 @@
 				the development lifecycle. Track our progress, as well as sneak
 				previews!, by checking out our latest release videos.
 			</p>
+			<h3>
+				<span class="text-muted">Scan QR code for SL App</span>
+			</h3>
+			<div>
+				<i class="fa fa-share qr-arrow-icon"></i>
+				<img id="qr-code" src="images/app-download-qrcode.svg" />
+				<i class="fa fa-reply qr-arrow-icon"></i>
+			</div>
 		</div>
 		<div class="col-md-5">
 			<div id="videoCarousel" class="carousel slide" data-interval="false"
