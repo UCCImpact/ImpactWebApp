@@ -60,14 +60,23 @@
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Dr Yvonne O' Connor" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
+								<property name="qualifications" value="BSc, PhD (Business Information Systems)" />
+								<property name="role" value="IS Post-Doctoral Researcher" />
+								<property name="bio" value="Currently, Dr O' Connor is an Information Systems post-doctoral researcher 
+															on the FP7 Supporting LIFE project within the Health Information Systems 
+															Research Center (HISRC), Business Information Systems at University College Cork. 
+															The Supporting LIFE project explores the potential of mobile health use in developing 
+															countries by community health workers. In particular, her research focuses on (a) 
+															community health workers' decision making processes and (b) health-related outcomes 
+															associated with a decision support system; namely, electronic community case management. 
+															Outside of research, Yvonne is currently lead User Interface (UI) analyst for the 
+															Supporting LIFE project. This work involves prototyping and designing graphic user interfaces 
+															(GUIs) for both the Supporting LIFE application and website" />
 								<property name="photoPresent" value="true"/>
 								<property name="linkedInProfilePresent" value="true"/>
 								<property name="researchProfilePresent" value="true"/>					
-								<property name="linkedInUrl" value="/testurl/" />
-								<property name="researchUrl" value="/testurl/" />
+								<property name="linkedInUrl" value="https://www.linkedin.com/in/yvonneoconnorbis/" />
+								<property name="researchUrl" value="http://research.ucc.ie/profiles/B004/yoconnor" />
 								<property name="imageRef" value="images/team-members/YOC.jpg" />
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
