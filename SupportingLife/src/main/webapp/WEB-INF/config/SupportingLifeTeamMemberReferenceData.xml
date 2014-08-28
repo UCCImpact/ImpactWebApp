@@ -136,9 +136,26 @@
 						<list>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Prof Matthew Thompson" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
+								<property name="qualifications" value="BSc, MBChB, DTM&amp;H, DPhil, MRCGP" />
+								<property name="role" value="Helen D. Cohen endowed Professor of Family Medicine and Vice Chair for Research at the University of Washington, Seattle" />
+								<property name="bio" value="Matthew currently holds the position of the Helen D. Cohen endowed Professor of 
+															Family Medicine and Vice Chair for Research at the University of Washington, Seattle. 
+															He is also a part-time Family Doctor and has worked clinically in the UK, Africa, and the USA.
+															Matthew's research is centred on improving diagnosis of children with infections in primary care 
+															settings, as well as better management of non-communicable diseases in adults, through the use of 
+															technological innovation and development of new diagnostic tools.  He has expertise in qualitative 
+															research, observational studies, randomized/non-randomized controlled designs and systematic reviews.&lt;br&gt;&lt;br&gt;
+															
+															He has led the development of new standards for using vital signs and clinical prediction rules in children 
+															to identify those with serious illnesses, including meningococcal disease.  His other major area of work is 
+															improving the diagnosis and treatment of children and adults with respiratory tract infections to enable GPs 
+															to better discriminate between those presenting with self-limiting illness and those with serious respiratory 
+															infection who would benefit from antibiotics.  In conjunction with these areas of work, he is evaluating the 
+															role of new diagnostic technologies in primary care settings.&lt;br&gt;&lt;br&gt;
+															
+															He has over 150 publications in peer-reviewed journals, many of which are in the world's leading journals. He 
+															has been directly involved in evidence syntheses and guideline development for the National Institute of Health 
+															and Clinical Excellence (NICE), Cochrane Collaboration and the United States Preventative Services Task Force"/>
 								<property name="photoPresent" value="true" />
 								<property name="linkedInProfilePresent" value="false" />
 								<property name="researchProfilePresent" value="false" />
@@ -148,13 +165,26 @@
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Victoria Hardy" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
+								<property name="qualifications" value="BSc, MSc" />
+								<property name="role" value="Researcher at the University of Oxford" />
+								<property name="bio" value="Victoria has varied research interests, but her work to date has predominantly 
+															involved coordinating and managing clinical studies in both primary and secondary care.  
+															Victoria led the recruitment of a randomized controlled trial investigating the 
+															effectiveness of Brief Interventions for reducing alcohol consumption in hazardous 
+															and harmful alcohol users, admitted to a hospital in Glasgow. She has recently coordinated 
+															recruitment of 2,000 children across central England for a research programme seeking to 
+															develop and validate a clinical prediction rule to enable GPs to better identify children 
+															with serious infections who would benefit from antibiotics. She also managed recruitment 
+															of 600 adults to the 3Cplus study investigating the association between colonization and 
+															commensal carriage of respiratory pathogens and patient's self-reported symptom severity 
+															and fever as well as the subsequent development of complications.&lt;br&gt;&lt;br&gt;
+															
+															She is currently undertaking two systematic reviews evaluating the diagnostic accuracy of 
+															vital signs in predicting serious infection in children under five." />
 								<property name="photoPresent" value="true" />
-								<property name="linkedInProfilePresent" value="false" />
+								<property name="linkedInProfilePresent" value="true" />
 								<property name="researchProfilePresent" value="false" />
-								<property name="linkedInUrl" value="/testurl/" />
+								<property name="linkedInUrl" value="https://www.linkedin.com/pub/victoria-hardy/89/58/66a" />
 								<property name="researchUrl" value="/testurl/" />
 								<property name="imageRef" value="images/team-members/VH.jpg" />
 							</bean>
@@ -185,10 +215,21 @@
 					<property name="teamMembers">
 						<list>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
-								<property name="name" value="Dr Joseph Wu" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
+								<property name="name" value="Joseph Wu" />
+								<property name="qualifications" value="BSc in Public Health&lt;br&gt;
+																	   MSc in Epidemiology&lt;br&gt;
+																	   Major in health informatics, disease surveillance" />
+								<property name="role" value="Country representative for Luke International in Malawi&lt;br&gt;
+															Acting regional representative for Luke International in Southern Africa"/>
+								<property name="bio" value="Joseph Wu graduated from National Taiwan University with Master degree and majored in Epidemiology in 2006. 
+															He is one of the pioneering researchers to assist Taiwan to develop the nationwide syndromic surveillance 
+															system during the post-SARS period. He is the Program Manager of the Department of Overseas Service in 
+															Pingtung Christian Hospital in Taiwan since 2008, Malawi Country Representative since 2008 and the Acting 
+															Regional Representative of Luke International in Southern Africa since 2013. He is also a lecture in Mzuzu 
+															University since 2009.&lt;br&gt;
+															His research domain is diseases surveillance system and public health system strengthening through technology. 
+															He is leading an integrated capacity building program of health informatics in Malawi (iCBP-him) funded by the 
+															Royal Norwegian Embassy and the LIN's team of the Supporting LIFE project."/>
 								<property name="photoPresent" value="true" />
 								<property name="linkedInProfilePresent" value="false" />
 								<property name="researchProfilePresent" value="false" />
@@ -198,9 +239,14 @@
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Jenny Hsieh" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
+								<property name="qualifications" value="Bachelor of Science in Public Health" />
+								<property name="role" value="Research Associate for Luke International in Malawi" />
+								<property name="bio" value="Jenny Hsieh graduated from National Taiwan University with Bachelor of Science in Public Health. 
+															She joined Luke International in 2013. Her major duties include coordinating implementation and 
+															research activities for Luke International and the Supporting LIFE project in Malawi, supervising 
+															student research and liaising with different partners. She is also a lecturer in Mzuzu University, 
+															lecturing Epidemiology and Research Methodology at the Biomedical Sciences Department. She is 
+															passionate about connecting research with program implementation." />
 								<property name="photoPresent" value="true" />
 								<property name="linkedInProfilePresent" value="false" />
 								<property name="researchProfilePresent" value="false" />
@@ -209,22 +255,16 @@
 								<property name="imageRef" value="images/team-members/JH.jpg" />
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
-								<property name="name" value="Duke Caesar" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
-								<property name="photoPresent" value="true" />
-								<property name="linkedInProfilePresent" value="false" />
-								<property name="researchProfilePresent" value="false" />
-								<property name="linkedInUrl" value="/testurl/" />
-								<property name="researchUrl" value="/testurl/" />
-								<property name="imageRef" value="images/team-members/DC.jpg" />
-							</bean>
-							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Rebecca Mtegha" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
+								<property name="qualifications" value="Business Administration qualifications majoring in Management" />
+								<property name="role" value="Project Coordinator Luke International in Malawi" />
+								<property name="bio" value="Rebecca W Mtegha is the Administrator and Project Coordinator for various projects at Luke International Malawi. 
+															Rebecca joined the organization in 2009 just as it was being registered with the government of Malawi. Major duties 
+															involve administering the office, active communication and coordination between various projects, managing staff relations, 
+															reporting to different stakeholders and other notable duties. Rebecca can handle multitasking and able to deliver results at a 
+															set timeframe. Rebecca has innovative and analytical skills which Rebecca has developed during her tenure at Luke International 
+															and a stint at educational institutions. Rebecca is currently based in Mzuzu, Malawi. Rebecca holds Business Administration 
+															qualifications majoring in Management." />
 								<property name="photoPresent" value="true" />
 								<property name="linkedInProfilePresent" value="false" />
 								<property name="researchProfilePresent" value="false" />
