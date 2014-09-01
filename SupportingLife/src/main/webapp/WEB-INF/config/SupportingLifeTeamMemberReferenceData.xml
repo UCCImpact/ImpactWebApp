@@ -81,7 +81,7 @@
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Dr Timothy O' Sullivan" />
-								<property name="qualifications" value="B.Sc, M.Sc, MBA, PhD" />
+								<property name="qualifications" value="BSc, MSc, MBA, PhD" />
 								<property name="role" value="Senior Software Engineer" />
 								<property name="bio" value="Dr. Timothy O' Sullivan is the Senior Software Engineer 
 															on the FP7 Supporting Life project. His research interests 
@@ -117,15 +117,27 @@
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Deirdre Ryan"/>
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
-								<property name="photoPresent" value="false"/>
+								<property name="qualifications" value="BSc, MPH, MSc" />
+								<property name="role" value="Research Assistant / Project Administrator" />
+								<property name="bio" value="Deirdre joined the UCC Health Information Systems Research Centre in February 
+															2014 as a Research Assistant and additionally became Project Co-ordinator of 
+															the Malawi e-Health Research Institute in May 2014. She is research and 
+															administrative assistant for Supporting LIFE from September 2014.&lt;br&gt;&lt;br&gt;
+															
+															She received a degree in Public Health &amp; Health Promotion from University College Cork 
+															in 2009, and a Master of Public Health from the University of Glasgow. After graduating 
+															from Glasgow in 2010, Deirdre went on to work with Scottish HIV Charity - Waverley Care 
+															in Edinburgh, of which a period of time was spent working for the charity with Malawian 
+															prisoners in Lilongwe. She has research experience having worked on an evaluation of BreastCheck - 
+															Ireland's breast cancer screening programme, and also works as a health promotion officer for 
+															UCC's Health Matters initiative. She most recently completed a Masters in Management with 
+															the Institute of Public Administration in August 2014." />
+								<property name="photoPresent" value="true"/>
 								<property name="linkedInProfilePresent" value="false"/>
 								<property name="researchProfilePresent" value="false"/>					
 								<property name="linkedInUrl" value="/testurl/" />
 								<property name="researchUrl" value="/testurl/" />
-								<property name="imageRef" value="/testurl/" />
+								<property name="imageRef" value="images/team-members/DR.jpg" />
 							</bean>
 						</list>
 					</property>

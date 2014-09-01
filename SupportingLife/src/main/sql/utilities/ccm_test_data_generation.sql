@@ -318,3 +318,14 @@ INSERT INTO sl_ccm_assessment_analytics(visit_id, breath_counter_used, breath_fu
 									
 INSERT INTO sl_ccm_assessment_analytics(visit_id, breath_counter_used, breath_full_time_assessment, latitude_location, longitude_location) 
 									VALUES (2, 1, 0, "53.9426846", "-6.490155");
+
+									
+-----------------------------------------------------------------------------------------------------------------
+-- ADD CCM ASSESSMENT 'SENSOR READING' DATA
+-----------------------------------------------------------------------------------------------------------------									 
+								 
+INSERT INTO sl_ccm_assessment_sensor(visit_id, heart_rate, respiratory_rate, body_temperature) 
+									VALUES (1, "63", "32", "31.2");
+									
+INSERT INTO sl_ccm_assessment_sensor(visit_id, heart_rate, respiratory_rate, body_temperature) 
+									VALUES (2, "58", "29", "29.2");

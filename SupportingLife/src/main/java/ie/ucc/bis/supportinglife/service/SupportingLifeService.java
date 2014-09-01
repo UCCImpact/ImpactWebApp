@@ -11,6 +11,7 @@ import ie.ucc.bis.supportinglife.ccm.dao.ContactsDao;
 import ie.ucc.bis.supportinglife.ccm.dao.Dao;
 import ie.ucc.bis.supportinglife.ccm.dao.UserDao;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmAssessmentAnalytics;
+import ie.ucc.bis.supportinglife.ccm.domain.CcmAssessmentSensorReadings;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatient;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientAskLookSymptoms;
@@ -191,18 +192,25 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 			ccmPatientVisit.getCcmPatientTreatmentList().add(new CcmPatientTreatment(ccmPatientVisit, new CcmTreatment(entry.getKey(), entry.getValue()), ccmPatient));
 		}
 		
-		// 8. create the 'assessment analytics' record
+		// 8. create the 'sensor vital sign readings' record
+		CcmAssessmentSensorReadings ccmAssessmentSensorReadings = new CcmAssessmentSensorReadings(ccmPatientVisit, patientAssessment.getSensorHeartRate(),
+				patientAssessment.getSensorRespiratoryRate(), patientAssessment.getSensorBodyTemperature());
+		
+		// associate the 'sensor vital sign readings' with the patient visit
+		ccmPatientVisit.setCcmAssessmentSensorReadings(ccmAssessmentSensorReadings);	
+		
+		// 9. create the 'assessment analytics' record
 		CcmAssessmentAnalytics ccmAssessmentAnalytics = new CcmAssessmentAnalytics(ccmPatientVisit, patientAssessment.isBreathCounterUsed(), 
 				patientAssessment.isBreathFullTimeAssessment(), patientAssessment.getLatitudeLocation(), patientAssessment.getLongitudeLocation());
 		
 		// associate the assessment analytics with the patient visit
 		ccmPatientVisit.setCcmAssessmentAnalytics(ccmAssessmentAnalytics);
 		
-		// 9. add the CcmPatientVisit record to the DB
+		// 10. add the CcmPatientVisit record to the DB
 		CcmPatientVisitDao patientVisitDao = (CcmPatientVisitDao) getDaoBeans().get("CcmPatientVisitDao");
 		patientVisitDao.addPatientVisit(ccmPatientVisit);
 						
-		// 10. construct 'communication response' for reply to device
+		// 11. construct 'communication response' for reply to device
 		PatientAssessmentResponseComms assessmentResponse = new PatientAssessmentResponseComms(patientAssessment.getDeviceGeneratedAssessmentId(), 
 																	ccmPatientVisit.getVisitId(), ccmPatient.getPatientId(), ccmPatient.getNationalId(), 
 																	ccmPatient.getNationalHealthId(), ccmPatient.getChildFirstName(), 
