@@ -23,189 +23,37 @@
       </div>
 
 	<h1>CCM Custom Report</h1>
+
+	<!-- ====================================== MARKETING MESSAGING  ======================================== -->
+	<!-- Wrap the rest of the page in another container to center all the content. -->
 	
-	<!-- using accordion to display sticky post-it note about the ccm custom report -->
-	<div class="panel-group center" id="report-note-accordion">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h5 class="panel-title">
-					Report Note
-					<a data-toggle="collapse" class="report-note-title" data-parent="#report-note-accordion" href="#report-note-collapse">
-						<i id="report-note-expand-icon" class="fa fa-plus-square pull-right"></i>
-					</a>
-				</h5>
+	<div class="container marketing">
+	
+		<!-- Three columns of text below the carousel -->
+		<div class="row">
+			<h1>What We Do</h1>
+			<div class="col-lg-4">
+				<i id="mobile-icon" class="fa fa-cogs"></i>
+				<h3>Technological</h3>
+				<p class="lead">Enhances user productivity, improves
+								healthcare services and increases care
+								coordination.</p>
 			</div>
-			<div id="report-note-collapse" class="panel-collapse collapse">
-				<div class="panel-body">
-					<div class="sticky-note">
-						<p>
-							<strong>Note</strong>
-						</p>
-						<span class="sticky-note-content">
-							Please note that in order to obtain a meaningful set of results,
-							the criteria selected must represent a valid combination.
-						</span>
-					</div>
-				</div>
+			<div class="col-lg-4">
+				<i id="healthcare-icon" class="fa fa-plus-square"></i>
+				<h3>Clinical Impact</h3>
+				<p class="lead">Improves the accuracy of diagnoses, treatment and
+					health outcomes by utilising automated, rigorous and robust decision
+					support systems.</p>
+			</div>
+			<div class="col-lg-4">
+				<i id="research-icon" class="fa fa-cubes"></i>
+				<h3>Research</h3>
+				<p class="lead">Investigates the impact of the technology from a user and
+								community perspective.</p>
 			</div>
 		</div>
 	</div>
-	
-	<!-- CCM report form -->
-	<form:form method="POST" action="../reports/ccm_custom_report" modelAttribute="ccmCustomFormBean" class="form-horizontal" id="ccm-report-form">
-		<!-- three columns for user/patient identifier input -->
-		<div class="row">
-			<div id="patient-identifier-container" class="col-lg-6">
-				<div class="control-group">
-					<!-- Number input (max. 8 characters, as per Functional Specification.) -->
-					<form:label for="patient-id" class="control-label" path="patientId">SL Patient ID: </form:label>
-					<div class="controls">
-						<form:input type="text" path="patientId" placeholder="Enter SL Patient Id"/>
-					</div>
-				</div>
-			
-				<div class="control-group">
-					<!-- Number input (max. 8 characters, as per Functional Specification.) -->
-					<form:label for="national-id" class="control-label" path="nationalId">National ID: </form:label>
-					<div class="controls">
-						<form:input type="text" path="nationalId" placeholder="Enter National Id"/>
-					</div>
-				</div>
-	
-				<div class="control-group">
-					<!-- Number input (max. 8 characters, as per Functional Specification.) -->
-					<form:label for="national-health-id" class="control-label" path="nationalHealthId">National	Health ID: </form:label>
-					<div class="controls">
-						<form:input type="text"	path="nationalHealthId" placeholder="Enter National Health Id"/>
-					</div>
-				</div>
-			</div>
-			<!-- end column -->
-	
-			<div id="right-side-container" class="col-lg-6">
-				<div class="control-group">
-					<form:label for="hsa-user-id" class="control-label" path="hsaUserId">HSA User ID: </form:label>
-					<div class="controls">
-						<form:input type="text"	path="hsaUserId" placeholder="Enter HSA User Id"/>
-					</div>
-				</div>
-				<div class="control-group">
-					<!-- assessment date range -->
-					<form:label for="assessment-date-from" class="control-label" path="assessmentDateFrom">From: </form:label>
-					<div class="controls">
-						<form:input class="assessment-datepicker"
-							data-format="dd-MM-yyyy" path="assessmentDateFrom" placeholder="Assessment Date From" />
-					</div>
-				</div>
-				<div class="control-group">
-					<form:label for="assessment-date-to" class="control-label" path="assessmentDateTo">To: </form:label>
-					<div class="controls">
-						<form:input class="assessment-datepicker"
-							data-format="dd-MM-yyyy" path="assessmentDateTo" placeholder="Assessment Date To" />
-					</div>
-				</div>
-			</div>
-			<!-- end column -->
-		</div>
-		<!-- end row -->
-	
-		<div id="checkbox-list-container" class="row">
-	
-			<!-- symptom list -->
-			<div id="symptom-list" class="col-lg-6 sl-table-container">
-				<table id="symptom-table" class="table-hover table-striped sl-table">
-					<thead>
-						<tr>
-							<th>SYMPTOM</th>
-							<th>SELECT</th>
-						</tr>
-					</thead>
-					<tbody> 
-						<!-- 'Ask Look Symptoms' First -->
-						<c:forEach items="${ccmCustomFormBean.askLookSymptoms}" var="askLookSymptom" varStatus="status">
-							<tr>
-								<td>${askLookSymptom.value}</td>
-								<td class="symptom-checkbox-column">
-									<form:checkbox path="askLookSymptoms[${status.index}].checked"/>
-								</td>
-								<form:input type="hidden" path="askLookSymptoms[${status.index}].key" value="${askLookSymptom.key}"/>
-								<form:input type="hidden" path="askLookSymptoms[${status.index}].value" value="${askLookSymptom.value}"/>
-							</tr>
-						</c:forEach>
-						<!-- 'Look Symptoms' Second -->
-						<c:forEach items="${ccmCustomFormBean.lookSymptoms}" var="lookSymptom" varStatus="status">
-							<tr>
-								<td>${lookSymptom.value}</td>
-								<td class="symptom-checkbox-column">
-									<form:checkbox path="lookSymptoms[${status.index}].checked"/>
-								</td>
-								<form:input type="hidden" path="lookSymptoms[${status.index}].key" value="${lookSymptom.key}"/>
-								<form:input type="hidden" path="lookSymptoms[${status.index}].value" value="${lookSymptom.value}"/>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</div>
-	
-			<!-- classification list -->
-			<div id="classification-list" class="col-lg-6 sl-table-container">
-				<table id="classification-table" class="table-hover table-striped sl-table">
-					<thead>
-						<tr>
-							<th>CLASSIFICATION</th>
-							<th>SELECT</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${ccmCustomFormBean.classifications}" var="classification" varStatus="status">
-							<tr>
-								<td>${classification.value}</td>
-								<td class="classification-checkbox-column">
-									<form:checkbox path="classifications[${status.index}].checked"/>
-								</td>
-								<form:input type="hidden" path="classifications[${status.index}].key" value="${classification.key}"/>
-								<form:input type="hidden" path="classifications[${status.index}].value" value="${classification.value}"/>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<!-- end row -->
-	
-		<!-- treatment list -->
-		<div id="checkbox-list-container" class="row">
-			<div id="treatment-list" class="col-lg-12 sl-table-container">
-				<table id="treatment-table" class="table-hover table-striped sl-table">
-					<thead>
-						<tr>
-							<th>TREATMENT</th>
-							<th>CATEGORY</th>
-							<th>SELECT</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${ccmCustomFormBean.treatments}" var="treatment" varStatus="status">
-							<tr>
-								<td>${treatment.value}</td>
-								<td>${treatment.associatedClassification}</td>
-								<td class="treatment-checkbox-column">
-									<form:checkbox path="treatments[${status.index}].checked"/>
-								</td>
-								<form:input type="hidden" path="treatments[${status.index}].key" value="${treatment.key}"/>
-								<form:input type="hidden" path="treatments[${status.index}].value" value="${treatment.value}"/>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<div class="form-actions">
-			<input type="hidden" name="save" value="contact">
-			<button id="submit-button" type="submit" class="btn btn-success">Submit</button>
-			<button id="reset-button" type="reset" class="btn">Reset</button>
-		</div>
-	</form:form>
 </div><!--  END: report-ccm-container -->
 
 

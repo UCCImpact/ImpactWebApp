@@ -17,28 +17,25 @@ public interface CcmPatientVisitDao extends Dao {
 	
 	/**
 	 * DAO Handler for performing generic CCM Custom Form Queries
-	 * against DB. Uses JPA Criteria Builder.
-	 * 
-	 * @param patientId
-	 * @param nationalId
-	 * @param nationalHealthId
-	 * @param hsaUserId
-	 * @param assessmentDateFrom
-	 * @param assessmentDateTo
-	 * @param selectedLookSymptoms
-	 * @param selectedAskLookSymptoms
-	 * @param selectedClassifications
-	 * @param selectedTreatments
-	 * @return
+	 * against DB using demographic criteria. 
 	 */
 	public List<CcmPatientVisit> getPatientVisits(String patientId, String nationalId,
-							String nationalHealthId, String hsaUserId, 
-							Date assessmentDateFrom, Date assessmentDateTo, 
-							List<CheckboxFormElement> selectedLookSymptoms,
-							List<CheckboxFormElement> selectedAskLookSymptoms,
-							List<CheckboxFormElement> selectedClassifications,
-							List<Treatment> selectedTreatments);
+												  String nationalHealthId, String hsaUserId, 
+												  Date assessmentDateFrom, Date assessmentDateTo);
 	
+	/**
+	 * DAO Handler for performing generic CCM Custom Form Queries
+	 * against DB using symptom / classification criteria. 
+	 */
+	public List<CcmPatientVisit> getPatientVisits(List<CheckboxFormElement> selectedLookSymptoms,
+			  									  List<CheckboxFormElement> selectedAskLookSymptoms,
+			  									  List<CheckboxFormElement> selectedClassifications);
+	
+	/**
+	 * DAO Handler for performing generic CCM Custom Form Queries
+	 * against DB using treatments criteria. 
+	 */
+	public List<CcmPatientVisit> getPatientVisits(List<Treatment> selectedTreatments);
 
 	/**
 	 * Example method highlighting JPQL for Querying DB	

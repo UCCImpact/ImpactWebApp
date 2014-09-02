@@ -244,11 +244,18 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 												String nationalHealthId, 
 												String hsaUserId, 
 												Date assessmentDateFrom,
-												Date assessmentDateTo, 
-												List<CheckboxFormElement> lookSymptoms,
+												Date assessmentDateTo) {
+		CcmPatientVisitDao patientVisitDao = (CcmPatientVisitDao) getDaoBeans().get("CcmPatientVisitDao");
+		
+		return patientVisitDao.getPatientVisits(patientId, nationalId, nationalHealthId,
+											hsaUserId, assessmentDateFrom, assessmentDateTo);
+	}
+	
+	
+	@Override
+	public List<CcmPatientVisit> getPatientVisits(List<CheckboxFormElement> lookSymptoms,
 												List<CheckboxFormElement> askLookSymptoms,
-												List<CheckboxFormElement> classifications, 
-												List<Treatment> treatments) {
+												List<CheckboxFormElement> classifications) {
 		// 1. identify symptoms selected by user
 		List<CheckboxFormElement> selectedLookSymptoms = identifySelectedSymptoms(lookSymptoms);
 		List<CheckboxFormElement> selectedAskLookSymptoms = identifySelectedSymptoms(askLookSymptoms);
@@ -256,15 +263,18 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		// 2. identify classifications selected by user
 		List<CheckboxFormElement> selectedClassifications = identifySelectedClassifications(classifications);
 		
-		// 3. identify treatments selected by user
+		CcmPatientVisitDao patientVisitDao = (CcmPatientVisitDao) getDaoBeans().get("CcmPatientVisitDao");
+		return patientVisitDao.getPatientVisits(selectedLookSymptoms, selectedAskLookSymptoms, selectedClassifications);		
+	}
+	
+	
+	@Override
+	public List<CcmPatientVisit> getPatientVisits(List<Treatment> treatments) {		
+		// 1. identify treatments selected by user
 		List<Treatment> selectedTreatments = identifySelectedTreatments(treatments);
 
 		CcmPatientVisitDao patientVisitDao = (CcmPatientVisitDao) getDaoBeans().get("CcmPatientVisitDao");
-		return patientVisitDao.getPatientVisits(patientId, nationalId, nationalHealthId,
-											hsaUserId, assessmentDateFrom,
-											assessmentDateTo, selectedLookSymptoms,
-											selectedAskLookSymptoms,
-											selectedClassifications, selectedTreatments);
+		return patientVisitDao.getPatientVisits(selectedTreatments);
 	}
 	
 	/*******************************************************************************/

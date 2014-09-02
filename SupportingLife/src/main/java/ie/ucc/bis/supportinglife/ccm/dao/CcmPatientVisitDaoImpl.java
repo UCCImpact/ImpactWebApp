@@ -134,12 +134,8 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 												String nationalHealthId, 
 												String hsaUserId, 
 												Date assessmentDateFrom, 
-												Date assessmentDateTo, 
-												List<CheckboxFormElement> selectedLookSymptoms,
-												List<CheckboxFormElement> selectedAskLookSymptoms,
-												List<CheckboxFormElement> selectedClassifications,
-												List<Treatment> selectedTreatments) {
-
+												Date assessmentDateTo) {
+		
 		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 		
 		// Create criteria query and pass the value object which needs to be populated as result
@@ -160,6 +156,53 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 		/**  Join CcmPatient and User tables	    **/
 		/*********************************************/
 		Join<CcmPatientVisit, User> ccmUserJoin = patientVisitRoot.join(CcmPatientVisit_.user); // Default is inner
+
+		// 1. retrieve patient associated with the Patient Id provided
+		DaoUtils.addEqualCondition(patientId, builder, criteriaList, ccmPatientJoin, CcmPatient_.patientId);
+		
+		// 2. retrieve patient associated with the National Id provided
+		DaoUtils.addEqualCondition(nationalId, builder, criteriaList, ccmPatientJoin, CcmPatient_.nationalId);
+
+		// 3. retrieve patient associated with the National Health Id provided
+		DaoUtils.addEqualCondition(nationalHealthId, builder, criteriaList, ccmPatientJoin, CcmPatient_.nationalHealthId);
+		
+		// 4. retrieve patient associated with the HSA User Id provided
+		DaoUtils.addEqualCondition(hsaUserId, builder, criteriaList, ccmUserJoin, User_.userId);
+		
+		// 5. retrieve only those records where the patient assessment date is later than the 'Assessment Date From' field
+		if (assessmentDateFrom != null) {
+			Predicate assessmentDateFromCondition = builder.greaterThanOrEqualTo(patientVisitRoot.get(CcmPatientVisit_.visitDate), assessmentDateFrom);
+			criteriaList.add(assessmentDateFromCondition);
+		}
+		
+		// 6. retrieve only those records where the patient assessment date is earlier than the 'Assessment Date To' field
+		if (assessmentDateTo != null) {
+			Predicate assessmentDateBeforeCondition = builder.lessThanOrEqualTo(patientVisitRoot.get(CcmPatientVisit_.visitDate), assessmentDateTo);
+			criteriaList.add(assessmentDateBeforeCondition);
+		}
+		
+		// avoid duplicates in resultset
+		query.distinct(true);	
+		query.where(builder.and(criteriaList.toArray(new Predicate[0])));
+				
+	    List<CcmPatientVisit> patientVisitResults = entityManager.createQuery(query).getResultList();
+	        
+	    return patientVisitResults;
+	}
+	
+	public List<CcmPatientVisit> getPatientVisits(List<CheckboxFormElement> selectedLookSymptoms,
+												  List<CheckboxFormElement> selectedAskLookSymptoms,
+												  List<CheckboxFormElement> selectedClassifications) {
+		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+		
+		// Create criteria query and pass the value object which needs to be populated as result
+		CriteriaQuery<CcmPatientVisit> query = builder.createQuery(CcmPatientVisit.class);
+		
+		// Specify to criteria query which tables/entities you want to fetch
+		Root<CcmPatientVisit> patientVisitRoot = query.from(CcmPatientVisit.class);
+		
+		// This list will contain all Predicates (where clauses)
+		List<Predicate> criteriaList = new ArrayList<Predicate>();
 
 		/*********************************************/
 		/** Join table to handle 'Ask Look Symptoms' */
@@ -187,6 +230,36 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 			// initially we'll pull back all records which have AT LEAST ONE of the user selected classifications
 			criteriaList.add(builder.isTrue(ccmClassificationJoin.get(CcmClassification_.classificationKey).in(classificationsKeysRequired)));
 		}
+		
+		// selected 'Ask Look' Symptoms
+		addAskLookSymptomConditions(selectedAskLookSymptoms, builder, criteriaList, ccmPatientAskLookSymptomsJoin);
+
+		// selected 'Look' Symptoms
+		addLookSymptomConditions(selectedLookSymptoms, builder, criteriaList, ccmPatientLookSymptomsJoin);
+		
+		// avoid duplicates in resultset
+		query.distinct(true);	
+		query.where(builder.and(criteriaList.toArray(new Predicate[0])));
+				
+	    List<CcmPatientVisit> patientVisitResults = entityManager.createQuery(query).getResultList();
+	        
+	    return filterPatientVisitResultsByClassificationsRequired(classificationsKeysRequired, patientVisitResults);		
+	}
+	
+	
+	@Override
+	public List<CcmPatientVisit> getPatientVisits(List<Treatment> selectedTreatments) {
+
+		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+		
+		// Create criteria query and pass the value object which needs to be populated as result
+		CriteriaQuery<CcmPatientVisit> query = builder.createQuery(CcmPatientVisit.class);
+		
+		// Specify to criteria query which tables/entities you want to fetch
+		Root<CcmPatientVisit> patientVisitRoot = query.from(CcmPatientVisit.class);
+		
+		// This list will contain all Predicates (where clauses)
+		List<Predicate> criteriaList = new ArrayList<Predicate>();
 
 		/*********************************************/
 		/**    Join tables to handle treatments     **/
@@ -202,36 +275,6 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 			// initially we'll pull back all records which have AT LEAST ONE of the user selected treatments
 			criteriaList.add(builder.isTrue(ccmTreatmentJoin.get(CcmTreatment_.treatmentKey).in(treatmentKeysRequired)));
 		}
-
-		// retrieve patient associated with the Patient Id provided
-		DaoUtils.addEqualCondition(patientId, builder, criteriaList, ccmPatientJoin, CcmPatient_.patientId);
-		
-		// retrieve patient associated with the National Id provided
-		DaoUtils.addEqualCondition(nationalId, builder, criteriaList, ccmPatientJoin, CcmPatient_.nationalId);
-
-		// retrieve patient associated with the National Health Id provided
-		DaoUtils.addEqualCondition(nationalHealthId, builder, criteriaList, ccmPatientJoin, CcmPatient_.nationalHealthId);
-		
-		// 4. retrieve patient associated with the HSA User Id provided
-		DaoUtils.addEqualCondition(hsaUserId, builder, criteriaList, ccmUserJoin, User_.userId);
-		
-		// 5. retrieve only those records where the patient assessment date is later than the 'Assessment Date From' field
-		if (assessmentDateFrom != null) {
-			Predicate assessmentDateFromCondition = builder.greaterThanOrEqualTo(patientVisitRoot.get(CcmPatientVisit_.visitDate), assessmentDateFrom);
-			criteriaList.add(assessmentDateFromCondition);
-		}
-		
-		// 6. retrieve only those records where the patient assessment date is earlier than the 'Assessment Date To' field
-		if (assessmentDateTo != null) {
-			Predicate assessmentDateBeforeCondition = builder.lessThanOrEqualTo(patientVisitRoot.get(CcmPatientVisit_.visitDate), assessmentDateTo);
-			criteriaList.add(assessmentDateBeforeCondition);
-		}
-		
-		// 7. selected 'Ask Look' Symptoms
-		addAskLookSymptomConditions(selectedAskLookSymptoms, builder, criteriaList, ccmPatientAskLookSymptomsJoin);
-
-		// 8. selected 'Look' Symptoms
-		addLookSymptomConditions(selectedLookSymptoms, builder, criteriaList, ccmPatientLookSymptomsJoin);
 		
 		// avoid duplicates in resultset
 		query.distinct(true);	
@@ -239,7 +282,7 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 				
 	    List<CcmPatientVisit> patientVisitResults = entityManager.createQuery(query).getResultList();
 	        
-	    return filterPatientVisitResults(classificationsKeysRequired, treatmentKeysRequired, patientVisitResults);
+	    return filterPatientVisitResultsByTreatmentsRequired(treatmentKeysRequired, patientVisitResults);	
 	}
 
 
@@ -376,33 +419,70 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 
 	/**
 	 * Filter the 'patient visit' results to ensure each 'patient visit' has
-	 * ALL of the specified classifications and ALL of the specified treatments
-	 * from the CCM Report Criteria Form
+	 * ALL of the specified classifications from the 
+	 * CCM Symptom / Classification Criteria Form
 	 * 
 	 * @param classificationsKeysRequired
 	 * @param patientVisitResults
 	 * @return
 	 */
-	private List<CcmPatientVisit> filterPatientVisitResults(Set<String> classificationKeysRequired,
-										Set<String> treatmentKeysRequired,
-										List<CcmPatientVisit> patientVisitResults) {
-		List<CcmPatientVisit> classificationFilteredResults = new ArrayList<CcmPatientVisit>();
+	private List<CcmPatientVisit> filterPatientVisitResultsByClassificationsRequired(Set<String> classificationKeysRequired, List<CcmPatientVisit> patientVisitResults) {
 		List<CcmPatientVisit> filteredResults = new ArrayList<CcmPatientVisit>();
 
     	// Filter the 'patient visit' results to ensure each 'patient visit' has
    	    // ALL of the specified classifications from the CCM Report Criteria form
-	    for (CcmPatientVisit patientVisit : patientVisitResults) {
-    	   	filterPatientVisitResultsByClassificationsRequired(classificationFilteredResults, classificationKeysRequired, patientVisit);    	
-	    }
-	        
-    	// Filter the 'patient visit' results to ensure each 'patient visit' has
-   	    // ALL of the specified treatments from the CCM Report Criteria form
-	    for (CcmPatientVisit patientVisit : classificationFilteredResults) {
-    	   	filterPatientVisitResultsByTreatmentsRequired(filteredResults, treatmentKeysRequired, patientVisit);    	
-	    }	    
-	    
+		if (classificationKeysRequired != null) {
+		    for (CcmPatientVisit patientVisit : patientVisitResults) {
+				if (classificationKeysRequired.size() != 0) {
+					Set<String> patientClassificationKeys = new HashSet<String>();	    	
+					for (CcmPatientClassification patientClassification : patientVisit.getCcmPatientClassificationList()) {
+						patientClassificationKeys.add(patientClassification.getClassification().getClassificationKey());
+					}
+								
+					if (patientClassificationKeys.containsAll(classificationKeysRequired)) {
+						filteredResults.add(patientVisit);
+					}
+				}
+				else {
+					filteredResults.add(patientVisit);
+				}
+		    }
+		}
+		
 		return filteredResults;
 	}
+	
+	/**
+	 * Filter the 'patient visit' results to ensure each 'patient visit' has
+	 * ALL of the specified treatments from the CCM Treatment Report Criteria Form
+	 * 
+	 * @param classificationsKeysRequired
+	 * @param patientVisitResults
+	 * @return
+	 */
+	private List<CcmPatientVisit> filterPatientVisitResultsByTreatmentsRequired(Set<String> treatmentKeysRequired, List<CcmPatientVisit> patientVisitResults) {
+		List<CcmPatientVisit> filteredResults = new ArrayList<CcmPatientVisit>();
+
+    	// Filter the 'patient visit' results to ensure each 'patient visit' has
+   	    // ALL of the specified treatments from the CCM Report Criteria form
+		for (CcmPatientVisit patientVisit : patientVisitResults) {
+			if (treatmentKeysRequired.size() != 0) {
+				Set<String> patientTreatmentKeys = new HashSet<String>();	    	
+				for (CcmPatientTreatment patientTreatment : patientVisit.getCcmPatientTreatmentList()) {
+					patientTreatmentKeys.add(patientTreatment.getTreatment().getTreatmentKey());
+				}
+
+				if (patientTreatmentKeys.containsAll(treatmentKeysRequired)) {
+					filteredResults.add(patientVisit);
+				}
+			}
+			else {
+				filteredResults.add(patientVisit);
+			} 	
+		}
+		return filteredResults;
+	}
+
 
 	/**
 	 * Retrieve the Set of classification Keys from User Selection on
@@ -420,56 +500,4 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 	    }
 		return keysRequired;
 	} // end of retrieveUserSpecifiedClassificationKeys(..)
-
-	/**
-	 * Filter the 'patient visit' results to ensure each 'patient visit' has
-	 * ALL of the specified treatments from the CCM Report Criteria Form
-	 * 
-	 * @param filteredResults
-	 * @param treatmentKeysRequired
-	 * @param patientVisit
-	 */
-	private void filterPatientVisitResultsByTreatmentsRequired(List<CcmPatientVisit> filteredResults,
-									Set<String> treatmentKeysRequired, CcmPatientVisit patientVisit) {
-		
-		if (treatmentKeysRequired.size() != 0) {
-			Set<String> patientTreatmentKeys = new HashSet<String>();	    	
-			for (CcmPatientTreatment patientTreatment : patientVisit.getCcmPatientTreatmentList()) {
-				patientTreatmentKeys.add(patientTreatment.getTreatment().getTreatmentKey());
-			}
-						
-			if (patientTreatmentKeys.containsAll(treatmentKeysRequired)) {
-				filteredResults.add(patientVisit);
-			}
-		}
-		else {
-			filteredResults.add(patientVisit);
-		}
-	}
-	
-	/**
-	 * Filter the 'patient visit' results to ensure each 'patient visit' has
-	 * ALL of the specified classifications from the CCM Report Criteria Form
-	 * 
-	 * @param filteredPatientVisitResults
-	 * @param classificationsKeysRequired
-	 * @param patientVisit
-	 */
-	private void filterPatientVisitResultsByClassificationsRequired(List<CcmPatientVisit> filteredPatientVisitResults,
-												Set<String> classificationsKeysRequired, CcmPatientVisit patientVisit) {
-		
-		if (classificationsKeysRequired.size() != 0) {
-			Set<String> patientClassificationKeys = new HashSet<String>();	    	
-			for (CcmPatientClassification patientClassification : patientVisit.getCcmPatientClassificationList()) {
-				patientClassificationKeys.add(patientClassification.getClassification().getClassificationKey());
-			}
-						
-			if (patientClassificationKeys.containsAll(classificationsKeysRequired)) {
-				filteredPatientVisitResults.add(patientVisit);
-			}
-		}
-		else {
-			filteredPatientVisitResults.add(patientVisit);
-		}
-	} // end of filterPatientVisitResultsByClassificationsRequired(..)	
 }

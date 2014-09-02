@@ -30,12 +30,16 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Reporting<b class="caret"></b></a>				<!-- REPORTING -->
 								<ul class="dropdown-menu">
-									<li class="dropdown-header">Custom Reports</li>							
-										<li><a href="${pageContext.request.contextPath}/reports/ccm_custom_report_form">CCM Custom Report</a></li>
-									<li class="divider"></li>
-									<li class="dropdown-header">Pre-defined Reports</li>		
-										<li class="disabled"><a href="#" class="unimplemented-feature">Village Register</a></li>
-										<li class="disabled"><a href="#" class="unimplemented-feature">Form 1A</a></li>
+									<li class="dropdown-header">Custom Reports</li>
+									<li><a href="${pageContext.request.contextPath}/reports/ccm_custom_report_form">CCM Report</a></li>
+									<li><a class="trigger right-caret">CCM Advanced Search</a>
+										<ul class="dropdown-menu sub-menu">
+											<li class="dropdown-header">CCM Advanced Search Reports</li>
+											<li><a href="${pageContext.request.contextPath}/reports/ccm_demographic_report_form">CCM Demographic Search</a></li>
+											<li><a href="${pageContext.request.contextPath}/reports/ccm_symptom_classification_report_form">CCM Symptom/Classification Search</a></li>
+											<li><a href="${pageContext.request.contextPath}/reports/ccm_treatment_report_form">CCM Treatment Search</a></li>
+										</ul>
+									</li>
 									<li class="divider"></li>
 									<li class="dropdown-header">Usage Analytics</li>
 										<li class="disabled"><a href="#" class="unimplemented-feature">Android App Analytics</a></li>

@@ -1,0 +1,38 @@
+<%-- sl_ccm_treatment_report_footer.jspf --%>
+<%-- SL CCM Treatment Report Footer, containing JS references --%>
+<%-- author: Timothy O' Sullivan --%>
+<%-- Last Updated: 02/09/2014 --%>
+
+ 	<%----------------------------------------- JS References -----------------------------------------%>
+ 	<%-- Placed at the end of the document so the pages load faster --%>
+ 	
+	<%-- NOTE: NEEDED TO ORDER JS FILES IN THE FOLLOWING ORDER AS OTHERWISE WAS GETTING CONFLICT --%>
+	<%-- 	   JQUERY AND BOOTSTRAP WITH THE DATEPICKER: 										 --%>
+	<%-- 	   ORDER: 				 															 --%>
+	<%--			  1. JQUERY		 															 --%>
+	<%--			  2. BOOTSTRAP JS FILES  			 										 --%>
+	
+	<%-- jQuery Source file --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery-1.10.2.js"/> charset="utf-8"></script>
+	
+	<%--  jQuery Validation --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery.validate.min.js"/>></script>
+
+	<%--  JQuery Datatables --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery.dataTables.js"/>></script>
+	
+	<%--  jQuery Themeroller theme - used for customising look of datatables --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery-ui-1.10.4.custom.min.js"/>></script>
+
+	<%--  SL CCM Treatment Report JS Functionality --%>
+	<script type="text/javascript" src=<c:url value="/js/sl_ccm_treatment_report.js"/>></script>
+
+	<%-- Holder renders image placeholders entirely on the client side. --%>
+	<%-- It works both online and offline, and offers a chainable API   --%>
+	<%-- to style and create placeholders with ease. --%>
+	<%-- Ref. http://imsky.github.io/holder/ --%>
+	<script src=<c:url value="/js/library/holder.js"/>></script>
+
+	<%--  Bootstrap Datepicker --%>
+	<script type="text/javascript" src=<c:url value="/js/library/bootstrap-datepicker.js"/>></script>
+	

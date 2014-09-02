@@ -49,35 +49,23 @@ public interface SupportingLifeServiceInf {
 	public List<CcmPatientVisit> getPatientVisitsbyPatientId(long patientId);
 	public List<CcmPatientVisit> getAllPatientVisits();
 
-	/**
-	 * Retrieve all patient visits which match the passed-in criteria.
-	 * Used in the CCM Custom Report Form on the desktop admin site.
-	 * 
-	 * @param nationalId
-	 * @param nationalHealthId
-	 * @param hsaUserId
-	 * @param assessmentDateFrom
-	 * @param assessmentDateTo
-	 * @param symptoms
-	 * @param classifications
-	 * @param treatments
-	 * 
-	 * @return List<CcmPatientVisit>
-	 *
-	 */
-
+	
+	/** Retrieve all patient visits which match the demographic criteria. */
 	public List<CcmPatientVisit> getPatientVisits(String patientId,
-												String nationalId,
-												String nationalHealthId,
-												String hsaUserId, 
-												Date assessmentDateFrom,
-												Date assessmentDateTo, 
-												List<CheckboxFormElement> lookSymptoms,
+												  String nationalId,
+												  String nationalHealthId, 
+												  String hsaUserId, 
+												  Date assessmentDateFrom,
+												  Date assessmentDateTo);
+	
+	/** Retrieve all patient visits which match the symptoms / classifications criteria. */
+	public List<CcmPatientVisit> getPatientVisits(List<CheckboxFormElement> lookSymptoms,
 												List<CheckboxFormElement> askLookSymptoms,
-												List<CheckboxFormElement> classifications, 
-												List<Treatment> treatments);
+												List<CheckboxFormElement> classifications);
 	
-	
+	/** Retrieve all patient visits which match the treatments criteria. */
+	public List<CcmPatientVisit> getPatientVisits(List<Treatment> treatments);
+		
 	/*******************************************************************************/
 	/*********************************Patient Symptoms******************************/
 	/*******************************************************************************/

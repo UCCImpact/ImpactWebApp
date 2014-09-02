@@ -2,7 +2,9 @@ package ie.ucc.bis.supportinglife.controller;
 
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.controller.interfaces.ReportControllerInf;
-import ie.ucc.bis.supportinglife.report.form.CcmCustomForm;
+import ie.ucc.bis.supportinglife.report.form.CcmDemographicForm;
+import ie.ucc.bis.supportinglife.report.form.CcmSymptomsClassificationsForm;
+import ie.ucc.bis.supportinglife.report.form.CcmTreatmentForm;
 import ie.ucc.bis.supportinglife.service.SupportingLifeService;
 import ie.ucc.bis.supportinglife.service.SupportingLifeServiceInf;
 import ie.ucc.bis.supportinglife.service.helper.SupportingLifeRefDataHelperInf;
@@ -88,67 +90,159 @@ public class ReportController implements ReportControllerInf {
 		List<String> nationalHealthIds = supportingLifeService.getAllPatientsByNationalHealthIdFilter(term);
 	
 		results.put("nationalHealthIds", nationalHealthIds);
-		
 		return results;		
 	}
-	
+		
 	/**
-	 * Returns the selection criteria for the CCM Custom Report
+	 * Returns the CCM Report Form
 	 * 
 	 * @param model
 	 * 
 	 * @return String
 	 */
 	@RequestMapping(value="/ccm_custom_report_form", method=RequestMethod.GET, headers="Accept=html/text")
-	public String getCcmCustomReportSelectionCriteria(ModelMap model) {
+	public String getCcmReportSelectionCriteria(ModelMap model) {
 		final String reportName = "ccm_custom_report";
 		
 		log.info("GET form page for report: " + reportName);
-		
-		CcmCustomForm ccmCustomForm = new CcmCustomForm();
-		ccmCustomForm.setLookSymptoms(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getLookSymptoms());
-		ccmCustomForm.setAskLookSymptoms(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getAskLookSymptoms());
-		ccmCustomForm.setClassifications(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getClassifications());
-		ccmCustomForm.setTreatments(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getTreatments());
-		
-		model.addAttribute("ccmCustomFormBean", ccmCustomForm);
 		
 		// Spring uses InternalResourceViewResolver and returns back report criteria jsp
 		return REPORT_PREFIX + reportName;		
 	}
 	
 	/**
-	 * Returns the resultset for the CCM Custom Report
+	 * Returns the selection criteria for the CCM Demographic Report
 	 * 
 	 * @param model
 	 * 
 	 * @return String
 	 */
-	@RequestMapping(value="/ccm_custom_report", method=RequestMethod.POST, headers="Accept=html/text")
-	public String getCcmCustomReport(@ModelAttribute("ccmCustomFormBean") CcmCustomForm ccmCustomForm, Model model) {
-		final String reportName = "ccm_custom_report";
+	@RequestMapping(value="/ccm_demographic_report_form", method=RequestMethod.GET, headers="Accept=html/text")
+	public String getCcmDemographicReportSelectionCriteria(ModelMap model) {
+		final String reportName = "ccm_demographic_report";
+		
+		log.info("GET form page for report: " + reportName);
+		
+		CcmDemographicForm ccmDemographicForm = new CcmDemographicForm();
+		
+		model.addAttribute("ccmDemographicFormBean", ccmDemographicForm);
+		// Spring uses InternalResourceViewResolver and returns back report criteria jsp
+		return REPORT_PREFIX + reportName;		
+	}
+	
+	/**
+	 * Returns the selection criteria for the CCM Symptom / Classification Report
+	 * 
+	 * @param model
+	 * 
+	 * @return String
+	 */
+	@RequestMapping(value="/ccm_symptom_classification_report_form", method=RequestMethod.GET, headers="Accept=html/text")
+	public String getCcmSymptomsClassificationsReportSelectionCriteria(ModelMap model) {
+		final String reportName = "ccm_symptom_classification_report";
+		
+		log.info("GET form page for report: " + reportName);
+		
+		CcmSymptomsClassificationsForm ccmSymptomsClassificationsForm = new CcmSymptomsClassificationsForm();
+		ccmSymptomsClassificationsForm.setLookSymptoms(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getLookSymptoms());
+		ccmSymptomsClassificationsForm.setAskLookSymptoms(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getAskLookSymptoms());
+		ccmSymptomsClassificationsForm.setClassifications(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getClassifications());
+		
+		model.addAttribute("ccmSymptomsClassificationsFormBean", ccmSymptomsClassificationsForm);
+		// Spring uses InternalResourceViewResolver and returns back report criteria jsp
+		return REPORT_PREFIX + reportName;		
+	}
+	
+	/**
+	 * Returns the selection criteria for the CCM Treatment Report
+	 * 
+	 * @param model
+	 * 
+	 * @return String
+	 */
+	@RequestMapping(value="/ccm_treatment_report_form", method=RequestMethod.GET, headers="Accept=html/text")
+	public String getCcmTreatmentReportSelectionCriteria(ModelMap model) {
+		final String reportName = "ccm_treatment_report";
+		
+		log.info("GET form page for report: " + reportName);
+		
+		CcmTreatmentForm ccmTreatmentForm = new CcmTreatmentForm();
+		ccmTreatmentForm.setTreatments(SupportingLifeRefDataHelper.getCcmCustomReportReferenceCriteria().getTreatments());
+		
+		model.addAttribute("ccmTreatmentFormBean", ccmTreatmentForm);
+		// Spring uses InternalResourceViewResolver and returns back report criteria jsp
+		return REPORT_PREFIX + reportName;		
+	}
+		
+	/**
+	 * Returns the resultset for the CCM Demographic Report
+	 * 
+	 * @param model
+	 * 
+	 * @return String
+	 */
+	@RequestMapping(value="/ccm_demographic_report", method=RequestMethod.POST, headers="Accept=html/text")
+	public String getCcmDemographicReport(@ModelAttribute("ccmDemographicFormBean") CcmDemographicForm ccmDemographicForm, Model model) {
+		final String reportName = "ccm_demographic_report";
 			
 		log.info("GET resultset for report: " + reportName);
-		
-		log.info("CCM Custom Form: " + ccmCustomForm.toString());
+		log.info("CCM Demographic Form: " + ccmDemographicForm.toString());
 
-		// 1. pull back all patient visits which meet the criteria
+		// 1. pull back all patient visits which meet the demographic criteria
 		List<CcmPatientVisit> patientVisits = 
-				supportingLifeService.getPatientVisits(ccmCustomForm.getPatientId(),
-													   ccmCustomForm.getNationalId(),
-													   ccmCustomForm.getNationalHealthId(),
-													   ccmCustomForm.getHsaUserId(),
-													   ccmCustomForm.getAssessmentDateFrom(),
-													   ccmCustomForm.getAssessmentDateTo(),
-													   ccmCustomForm.getLookSymptoms(),
-													   ccmCustomForm.getAskLookSymptoms(),
-													   ccmCustomForm.getClassifications(),
-													   ccmCustomForm.getTreatments());
-		
-		
+				supportingLifeService.getPatientVisits(ccmDemographicForm.getPatientId(),
+													   ccmDemographicForm.getNationalId(),
+													   ccmDemographicForm.getNationalHealthId(),
+													   ccmDemographicForm.getHsaUserId(),
+													   ccmDemographicForm.getAssessmentDateFrom(),
+													   ccmDemographicForm.getAssessmentDateTo());
 		model.addAttribute("patientVisits", patientVisits);
-		
         return REPORT_PREFIX + "ccm_report_results";
 	}
 	
+
+	/**
+	 * Returns the resultset for the CCM Symptom / Classification Report
+	 * 
+	 * @param model
+	 * 
+	 * @return String
+	 */
+	@RequestMapping(value="/ccm_symptom_classification_report", method=RequestMethod.POST, headers="Accept=html/text")
+	public String getCcmSymptomClassificationReport(CcmSymptomsClassificationsForm ccmSymptomsClassificationsForm, Model model) {
+		final String reportName = "ccm_symptom_classification_report";
+		
+		log.info("GET resultset for report: " + reportName);	
+		log.info("CCM Symptom / Classification Form: " + ccmSymptomsClassificationsForm.toString());
+
+		// 1. pull back all patient visits which meet the symptoms / classifications criteria
+		List<CcmPatientVisit> patientVisits = 
+				supportingLifeService.getPatientVisits(ccmSymptomsClassificationsForm.getLookSymptoms(),
+													   ccmSymptomsClassificationsForm.getAskLookSymptoms(),
+													   ccmSymptomsClassificationsForm.getClassifications());	
+		model.addAttribute("patientVisits", patientVisits);
+        return REPORT_PREFIX + "ccm_report_results";
+	}
+	
+	/**
+	 * Returns the resultset for the CCM Treatment Report
+	 * 
+	 * @param model
+	 * 
+	 * @return String
+	 */
+	@RequestMapping(value="/ccm_treatment_report", method=RequestMethod.POST, headers="Accept=html/text")
+	public String getCcmTreatmentReport(CcmTreatmentForm ccmTreatmentForm, Model model) {
+		final String reportName = "ccm_treatment_report";
+		
+		log.info("GET resultset for report: " + reportName);
+		log.info("CCM Treatment Form: " + ccmTreatmentForm.toString());
+
+		// 1. pull back all patient visits which meet the treatments criteria
+		List<CcmPatientVisit> patientVisits = 
+				supportingLifeService.getPatientVisits(ccmTreatmentForm.getTreatments());
+		
+		model.addAttribute("patientVisits", patientVisits);
+        return REPORT_PREFIX + "ccm_report_results";
+	}
 } // end of class
