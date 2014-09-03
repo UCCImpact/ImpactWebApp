@@ -345,6 +345,7 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	 */
 	private List<SurveillanceRecord> modifyDuplicatedCoordinates(Collection<SurveillanceRecord> originalRecords) {
 		final List<SurveillanceRecord> modifiedRecords = new ArrayList<SurveillanceRecord>();
+		final String defaultCoordinateLocation = "0";
 
 		@SuppressWarnings("serial")
 		Set<SurveillanceRecord> surveillanceSet = new HashSet<SurveillanceRecord>() {
@@ -362,7 +363,15 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		};
 
 		for (SurveillanceRecord record : originalRecords) {
-			surveillanceSet.add(record);
+			// need to exclude those records for which a location was not provided. 
+			// this could have occured if the phone user has configured a setting 
+			// on the phone to turn off location. In this case, a default location
+			// of longitude: 0, and latitude: 0, would have configured for the 
+			// record.
+			if (record.getLatitude().equalsIgnoreCase(defaultCoordinateLocation) == false && 
+					record.getLongitude().equalsIgnoreCase(defaultCoordinateLocation) == false) {
+				surveillanceSet.add(record);
+			}
 		}
 		return modifiedRecords;
 	}
