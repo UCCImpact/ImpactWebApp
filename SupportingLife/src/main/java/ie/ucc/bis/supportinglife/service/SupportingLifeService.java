@@ -345,7 +345,7 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 	 */
 	private List<SurveillanceRecord> modifyDuplicatedCoordinates(Collection<SurveillanceRecord> originalRecords) {
 		final List<SurveillanceRecord> modifiedRecords = new ArrayList<SurveillanceRecord>();
-		final String defaultCoordinateLocation = "0";
+		final String defaultCoordinateLocation = "0.0";
 
 		@SuppressWarnings("serial")
 		Set<SurveillanceRecord> surveillanceSet = new HashSet<SurveillanceRecord>() {
