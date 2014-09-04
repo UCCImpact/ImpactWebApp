@@ -320,6 +320,7 @@ function configureNewsletterValidationRules() {
 		rules: {
 			'newsletterEmailContact': {
 				required: true,
+				maxlength: 80,
 				emailRegex: true
 			}
 		},
@@ -376,18 +377,22 @@ function configureContactFormValidationRules() {
 		rules: {
 			'contactFullName': {
 				required: true,
-				lettersRegex: true
+				lettersRegex: true,
+				maxlength: 80
 			},
 			'contactEmail': {
 				required: true,
-				emailRegex: true
+				emailRegex: true,
+				maxlength: 80
 			},
 			'contactPhoneNumber': {
 				required: false,
-				numbersRegex: true
+				numbersRegex: true,
+				maxlength: 30
 			},
 			'contactComment': {
-				required: true
+				required: true,
+				maxlength: 800
 			}
 		},
 		messages: {
