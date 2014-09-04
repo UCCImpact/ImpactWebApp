@@ -6,7 +6,7 @@
 	<!-- FOOTER -->
 <div class="container marketing">
 	<footer>
-		<p class="pull-right">							<!-- place on right-hand side of page -->			
+		<p class="pull-right">							<!-- place on right-hand side of page -->
 			<a href="#">Back to top</a>
 		</p>
 		
@@ -36,7 +36,21 @@
 		</div>
 		<div class="col-md-5"></div>
 	</div>
-	<hr class="featurette-divider">
+	
+	<hr id="footer-featurette-divider" class="featurette-divider">
+	
+	<img id="eu-logo-image" src=<c:url value="/images/eu-flag.png"/> alt="European Union">	
+	<div id="eu-logo-text-container" class="col-md-12">
+		<div class="col-md-10"></div>
+		<div class="col-md-2">
+			<p id="eu-logo-text">
+				This project has received funding from the European Union's Seventh Framework 
+				Programme for research, technological development and demonstration under 
+				grant agreement N° 305292.
+			</p>
+		</div>
+	</div>
+	
 </div>
 
 <%----------------------------------------- JS References -----------------------------------------%>

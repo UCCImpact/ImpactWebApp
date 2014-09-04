@@ -8,12 +8,45 @@
 ** Last Updated: 20/01/2014.
 ** *************************************************************************/
 
+/* -------------------------------------------------- */
+/* EU Logo										 	  */
+/* -------------------------------------------------- */
+
+#eu-logo-image {
+	margin-top: 10px;
+	float: right;
+	font-family: sans-serif;
+	font-style: italic;
+	font-size: 8px;
+	padding-right: 25px;
+}
+
+#eu-logo-text-container {
+	padding-right: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+#eu-logo-text-container .col-md-2 {
+	padding-right: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+#eu-logo-text {
+	margin-top: 5px;
+	font-family: sans-serif;
+	font-style: italic;
+	font-size: 8px;
+	text-align: justify;
+	float: right;
+}
 
 /* -------------------------------------------------- */
 /* Ensure space between body content and footer 	  */
 /* -------------------------------------------------- */
 #footer-link {
-	margin-top: 40px;
+	margin-top: 20px;
 	text-align: left;
 }
 
@@ -31,6 +64,7 @@
 /*													  */
 /* -------------------------------------------------- */
 
-.featurette-divider {
-  margin: 35px 0px; /* Space out the Bootstrap <hr> more */
+#footer-featurette-divider {
+  margin-top: 0px;
+  margin-bottom: 5px;
 }

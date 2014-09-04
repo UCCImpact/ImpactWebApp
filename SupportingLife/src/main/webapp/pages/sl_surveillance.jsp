@@ -44,7 +44,7 @@
 
 	<div class="form-actions">
 		<div id="surveillance-selection-criteria" class="row">
-			<div class="col-lg-12">
+			<div class="col-xs-12">
 				<h4>Outbreak Classifications</h4>
 				<select id="surveillance-classifications" multiple="multiple">
 					<c:forEach items="${classifications}" var="classification" varStatus="status">
@@ -52,16 +52,16 @@
 					</c:forEach>
 				</select>
 			</div>
-			<div id="surveillance-time-container" class="col-lg-12">
-				<div id="surveillance-start-container" class="col-lg-5">
+			<div id="surveillance-time-container" class="col-xs-12 fluid">
+				<div id="surveillance-start-container" class="col-xs-5">
 					<h4>Surveillance Start Date &amp; Time</h4>
-					<div id="surveillanceDateStart" class="col-lg-6 input-group date surveillance-datepicker">
+					<div id="surveillanceDateStart" class="col-xs-5 input-group date surveillance-datepicker">
 						<input id="surveillanceDateStartTextInput" type='text' class="form-control" placeholder="Surveillance Start Date" />
 						<span class="input-group-addon">
 							<span class="fa fa-calendar"></span>
 						</span>
 					</div>
-					<div id="surveillanceTimeStart"	class="col-lg-6 input-group bootstrap-timepicker">
+					<div id="surveillanceTimeStart"	class="col-xs-5 input-group bootstrap-timepicker">
 						<input id="surveillanceTimeStartTextInput" type='text' class="form-control" />
 						<span class="input-group-addon">
 							<span class="fa fa-clock-o"></span>
@@ -69,15 +69,15 @@
 					</div>
 				</div>
 				<div class="col-lg-2"></div>
-				<div id="surveillance-end-container" class="col-lg-5">
+				<div id="surveillance-end-container" class="col-xs-5">
 					<h4>Surveillance End Date &amp; Time</h4>
-					<div id="surveillanceDateEnd" class="col-lg-6 input-group date surveillance-datepicker">
+					<div id="surveillanceDateEnd" class="col-xs-5 input-group date surveillance-datepicker">
 						<input id="surveillanceDateEndTextInput" type='text' class="form-control" placeholder="Surveillance End Date" />
 						<span class="input-group-addon">
 							<span class="fa fa-calendar"></span>
 						</span>
 					</div>
-					<div id="surveillanceTimeEnd"	class="col-lg-6 input-group bootstrap-timepicker">
+					<div id="surveillanceTimeEnd" class="col-xs-5 input-group bootstrap-timepicker">
 						<input id="surveillanceTimeEndTextInput" type='text' class="form-control" />
 						<span class="input-group-addon">
 							<span class="fa fa-clock-o"></span>

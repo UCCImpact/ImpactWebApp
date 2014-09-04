@@ -28,6 +28,14 @@
 		</h1>
 	</div>
 
+
+	<div id="search-query-return-container">
+		<a id="search-query-anchor" href="javascript:history.back()">
+			<i id="search-return-arrow-icon" class="fa fa-reply"></i>
+			<span class="text-muted">Return to Search Query</span>
+		</a>
+	</div>
+
 	<!-- patient visits list -->
 	<div id="patient-visit-list" class="col-lg-12 sl-table-container">
 		<h4>PATIENT VISITS</h4>

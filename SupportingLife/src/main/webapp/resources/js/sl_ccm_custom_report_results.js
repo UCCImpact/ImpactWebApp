@@ -270,5 +270,17 @@ $(document).ready(function() {
 		"bJQueryUI": true
 	});
 	
+		
+	/* Responsible for highlighting the search query return text */
+	$('#search-query-return-container').hover(
+		function() 
+		{
+			$('#search-query-return-container a').children().css('color', '#077204'); /* SL Green */
+		}, 
+		function() {
+			$('#search-query-return-container a').children().css('color', '#777'); /* Grey */
+		}
+	);
+	
 });
  

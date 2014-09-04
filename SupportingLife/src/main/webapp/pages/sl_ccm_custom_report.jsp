@@ -22,7 +22,7 @@
        </div>
       </div>
 
-	<h1>CCM Custom Report</h1>
+	<h1>CCM Report</h1>
 
 	<!-- ====================================== MARKETING MESSAGING  ======================================== -->
 	<!-- Wrap the rest of the page in another container to center all the content. -->
@@ -31,26 +31,26 @@
 	
 		<!-- Three columns of text below the carousel -->
 		<div class="row">
-			<h1>What We Do</h1>
-			<div class="col-lg-4">
-				<i id="mobile-icon" class="fa fa-cogs"></i>
-				<h3>Technological</h3>
-				<p class="lead">Enhances user productivity, improves
-								healthcare services and increases care
-								coordination.</p>
+			<div class="report-icon-container col-md-4">
+				<a href="${pageContext.request.contextPath}/reports/ccm_demographic_report_form">
+					<i id="demographic-icon" class="fa fa-group"></i>
+					<br> 
+					<span class="text-muted"> Demographic Search </span>
+				</a>
 			</div>
-			<div class="col-lg-4">
-				<i id="healthcare-icon" class="fa fa-plus-square"></i>
-				<h3>Clinical Impact</h3>
-				<p class="lead">Improves the accuracy of diagnoses, treatment and
-					health outcomes by utilising automated, rigorous and robust decision
-					support systems.</p>
+			<div class="report-icon-container col-md-4">
+				<a href="${pageContext.request.contextPath}/reports/ccm_symptom_classification_report_form">
+					<i id="symptom-classification-icon" class="fa fa-plus-square"></i>
+					<br> 
+					<span class="text-muted"> Symptom / Classification Search </span>
+				</a>
 			</div>
-			<div class="col-lg-4">
-				<i id="research-icon" class="fa fa-cubes"></i>
-				<h3>Research</h3>
-				<p class="lead">Investigates the impact of the technology from a user and
-								community perspective.</p>
+			<div class="report-icon-container col-md-4">
+				<a href="${pageContext.request.contextPath}/reports/ccm_treatment_report_form">
+					<i id="treatment-icon" class="fa fa-stethoscope"></i>
+					<br> 
+					<span class="text-muted"> Treatment Search </span>
+				</a>
 			</div>
 		</div>
 	</div>

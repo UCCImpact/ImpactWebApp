@@ -51,6 +51,33 @@
 	color: #077204;
 }
 
+
+/* -------------------------------------------------- */
+/* SEARCH QUERY RETURN ICON LINK STYLING			  */
+/* -------------------------------------------------- */
+
+#search-query-return-container {
+	float: left;
+	text-align: center;
+	padding-left: 15px;
+}
+
+/* remove the underline on html links showing when hovering over icons */
+#search-query-return-container a {
+    text-decoration: none !important;
+}
+
+#search-query-return-container .text-muted {
+    font-size: 12px;
+}
+
+#search-return-arrow-icon {
+	font-size: 18px;
+	color: #777;
+	text-align: center;
+}
+
+
 /* -------------------------------------------------- */
 /* Style the tables as follows: 					  */
 /* 													  */
@@ -64,7 +91,7 @@
 /* -------------------------------------------------- */
 
 .sl-table-container {
-	margin-top: 50px;
+	margin-top: 15px;
 	margin-bottom: 50px;
 }
 

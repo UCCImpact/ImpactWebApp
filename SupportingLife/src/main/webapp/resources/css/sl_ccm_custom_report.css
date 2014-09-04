@@ -37,6 +37,56 @@
 }
 
 /* -------------------------------------------------- */
+/* Report Icons										  */
+/* -------------------------------------------------- */
+
+/* remove the underline on html links showing when hovering over icons */
+.report-icon-container a {
+    text-decoration: none !important;
+}
+
+.report-icon-container .text-muted {
+    font-size: 20px;
+}
+
+
+/* demographic search icon */
+#demographic-icon {
+	padding-top: 50px;
+	text-align: center;
+	font-size: 175px;
+	color: #777;
+}
+
+#demographic-icon:hover {
+	color:  #077204;
+}
+
+/* symptom / classification search icon */
+#symptom-classification-icon {
+	padding-top: 50px;
+	text-align: center;
+	font-size: 175px;
+	color: #777;
+}
+
+#symptom-classification-icon:hover {
+	color:  #077204;
+}
+
+/* treatment search icon */
+#treatment-icon {
+	padding-top: 50px;
+	text-align: center;
+	font-size: 175px;
+	color: #777;
+}
+
+#treatment-icon:hover {
+	color:  #077204;
+}
+
+/* -------------------------------------------------- */
 /* RESPONSIVE CSS */
 /* -------------------------------------------------- */
 
