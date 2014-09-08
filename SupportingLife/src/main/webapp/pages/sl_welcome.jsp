@@ -119,13 +119,27 @@
 				the development lifecycle. Track our progress, as well as sneak
 				previews!, by checking out our latest release videos.
 			</p>
-			<h3>
-				<span class="text-muted">Scan QR code for SL App</span>
-			</h3>
-			<div>
-				<i class="fa fa-share qr-arrow-icon"></i>
-				<img id="qr-code" src="images/app-download-qrcode.svg" />
-				<i class="fa fa-reply qr-arrow-icon"></i>
+			<div class="col-md-12">
+				<div class="col-md-6">
+					<h3>
+						<span class="text-muted">Scan QR code <br> for SL App</span>
+					</h3>
+					<div>
+						<i class="fa fa-share qr-arrow-icon"></i>
+						<img id="app-qr-code" src="images/app-download-qrcode.svg" />
+						<i class="fa fa-reply qr-arrow-icon"></i>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<h3>
+						<span class="text-muted">Scan QR code <br> for SL Reporting Web App</span>
+					</h3>
+					<div>
+						<i class="fa fa-share qr-arrow-icon"></i>
+						<img id="reporting-app-qr-code" src="images/reporting-app-download-qrcode.svg" />
+						<i class="fa fa-reply qr-arrow-icon"></i>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-5">
