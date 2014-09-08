@@ -64,4 +64,18 @@ public class BaseController {
 		supportingLifeService.addNewsletterContact(emailAddress);
 		return true;
 	}
+	
+	/**
+	 * Directs user to SL infographic display
+	 * 
+	 * @param String
+	 * 
+	 * @return @ResponseBody
+	 */
+	@RequestMapping(value="/infographic", method = RequestMethod.GET, headers="Accept=html/text")
+	public String displayInfographic(ModelMap model) {
+	
+		return"sl_about_infographic";
+	}
+	
 }

@@ -1,0 +1,22 @@
+<%-- sl_about_infographic_footer.jspf --%>
+<%-- SL About Infographic Footer, containing JS references --%>
+<%-- author: Timothy O' Sullivan --%>
+<%-- Last Updated: 04/09/2014 --%>
+
+ 	<%----------------------------------------- JS References -----------------------------------------%>
+ 	<%-- Placed at the end of the document so the pages load faster --%>
+ 	
+	<%-- NOTE: NEEDED TO ORDER JS FILES IN THE FOLLOWING ORDER AS OTHERWISE WAS GETTING CONFLICT --%>
+	<%-- 	   JQUERY AND BOOTSTRAP WITH THE DATEPICKER: 										 --%>
+	<%-- 	   ORDER: 				 															 --%>
+	<%--			  1. JQUERY		 															 --%>
+	<%--			  2. BOOTSTRAP JS FILES  			 										 --%>
+	
+	<%-- jQuery Source file --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery-1.10.2.js"/> charset="utf-8"></script>
+	
+	<%--  jQuery Themeroller theme --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery-ui-1.10.4.custom.min.js"/>></script>
+	
+	<%--  SL About Infographic JS Functionality --%>
+	<script type="text/javascript" src=<c:url value="/js/sl_about_infographic.js"/>></script>

@@ -1,0 +1,107 @@
+/* **************************************************************************
+** Filename: sl_about_infographic.css
+** 
+** Styling for SL 'About' Infographic.
+**
+** Author: Timothy O' Sullivan
+**
+** Last Updated: 04/09/2014.
+** *************************************************************************/
+
+/* -------------------------------------------------- */
+/* container for entire infographic page	 		  */
+/* -------------------------------------------------- */
+
+html, iframe, .container, .col-xs-12, .col-xs-10, .col-xs-10 { 
+	height: 175%;
+}
+
+#sl-about-infographic-container {
+	margin-top: 50px; 
+	text-align: center; /* Centre-align all components, unless overridden individually */
+}
+
+#sl-about-infographic-container h1 {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  padding-bottom: 15px;
+}
+
+#sl-about-infographic-container h3 {
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  color: #077204;
+}
+
+/* -------------------------------------------------- */
+/* Canvas to maintain visual consistency from 		  */
+/* carousel main screen to reporting screens		  */
+/* -------------------------------------------------- */
+#sl-report-banner {
+	position: relative;
+	border-radius: 4px; /* round corner of rectangle */
+	width: 100%;
+	min-height: 20px;
+	background: #077204;
+}
+
+/* -------------------------------------------------- */
+/* INFOGRAPHIC STYLING								  */
+/* -------------------------------------------------- */
+#sl-infographic-graphic {
+	overflow: hidden;		/* no scrollbars */
+	width: 100%;
+	height: 100%;
+	padding-left: 40px;
+}
+
+#graphic-creation-text {
+	font-size: 10px;
+	font-style: italic;
+}
+
+/* -------------------------------------------------- */
+/* RESPONSIVE CSS */
+/* -------------------------------------------------- */
+
+@media (max-width: 1200px) {
+
+	html, iframe, .container, .col-xs-12, .col-xs-10, .col-xs-10 {
+		height: 120%;
+	}
+	
+	#sl-infographic-graphic {
+		overflow: scroll;		/* no scrollbars */
+		padding-left: 0px;
+	}
+	
+	#sl-about-infographic-container {
+		margin-top: 50px;
+		text-align: center;
+	}
+}
+
+/* this is the width point at which the navbar 	*/
+/* collapses to the mobile look					*/
+@media (max-width: 768px) {
+	
+	html, iframe, .container, .col-xs-12, .col-xs-10, .col-xs-10 {
+		height: 70%;
+	}
+	
+	#sl-infographic-graphic {
+		overflow: scroll;		/* no scrollbars */
+		padding-left: 0px;
+	}
+	
+	#sl-about-infographic-container {
+		margin-top: 68px; 
+		text-align: center; /* Centre-align all components, unless overridden individually */
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}

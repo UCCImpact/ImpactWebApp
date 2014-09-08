@@ -1,0 +1,15 @@
+<%-- sl_about_infographic_header.jspf --%>
+<%-- Header for About 'SL Infographic' --%>
+<%-- author: Timothy O Sullivan --%>
+<%-- Last Updated: 22/01/2014. --%>
+	 
+	<title>Supporting Life Infographic</title>
+	 
+	<%--------------------------------------------- CSS Links -----------------------------------------%>	
+	<%--  CSS JQuery UI --%>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-theme.css"/>/>
+
+	<%-- Custom style for the SL About Infographic --%>
+ 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_about_infographic.css"/>/>
+     
+</head>

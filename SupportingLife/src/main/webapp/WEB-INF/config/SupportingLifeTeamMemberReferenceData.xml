@@ -48,7 +48,7 @@
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Dr Joe Gallagher"/>
-								<property name="qualifications" value="BSc BIS" />
+								<property name="qualifications" value="" />
 								<property name="role" value="" />
 								<property name="bio" value="to be added..." />
 								<property name="photoPresent" value="false"/>
@@ -105,9 +105,21 @@
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Siobhan O' Connor"/>
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
+								<property name="qualifications" value="BSc (Nursing)&lt;br&gt;
+																	   BSc (Business Information Systems)" />
+								<property name="role" value="Researcher" />
+								<property name="bio" value="Siobhan O'Connor is a researcher on the FP7 Supporting LIFE project. She is a Registered General 
+															Nurse (RGN), with a background in informatics. She received a first class honours B.Sc. Nursing 
+															from University College Cork in 2013 and an honours B.Sc. Business Information Systems degree 
+															from University College Cork in 2004. She spent several years working in the international 
+															financial services industry before refocusing her career to healthcare. She is currently 
+															undertaking doctoral studies at the University of Glasgow and her PhD research is focusing 
+															on the implementation of public engagement strategies to recruit patients and their carer 
+															to digital health and wellbeing technologies and services. She has won several awards for 
+															her innovative use of mobile technology in nursing education and practice and has published 
+															in a number of national and international journals and conferences. She is a member of the 
+															Health Informatics Society of Ireland (HISI), the American Nursing Informatics Association 
+															(ANIA) and the British Computer Society (BCS)." />
 								<property name="photoPresent" value="true"/>
 								<property name="linkedInProfilePresent" value="false"/>
 								<property name="researchProfilePresent" value="false"/>					
@@ -209,13 +221,33 @@
 						<list>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Dr John O' Donoghue" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
+								<property name="qualifications" value="BSc, MSc, PhD" />
+								<property name="role" value="Principal Investigator Supporting LIFE" />
+								<property name="bio" value="Dr John O'Donoghue is a Senior Lecturer in eHealth at Imperial College London 
+															and Deputy Director of its Global eHealth Unit. 
+															He received his B.Sc. in Computer Science and a research M.Sc. in Real-Time Systems and 
+															Simulation from the Department of Mathematics and Computing, Cork Institute of Technology, 
+															Ireland and a PhD from the Department of Computer Science at University College Cork, Ireland. 
+															He has published in a number of national\international journals and conference proceedings in the 
+															area of eHealth and mhealth for both developed and developing countries. His main research areas 
+															include: Pervasive Data Management, Quality of Data, Health Informatics and Medical based Information Systems. 
+															For his doctoral research, he received the Massachusetts Institute of Technology 
+															Ballou/Pazer DQ/IQ Research Award, which recognises a PhD dissertation that demonstrates a significant 
+															contribution to the field of Information Quality (IQ).&lt;br&gt;&lt;br&gt;
+															
+															The Global eHealth Unit is an international research hub for innovation and entrepreneurship in health 
+															care. It is a multidisciplinary team, collaborating on a number of local, national and international 
+															activities. It rigorous approach to research and development work provides a strong evidence base for 
+															influencing policy and improving health education and practice.&lt;br&gt;&lt;br&gt;
+															
+															Examples of projects which John is currently involved with include, detection and management 
+															of acutely ill patients on hospital wards, data management modelling for clinical trials, use of 
+															mHealth technology to identify illness in children in developing countries, and development of systems 
+															for integrated chronic disease management." />
 								<property name="photoPresent" value="true" />
-								<property name="linkedInProfilePresent" value="false" />
+								<property name="linkedInProfilePresent" value="true" />
 								<property name="researchProfilePresent" value="false" />
-								<property name="linkedInUrl" value="/testurl/" />
+								<property name="linkedInUrl" value="https://uk.linkedin.com/pub/john-o-donoghue/7a/412/759" />
 								<property name="researchUrl" value="/testurl/" />
 								<property name="imageRef" value="images/team-members/JOD.jpg" />
 							</bean>
@@ -310,9 +342,18 @@
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Tiwonge Kawonga" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
+								<property name="qualifications" value="BSc Electrical Engineering&lt;br&gt;
+																	   MSc Electrical Engineering " />
+								<property name="role" value="Researcher" />
+								<property name="bio" value="Tiwonge Kawonga is a lecturer in ICT department at Mzuzu University. 
+															He has a Bsc. in electrical engineering (University of Malawi) and Msc. 
+															in electrical engineering (Wits University). He has published conference 
+															papers in use of middleware in provisioning of distributed applications 
+															and resource provisioning in optical networks. His current research interests 
+															are in the performance of wireless networks, wireless sensor networks, development 
+															of mobile applications for developing countries' problems and security in wireless 
+															and distributed application environment. He is a member of supporting Life project 
+															from the ICT department of Mzuzu University." />
 								<property name="photoPresent" value="false" />
 								<property name="linkedInProfilePresent" value="false" />
 								<property name="researchProfilePresent" value="false" />
@@ -369,18 +410,6 @@
 								<property name="researchUrl" value="http://www.jeanette-mueller.ch/ " />
 								<property name="imageRef" value="images/team-members/JM.jpg" />
 							</bean>
-							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
-								<property name="name" value="Sarah Castelli" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
-								<property name="photoPresent" value="true" />
-								<property name="linkedInProfilePresent" value="false" />
-								<property name="researchProfilePresent" value="false" />
-								<property name="linkedInUrl" value="/testurl/" />
-								<property name="researchUrl" value="/testurl/" />
-								<property name="imageRef" value="images/team-members/SaC.jpg" />
-							</bean>
 						</list>
 					</property>
 				</bean>
@@ -402,14 +431,18 @@
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Dr Bo Andersson" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
+								<property name="qualifications" value="PhD (Informatics)" />
+								<property name="role" value="Researcher" />
+								<property name="bio" value="Bo Andersson is a senior lecturer at Lund University and holds a PhD in Informatics. 
+															He is conducting research within the mobility domain, from development to use. Areas 
+															of special interest are mobile payment solutions and mobile applications for organizational 
+															use. He also teaches requirements engineering and modeling at Lund University. 
+															He is the former CTO of 21st Century Mobile Solutions, a development company in Sweden. " />
 								<property name="photoPresent" value="true" />
-								<property name="linkedInProfilePresent" value="false" />
-								<property name="researchProfilePresent" value="false" />
-								<property name="linkedInUrl" value="/testurl/" />
-								<property name="researchUrl" value="/testurl/" />
+								<property name="linkedInProfilePresent" value="true" />
+								<property name="researchProfilePresent" value="true" />
+								<property name="linkedInUrl" value="https://www.linkedin.com/in/boander" />
+								<property name="researchUrl" value="http://www.ics.lu.se/staff/bo.andersson" />
 								<property name="imageRef" value="images/team-members/BA.jpg" />
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">

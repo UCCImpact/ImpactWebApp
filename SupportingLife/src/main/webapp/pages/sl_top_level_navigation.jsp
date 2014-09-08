@@ -63,8 +63,13 @@
 								</ul>
 							</li> <!-- END: ADMIN -->
 							
-							<li class="disabled"><a  data-toggle="tab" href="#about" class="unimplemented-feature">About</a></li>					<!-- ABOUT -->
-							
+							<li class="dropdown">																							<!-- ABOUT -->
+								<a href="#" class="dropdown-toggle"	data-toggle="dropdown">About<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li class="dropdown-header">Learn More</li>
+										<li><a href="${pageContext.request.contextPath}/welcome/infographic">Infographic</a></li>
+								</ul>								
+							</li><!-- END: ABOUT -->
 						</ul>
 					</div>
 				</div>
