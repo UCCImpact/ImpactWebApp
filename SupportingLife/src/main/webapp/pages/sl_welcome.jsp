@@ -126,7 +126,7 @@
 					</h3>
 					<div>
 						<i class="fa fa-share qr-arrow-icon"></i>
-						<img id="app-qr-code" src="images/app-download-qrcode.svg" />
+						<img id="app-qr-code" src="images/app-download-qrcode.png" />
 						<i class="fa fa-reply qr-arrow-icon"></i>
 					</div>
 				</div>
@@ -136,7 +136,7 @@
 					</h3>
 					<div>
 						<i class="fa fa-share qr-arrow-icon"></i>
-						<img id="reporting-app-qr-code" src="images/reporting-app-download-qrcode.svg" />
+						<img id="reporting-app-qr-code" src="images/reporting-app-download-qrcode.png" />
 						<i class="fa fa-reply qr-arrow-icon"></i>
 					</div>
 				</div>
