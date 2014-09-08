@@ -419,9 +419,19 @@
 						<list>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Prof Sven Carlsson" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
+								<property name="qualifications" value="Professor (PhD)" />
+								<property name="role" value="Researcher" />
+								<property name="bio" value="Sven Carlsson is Professor of Informatics at Lund University School of Economics 
+															and Management (LUSEM). His current research interests include: the use of ICT/IS to 
+															support management processes, business intelligence, knowledge management, enterprise systems, 
+															technochange, IT management and governance, design and redesign of e-business, and 
+															health information systems. He has a keen interest in the use of critical realism 
+															in IS research and IS design science research. He has published more than 150 
+															peer-reviewed journal articles, book chapters, and conference papers and his work 
+															has appeared in journals like Journal of Management Information Systems, 
+															Decision Sciences, Information Systems Journal, and Information &amp; Management. 
+															Carlsson is a regional editor for Knowledge Management Research and Practice 
+															(he is a co-founder of the journal)." />
 								<property name="photoPresent" value="true" />
 								<property name="linkedInProfilePresent" value="false" />
 								<property name="researchProfilePresent" value="false" />
