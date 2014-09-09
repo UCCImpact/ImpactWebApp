@@ -318,9 +318,16 @@
 							</bean>
 							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
 								<property name="name" value="Dominic Nyirongo" />
-								<property name="qualifications" value="" />
-								<property name="role" value="" />
-								<property name="bio" value="to be added..." />
+								<property name="qualifications" value="BSc in Agriculture&lt;br&gt;
+																	   MSc in Strategic Management" />
+								<property name="role" value="Work Pack leader Supporting Life &amp; Executive Secretary Ungweru" />
+								<property name="bio" value="Mr. Dominic Nyirongo is the Work Pack leader and LEAR on the FP7 
+															Supporting LIFE Project at Ungweru. Dominic is also the Executive Secretary 
+															for Ungweru. His interests are in bringing positive change in the lives of the rural poor. 
+															He graduated from University of Malawi, Bunda College of Agriculture with a BSc in Agriculture 
+															(Rural development and Extension). He received an MSc in Strategic Management from 
+															University of Derby in UK. Dominic has over 12 years experience in rural and community 
+															development and in project management." />
 								<property name="photoPresent" value="false" />
 								<property name="linkedInProfilePresent" value="false" />
 								<property name="researchProfilePresent" value="false" />
