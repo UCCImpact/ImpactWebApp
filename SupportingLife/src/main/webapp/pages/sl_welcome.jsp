@@ -149,14 +149,24 @@
 					<div class="item active">
 						<div class="container">
 							<div class="carousel-caption">
-								<h3>Latest Software Release (SL 3.0)</h3>
+								<h3>Latest Software Release (SL 4.0)</h3>
+							</div>
+						</div>
+						<iframe height="200" src="//www.youtube.com/embed/nrNzS5hsFv4"
+							allowfullscreen></iframe>
+					</div>
+					<!-- end of active item -->
+					<div class="item">
+						<div class="container">
+							<div class="carousel-caption">
+								<h3>Third Software Release (SL 3.0)</h3>
 							</div>
 						</div>
 						<iframe height="200" src="//www.youtube.com/embed/n4iDDow6pxc"
 							allowfullscreen></iframe>
 					</div>
-					<!-- end of active item -->
-					<div class="item ">
+					<!-- end of item -->
+					<div class="item">
 						<div class="container">
 							<div class="carousel-caption">
 								<h3>Health Record Data Management</h3>
