@@ -88,6 +88,11 @@ INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname,
 					created_dt, updated_dt) 
 					VALUES ("josephwu", "josephwu", 1, 0, "Joseph", "Wu", "HSA_USER",
 							STR_TO_DATE('20,06,2014','%d,%m,%Y'), STR_TO_DATE('20,06,2014','%d,%m,%Y'));
+							
+INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
+					created_dt, updated_dt) 
+					VALUES ("khackett", "khackett", 1, 0, "Keith", "Hackett", "HSA_USER",
+							STR_TO_DATE('26,09,2014','%d,%m,%Y'), STR_TO_DATE('26,09,2014','%d,%m,%Y'));
 
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, first_name, surname, role,
 					created_dt, updated_dt) 
