@@ -128,7 +128,7 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		if (patientId == null) {
 			ccmPatient = new CcmPatient(patientAssessment.getNationalId(), patientAssessment.getNationalHealthId(),
 					patientAssessment.getChildFirstName(), patientAssessment.getChildSurname(),
-					patientAssessment.getBirthDate(), patientAssessment.getGender(),
+					patientAssessment.getBirthDate(), patientAssessment.getMonthsAge(), patientAssessment.getGender(),
 					patientAssessment.getCaregiverName(), patientAssessment.getRelationship(),
 					patientAssessment.getPhysicalAddress(),
 					patientAssessment.getVillageTa(), currentDate, currentDate);

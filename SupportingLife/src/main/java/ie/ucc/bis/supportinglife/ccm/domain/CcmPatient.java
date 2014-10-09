@@ -53,6 +53,9 @@ public class CcmPatient implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date birthDate;
 	
+	@Column(name="age_months")
+	private Integer ageMonths;
+	
 	@Column(name="gender")
 	private String gender;
 	
@@ -115,6 +118,7 @@ public class CcmPatient implements Serializable {
 	 * @param childFirstName
 	 * @param childSurname
 	 * @param birthDate
+	 * @param ageMonths
 	 * @param gender
 	 * @param caregiverName
 	 * @param relationship
@@ -125,7 +129,7 @@ public class CcmPatient implements Serializable {
 	 * @param updatedDate
 	 */
 	public CcmPatient(String nationalId, String nationalHealthId, String childFirstName, 
-					String childSurname, Date birthDate, String gender,
+					String childSurname, Date birthDate, Integer ageMonths, String gender,
 					String caregiverName, String relationship, 
 					String physicalAddress, String villageTa,
 					Date createdDate, Date updatedDate) {
@@ -135,6 +139,7 @@ public class CcmPatient implements Serializable {
 		setChildFirstName(childFirstName);
 		setChildSurname(childSurname);
 		setBirthDate(birthDate);
+		setAgeMonths(ageMonths);
 		setGender(gender);
 		setCaregiverName(caregiverName);
 		setRelationship(relationship);
@@ -193,6 +198,14 @@ public class CcmPatient implements Serializable {
 
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
+	}
+
+	public Integer getAgeMonths() {
+		return ageMonths;
+	}
+
+	public void setAgeMonths(Integer ageMonths) {
+		this.ageMonths = ageMonths;
 	}
 
 	public String getGender() {
