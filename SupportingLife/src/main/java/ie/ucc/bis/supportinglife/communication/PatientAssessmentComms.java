@@ -3,8 +3,10 @@ package ie.ucc.bis.supportinglife.communication;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -78,7 +80,7 @@ public class PatientAssessmentComms implements Serializable {
 	private Map<String, String> classifications;
 
 	// treatments
-	private Map<String, String> treatments;
+	private List<TreatmentRecommendation> treatments;
 	
 	// assessment specific analytics
 	private boolean breathCounterUsed;
@@ -153,7 +155,7 @@ public class PatientAssessmentComms implements Serializable {
 		}
 
 		setClassifications(new HashMap<String, String>());
-		setTreatments(new HashMap<String, String>());
+		setTreatments(new ArrayList<TreatmentRecommendation>());
 	}
 
 	public Date parseDate(String dateValue, String slDateFormat) throws ParseException {
@@ -496,11 +498,11 @@ public class PatientAssessmentComms implements Serializable {
 		this.classifications = classifications;
 	}
 
-	public Map<String, String> getTreatments() {
+	public List<TreatmentRecommendation> getTreatments() {
 		return treatments;
 	}
 
-	public void setTreatments(Map<String, String> treatments) {
+	public void setTreatments(List<TreatmentRecommendation> treatments) {
 		this.treatments = treatments;
 	}
 	

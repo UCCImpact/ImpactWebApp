@@ -25,6 +25,7 @@ import ie.ucc.bis.supportinglife.communication.PatientAssessmentComms;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentResponseComms;
 import ie.ucc.bis.supportinglife.communication.PersonContactComms;
 import ie.ucc.bis.supportinglife.communication.SurveillanceRequestComms;
+import ie.ucc.bis.supportinglife.communication.TreatmentRecommendation;
 import ie.ucc.bis.supportinglife.communication.UserAuthenticationComms;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
@@ -34,6 +35,7 @@ import ie.ucc.bis.supportinglife.utilities.DateUtilities;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -188,8 +190,15 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		}
 		
 		// 7. associate the treatments with the patient visit
-		for (Map.Entry<String, String> entry : patientAssessment.getTreatments().entrySet()) {
-			ccmPatientVisit.getCcmPatientTreatmentList().add(new CcmPatientTreatment(ccmPatientVisit, new CcmTreatment(entry.getKey(), entry.getValue()), ccmPatient));
+		Map<String, String> treatments = new HashMap<String, String>();
+		for (TreatmentRecommendation treatment : patientAssessment.getTreatments()) {
+			treatments.put(treatment.getTreatmentIdentifier(), treatment.getTreatmentDescription());
+		}
+		
+		for (TreatmentRecommendation treatment : patientAssessment.getTreatments()) {
+			ccmPatientVisit.getCcmPatientTreatmentList().add(new CcmPatientTreatment(ccmPatientVisit, 
+					new CcmTreatment(treatment.getTreatmentIdentifier(), treatment.getTreatmentDescription(),
+							treatment.isDrugAdministered(), treatment.isTreatmentAdministered()), ccmPatient));
 		}
 		
 		// 8. create the 'sensor vital sign readings' record

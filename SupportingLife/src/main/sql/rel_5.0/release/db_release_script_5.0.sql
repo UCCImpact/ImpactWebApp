@@ -147,9 +147,11 @@ TRUNCATE TABLE sl_ccm_patient_classification;
 -----------------------------------------------------------------------------------------------------------------
 USE supportinglifedb;
 CREATE TABLE IF NOT EXISTS sl_ccm_treatment (
-    											treatment_id 		INTEGER(18) NOT NULL AUTO_INCREMENT,
-    											treatment_key		VARCHAR(250),
-    											description 		VARCHAR(1000),
+    											treatment_id 			INTEGER(18) NOT NULL AUTO_INCREMENT,
+    											treatment_key			VARCHAR(250),
+    											description 			VARCHAR(1000),
+    											drug_administered		TINYINT(1),
+    											treatment_administered	TINYINT(1),
 				    							PRIMARY KEY (treatment_id)
 											 );
 

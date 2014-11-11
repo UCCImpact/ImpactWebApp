@@ -32,6 +32,12 @@ public class CcmTreatment implements Serializable {
 	
 	@Column(name="description")
 	private String description;
+	
+	@Column(name="drug_administered", columnDefinition = "TINYINT(1)")
+	private boolean drugAdministered;
+
+	@Column(name="treatment_administered", columnDefinition = "TINYINT(1)")
+	private boolean treatmentAdministered;
 			 
 	public CcmTreatment() {}
 
@@ -41,9 +47,11 @@ public class CcmTreatment implements Serializable {
 	 * @param classificationId
 	 * @param name
 	 */
-	public CcmTreatment(String treatmentKey, String description) {
+	public CcmTreatment(String treatmentKey, String description, boolean drugAdministered, boolean treatmentAdministered) {
 		setTreatmentKey(treatmentKey);
 		setDescription(description);
+		setDrugAdministered(drugAdministered);
+		setTreatmentAdministered(treatmentAdministered);
 	}
 
 	public Long getTreatmentId() {
@@ -70,4 +78,19 @@ public class CcmTreatment implements Serializable {
 		this.description = description;
 	}
 
+	public boolean isDrugAdministered() {
+		return drugAdministered;
+	}
+
+	public void setDrugAdministered(boolean drugAdministered) {
+		this.drugAdministered = drugAdministered;
+	}
+
+	public boolean isTreatmentAdministered() {
+		return treatmentAdministered;
+	}
+
+	public void setTreatmentAdministered(boolean treatmentAdministered) {
+		this.treatmentAdministered = treatmentAdministered;
+	}
 }
