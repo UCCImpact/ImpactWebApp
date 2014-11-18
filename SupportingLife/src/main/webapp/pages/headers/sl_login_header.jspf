@@ -1,0 +1,15 @@
+<%-- sl_login_header.jspf --%>
+<%-- Header for Login Form --%>
+<%-- author: Timothy O Sullivan --%>
+<%-- Last Updated: 18/11/2014. --%>
+	 
+	<title>Supporting LIFE Login Form</title>
+	 
+	<%--------------------------------------------- CSS Links -----------------------------------------%>
+	<%--  CSS JQuery UI --%>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-theme.css"/>/>
+
+	<%-- Custom style for login form --%>
+ 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_login.css"/>/>
+     
+</head>

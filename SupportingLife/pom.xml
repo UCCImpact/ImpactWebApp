@@ -9,6 +9,7 @@
 
 	<properties>
 		<spring.version>3.2.0.RELEASE</spring.version>
+		<spring.security.version>3.2.5.RELEASE</spring.security.version>
 		<junit.version>4.11</junit.version>
 		<jdk.version>1.6</jdk.version>
 		<jackson.version>1.9.12</jackson.version>
@@ -22,6 +23,7 @@
 		<javax.validation.version>1.0.0.GA</javax.validation.version>
 		<javax.servlet.version>3.0.1</javax.servlet.version>
 		<jquery.ui.version>1.10.2-1</jquery.ui.version>
+		<javax.mail.version>1.4.7</javax.mail.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.resources.sourceEncoding>UTF-8</project.resources.sourceEncoding>
 	</properties>
@@ -56,6 +58,31 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
+		</dependency>
+		
+		 <dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+ 
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security.version}</version>
 		</dependency>
 
 		<!-- JUnit -->
@@ -178,6 +205,14 @@
 			<artifactId>jquery-ui</artifactId>
 			<version>${jquery.ui.version}</version>
 		</dependency>
+		
+	    <!-- Java Mail API -->
+	    <dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>javax.mail-api</artifactId>
+		    <version>${javax.mail.version}</version>
+	    </dependency>
+		
 	</dependencies>
 
 	<build>
