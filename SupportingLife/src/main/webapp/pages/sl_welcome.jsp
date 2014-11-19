@@ -98,6 +98,49 @@
 		</div>
 	</div>
 
+	<hr class="featurette-divider">
+	
+	<div class="row featurette">
+		<h1>About Supporting LIFE</h1>
+		<div class="col-md-5">
+			<div id="documentaryCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
+				<div class="carousel-inner">
+					<div class="item active">
+						<div>
+							<div class="carousel-caption">
+								<h3>Laying the Foundations</h3>
+							</div>
+							<iframe height="200" src="//www.youtube.com/embed/J7bSm2ARzs4"	allowfullscreen></iframe>
+						</div>
+					</div>	
+				</div><!-- end of carousel inner -->
+				
+				<a class="left carousel-control" href="#documentaryCarousel" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a> 
+				<a class="right carousel-control" href="#documentaryCarousel" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div> <!-- end of documentary carousel slide -->
+		</div>	<!-- end of col-md-5 -->
+		<div class="col-md-7">
+			<h2>Documentary Videos</h2>
+			<h3>
+				<span class="text-muted">Follow our exciting journey</span>
+			</h3>
+			<br>
+			<p class="lead">
+				We're documenting each step of the Supporting LIFE project. 
+				These documentaries are intended to capture and communicate the obstacles
+				and successes of the  Supporting LIFE project.
+				<br><br>
+			</p>
+			<p class="lead feature-text-centered">	
+				Tune in and see the progress that we're making!
+			</p>
+		</div>
+	</div>
+		
 	<!-- =========================================== FEATURETTES ================================================= -->
 
 	<hr class="featurette-divider">

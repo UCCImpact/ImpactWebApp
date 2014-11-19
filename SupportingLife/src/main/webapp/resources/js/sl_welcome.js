@@ -30,6 +30,19 @@ $(document).ready(function() {
 	teamMap.placeLocationMarkers();
 	
 	/* Responsible for highlighting the background colour of  
+	 * all child elements of documentary carousel on a hover event
+	 */
+	$('#documentaryCarousel').hover(
+		function() 
+		{
+			$('#documentaryCarousel .carousel-inner').children().css('background-color', '#077204'); /* SL Green */
+		}, 
+		function() {
+			$('#documentaryCarousel .carousel-inner').children().css('background-color', '#777'); /* Grey */
+		}
+	);
+	
+	/* Responsible for highlighting the background colour of  
 	 * all child elements of video carousel on a hover event
 	 */
 	$('#videoCarousel').hover(
@@ -41,7 +54,7 @@ $(document).ready(function() {
 			$('#videoCarousel .carousel-inner').children().css('background-color', '#777'); /* Grey */
 		}
 	);
-				
+		
 	// initialise 'team members' accordion
 	configureTeamMembersAccordion();
 	

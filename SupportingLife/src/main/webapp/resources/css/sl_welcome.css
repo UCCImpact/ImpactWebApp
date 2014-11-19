@@ -136,6 +136,33 @@
 	margin-bottom: 10px;
 }
 
+.feature-text-centered {
+	text-align: center !important;
+}
+
+/* -------------------------------------------------- */
+/* Documentary Carousel 							  */
+/* -------------------------------------------------- */
+
+#documentaryCarousel  {
+	height: 300px;
+	margin-bottom: 0px;
+	margin-bottom: 10px;
+}
+
+#documentaryCarousel .carousel-inner .item {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-bottom: 0px;
+	height: 300px;
+}
+
+#documentaryCarousel .carousel-caption {
+  z-index: 10;
+  margin-bottom: -40px;
+  color: #ffd700; /* gold */
+}
+
 /* -------------------------------------------------- */
 /* Video Carousel */
 /* -------------------------------------------------- */
@@ -150,6 +177,7 @@
 	padding-bottom: 50px;
 	margin-bottom: 0px;
 	height: 300px;
+	
 }
 
 #videoCarousel .carousel-caption {
