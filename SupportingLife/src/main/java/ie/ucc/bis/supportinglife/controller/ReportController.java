@@ -2,9 +2,9 @@ package ie.ucc.bis.supportinglife.controller;
 
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.controller.interfaces.ReportControllerInf;
-import ie.ucc.bis.supportinglife.report.form.CcmDemographicForm;
-import ie.ucc.bis.supportinglife.report.form.CcmSymptomsClassificationsForm;
-import ie.ucc.bis.supportinglife.report.form.CcmTreatmentForm;
+import ie.ucc.bis.supportinglife.form.CcmDemographicForm;
+import ie.ucc.bis.supportinglife.form.CcmSymptomsClassificationsForm;
+import ie.ucc.bis.supportinglife.form.CcmTreatmentForm;
 import ie.ucc.bis.supportinglife.service.SupportingLifeService;
 import ie.ucc.bis.supportinglife.service.SupportingLifeServiceInf;
 import ie.ucc.bis.supportinglife.service.helper.SupportingLifeRefDataHelperInf;

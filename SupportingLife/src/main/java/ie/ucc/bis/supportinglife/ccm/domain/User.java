@@ -45,14 +45,14 @@ public class User implements Serializable {
 	@Column(name="imci_user", columnDefinition = "TINYINT(1)")
 	private boolean imciUser;
 	
+	@Column(name="admin_user", columnDefinition = "TINYINT(1)")
+	private boolean adminUser;
+	
 	@Column(name="first_name")
 	private String firstName;
 	
 	@Column(name="surname")
 	private String surname;
-	
-	@Column(name="role")
-	private String role;	
 	
 	@Column(name="created_dt")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -77,27 +77,12 @@ public class User implements Serializable {
 
 	/**
 	 * Constructor
-	 * 
-	 * @param password
-	 * @param ccmUser
-	 * @param imciUser
-	 * @param firstName
-	 * @param surname
-	 * @param role
-	 * @param createdDate
-	 * @param updatedDate
 	 */
-	public User(String password, boolean ccmUser, boolean imciUser, String firstName,
-				String surname, String role, Date createdDate, Date updatedDate, Date registeredDate) {
+	public User(String userId, String password, String firstName, String surname) {
+		setUserId(userId);
 		setPassword(password);
-		setCcmUser(ccmUser);
-		setImciUser(imciUser);
 		setFirstName(firstName);
 		setSurname(surname);
-		setRole(role);
-		setCreatedDate(createdDate);
-		setUpdatedDate(updatedDate);
-		setRegisteredDate(registeredDate);
 	}
 
 	public String getUserId() {
@@ -132,6 +117,14 @@ public class User implements Serializable {
 		this.imciUser = imciUser;
 	}
 
+	public boolean isAdminUser() {
+		return adminUser;
+	}
+
+	public void setAdminUser(boolean adminUser) {
+		this.adminUser = adminUser;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -146,14 +139,6 @@ public class User implements Serializable {
 
 	public void setSurname(String surname) {
 		this.surname = surname;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
 	}
 
 	public Date getCreatedDate() {

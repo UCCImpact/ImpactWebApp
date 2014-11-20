@@ -1,8 +1,8 @@
 package ie.ucc.bis.supportinglife.controller.interfaces;
 
-import ie.ucc.bis.supportinglife.report.form.CcmDemographicForm;
-import ie.ucc.bis.supportinglife.report.form.CcmSymptomsClassificationsForm;
-import ie.ucc.bis.supportinglife.report.form.CcmTreatmentForm;
+import ie.ucc.bis.supportinglife.form.CcmDemographicForm;
+import ie.ucc.bis.supportinglife.form.CcmSymptomsClassificationsForm;
+import ie.ucc.bis.supportinglife.form.CcmTreatmentForm;
 
 import java.util.List;
 import java.util.Map;

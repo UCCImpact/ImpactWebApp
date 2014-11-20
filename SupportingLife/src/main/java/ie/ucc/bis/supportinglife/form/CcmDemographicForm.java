@@ -1,4 +1,4 @@
-package ie.ucc.bis.supportinglife.report.form;
+package ie.ucc.bis.supportinglife.form;
 
 
 import java.util.Date;

@@ -1,4 +1,4 @@
-package ie.ucc.bis.supportinglife.report.form;
+package ie.ucc.bis.supportinglife.form;
 
 
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;

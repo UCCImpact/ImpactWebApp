@@ -27,6 +27,7 @@ import ie.ucc.bis.supportinglife.communication.PersonContactComms;
 import ie.ucc.bis.supportinglife.communication.SurveillanceRequestComms;
 import ie.ucc.bis.supportinglife.communication.TreatmentRecommendation;
 import ie.ucc.bis.supportinglife.communication.UserAuthenticationComms;
+import ie.ucc.bis.supportinglife.form.UserCreationForm;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 import ie.ucc.bis.supportinglife.surveillance.SurveillanceRecord;
@@ -66,6 +67,12 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 			userDao.registerUser(getUserByUserId(userDetails.getHsaUserId()));
 		}
 		return authenticatedUser;
+	}
+	
+	@Override
+	public void createUser(UserCreationForm userDetails) {
+		UserDao userDao = (UserDao) getDaoBeans().get("UserDao");
+		userDao.addUser(userDetails);
 	}
 	
 	/*******************************************************************************/

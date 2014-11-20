@@ -22,7 +22,6 @@ CREATE TABLE IF NOT EXISTS sl_user (
     								admin_user		TINYINT(1),
     								first_name 		VARCHAR(50),
     								surname 		VARCHAR(50),
-    								role 			VARCHAR(10),
     								created_dt 		TIMESTAMP,
     								updated_dt 		TIMESTAMP,
     								registered_dt 	TIMESTAMP,

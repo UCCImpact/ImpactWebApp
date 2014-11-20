@@ -1,0 +1,18 @@
+<%-- sl_create_user_form_header.jspf --%>
+<%-- Header for User Creation Form --%>
+<%-- author: Timothy O Sullivan --%>
+<%-- Last Updated: 20/11/2014. --%>
+	 
+	<title>User Creation Form</title>
+	 
+	<%--------------------------------------------- CSS Links -----------------------------------------%>
+	<%-- CSS for datepicker --%>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/datepicker.css"/>/>
+	
+	<%--  CSS JQuery UI --%>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-theme.css"/>/>
+
+	<%-- Custom style for the ccm demographic report --%>
+ 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_create_user_form.css"/>/>
+     
+</head>

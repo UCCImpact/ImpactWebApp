@@ -2,6 +2,7 @@ package ie.ucc.bis.supportinglife.ccm.dao;
 
 import ie.ucc.bis.supportinglife.ccm.domain.User;
 import ie.ucc.bis.supportinglife.ccm.domain.User_;
+import ie.ucc.bis.supportinglife.form.UserCreationForm;
 import ie.ucc.bis.supportinglife.utilities.DateUtilities;
 
 import java.util.Date;
@@ -50,6 +51,18 @@ public class UserDaoImpl implements UserDao {
 	public void registerUser(User user) {
 		Date currentDate = DateUtilities.getTodaysDate(DateUtilities.DATE_TIME_CUSTOM_FORMAT);
 		user.setRegisteredDate(currentDate);
+		entityManager.persist(user);
+		// save to DB
+		entityManager.flush();
+		entityManager.clear();
+	}
+
+	@Override
+	public void addUser(UserCreationForm userDetails) {
+		
+		User user = new User(userDetails.getUserId(), userDetails.getPassword(), userDetails.getFirstName(),
+							 userDetails.getSurname());
+		
 		entityManager.persist(user);
 		// save to DB
 		entityManager.flush();

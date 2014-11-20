@@ -31,7 +31,7 @@
 
 							<sec:authorize access="hasRole('ROLE_ADMIN')">
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Reporting<b class="caret"></b></a>				<!-- REPORTING -->
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Reporting<b class="caret"></b></a>			<!-- REPORTING -->
 									<ul class="dropdown-menu">
 										<li class="dropdown-header">Custom Reports</li>
 										<li><a href="${pageContext.request.contextPath}/reports/ccm_custom_report_form">CCM Report</a></li>
@@ -51,24 +51,28 @@
 							</sec:authorize>
 
 							<sec:authorize access="hasRole('ROLE_ADMIN')">
-								<li><a href="${pageContext.request.contextPath}/surveillance">Surveillance</a></li>								<!-- SURVEILLANCE -->
+								<li><a href="${pageContext.request.contextPath}/surveillance">Surveillance</a></li>							<!-- SURVEILLANCE -->
 							</sec:authorize>
 							
 							<li class="disabled"><a data-toggle="tab" href="#contact" class="unimplemented-feature">Training</a></li>		<!-- TRAINING -->
 							
-							<sec:authorize access="hasRole('ROLE_ADMIN')">
-								<li class="dropdown">																							<!-- ADMIN -->
-									<a href="#" class="dropdown-toggle"	data-toggle="dropdown">Admin<b class="caret"></b></a>
-									<ul class="dropdown-menu">
+							<li class="dropdown">																							<!-- ADMIN -->
+								<a href="#" class="dropdown-toggle"	data-toggle="dropdown">Admin<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li class="dropdown-header">User Account</li>
+										<sec:authorize access="!hasRole('ROLE_ADMIN')">
+											<li><a href="${pageContext.request.contextPath}/login">Sign In</a></li>
+										</sec:authorize>
+										<sec:authorize access="hasRole('ROLE_ADMIN')">
+											<li><a href="${pageContext.request.contextPath}/j_spring_security_logout">Logout</a></li>
+										</sec:authorize>
+									<sec:authorize access="hasRole('ROLE_ADMIN')">
 										<li class="dropdown-header">User Management</li>
-											<li class="disabled"><a href="#" class="unimplemented-feature">Register User</a></li>
-											<li class="disabled"><a href="#" class="unimplemented-feature">Modify User</a></li>
+											<li><a href="${pageContext.request.contextPath}/user/create_user_form" >Create User</a></li>
 										<li class="divider"></li>
-										<li class="dropdown-header">Account Settings</li>
-											<li class="disabled"><a href="#" class="unimplemented-feature">View Account</a></li>
-									</ul>
-								</li> <!-- END: ADMIN -->
-							</sec:authorize>
+									</sec:authorize>
+								</ul>			
+							</li><!-- END: ADMIN -->
 							
 							<li class="dropdown">																							<!-- ABOUT -->
 								<a href="#" class="dropdown-toggle"	data-toggle="dropdown">About<b class="caret"></b></a>
@@ -76,20 +80,7 @@
 									<li class="dropdown-header">Learn More</li>
 										<li><a href="${pageContext.request.contextPath}/welcome/infographic">Infographic</a></li>
 								</ul>			
-							</li><!-- END: ABOUT -->
-							
-							<li class="dropdown">																							<!-- ABOUT -->
-								<a href="#" class="dropdown-toggle"	data-toggle="dropdown">Admin<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li class="dropdown-header">User</li>
-										<sec:authorize access="!hasRole('ROLE_ADMIN')">
-											<li><a href="${pageContext.request.contextPath}/login">Sign In</a></li>
-										</sec:authorize>
-										<sec:authorize access="hasRole('ROLE_ADMIN')">
-											<li><a href="${pageContext.request.contextPath}/j_spring_security_logout">Logout</a></li>
-										</sec:authorize>
-								</ul>			
-							</li><!-- END: ABOUT -->
+							</li><!-- END: ABOUT -->						
 						</ul>
 					</div>
 				</div>

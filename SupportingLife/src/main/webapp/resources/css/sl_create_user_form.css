@@ -1,0 +1,70 @@
+/* **************************************************************************
+** Filename: sl_create_user_form.css
+** 
+** Styling for User Creation Form
+**
+** Author: Timothy O' Sullivan
+**
+** Last Updated: 20/11/2014.
+** *************************************************************************/
+
+/* -------------------------------------------------- */
+/* container for entire user creation form	 		  */
+/* -------------------------------------------------- */
+#user-creation-container {
+	margin-top: 50px; 
+	text-align: center; /* Centre-align all components, unless overridden individually */
+}
+
+#user-creation-container h1 {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  padding-bottom: 15px;
+}
+
+#user-welcome h1 {
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 0px;
+}
+
+#user-identifier {
+	font-weight: bold;
+	color: #077204;
+}
+
+/* -------------------------------------------------- */
+/* Canvas to maintain visual consistency from 		  */
+/* carousel main screen to reporting screens		  */
+/* -------------------------------------------------- */
+#sl-banner {
+	position: relative;
+	border-radius: 4px; /* round corner of rectangle */
+	width: 100%;
+	min-height: 20px;
+	background: #077204;
+}
+
+/* -------------------------------------------------- */
+/* RESPONSIVE CSS */
+/* -------------------------------------------------- */
+
+@media (max-width: 1200px) {
+	#user-creation-container {
+		margin-top: 50px;
+		text-align: center;
+	}
+}
+
+/* this is the width point at which the navbar 	*/
+/* collapses to the mobile look					*/
+@media (max-width: 768px) {
+	#user-creation-container {
+		margin-top: 68px; 
+		text-align: center; /* Centre-align all components, unless overridden individually */
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
