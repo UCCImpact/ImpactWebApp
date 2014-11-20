@@ -24,6 +24,17 @@
   padding-bottom: 15px;
 }
 
+#user-welcome h1 {
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 0px;
+}
+
+#user-identifier {
+	font-weight: bold;
+	color: #077204;
+}
+
 /* -------------------------------------------------- */
 /* Canvas to maintain visual consistency from 		  */
 /* carousel main screen to reporting screens		  */

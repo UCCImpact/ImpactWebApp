@@ -22,8 +22,8 @@
 	<import resource="config/SupportingLifeViewResolvers.xml" />
 	<import resource="config/SupportingLifeDaoBeans.xml" />
  	<import resource="config/SupportingLifeServices.xml" />
- 	<import resource="config/SupportingLifeSecurity.xml" />
  	<import resource="config/SupportingLifePersistence.xml" />
+ 	<import resource="config/SupportingLifeSecurity.xml" />
  	<import resource="config/SupportingLifeTxManager.xml" />
  	<import resource="config/SupportingLifeTeamMemberReferenceData.xml" />
  	<import resource="config/SupportingLifeCommonReferenceData.xml" />

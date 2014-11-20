@@ -16,11 +16,18 @@
 
 	<!-- coloured banner to maintain visual consistency from carousel -->
 	<!-- screen to reporting screens -->
-     <div class="row-fluid">
-       <div class="span12 item">
-         <div id="sl-report-banner" class="box"></div>
-       </div>
-      </div>
+	<div class="row-fluid">
+		<div class="span12 item">
+			<div id="sl-report-banner" class="box"></div>
+		</div>
+	</div>
+
+	<div id="user-welcome" class="row">
+		<div class="col-lg-9"></div>
+		<div class="col-lg-3">
+			<h1>Welcome User:&nbsp;&nbsp;<span id="user-identifier"><sec:authentication property="principal.username"/></span></h1>
+		</div>
+	</div>
 
 	<h1>CCM Report</h1>
 

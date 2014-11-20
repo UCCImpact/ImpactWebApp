@@ -23,12 +23,19 @@
 		<logout logout-success-url="/welcome"/>
 	</http>
 
-	<authentication-manager>
-		<authentication-provider>
-			<user-service>
-				<user name="tosulliv" password="123456" authorities="ROLE_ADMIN" />
-			</user-service>
-		</authentication-provider>
+	<authentication-manager alias="authenticationManager">
+	    <authentication-provider>
+	        <jdbc-user-service data-source-ref="supportingLifeDataSource" 
+	        
+				users-by-username-query="SELECT user_id AS username, password, CASE admin_user WHEN 1 THEN 'true' ELSE 'false' END 'admin_user'
+											FROM sl_user
+											WHERE user_id=?;"
+	        
+				authorities-by-username-query="SELECT user_id AS username, CASE admin_user WHEN 1 THEN 'ROLE_ADMIN' ELSE '' END 'admin_user'
+												FROM sl_user
+												WHERE user_id=?;"
+			/>
+	    </authentication-provider>
 	</authentication-manager>
 	<!-- =================================================================================== -->
 	<!-- **** END OF SUPPORTING LIFE SECURITY											**** -->

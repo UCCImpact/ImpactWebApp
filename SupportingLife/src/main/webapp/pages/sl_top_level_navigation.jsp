@@ -86,7 +86,7 @@
 											<li><a href="${pageContext.request.contextPath}/login">Sign In</a></li>
 										</sec:authorize>
 										<sec:authorize access="hasRole('ROLE_ADMIN')">
-											<li><a href="j_spring_security_logout">Logout</a></li>
+											<li><a href="${pageContext.request.contextPath}/j_spring_security_logout">Logout</a></li>
 										</sec:authorize>
 								</ul>			
 							</li><!-- END: ABOUT -->

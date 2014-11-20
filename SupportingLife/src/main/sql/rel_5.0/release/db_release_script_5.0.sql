@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS sl_user (
     								password 		VARCHAR(250) COLLATE latin1_general_cs,
     								ccm_user 		TINYINT(1),
     								imci_user 		TINYINT(1),
+    								admin_user		TINYINT(1),
     								first_name 		VARCHAR(50),
     								surname 		VARCHAR(50),
     								role 			VARCHAR(10),
