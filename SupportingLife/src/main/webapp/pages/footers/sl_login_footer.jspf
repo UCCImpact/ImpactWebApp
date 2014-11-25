@@ -21,6 +21,9 @@
 	<%--  jQuery Themeroller theme - used for customising look of datatables --%>
 	<script type="text/javascript" src=<c:url value="/js/library/jquery-ui-1.10.4.custom.min.js"/>></script>
 
+	<%-- pretty-checkable.js - used for styling and handling of checkboxes --%>
+	<script type="text/javascript" src=<c:url value="/js/library/pretty-checkable.js"/>></script>
+
 	<%--  SL Login Form JS Functionality --%>
 	<script type="text/javascript" src=<c:url value="/js/sl_login.js"/>></script>
 

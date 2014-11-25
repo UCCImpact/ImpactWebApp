@@ -20,6 +20,8 @@
 		<form-login login-processing-url="/static/j_spring_security_check"
 					login-page="/login"
 					authentication-failure-url="/login?login_error=t"/>
+				
+		<remember-me key="slKey" token-validity-seconds="2419200"/> <!-- token valid for 4 weeks -->
 							
 		<logout logout-success-url="/welcome"/>
 	</http>

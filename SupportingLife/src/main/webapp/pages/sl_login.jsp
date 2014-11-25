@@ -51,8 +51,8 @@
 				</div>
 			</div>
 			<div class="col-lg-12">
-				<input id="remember_me" type="checkbox" name="_spring_security_remember_me">
-				<label for="remember_me" class="inline">Remember me</label>
+				<input id="remember_me" type="checkbox" class="prettyCheckable" name="_spring_security_remember_me">
+				<label for="remember_me" class="inline">Remember Me</label>
 			</div>
 		</div>
 		<div class="form-actions">

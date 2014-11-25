@@ -6,8 +6,6 @@
 	<title>User Creation Form</title>
 	 
 	<%--------------------------------------------- CSS Links -----------------------------------------%>
-	<%-- CSS for datepicker --%>
-	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/datepicker.css"/>/>
 	
 	<%--  CSS JQuery UI --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-theme.css"/>/>
