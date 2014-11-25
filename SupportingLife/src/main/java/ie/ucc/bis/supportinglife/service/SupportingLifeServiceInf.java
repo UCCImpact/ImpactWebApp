@@ -32,7 +32,8 @@ public interface SupportingLifeServiceInf {
 	public User getUserByUserId(String userId);
 	public Boolean registerUser(UserAuthenticationComms userDetails);
 	public void createUser(UserCreationForm userDetails);
-
+	public Boolean checkUserIdExistence(String userId);
+	
 	/*******************************************************************************/
 	/***********************************Patients************************************/
 	/*******************************************************************************/

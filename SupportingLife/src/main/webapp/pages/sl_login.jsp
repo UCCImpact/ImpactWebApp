@@ -23,7 +23,13 @@
 	</div>
 
 	<h1>Supporting LIFE</h1>
-		
+
+	<c:if test="${not empty param.login_error}">
+		<div class="error">
+			<span id="login-error-message">Your login attempt was not successful.</span>
+		</div>
+	</c:if>
+
 	<!-- SL Login Form -->
 	<spring:url var="authUrl" value="/static/j_spring_security_check"/>
 	<form id="login-form" class="signin form-horizontal" action="${authUrl}" method="post">
@@ -32,7 +38,7 @@
 				<div class="control-group">
 					<label for="username" class="control-label">User Name </label>
 					<div class="controls">
-						<input id="username" type="text" name="j_username" placeholder="Enter SL Username"/>
+						<span><input id="username" type="text" name="j_username" placeholder="Enter SL Username"/></span>
 					</div>
 				</div>
 			</div>
@@ -40,7 +46,7 @@
 				<div class="control-group">
 					<label for="password" class="control-label">Password </label>
 					<div class="controls">
-						<input id="password" type="password" name="j_password" placeholder="Enter Password"/>
+						<span><input id="password" type="password" name="j_password" placeholder="Enter Password"/></span>
 					</div>
 				</div>
 			</div>

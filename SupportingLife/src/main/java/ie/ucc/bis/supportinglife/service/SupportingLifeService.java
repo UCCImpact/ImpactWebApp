@@ -75,6 +75,17 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		userDao.addUser(userDetails);
 	}
 	
+	@Override
+	public Boolean checkUserIdExistence(String userId) {
+		UserDao userDao = (UserDao) getDaoBeans().get("UserDao");
+		if (userDao.getUserByUserId(userId) != null) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	/*******************************************************************************/
 	/***********************************Patients************************************/
 	/*******************************************************************************/

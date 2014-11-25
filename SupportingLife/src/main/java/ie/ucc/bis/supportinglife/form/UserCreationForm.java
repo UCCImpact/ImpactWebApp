@@ -13,6 +13,9 @@ public class UserCreationForm  {
 	private String password;
 	private String firstName;
 	private String surname;
+	private Boolean ccmRole;
+	private Boolean imciRole;
+	private Boolean adminRole;
 
 	public String getUserId() {
 		return userId;
@@ -46,13 +49,39 @@ public class UserCreationForm  {
 		this.surname = surname;
 	}
 
+	public Boolean getCcmRole() {
+		return ccmRole;
+	}
+
+	public void setCcmRole(Boolean ccmRole) {
+		this.ccmRole = ccmRole;
+	}
+
+	public Boolean getImciRole() {
+		return imciRole;
+	}
+
+	public void setImciRole(Boolean imciRole) {
+		this.imciRole = imciRole;
+	}
+
+	public Boolean getAdminRole() {
+		return adminRole;
+	}
+
+	public void setAdminRole(Boolean adminRole) {
+		this.adminRole = adminRole;
+	}
+
 	public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         
         stringBuilder.append("\n" + "userID: " + getUserId() + "\n");
         stringBuilder.append("firstName: " + getFirstName()  + "\n");
         stringBuilder.append("surname: " + getSurname() + "\n");
-
+        stringBuilder.append("ccm role: " + getCcmRole() + "\n");
+        stringBuilder.append("imci role: " + getImciRole() + "\n");
+        stringBuilder.append("admin role: " + getAdminRole() + "\n");
         
         return stringBuilder.toString();
 	}

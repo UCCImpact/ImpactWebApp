@@ -61,7 +61,8 @@ public class UserDaoImpl implements UserDao {
 	public void addUser(UserCreationForm userDetails) {
 		
 		User user = new User(userDetails.getUserId(), userDetails.getPassword(), userDetails.getFirstName(),
-							 userDetails.getSurname());
+							 userDetails.getSurname(), userDetails.getCcmRole(), userDetails.getImciRole(),
+							 userDetails.getAdminRole());
 		
 		entityManager.persist(user);
 		// save to DB

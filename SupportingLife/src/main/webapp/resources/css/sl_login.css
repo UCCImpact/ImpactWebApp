@@ -45,6 +45,19 @@
 	text-align: center;
 }
 
+#username {
+	margin-bottom: 20px;
+}
+
+#password {
+	margin-bottom: 20px;
+}
+
+#remember_me {
+	margin-bottom: 20px;
+}
+
+
 /* -------------------------------------------------- */
 /* Customise the colour of the submit button		  */
 /* to match SL colour scheme						  */

@@ -72,17 +72,23 @@ public class User implements Serializable {
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private Set<CcmPatientVisit> ccmPatientVisitList;
 
-
+	/**
+	 * Constructor
+	 */
 	public User() {}
 
 	/**
 	 * Constructor
 	 */
-	public User(String userId, String password, String firstName, String surname) {
+	public User(String userId, String password, String firstName, String surname, Boolean ccmRole,
+				Boolean imciRole, Boolean adminRole) {
 		setUserId(userId);
 		setPassword(password);
 		setFirstName(firstName);
 		setSurname(surname);
+		setCcmUser(ccmRole);
+		setImciUser(imciRole);
+		setAdminUser(adminRole);
 	}
 
 	public String getUserId() {

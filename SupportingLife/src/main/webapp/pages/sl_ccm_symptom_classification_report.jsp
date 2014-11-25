@@ -25,7 +25,9 @@
 	<div id="user-welcome" class="row">
 		<div class="col-lg-9"></div>
 		<div class="col-lg-3">
-			<h1>Welcome User:&nbsp;&nbsp;<span id="user-identifier"><sec:authentication property="principal.username"/></span></h1>
+			<sec:authorize access="isAuthenticated()">
+				<h1>Welcome User:&nbsp;&nbsp;<span id="user-identifier"><sec:authentication property="principal.username"/></span></h1>
+			</sec:authorize>
 		</div>
 	</div>
 

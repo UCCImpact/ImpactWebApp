@@ -10,7 +10,7 @@
 
 
 $(document).ready(function() {
-	
+		
 	$('#username').focus();
 	
 	/* when reset button is clicked, perform the following: */
@@ -26,6 +26,9 @@ $(document).ready(function() {
 		$('.control-label').each(function(event) {
 			$(this).removeClass('error').addClass('valid');	
 		});
+		
+		/* remove error message from any previous login attempt */
+		$('#login-error-message').empty();		
 	});
 
 });
