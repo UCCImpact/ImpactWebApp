@@ -151,7 +151,7 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 					patientAssessment.getBirthDate(), patientAssessment.getMonthsAge(), patientAssessment.getGender(),
 					patientAssessment.getCaregiverName(), patientAssessment.getRelationship(),
 					patientAssessment.getPhysicalAddress(),
-					patientAssessment.getVillageTa(), currentDate, currentDate);
+					patientAssessment.getVillage(),patientAssessment.getTa(), currentDate, currentDate);
 			
 			// need to persist this new ccmPatient instance to obtain a valid 'patient_id'
 			CcmPatientDao patientDao = (CcmPatientDao) getDaoBeans().get("CcmPatientDao");

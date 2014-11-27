@@ -68,8 +68,11 @@ public class CcmPatient implements Serializable {
 	@Column(name="physical_address")
 	private String physicalAddress;
 	
-	@Column(name="village_ta")
-	private String villageTa;
+	@Column(name="village")
+	private String village;
+	
+	@Column(name="ta")
+	private String ta;
 	
 	@Column(name="created_dt")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -131,7 +134,7 @@ public class CcmPatient implements Serializable {
 	public CcmPatient(String nationalId, String nationalHealthId, String childFirstName, 
 					String childSurname, Date birthDate, Integer ageMonths, String gender,
 					String caregiverName, String relationship, 
-					String physicalAddress, String villageTa,
+					String physicalAddress, String village, String ta,
 					Date createdDate, Date updatedDate) {
 
 		setNationalId(nationalId);
@@ -144,7 +147,8 @@ public class CcmPatient implements Serializable {
 		setCaregiverName(caregiverName);
 		setRelationship(relationship);
 		setPhysicalAddress(physicalAddress);
-		setVillageTa(villageTa);
+		setVillage(village);
+		setTa(ta);
 		setCreatedDate(createdDate);
 		setUpdatedDate(updatedDate);
 		
@@ -240,12 +244,20 @@ public class CcmPatient implements Serializable {
 		this.physicalAddress = physicalAddress;
 	}
 
-	public String getVillageTa() {
-		return villageTa;
+	public String getVillage() {
+		return village;
 	}
 
-	public void setVillageTa(String villageTa) {
-		this.villageTa = villageTa;
+	public void setVillage(String village) {
+		this.village = village;
+	}
+
+	public String getTa() {
+		return ta;
+	}
+
+	public void setTa(String ta) {
+		this.ta = ta;
 	}
 
 	public Date getCreatedDate() {

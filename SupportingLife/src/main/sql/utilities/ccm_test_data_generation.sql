@@ -171,37 +171,37 @@ INSERT INTO sl_user(user_id, password, ccm_user, imci_user, admin_user, first_na
 
 INSERT INTO sl_ccm_patient(patient_id, national_id, national_health_id, 
 							child_first_name, child_surname, date_of_birth, age_months, gender, caregiver_name,
-							relationship, physical_address, village_ta, created_dt, updated_dt) 
+							relationship, physical_address, village, ta, created_dt, updated_dt) 
 							VALUES (NULL, "12A", "15FFFF", "JOHN", "SMITH", STR_TO_DATE('18,05,2009','%d,%m,%Y'), 
-									46, "MALE", "CAREGIVER 1", "MOTHER", "ADDRESS 1", "VILLAGE 1",
+									46, "MALE", "CAREGIVER 1", "MOTHER", "ADDRESS 1", "VILLAGE 1", "TA 1",
 									STR_TO_DATE('13,01,2014','%d,%m,%Y'), STR_TO_DATE('13,01,2014','%d,%m,%Y'));
 										   
 INSERT INTO sl_ccm_patient(patient_id, national_id, national_health_id,
 							child_first_name, child_surname, date_of_birth, age_months, gender, caregiver_name,
-							relationship, physical_address, village_ta, created_dt, updated_dt) 
+							relationship, physical_address, village, ta, created_dt, updated_dt) 
 							VALUES (NULL, "16D", "65RFHR", "JULIE", "SMITH", STR_TO_DATE('20,08,2010','%d,%m,%Y'), 
-									34, "FEMALE", "CAREGIVER 2", "FATHER", "ADDRESS 2", "VILLAGE 2",
+									34, "FEMALE", "CAREGIVER 2", "FATHER", "ADDRESS 2", "VILLAGE 2", "TA 2",
 									 STR_TO_DATE('14,01,2014','%d,%m,%Y'), STR_TO_DATE('14,01,2014','%d,%m,%Y'));
 
 INSERT INTO sl_ccm_patient(patient_id, national_id, national_health_id,
 							child_first_name, child_surname, date_of_birth, age_months, gender, caregiver_name,
-							relationship, physical_address, village_ta, created_dt, updated_dt) 
+							relationship, physical_address, village, ta, created_dt, updated_dt) 
 							VALUES (NULL, "134D", "65RDEF", "SAM", "SMITH", STR_TO_DATE('21,03,2011','%d,%m,%Y'), 
-									28, "MALE", "CAREGIVER 3", "FATHER", "ADDRESS 3", "VILLAGE 3",
+									28, "MALE", "CAREGIVER 3", "FATHER", "ADDRESS 3", "VILLAGE 3", "TA 3",
 									 STR_TO_DATE('14,02,2013','%d,%m,%Y'), STR_TO_DATE('14,02,2013','%d,%m,%Y'));
 
 INSERT INTO sl_ccm_patient(patient_id, national_id, national_health_id,
 							child_first_name, child_surname, date_of_birth, age_months, gender, caregiver_name,
-							relationship, physical_address, village_ta, created_dt, updated_dt) 
+							relationship, physical_address, village, ta, created_dt, updated_dt) 
 							VALUES (NULL, "123M", "99RDEF", "MATT", "DUCHA", STR_TO_DATE('24,04,2011','%d,%m,%Y'), 
-									27, "MALE", "CAREGIVER 4", "FATHER", "ADDRESS 4", "VILLAGE 4",
+									27, "MALE", "CAREGIVER 4", "FATHER", "ADDRESS 4", "VILLAGE 4", "TA 4",
 									 STR_TO_DATE('14,04,2013','%d,%m,%Y'), STR_TO_DATE('14,04,2013','%d,%m,%Y'));
 
 INSERT INTO sl_ccm_patient(patient_id, national_id, national_health_id,
 							child_first_name, child_surname, date_of_birth, age_months, gender, caregiver_name,
-							relationship, physical_address, village_ta, created_dt, updated_dt) 
+							relationship, physical_address, village, ta, created_dt, updated_dt) 
 							VALUES (NULL, "134W", "90RXXF", "JUNE", "DUCHA", STR_TO_DATE('24,04,2011','%d,%m,%Y'), 
-									27, "MALE", "CAREGIVER 5", "FATHER", "ADDRESS 5", "VILLAGE 5",
+									27, "MALE", "CAREGIVER 5", "FATHER", "ADDRESS 5", "VILLAGE 5", "TA 5",
 									 STR_TO_DATE('15,05,2013','%d,%m,%Y'), STR_TO_DATE('15,05,2013','%d,%m,%Y'));					 
 				
 									 
