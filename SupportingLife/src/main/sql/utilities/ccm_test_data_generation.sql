@@ -21,7 +21,7 @@ DELETE FROM sl_user;
 
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, admin_user, first_name, surname,
 					created_dt, updated_dt) 
-					VALUES ("HSAUSER1", "password", 1, 0, 0, "SELEMI", "FUIAMA", 
+					VALUES ("HSAUSER1", "password", 1, 0, 1, "SELEMI", "FUIAMA", 
 							STR_TO_DATE('14,01,2014','%d,%m,%Y'), STR_TO_DATE('14,01,2014','%d,%m,%Y'));
 					
 INSERT INTO sl_user(user_id, password, ccm_user, imci_user, admin_user, first_name, surname,
@@ -279,13 +279,13 @@ INSERT INTO sl_ccm_patient_classification(visit_id, patient_id, classification_i
 -- ADD CCM TREATMENTS TEST DATA
 -----------------------------------------------------------------------------------------------------------------										 						 
 --*** patient 1 treatments
-INSERT INTO sl_ccm_treatment(treatment_key, description)
-								VALUES ("CCM_DANGER_SIGN_REFER_URGENTLY_TREATMENT", "REFER URGENTLY to health facility"),
-									   ("CCM_DANGER_SIGN_EXPLAIN_REFERRAL_TREATMENT", "Explain why child needs to go to health facility"),
-									   ("CCM_DANGER_SIGN_FLUIDS_AND_FEEDING_TREATMENT", "Advise to give fluids and continue feeding"),
-									   ("CCM_DANGER_SIGN_KEEP_CHILD_WARM_TREATMENT", "Advise to keep child warm, if 'child is NOT hot with fever'"),
-									   ("CCM_DANGER_SIGN_REFERRAL_NOTE_TREATMENT", "Write a referral note"),	 
-									   ("CCM_DANGER_SIGN_TRANSPORTATION_TREATMENT", "Arrange transportation and help solve other difficulties in referral");	 
+INSERT INTO sl_ccm_treatment(treatment_key, description, drug_administered, treatment_administered)
+								VALUES ("CCM_DANGER_SIGN_REFER_URGENTLY_TREATMENT", "REFER URGENTLY to health facility", 0, 1),
+									   ("CCM_DANGER_SIGN_EXPLAIN_REFERRAL_TREATMENT", "Explain why child needs to go to health facility", 0, 1),
+									   ("CCM_DANGER_SIGN_FLUIDS_AND_FEEDING_TREATMENT", "Advise to give fluids and continue feeding", 0, 1),
+									   ("CCM_DANGER_SIGN_KEEP_CHILD_WARM_TREATMENT", "Advise to keep child warm, if 'child is NOT hot with fever'", 0, 1),
+									   ("CCM_DANGER_SIGN_REFERRAL_NOTE_TREATMENT", "Write a referral note", 0, 1),	 
+									   ("CCM_DANGER_SIGN_TRANSPORTATION_TREATMENT", "Arrange transportation and help solve other difficulties in referral", 0, 1);	 
 											 
 											 
 INSERT INTO sl_ccm_patient_treatment(visit_id, patient_id, treatment_id) 
@@ -297,13 +297,13 @@ INSERT INTO sl_ccm_patient_treatment(visit_id, patient_id, treatment_id)
 												   (1, 1, 6);
 												   
 --*** patient 2 treatments
-INSERT INTO sl_ccm_treatment(treatment_key, description)
-								VALUES ("CCM_DANGER_SIGN_REFER_URGENTLY_TREATMENT", "REFER URGENTLY to health facility"),
-									   ("CCM_DANGER_SIGN_EXPLAIN_REFERRAL_TREATMENT", "Explain why child needs to go to health facility"),
-									   ("CCM_DANGER_SIGN_FLUIDS_AND_FEEDING_TREATMENT", "Advise to give fluids and continue feeding"),
-									   ("CCM_DANGER_SIGN_KEEP_CHILD_WARM_TREATMENT", "Advise to keep child warm, if 'child is NOT hot with fever'"),
-									   ("CCM_DANGER_SIGN_REFERRAL_NOTE_TREATMENT", "Write a referral note"),	 
-									   ("CCM_DANGER_SIGN_TRANSPORTATION_TREATMENT", "Arrange transportation and help solve other difficulties in referral");	 
+INSERT INTO sl_ccm_treatment(treatment_key, description, drug_administered, treatment_administered)
+								VALUES ("CCM_DANGER_SIGN_REFER_URGENTLY_TREATMENT", "REFER URGENTLY to health facility", 0, 1),
+									   ("CCM_DANGER_SIGN_EXPLAIN_REFERRAL_TREATMENT", "Explain why child needs to go to health facility", 0, 1),
+									   ("CCM_DANGER_SIGN_FLUIDS_AND_FEEDING_TREATMENT", "Advise to give fluids and continue feeding", 0, 1),
+									   ("CCM_DANGER_SIGN_KEEP_CHILD_WARM_TREATMENT", "Advise to keep child warm, if 'child is NOT hot with fever'", 0, 1),
+									   ("CCM_DANGER_SIGN_REFERRAL_NOTE_TREATMENT", "Write a referral note", 0, 1),	 
+									   ("CCM_DANGER_SIGN_TRANSPORTATION_TREATMENT", "Arrange transportation and help solve other difficulties in referral", 0, 1);	 
 											 
 											 
 INSERT INTO sl_ccm_patient_treatment(visit_id, patient_id, treatment_id) 

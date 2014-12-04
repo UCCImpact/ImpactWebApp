@@ -417,6 +417,23 @@
 								<property name="researchUrl" value="http://www.jeanette-mueller.ch/ " />
 								<property name="imageRef" value="images/team-members/JM.jpg" />
 							</bean>
+							<bean class="ie.ucc.bis.supportinglife.reference.TeamMember">
+								<property name="name" value="Edina Gallos" />
+								<property name="qualifications" value="" />
+								<property name="role" value="Dissemination Manager" />
+								<property name="bio" value="At accelopment, Edina Gallos is responsible for the dissemination of several EU-funded multinational research projects and 
+															is involved in the planning, coordination and execution of the company's own marketing and communication activities. 
+															Edina has over a decade of professional experience in design and communication and an academicic background in 
+															humanities and social sciences. Following her training as a multimedia producer, she worked in various fields of digital arts 
+															including web design and development, later specialising in corporate communications for both printed and electronic media 
+															as well as in e-Learning. " />
+								<property name="photoPresent" value="true" />
+								<property name="linkedInProfilePresent" value="false" />
+								<property name="researchProfilePresent" value="false" />
+								<property name="linkedInUrl" value="" />
+								<property name="researchUrl" value="" />
+								<property name="imageRef" value="images/team-members/EG.jpg" />
+							</bean>
 						</list>
 					</property>
 				</bean>
