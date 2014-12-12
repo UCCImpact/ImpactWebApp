@@ -1,0 +1,20 @@
+<!-- SURVEILLANCE MESSAGE FOOTER -->
+<div>
+	<p id="footer-link">
+		&copy; 2015 <a href="http://www.sl-technology.eu" target="_blank">Supporting LIFE</a>
+	</p>
+
+	<hr id="footer-featurette-divider">
+	
+	<img id="eu-logo-image" src="cid:euFlag" alt="European Union">	
+	<div id="eu-logo-text-container">
+		<p id="eu-logo-text">
+			This project has received funding from the European Union's Seventh Framework 
+			Programme for research, technological development and demonstration under 
+			grant agreement No 305292.
+		</p>
+	</div>	
+</div>
+	
+</body>
+</html>

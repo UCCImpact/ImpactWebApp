@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+
+	<!-- =================================================================================== -->
+	<!-- **** SUPPORTING LIFE MAIL														**** -->
+	<!-- =================================================================================== -->
+
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="email-smtp.eu-west-1.amazonaws.com" />
+		<property name="protocol" value="smtps" />
+		<property name="port" value="465" />
+		<property name="username" value="#{systemProperties['SMTP_USERNAME']}" />
+		<property name="password" value="#{systemProperties['SMTP_PASSWORD']}" />
+		<property name="javaMailProperties">
+			<props>
+				<!-- Use SMTP-AUTH to authenticate to SMTP server -->
+        	    <prop key="mail.smtp.auth">true</prop>
+        	    <prop key="mail.transport.protocol">smtps</prop>
+        	    <prop key="mail.smtp.ssl.enable">true</prop>
+        	    <prop key="mail.debug">true</prop> 
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="resourceLoaderPath" value="/WEB-INF/velocity/"/>
+	</bean>  
+	
+	<bean id="MailHandlerBean" class="ie.ucc.bis.supportinglife.mail.MailHandler">
+		<property name="mailSender" ref="mailSender" />
+		<property name="velocityEngine" ref="velocityEngine"/>
+	</bean>
+	
+	<!-- =================================================================================== -->
+	<!-- **** END OF SUPPORTING LIFE MAIL												**** -->
+	<!-- =================================================================================== -->
+    		
+</beans>

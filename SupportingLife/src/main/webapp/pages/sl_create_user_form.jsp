@@ -40,7 +40,7 @@
 				<div class="control-group input-group">				
 					<div class="controls">
 						<input type="hidden" id="userIdValid" value="">
-						<span><form:label for="user-id" class="control-label" path="userId">User ID: </form:label></span>
+						<span><form:label for="user-id" class="control-label" path="userId">Username: </form:label></span>
 						<span><form:input type="text" path="userId" placeholder="Enter User Id"/></span>
 						<span class="addon"><i id="valid-userid-icon" class="fa fa-thumbs-o-up"></i></span>
 						<span class="addon"><i id="invalid-userid-icon" class="fa fa-times"></i></span>

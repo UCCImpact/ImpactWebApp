@@ -3,6 +3,7 @@ package ie.ucc.bis.supportinglife.ccm.dao;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
+import ie.ucc.bis.supportinglife.surveillance.SurveillancePeriodStats;
 
 import java.util.Date;
 import java.util.List;
@@ -37,6 +38,16 @@ public interface CcmPatientVisitDao extends Dao {
 	 */
 	public List<CcmPatientVisit> getPatientVisits(List<Treatment> selectedTreatments);
 
+	/**
+	 * DAO Handler for capturing number of disease classifications over a certain number of
+	 * time periods i.e.
+	 * 
+	 * - 24 hour period
+	 * - 7 days
+	 * - 30 days
+	 */
+	public SurveillancePeriodStats performDiseaseSurveillancePeriodCheck(List<String> symptoms);
+	
 	/**
 	 * Example method highlighting JPQL for Querying DB	
 	 * 

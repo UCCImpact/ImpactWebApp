@@ -24,6 +24,9 @@
 		<javax.servlet.version>3.0.1</javax.servlet.version>
 		<jquery.ui.version>1.10.2-1</jquery.ui.version>
 		<javax.mail.version>1.4.7</javax.mail.version>
+		<apache.velocity.version>1.7</apache.velocity.version>
+		<velocity.tools.version>2.0</velocity.tools.version>
+		<jfreechart.version>1.0.13</jfreechart.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.resources.sourceEncoding>UTF-8</project.resources.sourceEncoding>
 	</properties>
@@ -208,10 +211,29 @@
 		
 	    <!-- Java Mail API -->
 	    <dependency>
-		    <groupId>javax.mail</groupId>
-		    <artifactId>javax.mail-api</artifactId>
+		    <groupId>com.sun.mail</groupId>
+		    <artifactId>javax.mail</artifactId>
 		    <version>${javax.mail.version}</version>
 	    </dependency>
+		
+		<!-- velocity : email template(s) -->
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>${apache.velocity.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-tools</artifactId>
+			<version>${velocity.tools.version}</version>
+		</dependency>
+
+		<!-- JFree Chart Generation -->
+		<dependency>
+			<groupId>jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>${jfreechart.version}</version>
+		</dependency>
 		
 	</dependencies>
 

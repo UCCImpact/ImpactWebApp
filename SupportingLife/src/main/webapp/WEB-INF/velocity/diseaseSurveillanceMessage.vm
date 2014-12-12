@@ -1,0 +1,26 @@
+<!--  Include Surveillance Message Header -->
+#include("surveillanceMessageHeader.vm")
+
+<body>
+
+	<img id="supporting-life-image" src="cid:slLogo" alt="Supporting LIFE">
+	<br><br>
+
+	<h2 style="color:green">Disease Surveillance - Cholera Monitoring</h2>
+
+	<p>
+		<img id="bar-chart-image" src="cid:barChart" alt="Diarrhoea Symptom Cases">
+	</p>
+
+	<p style="color:green">
+		Number of cases in last 24 hours: ${surveillancePeriodStats.twentyFourHours}<br>
+		Number of cases in last 7 days: ${surveillancePeriodStats.sevenDays}<br>
+		Number of cases in last 30 days: ${surveillancePeriodStats.thirtyDays}
+	</p>
+
+	<p style="font-style: italic">
+		Automated Email Notification
+	</p>
+				
+	<!--  Include Surveillance Message Footer -->
+	#include("surveillanceMessageFooter.vm")

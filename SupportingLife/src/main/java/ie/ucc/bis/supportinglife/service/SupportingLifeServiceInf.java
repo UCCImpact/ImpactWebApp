@@ -15,6 +15,7 @@ import ie.ucc.bis.supportinglife.communication.UserAuthenticationComms;
 import ie.ucc.bis.supportinglife.form.UserCreationForm;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
+import ie.ucc.bis.supportinglife.surveillance.SurveillancePeriodStats;
 import ie.ucc.bis.supportinglife.surveillance.SurveillanceRecord;
 
 import java.util.Date;
@@ -89,6 +90,7 @@ public interface SupportingLifeServiceInf {
 	/*******************************Disease Surveillance****************************/
 	/*******************************************************************************/
 	public List<SurveillanceRecord> getSurveillanceRecords(SurveillanceRequestComms surveillanceRequestComms);
+	public SurveillancePeriodStats performDiseaseSurveillancePeriodCheck(List<String> symptoms);
 	
 	/*******************************************************************************/
 	/*******************************Contacts/Newsletter*****************************/

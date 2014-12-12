@@ -14,7 +14,8 @@
 	<!-- =================================================================================== -->
 
 	<context:annotation-config />
-	<context:component-scan base-package="ie.ucc.bis.supportinglife.controller, ie.ucc.bis.supportinglife.dao, ie.ucc.bis.supportinglife.interceptor" />
+	<context:component-scan base-package="ie.ucc.bis.supportinglife.controller, ie.ucc.bis.supportinglife.dao, 
+						ie.ucc.bis.supportinglife.interceptor, ie.ucc.bis.supportinglife.scheduler" />
 
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven />

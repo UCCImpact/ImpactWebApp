@@ -30,9 +30,13 @@ import ie.ucc.bis.supportinglife.communication.UserAuthenticationComms;
 import ie.ucc.bis.supportinglife.form.UserCreationForm;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
 import ie.ucc.bis.supportinglife.reference.Treatment;
+import ie.ucc.bis.supportinglife.surveillance.SurveillancePeriodStats;
 import ie.ucc.bis.supportinglife.surveillance.SurveillanceRecord;
 import ie.ucc.bis.supportinglife.utilities.DateUtilities;
 
+import java.awt.Color;
+import java.awt.GradientPaint;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -42,12 +46,23 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.springframework.context.ResourceLoaderAware;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
-public class SupportingLifeService implements SupportingLifeServiceInf {
+public class SupportingLifeService implements SupportingLifeServiceInf, ResourceLoaderAware {
 
 	private Map<String, Dao> daoBeans;
+	private ResourceLoader resourceLoader;
 	
 	/*******************************************************************************/
 	/************************************Users**************************************/
@@ -391,7 +406,7 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 
 		for (SurveillanceRecord record : originalRecords) {
 			// need to exclude those records for which a location was not provided. 
-			// this could have occured if the phone user has configured a setting 
+			// this could have occurred if the phone user has configured a setting 
 			// on the phone to turn off location. In this case, a default location
 			// of longitude: 0, and latitude: 0, would have configured for the 
 			// record.
@@ -402,6 +417,59 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 		}
 		return modifiedRecords;
 	}
+	
+	
+	@Override
+	public SurveillancePeriodStats performDiseaseSurveillancePeriodCheck(List<String> symptoms) {
+		CcmPatientVisitDao patientVisitDao = (CcmPatientVisitDao) getDaoBeans().get("CcmPatientVisitDao");
+		SurveillancePeriodStats stats = patientVisitDao.performDiseaseSurveillancePeriodCheck(symptoms);
+		generateSurveillanceBarChart(stats); 
+	     return stats;
+	}
+
+	/**
+	 * Responsible for creating image bar chart of disease surveillance chart which
+	 * will be incorporated into automated email
+	 * 
+	 * @param stats
+	 */
+	private void generateSurveillanceBarChart(SurveillancePeriodStats stats) {
+		DefaultCategoryDataset bardataset = new DefaultCategoryDataset();  
+	     bardataset.setValue(stats.getTwentyFourHours(),"Cases" ,"24 Hours" );
+	     bardataset.setValue(stats.getSevenDays(),"Cases" ,"7 Days" );
+	     bardataset.setValue(stats.getThirtyDays(),"Cases" ,"30 Days" );
+	     
+	     JFreeChart barchart = ChartFactory.createBarChart3D(  
+	         "Diarrhoea Cases",      	// Title  
+	         "Time Period",             // X-axis Label  
+	         "Cases",               	// Y-axis Label  
+	         bardataset,             	// Dataset  
+	         PlotOrientation.VERTICAL,  // Plot orientation  
+	         false,                		// Show legend  
+	         true,                		// Use tooltips  
+	         false                		// Generate URLs  
+	      );
+	     
+	     barchart.getTitle().setPaint(Color.BLACK);   	 			// Set the colour of the title  
+	     barchart.setBackgroundPaint(Color.WHITE);    				// Set the background colour of the chart  
+	     CategoryPlot categoryPlot = barchart.getCategoryPlot();  	// Get the Plot object for a bar graph  
+	     categoryPlot.setBackgroundPaint(Color.WHITE);       		// Set the plot background colour
+	     categoryPlot.setRangeGridlinePaint(Color.DARK_GRAY);		// Set the colour of the plot gridlines 
+	     
+	     GradientPaint gradientPaint = new GradientPaint(0.0F, 0.0F, Color.RED, 0.0F, 0.0F, Color.LIGHT_GRAY);  
+	     BarRenderer barRenderer = (BarRenderer) categoryPlot.getRenderer();   
+	     barRenderer.setSeriesPaint(0, gradientPaint);				// Set the bar colour
+	     barRenderer.setSeriesPaint(1, gradientPaint);				// Set the bar colour
+	     barRenderer.setSeriesPaint(2, gradientPaint);				// Set the bar colour
+
+	     try {
+			ChartUtilities.saveChartAsJPEG((getResource("resources/images/surveillance_bar_chart.jpg").getFile()), barchart, 500, 300);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	
 	/*******************************************************************************/
 	/*******************************Contacts/Newsletter*****************************/
@@ -487,5 +555,13 @@ public class SupportingLifeService implements SupportingLifeServiceInf {
 
 	public void setDaoBeans(Map<String, Dao> daoBeans) {
 		this.daoBeans = daoBeans;
+	}
+
+	public void setResourceLoader(ResourceLoader resourceLoader) {
+		this.resourceLoader = resourceLoader;
+	}
+ 
+	public Resource getResource(String location){
+		return resourceLoader.getResource(location);
 	}
 }

@@ -25,6 +25,8 @@
  	<import resource="config/SupportingLifePersistence.xml" />
  	<import resource="config/SupportingLifeSecurity.xml" />
  	<import resource="config/SupportingLifeTxManager.xml" />
+ 	<import resource="config/SupportingLifeMail.xml" />
+ 	<import resource="config/SupportingLifeScheduler.xml" />
  	<import resource="config/SupportingLifeTeamMemberReferenceData.xml" />
  	<import resource="config/SupportingLifeCommonReferenceData.xml" />
 

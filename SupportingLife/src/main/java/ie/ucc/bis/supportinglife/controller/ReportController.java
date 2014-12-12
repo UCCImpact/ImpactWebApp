@@ -184,7 +184,7 @@ public class ReportController implements ReportControllerInf {
 	@RequestMapping(value="/ccm_demographic_report", method=RequestMethod.POST, headers="Accept=html/text")
 	public String getCcmDemographicReport(@ModelAttribute("ccmDemographicFormBean") CcmDemographicForm ccmDemographicForm, Model model) {
 		final String reportName = "ccm_demographic_report";
-			
+				
 		log.info("GET resultset for report: " + reportName);
 		log.info("CCM Demographic Form: " + ccmDemographicForm.toString());
 
