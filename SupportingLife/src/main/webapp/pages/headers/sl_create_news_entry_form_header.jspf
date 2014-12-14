@@ -1,0 +1,19 @@
+<%-- sl_create_news_entry_form_header.jspf --%>
+<%-- Header for News Entry Creation Form --%>
+<%-- author: Timothy O Sullivan --%>
+<%-- Last Updated: 13/12/2014. --%>
+	 
+	<title>News Entry Creation Form</title>
+	 
+	<%--------------------------------------------- CSS Links -----------------------------------------%>
+	
+	<%--  CSS JQuery UI --%>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-theme.css"/>/>
+	
+	<%--  Custom Checkbox CSS --%>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/pretty-checkable.css"/>/>
+
+	<%-- Custom style for the media news entry form --%>
+ 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_create_news_entry_form.css"/>/>
+     
+</head>

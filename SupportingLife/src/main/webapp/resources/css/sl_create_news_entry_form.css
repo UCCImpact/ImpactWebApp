@@ -1,0 +1,120 @@
+/* **************************************************************************
+** Filename: sl_create_news_entry_form.css
+** 
+** Styling for News Entry Creation Form
+**
+** Author: Timothy O' Sullivan
+**
+** Last Updated: 13/12/2014.
+** *************************************************************************/
+
+/* -------------------------------------------------- */
+/* container for entire news entry creation form	  */
+/* -------------------------------------------------- */
+#news-entry-creation-container {
+	margin-top: 50px; 
+	text-align: center; /* Centre-align all components, unless overridden individually */
+}
+
+#news-entry-creation-container h1 {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  padding-bottom: 15px;
+}
+
+#user-welcome h1 {
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 0px;
+}
+
+#news-entry-creation-container .control-label {
+	width: 140px;
+	text-align: left;
+	margin-left: 30px;
+}
+
+#news-entry-creation-container .input {
+	text-align: left;
+}
+
+#headline {
+	margin-bottom: 20px;
+}
+
+#entry {
+	margin-bottom: 20px;
+	vertical-align:middle;
+}
+
+#entryLabel {
+	vertical-align:middle;
+}
+
+#newsDate {
+	margin-bottom: 20px;
+}
+
+#newsPicture {
+	margin-bottom: 20px;
+}
+
+#submit-button, #reset-button {
+	margin-top: 15px;
+}
+
+/* -------------------------------------------------- */
+/* Canvas to maintain visual consistency from 		  */
+/* carousel main screen to reporting screens		  */
+/* -------------------------------------------------- */
+#sl-banner {
+	position: relative;
+	border-radius: 4px; /* round corner of rectangle */
+	width: 100%;
+	min-height: 20px;
+	background: #077204;
+}
+
+/* -------------------------------------------------- */
+/* Customise the colour of the form validation		  */
+/* messages presented to the user					  */
+/* -------------------------------------------------- */
+.error {
+	color: #FF0000;  /* red */
+}
+
+.valid {
+    color:#000000; /* black */
+}
+
+/* -------------------------------------------------- */
+/* RESPONSIVE CSS */
+/* -------------------------------------------------- */
+
+@media (max-width: 1200px) {
+	#news-entry-creation-container {
+		margin-top: 50px;
+		text-align: center;
+	}
+	
+	.input-group {
+		display: block;
+	}
+}
+
+/* this is the width point at which the navbar 	*/
+/* collapses to the mobile look					*/
+@media (max-width: 768px) {
+	#news-entry-creation-container {
+		margin-top: 68px; 
+		text-align: center; /* Centre-align all components, unless overridden individually */
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	
+	.input-group {
+		display: block;
+	}
+}

@@ -19,6 +19,8 @@
 		<intercept-url pattern="/user/create_user_form" access="hasRole('ROLE_ADMIN')"  />
 		<intercept-url pattern="/user/create" access="hasRole('ROLE_ADMIN')"  />
 		<intercept-url pattern="/user/checkUserIdExistence" access="hasRole('ROLE_ADMIN')"  />
+		<intercept-url pattern="/media/create_news_entry_form" access="hasRole('ROLE_ADMIN')"  />
+		<intercept-url pattern="/media/create_news_entry" access="hasRole('ROLE_ADMIN')"  />
 		
 		<form-login login-processing-url="/static/j_spring_security_check"
 					login-page="/login"

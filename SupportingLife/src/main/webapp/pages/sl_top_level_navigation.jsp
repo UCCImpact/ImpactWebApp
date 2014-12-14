@@ -74,9 +74,14 @@
 								</ul>			
 							</li><!-- END: ADMIN -->
 							
-							<li class="dropdown">																							<!-- ABOUT -->
+							<li class="dropdown">																							<!-- ABOUT / MEDIA -->
 								<a href="#" class="dropdown-toggle"	data-toggle="dropdown">About<b class="caret"></b></a>
 								<ul class="dropdown-menu">
+									<li class="dropdown-header">Media</li>
+										<li><a href="${pageContext.request.contextPath}/media/news">Latest News</a></li>
+										<sec:authorize access="hasRole('ROLE_ADMIN')">
+											<li><a href="${pageContext.request.contextPath}/media/create_news_entry_form">Create News Entry</a></li>
+										</sec:authorize>
 									<li class="dropdown-header">Learn More</li>
 										<li><a href="${pageContext.request.contextPath}/welcome/infographic">Infographic</a></li>
 								</ul>			
