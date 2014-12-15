@@ -41,6 +41,7 @@ import ie.ucc.bis.supportinglife.utilities.DateUtilities;
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -506,10 +507,18 @@ public class SupportingLifeService implements SupportingLifeServiceInf, Resource
 		
 		List<NewsItem> newsItems = new ArrayList<NewsItem>();
 		for (NewsEntry newsEntry : newsEntries) {
-			newsItems.add(new NewsItem(newsEntry.getHeadline(), newsEntry.getEntry(), newsEntry.getNewsDate().toString(), 
-					new String("data:image/jpg;base64," + org.apache.commons.codec.binary.Base64.encodeBase64(newsEntry.getPicture()))));
+		    System.out.println("bytes" + newsEntry.getPicture());
+		    byte[] encodeBase64 = Base64.encodeBase64(newsEntry.getPicture());
+		    String base64Encoded;
+			try {
+				base64Encoded = new String(encodeBase64, "UTF-8");
+				newsItems.add(new NewsItem(newsEntry.getHeadline(), newsEntry.getEntry(), newsEntry.getNewsDate().toString(), 
+						new String("data:image/jpg;base64," + base64Encoded)));
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		
 		return newsItems;
 	}
 	

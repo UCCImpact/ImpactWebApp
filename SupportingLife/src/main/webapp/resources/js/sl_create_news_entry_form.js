@@ -49,6 +49,21 @@ $(document).ready(function() {
 	});
 });
 
+/* 
+ * Validation method using a regular expression to check image file extension
+ * consists of correct syntax
+ */
+$.validator.addMethod("hasExtension", function(value, element) {
+	var fileName = $(element).val();
+	var extension = fileName.split('.').pop().toLowerCase();
+	if ($.inArray(extension, ['jpg', 'jpeg', 'gif', 'png'])) {
+		return false;
+	}
+	else {
+		return true;
+	}
+});
+
 /* Form Validation */
 $(document).ready(function () {
 
@@ -67,6 +82,9 @@ $(document).ready(function () {
 			},
 			"newsDate": {
 				required: true
+			},
+			"picture": {
+				hasExtension: true
 			}
 		},
 		messages: {
@@ -75,7 +93,10 @@ $(document).ready(function () {
 			},
 			"entry": {
 				maxlength: "Maximum of 1000 characters"
-			}
+			},
+			"picture": {
+				hasExtension: "Only images of type jpg and png can be uploaded"
+			}			
 		},
 		unhighlight: function(element, errorClass, validClass) {
 		    $(element).removeClass('error').addClass('valid');

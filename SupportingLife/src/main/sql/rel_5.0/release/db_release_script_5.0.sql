@@ -359,7 +359,7 @@ CREATE TABLE IF NOT EXISTS sl_news (
     								entry 			VARCHAR(1000),
     								headline		VARCHAR(250),
     								news_dt 		TIMESTAMP,
-    								picture			BLOB,
+    								picture			LONGBLOB,
     								PRIMARY KEY (id)
 									);
 
