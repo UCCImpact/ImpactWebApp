@@ -1,0 +1,16 @@
+<%-- sl_news_header.jspf --%>
+<%-- Header for Welcome Page. --%>
+<%-- author: Timothy O Sullivan --%>
+<%-- Last Updated: 15/12/2014. --%>
+
+	<title>Supporting LIFE Admin</title>
+	 
+	<%--------------------------------------------- CSS Links -----------------------------------------%>
+	<%-- Custom style for the news page  --%>
+    <link rel="stylesheet" type="text/css" href=<c:url value="/css/sl_news.css"/>/>
+        
+    <%-- CSS 'Smoothness' Themeroller theme - used for customising look of vertical accordion --%>
+    <%-- i.e. team member profiles --%>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-theme.css"/>/>
+    
+</head>

@@ -10,12 +10,27 @@
 
 
 $(document).ready(function() {
+	
+	var todaysDate = new Date();
+	todaysDate.setDate(todaysDate.getDate());
 
 	if($('#newsEntryCreated').val() == "true") {
 		$('#page-header-title').notify('News entry has been successfully recorded!', 
     			{className: 'success', style: 'bootstrap', autoHideDelay: 2000, showDuration: 500, elementPosition: 'top center'});
 	}
-		
+
+	/* initialises jQuery UI datepicker functionality */
+	/*												  */
+	/* Note: Don't allow user to pick a future date	  */
+	/*  	 beyond today							  */
+	/*												  */
+	$('.news-datepicker').datepicker({
+		format: 'dd-mm-yyyy',
+		endDate: '+0d'
+	});
+	$('.news-datepicker').datepicker('setDate', todaysDate);
+	$('.news-datepicker').datepicker('update');
+	
 	$('#headline').focus();
 	
 	/* when reset button is clicked, perform the following: */
@@ -43,13 +58,24 @@ $(document).ready(function () {
 	$('#news-entry-creation-form').validate({
 		rules: {
 			"headline": {
-				required: true
+				required: true,
+				maxlength: 250
 			},
 			"entry": {
+				required: true,
+				maxlength: 1000
+			},
+			"newsDate": {
 				required: true
 			}
 		},
 		messages: {
+			"headline": {
+				maxlength: "Maximum of 250 characters"
+			},
+			"entry": {
+				maxlength: "Maximum of 1000 characters"
+			}
 		},
 		unhighlight: function(element, errorClass, validClass) {
 		    $(element).removeClass('error').addClass('valid');

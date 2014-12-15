@@ -1,0 +1,128 @@
+/* **************************************************************************
+** Filename: sl_news.css
+** 
+** Styling for News page
+**
+** Author: Timothy O Sullivan
+**
+** Last Updated: 15/12/2014.
+** *************************************************************************/
+
+/* -------------------------------------------------- */
+/* container for entire news page			 		  */
+/* -------------------------------------------------- */
+#news-container {
+	margin-top: 50px; 
+	text-align: center; /* Centre-align all components, unless overridden individually */
+}
+
+#news-container h1 {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  padding-bottom: 15px;
+}
+
+/* -------------------------------------------------- */
+/* Canvas to maintain visual consistency from 		  */
+/* carousel main screen to news screen				  */
+/* -------------------------------------------------- */
+#sl-news-banner {
+	position: relative;
+	border-radius: 4px; /* round corner of rectangle */
+	width: 100%;
+	min-height: 20px;
+	background: #077204;
+}
+
+
+
+/* -------------------------------------------------- */
+/* Featurettes */
+/* -------------------------------------------------- */
+
+/* Thin out the marketing headings */
+
+.featurette h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  color: #077204;
+}
+
+.featurette h2 {
+  font-size: 20px;
+  font-weight: 300;
+  color: #077204;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.featurette h3 {
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.featurette p {
+  font-size: 14px;
+  text-align: justify;
+}
+
+.featurette-divider {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.feature-text-centered {
+	text-align: center !important;
+}
+
+.team-member-header img {
+	float: left;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	
+	height: 130px;
+	width: 100px;
+	
+	/* rounded corners */
+    background: #FFFFFF;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0px 0px 20px #888;
+	
+	/*this filter is for Firefox for SVG image, NOT working for other image format (yet)*/
+	filter: grayscale(1);
+	/*this filter is for Webkit browser, for any image format (probably)*/
+	-webkit-filter: grayscale(1);
+}
+
+/* -------------------------------------------------- */
+/* Customise the colour of the form validation		  */
+/* messages presented to the user					  */
+/* -------------------------------------------------- */
+.error {
+	color: #FF0000;  /* red */
+	padding-top: 5px;
+	padding-left: 3px;
+}
+
+.valid {
+    color:#000000; /* black */
+}
+
+/* -------------------------------------------------- */
+/* RESPONSIVE CSS */
+/* -------------------------------------------------- */
+@media (min-width: 768px) {
+
+	.featurette-heading {
+    	font-size: 50px;
+  	}
+
+}

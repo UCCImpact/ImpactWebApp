@@ -38,4 +38,14 @@ public class DateUtilities {
 		return todayDate;
 	}
 	
+	public static Date parseDate(String dateValue, String slDateFormat) throws ParseException {
+		if (dateValue != null) {
+			Date dateInstance = new SimpleDateFormat(slDateFormat, LOCALE).parse(dateValue);
+			return dateInstance;
+		}
+		else {
+			return null;
+		}
+	}
+	
 }

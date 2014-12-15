@@ -9,6 +9,7 @@ import ie.ucc.bis.supportinglife.ccm.dao.CcmPatientTreatmentDao;
 import ie.ucc.bis.supportinglife.ccm.dao.CcmPatientVisitDao;
 import ie.ucc.bis.supportinglife.ccm.dao.ContactsDao;
 import ie.ucc.bis.supportinglife.ccm.dao.Dao;
+import ie.ucc.bis.supportinglife.ccm.dao.NewsDao;
 import ie.ucc.bis.supportinglife.ccm.dao.UserDao;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmAssessmentAnalytics;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmAssessmentSensorReadings;
@@ -20,6 +21,7 @@ import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientLookSymptoms;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientTreatment;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmTreatment;
+import ie.ucc.bis.supportinglife.ccm.domain.NewsEntry;
 import ie.ucc.bis.supportinglife.ccm.domain.User;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentComms;
 import ie.ucc.bis.supportinglife.communication.PatientAssessmentResponseComms;
@@ -27,8 +29,10 @@ import ie.ucc.bis.supportinglife.communication.PersonContactComms;
 import ie.ucc.bis.supportinglife.communication.SurveillanceRequestComms;
 import ie.ucc.bis.supportinglife.communication.TreatmentRecommendation;
 import ie.ucc.bis.supportinglife.communication.UserAuthenticationComms;
+import ie.ucc.bis.supportinglife.form.NewsEntryCreationForm;
 import ie.ucc.bis.supportinglife.form.UserCreationForm;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
+import ie.ucc.bis.supportinglife.reference.NewsItem;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 import ie.ucc.bis.supportinglife.surveillance.SurveillancePeriodStats;
 import ie.ucc.bis.supportinglife.surveillance.SurveillanceRecord;
@@ -46,6 +50,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.codec.binary.Base64;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
@@ -483,7 +488,30 @@ public class SupportingLifeService implements SupportingLifeServiceInf, Resource
 		ContactsDao contactsDao = (ContactsDao) getDaoBeans().get("ContactsDao");
 		contactsDao.addNewsletterContact(emailAddress);		
 	}
+
 	
+	/*******************************************************************************/
+	/************************************Media/News*********************************/
+	/*******************************************************************************/	
+	@Override
+	public void createNewsEntry(NewsEntryCreationForm newsEntryCreationForm) {
+		NewsDao newsDao = (NewsDao) getDaoBeans().get("NewsDao");
+		newsDao.addNewsEntry(newsEntryCreationForm);		
+	}
+	
+	@Override
+	public List<NewsItem> getNewsItems() {
+		NewsDao newsDao = (NewsDao) getDaoBeans().get("NewsDao");
+		List<NewsEntry> newsEntries = newsDao.getNewsItems();
+		
+		List<NewsItem> newsItems = new ArrayList<NewsItem>();
+		for (NewsEntry newsEntry : newsEntries) {
+			newsItems.add(new NewsItem(newsEntry.getHeadline(), newsEntry.getEntry(), newsEntry.getNewsDate().toString(), 
+					new String("data:image/jpg;base64," + org.apache.commons.codec.binary.Base64.encodeBase64(newsEntry.getPicture()))));
+		}
+		
+		return newsItems;
+	}
 	
 	/*******************************************************************************/
 	/*********************************Utility Methods*******************************/

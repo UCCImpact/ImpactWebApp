@@ -10,6 +10,9 @@
 	<%--  CSS JQuery UI --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-theme.css"/>/>
 	
+	<%-- CSS for datepicker --%>
+	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/datepicker.css"/>/>
+	
 	<%--  Custom Checkbox CSS --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/pretty-checkable.css"/>/>
 

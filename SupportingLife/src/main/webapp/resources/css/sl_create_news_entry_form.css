@@ -61,6 +61,10 @@
 	margin-bottom: 20px;
 }
 
+#picture {
+	display: inline;
+}
+
 #submit-button, #reset-button {
 	margin-top: 15px;
 }

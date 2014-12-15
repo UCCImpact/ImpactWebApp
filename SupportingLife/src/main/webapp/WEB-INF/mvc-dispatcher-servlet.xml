@@ -18,7 +18,18 @@
 						ie.ucc.bis.supportinglife.interceptor, ie.ucc.bis.supportinglife.scheduler" />
 
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<mvc:annotation-driven />
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>image/jpeg</value>
+						<value>image/png</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
 
 	<!-- Configure Interceptor -->
 	<mvc:interceptors>

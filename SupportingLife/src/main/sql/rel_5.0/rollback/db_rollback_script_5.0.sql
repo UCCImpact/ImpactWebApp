@@ -79,3 +79,9 @@ DROP TABLE sl_contacts;
 -----------------------------------------------------------------------------------------------------------------
 USE supportinglifedb;
 DROP TABLE sl_newsletter_contacts;
+
+-----------------------------------------------------------------------------------------------------------------
+-- DROP TABLE sl_news (don't drop this table as we want to maintain the news items from release to release)
+-----------------------------------------------------------------------------------------------------------------
+--USE supportinglifedb;
+--DROP TABLE sl_news;

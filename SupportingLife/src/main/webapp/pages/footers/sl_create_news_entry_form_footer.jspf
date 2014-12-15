@@ -38,3 +38,6 @@
 	
 	<%--  SL News Entry Creation Form JS Functionality --%>
 	<script type="text/javascript" src=<c:url value="/js/sl_create_news_entry_form.js"/>></script>
+	
+	<%--  Bootstrap Datepicker --%>
+	<script type="text/javascript" src=<c:url value="/js/library/bootstrap-datepicker.js"/>></script>

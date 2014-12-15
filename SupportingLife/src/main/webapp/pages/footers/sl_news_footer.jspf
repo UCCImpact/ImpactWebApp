@@ -1,0 +1,31 @@
+<%-- sl_news_footer.jspf --%>
+<%-- SL Footer, containing JS references --%>
+<%-- author: Timothy O' Sullivan --%>
+<%-- Last Updated: 15/12/2014 --%>
+
+ 	<%----------------------------------------- JS References -----------------------------------------%>
+ 	<%-- Placed at the end of the document so the pages load faster --%>
+ 	
+	<%-- Holder renders image placeholders entirely on the client side. --%>
+	<%-- It works both online and offline, and offers a chainable API   --%>
+	<%-- to style and create placeholders with ease. --%>
+	<%-- Ref. http://imsky.github.io/holder/ --%>
+	<script src=<c:url value="/js/library/holder.js"/>></script>
+
+ 	<%----------------------------------------- JS References -----------------------------------------%>
+ 	<%-- Placed at the end of the document so the pages load faster --%>
+ 	
+	<%-- jQuery Source file --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery-1.10.2.js"/> charset="utf-8"></script>
+	
+	<%--  jQuery UI - used for customising look of horizontal accordion --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery-ui-1.10.4.custom.min.js"/>></script>
+	
+	<%--  jQuery Validation --%>
+	<script type="text/javascript" src=<c:url value="/js/library/jquery.validate.min.js"/>></script>
+	
+	<%--  notify.js - used for providing dynamic notifications on landing page --%>
+	<script type="text/javascript" src=<c:url value="/js/library/notify.min.js"/>></script>
+
+	<%--  SL News Page JS Functionality --%>
+	<script type="text/javascript" src=<c:url value="/js/sl_news.js"/>></script>

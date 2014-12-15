@@ -34,7 +34,7 @@
 	<h1 id="page-header-title">Create SL News Entry</h1>
 		
 	<!-- User Creation Form -->
-	<form:form method="POST" action="../media/create_news_entry" modelAttribute="newsEntryCreationForm" class="form-horizontal" id="news-entry-creation-form">
+	<form:form method="POST" action="../media/create_news_entry" enctype="multipart/form-data" modelAttribute="newsEntryCreationForm" class="form-horizontal" id="news-entry-creation-form">
 		<div class="row col-md-12">
 			<div class="col-md-offset-4">
 				<div class="control-group input-group">
@@ -47,6 +47,20 @@
 					<div class="controls">
 						<span><label for="entry" class="control-label" id="entryLabel">Entry: </label></span>
 						<span><form:textarea path="entry" rows="5" placeholder="Enter Details"/></span>
+					</div>
+				</div>
+				<div class="control-group input-group">
+					<div class="controls">
+						<!-- news date -->
+						<form:label for="news-date" class="control-label" path="newsDate">Date: </form:label>
+						<form:input class="news-datepicker" data-format="dd-MM-yyyy" path="newsDate" placeholder="News Date" />
+					</div>
+				</div>
+				<div class="control-group input-group">
+					<!-- picture -->
+					<div class="controls">
+						<span><form:label for="picture" class="control-label" path="picture">Image: </form:label></span>
+						<span><form:input type="file" path="picture" placeholder="Upload"/></span>
 					</div>
 				</div>
 			</div>

@@ -79,4 +79,22 @@ public class MediaController implements MediaControllerInf {
 		// redirect and flag that a new news entry has been successfully recorded
 		return new ModelAndView("redirect:/media/create_news_entry_form?newsEntryCreated=true");
 	}
+	
+	/**
+	 * Displays all news items
+	 * 
+	 * @return String
+	 */
+	@RequestMapping(value="/news", method = RequestMethod.GET, headers="Accept=html/text")
+	public ModelAndView displayNewsItems(ModelMap model) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("newsItems", supportingLifeService.getNewsItems());
+		// pull back the news items
+//		model.addAttribute("newsItems", supportingLifeService.getNewsItems());
+	
+		// Spring uses InternalResourceViewResolver and returns back sl_news.jsp
+//		return"sl_news";
+		mav.setViewName("sl_news");
+		return mav;
+	}
 } // end of class

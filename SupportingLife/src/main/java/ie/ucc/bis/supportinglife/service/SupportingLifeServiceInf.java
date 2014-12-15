@@ -12,8 +12,10 @@ import ie.ucc.bis.supportinglife.communication.PatientAssessmentResponseComms;
 import ie.ucc.bis.supportinglife.communication.PersonContactComms;
 import ie.ucc.bis.supportinglife.communication.SurveillanceRequestComms;
 import ie.ucc.bis.supportinglife.communication.UserAuthenticationComms;
+import ie.ucc.bis.supportinglife.form.NewsEntryCreationForm;
 import ie.ucc.bis.supportinglife.form.UserCreationForm;
 import ie.ucc.bis.supportinglife.reference.CheckboxFormElement;
+import ie.ucc.bis.supportinglife.reference.NewsItem;
 import ie.ucc.bis.supportinglife.reference.Treatment;
 import ie.ucc.bis.supportinglife.surveillance.SurveillancePeriodStats;
 import ie.ucc.bis.supportinglife.surveillance.SurveillanceRecord;
@@ -97,4 +99,10 @@ public interface SupportingLifeServiceInf {
 	/*******************************************************************************/	
 	public void addPersonContact(PersonContactComms personContact);
 	public void addNewsletterContact(String emailAddress);
+	
+	/*******************************************************************************/
+	/************************************Media/News*********************************/
+	/*******************************************************************************/		
+	public void createNewsEntry(NewsEntryCreationForm newsEntryCreationForm);
+	public List<NewsItem> getNewsItems();
 }

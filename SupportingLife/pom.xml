@@ -27,6 +27,9 @@
 		<apache.velocity.version>1.7</apache.velocity.version>
 		<velocity.tools.version>2.0</velocity.tools.version>
 		<jfreechart.version>1.0.13</jfreechart.version>
+		<commons.fileupload.version>1.2.2</commons.fileupload.version>
+		<commons.io.version>2.4</commons.io.version>
+		<commons.codec.version>1.9</commons.codec.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.resources.sourceEncoding>UTF-8</project.resources.sourceEncoding>
 	</properties>
@@ -235,6 +238,22 @@
 			<version>${jfreechart.version}</version>
 		</dependency>
 		
+		<!-- File Upload -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons.fileupload.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons.io.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons.codec.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
