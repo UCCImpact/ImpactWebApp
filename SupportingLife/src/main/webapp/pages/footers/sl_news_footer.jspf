@@ -27,5 +27,8 @@
 	<%--  notify.js - used for providing dynamic notifications on landing page --%>
 	<script type="text/javascript" src=<c:url value="/js/library/notify.min.js"/>></script>
 
+	<%--  lightbox.js - used for popping out image and dimming background --%>
+	<script type="text/javascript" src=<c:url value="/js/library/lightbox.min.js"/>></script>
+
 	<%--  SL News Page JS Functionality --%>
 	<script type="text/javascript" src=<c:url value="/js/sl_news.js"/>></script>

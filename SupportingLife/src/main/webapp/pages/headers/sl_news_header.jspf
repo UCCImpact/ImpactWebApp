@@ -13,4 +13,7 @@
     <%-- i.e. team member profiles --%>
 	<link rel="stylesheet" type="text/css" href=<c:url value="/css/library/jquery-ui-theme.css"/>/>
     
+    <%--  lightbox.css - used for popping out image and dimming background --%>
+    <link rel="stylesheet" type="text/css" href=<c:url value="/css/library/lightbox.css"/>/>
+
 </head>

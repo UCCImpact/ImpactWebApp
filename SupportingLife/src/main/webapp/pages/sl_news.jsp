@@ -29,7 +29,9 @@
 			<c:when test="${count % 2 == 0}">
 				<div class="row featurette">
 					<div id="knowledge-base-icon-container" class="col-md-5">
-						<img class="news-story-picture" src="${newsItem.pictureStringFormat}" />
+						<a href="${newsItem.pictureStringFormat}" class="news-story-picture" data-lightbox="${count}" data-title="${newsItem.headline}">
+							<img class="news-story-picture" data-lightbox="${count}" data-title="${newsItem.headline}" src="${newsItem.pictureStringFormat}" />
+						</a>
 					</div>
 					<div class="col-md-7">
 						<h1>${newsItem.headline}</h1>
@@ -52,7 +54,9 @@
 						<p class="lead">${newsItem.entry}</p>
 					</div>
 					<div id="knowledge-base-icon-container" class="col-md-7">
-						<img class="news-story-picture-larger" src="${newsItem.pictureStringFormat}" />
+						<a href="${newsItem.pictureStringFormat}" class="news-story-picture-larger" data-lightbox="${count}" data-title="${newsItem.headline}">
+							<img class="news-story-picture-larger" data-lightbox="${count}" data-title="${newsItem.headline}" src="${newsItem.pictureStringFormat}" />
+						</a>
 					</div>
 				</div>
 			</c:otherwise>
