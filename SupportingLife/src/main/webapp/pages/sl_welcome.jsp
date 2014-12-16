@@ -301,9 +301,9 @@
 			</p>
 		</div>
 		<div id="github-icon-container" class="col-md-5">
-			<a href="https://github.com/timothyosullivan" target="_blank"> <i
-				id="github-icon" class="fa fa-github"></i> <br> <span
-				class="text-muted"> Follow us on GitHub! </span>
+			<a href="https://bitbucket.org/healthresearch" target="_blank"> <i
+				id="github-icon" class="fa fa-bitbucket"></i> <br> <span
+				class="text-muted"> Follow us on Bitbucket! </span>
 			</a>
 		</div>
 	</div>
