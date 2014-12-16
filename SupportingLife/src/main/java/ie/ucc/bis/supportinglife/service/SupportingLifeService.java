@@ -42,8 +42,11 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -52,6 +55,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.codec.binary.Base64;
+import org.apache.log4j.Logger;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
@@ -67,6 +71,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class SupportingLifeService implements SupportingLifeServiceInf, ResourceLoaderAware {
 
+	Logger log = Logger.getLogger(SupportingLifeService.class); 
+	
 	private Map<String, Dao> daoBeans;
 	private ResourceLoader resourceLoader;
 	
@@ -519,6 +525,22 @@ public class SupportingLifeService implements SupportingLifeServiceInf, Resource
 				e.printStackTrace();
 			}
 		}
+		
+		// sort the news items by date
+		Collections.sort(newsItems, new Comparator<NewsItem>() {
+		    public int compare(NewsItem newsItem1, NewsItem newsItem2) {
+		    	int comparison = 0;
+		        try {
+		        	comparison = DateUtilities.parseDate(newsItem2.getNewsDate(), NewsItem.NEWS_DATE_FORMAT)
+							.compareTo(DateUtilities.parseDate(newsItem1.getNewsDate(), NewsItem.NEWS_DATE_FORMAT));
+				} catch (ParseException e) {
+					log.error("Parse exception attemping to sort news items");
+					e.printStackTrace();
+				}
+		        return comparison;
+		    }
+		});
+		
 		return newsItems;
 	}
 	

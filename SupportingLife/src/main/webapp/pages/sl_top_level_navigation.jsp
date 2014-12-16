@@ -56,6 +56,19 @@
 							
 							<li class="disabled"><a data-toggle="tab" href="#contact" class="unimplemented-feature">Training</a></li>		<!-- TRAINING -->
 							
+							<li class="dropdown">																							<!-- ABOUT / MEDIA -->
+								<a href="#" class="dropdown-toggle"	data-toggle="dropdown">About<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li class="dropdown-header">Media</li>
+										<li><a href="${pageContext.request.contextPath}/media/news">Latest News</a></li>
+										<sec:authorize access="hasRole('ROLE_ADMIN')">
+											<li><a href="${pageContext.request.contextPath}/media/create_news_entry_form">Create News Entry</a></li>
+										</sec:authorize>
+									<li class="dropdown-header">Learn More</li>
+										<li><a href="${pageContext.request.contextPath}/welcome/infographic">Infographic</a></li>
+								</ul>			
+							</li><!-- END: ABOUT -->					
+							
 							<li class="dropdown">																							<!-- ADMIN -->
 								<a href="#" class="dropdown-toggle"	data-toggle="dropdown">Admin<b class="caret"></b></a>
 								<ul class="dropdown-menu">
@@ -72,20 +85,7 @@
 										<li class="divider"></li>
 									</sec:authorize>
 								</ul>			
-							</li><!-- END: ADMIN -->
-							
-							<li class="dropdown">																							<!-- ABOUT / MEDIA -->
-								<a href="#" class="dropdown-toggle"	data-toggle="dropdown">About<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li class="dropdown-header">Media</li>
-										<li><a href="${pageContext.request.contextPath}/media/news">Latest News</a></li>
-										<sec:authorize access="hasRole('ROLE_ADMIN')">
-											<li><a href="${pageContext.request.contextPath}/media/create_news_entry_form">Create News Entry</a></li>
-										</sec:authorize>
-									<li class="dropdown-header">Learn More</li>
-										<li><a href="${pageContext.request.contextPath}/welcome/infographic">Infographic</a></li>
-								</ul>			
-							</li><!-- END: ABOUT -->						
+							</li><!-- END: ADMIN -->	
 						</ul>
 					</div>
 				</div>

@@ -46,7 +46,7 @@
 
 .featurette h1 {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-weight: 300;
   color: #077204;
 }
@@ -60,7 +60,9 @@
 }
 
 .featurette h3 {
-  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 14px;
   font-weight: 300;
   letter-spacing: -1px;
   line-height: 1;
@@ -69,6 +71,8 @@
 .featurette p {
   font-size: 14px;
   text-align: justify;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .featurette-divider {
@@ -80,14 +84,12 @@
 	text-align: center !important;
 }
 
-.team-member-header img {
-	float: left;
-	margin-top: 40px;
+.news-story-picture {
+	margin-top: 30px;
 	margin-bottom: 10px;
 	margin-left: 10px;
-	
-	height: 130px;
-	width: 100px;
+	height: 240px;
+	width: 240px;
 	
 	/* rounded corners */
     background: #FFFFFF;
@@ -95,11 +97,21 @@
     border-radius: 5px;
     padding: 5px;
     box-shadow: 0px 0px 20px #888;
+}
+
+.news-story-picture-larger {
+	margin-top: 40px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	height: 300px;
+	width: 300px;
 	
-	/*this filter is for Firefox for SVG image, NOT working for other image format (yet)*/
-	filter: grayscale(1);
-	/*this filter is for Webkit browser, for any image format (probably)*/
-	-webkit-filter: grayscale(1);
+	/* rounded corners */
+    background: #FFFFFF;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0px 0px 20px #888;
 }
 
 /* -------------------------------------------------- */

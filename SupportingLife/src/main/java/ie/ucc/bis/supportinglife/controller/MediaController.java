@@ -89,11 +89,6 @@ public class MediaController implements MediaControllerInf {
 	public ModelAndView displayNewsItems(ModelMap model) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("newsItems", supportingLifeService.getNewsItems());
-		// pull back the news items
-//		model.addAttribute("newsItems", supportingLifeService.getNewsItems());
-	
-		// Spring uses InternalResourceViewResolver and returns back sl_news.jsp
-//		return"sl_news";
 		mav.setViewName("sl_news");
 		return mav;
 	}

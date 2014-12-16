@@ -56,11 +56,11 @@ $(document).ready(function() {
 $.validator.addMethod("hasExtension", function(value, element) {
 	var fileName = $(element).val();
 	var extension = fileName.split('.').pop().toLowerCase();
-	if ($.inArray(extension, ['jpg', 'jpeg', 'gif', 'png'])) {
-		return false;
+	if ($.inArray(extension, ['jpg', 'jpeg', 'gif', 'png'])!==-1) {
+		return true;
 	}
 	else {
-		return true;
+		return false;
 	}
 });
 
@@ -95,7 +95,7 @@ $(document).ready(function () {
 				maxlength: "Maximum of 1000 characters"
 			},
 			"picture": {
-				hasExtension: "Only images of type jpg and png can be uploaded"
+				hasExtension: "jpg and png files only"
 			}			
 		},
 		unhighlight: function(element, errorClass, validClass) {

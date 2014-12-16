@@ -19,25 +19,44 @@
 	<h1>Latest News</h1>	
 			
 	<!-- =========================================== FEATURETTES ================================================= -->
-
+	<c:set var="count" value="0" scope="page" />
 	<c:forEach items="${newsItems}" var="newsItem">
+	
 		<hr class="featurette-divider">
 		
-		<div class="row featurette">
-			<div id="knowledge-base-icon-container" class="col-md-5">
-				<img src="${newsItem.pictureStringFormat}"/>
-			</div>
-			<div class="col-md-7">
-				<h2>${newsItem.headline}</h2>
-				<h3>
-					<span class="text-muted">${newsItem.newsDate}</span>
-				</h3>
-				<br>
-				<p class="lead">
-					${newsItem.entry}
-				</p>
-			</div>
-		</div>
+		<c:set var="count" value="${count + 1}" scope="page"/>
+		<c:choose>
+			<c:when test="${count % 2 == 0}">
+				<div class="row featurette">
+					<div id="knowledge-base-icon-container" class="col-md-5">
+						<img class="news-story-picture" src="${newsItem.pictureStringFormat}" />
+					</div>
+					<div class="col-md-7">
+						<h1>${newsItem.headline}</h1>
+						<h3>
+							<span class="text-muted">${newsItem.day} ${newsItem.month} ${newsItem.year}</span>
+						</h3>
+						<br>
+						<p class="lead">${newsItem.entry}</p>
+					</div>
+				</div>
+			</c:when>
+			<c:otherwise>
+				<div class="row featurette">
+					<div class="col-md-5">
+						<h1>${newsItem.headline}</h1>
+						<h3>
+							<span class="text-muted">${newsItem.day} ${newsItem.month} ${newsItem.year}</span>
+						</h3>
+						<br>
+						<p class="lead">${newsItem.entry}</p>
+					</div>
+					<div id="knowledge-base-icon-container" class="col-md-7">
+						<img class="news-story-picture-larger" src="${newsItem.pictureStringFormat}" />
+					</div>
+				</div>
+			</c:otherwise>
+		</c:choose>
 	</c:forEach>
 	<!-- /END THE FEATURETTES -->
 

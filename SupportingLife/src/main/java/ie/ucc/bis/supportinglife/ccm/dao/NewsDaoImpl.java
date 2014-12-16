@@ -1,7 +1,6 @@
 package ie.ucc.bis.supportinglife.ccm.dao;
 
 import ie.ucc.bis.supportinglife.ccm.domain.NewsEntry;
-import ie.ucc.bis.supportinglife.controller.BaseController;
 import ie.ucc.bis.supportinglife.form.NewsEntryCreationForm;
 import ie.ucc.bis.supportinglife.utilities.DateUtilities;
 
@@ -23,7 +22,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class NewsDaoImpl implements NewsDao {
 
-	Logger log = Logger.getLogger(BaseController.class); 
+	Logger log = Logger.getLogger(NewsDaoImpl.class); 
 	
 	@PersistenceContext
 	private EntityManager entityManager;
