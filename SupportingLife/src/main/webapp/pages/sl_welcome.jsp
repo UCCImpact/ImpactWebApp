@@ -192,13 +192,22 @@
 					<div class="item active">
 						<div class="container">
 							<div class="carousel-caption">
-								<h3>Latest Software Release (SL 4.0)</h3>
+								<h3>Latest Software Release (SL 5.0)</h3>
+							</div>
+						</div>
+						<iframe height="200" src="//www.youtube.com/embed/wbhDalQ5exc"
+							allowfullscreen></iframe>
+					</div>
+					<!-- end of active item -->
+					<div class="item">
+						<div class="container">
+							<div class="carousel-caption">
+								<h3>Fourth Software Release (SL 4.0)</h3>
 							</div>
 						</div>
 						<iframe height="200" src="//www.youtube.com/embed/nrNzS5hsFv4"
 							allowfullscreen></iframe>
-					</div>
-					<!-- end of active item -->
+					</div>					
 					<div class="item">
 						<div class="container">
 							<div class="carousel-caption">

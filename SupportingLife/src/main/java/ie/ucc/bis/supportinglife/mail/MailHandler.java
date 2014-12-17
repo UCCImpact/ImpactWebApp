@@ -30,16 +30,19 @@ public class MailHandler implements ResourceLoaderAware {
 	private VelocityEngine velocityEngine;
 	private ResourceLoader resourceLoader;
 	
-	public void sendMail(final String from, final String to, final String subject, final SurveillancePeriodStats surveillancePeriodStats) {
+	public void sendMail(final String from, final String[] recipients, final String subject, final SurveillancePeriodStats surveillancePeriodStats) {
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
 			@SuppressWarnings({ "rawtypes", "unchecked" })
 			public void prepare(MimeMessage mimeMessage) throws Exception {
 				MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true); // multipart
 			    
-				message.setTo(to);
 				message.setFrom(from);
 				message.setSubject(subject);
 				message.setSentDate(new Date());
+				
+				for (int emailRecipientCounter = 0; emailRecipientCounter < recipients.length; emailRecipientCounter++) {
+					message.addTo(recipients[emailRecipientCounter]);
+				}
 				
 				Map model = new HashMap();                 
 				model.put("surveillancePeriodStats", surveillancePeriodStats);

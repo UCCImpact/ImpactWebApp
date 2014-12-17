@@ -49,9 +49,15 @@ public class DiseaseSurveillanceScheduler implements DiseaseSurveillanceSchedule
 		    		   "\n 30 Day Time Period: "
 		    		   + surveillancePeriodStats.getThirtyDays());
 	    	
+	    	String[] emailRecipients = {"C.Heavin@ucc.ie", "T.OSullivan@ucc.ie",
+		    		   "Y.OConnor@ucc.ie", "deirdre.ryan@ucc.ie",
+		    		   "Bo.Andersson@ics.lu.se", "j.odonoghue@imperial.ac.uk",
+		    		   "wcsg@lukeinternational.no", "jennyhsieh@lukeinternational.no",
+		    		   "gbchirambo@yahoo.co.uk","victoria.e.hardy@outlook.com"};
+	    	
 			// Velocity Email Formatting
 	        mailHandler.sendMail("supplifeucc@gmail.com",
-	    		   "t.osullivan@ucc.ie",
+	        		emailRecipients,
 	    		   "Disease Surveillance Automated Email", 
 	    		   surveillancePeriodStats);
 
