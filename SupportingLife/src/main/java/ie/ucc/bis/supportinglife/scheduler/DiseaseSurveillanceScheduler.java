@@ -53,7 +53,7 @@ public class DiseaseSurveillanceScheduler implements DiseaseSurveillanceSchedule
 		    		   "Y.OConnor@ucc.ie", "deirdre.ryan@ucc.ie",
 		    		   "Bo.Andersson@ics.lu.se", "j.odonoghue@imperial.ac.uk",
 		    		   "wcsg@lukeinternational.no", "jennyhsieh@lukeinternational.no",
-		    		   "gbchirambo@yahoo.co.uk","victoria.e.hardy@outlook.com"};
+		    		   "gbchirambo@yahoo.co.uk","victoria.e.hardy@outlook.com", "supplifeucc@gmail.com"};
 	    	
 			// Velocity Email Formatting
 	        mailHandler.sendMail("supplifeucc@gmail.com",

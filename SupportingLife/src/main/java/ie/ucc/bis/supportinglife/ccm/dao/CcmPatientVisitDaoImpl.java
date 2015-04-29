@@ -325,7 +325,7 @@ public class CcmPatientVisitDaoImpl implements CcmPatientVisitDao {
 		// retrieve only those records within the 30 day time range
 		criteriaList.remove(assessmentDateFromCondition);
 		Calendar monthCal = Calendar.getInstance();
-		monthCal.add(Calendar.DAY_OF_YEAR, -400);
+		monthCal.add(Calendar.DAY_OF_YEAR, -30);
 		int thirtyDayStat = performTimeBasedDiseaseSurveillance(builder, query, patientVisitRoot, criteriaList, monthCal, 
 				assessmentDateFromCondition, symptoms, ccmPatientAskLookSymptomsJoin, ccmPatientLookSymptomsJoin);
 	    return new SurveillancePeriodStats(twentyFourHourStat, sevenDayStat, thirtyDayStat);
