@@ -17,6 +17,8 @@
 	<!-- **** SUPPORTING LIFE VIEW RESOLVERS **** -->
 	<!-- =================================================================================== -->
 
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
 	<!-- REST -->
 	<bean
 		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">

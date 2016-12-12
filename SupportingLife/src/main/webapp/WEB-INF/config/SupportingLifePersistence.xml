@@ -53,6 +53,17 @@
 		</bean>
 	</beans>
 
+	<!--<beans profile="production">
+		<bean id="supportingLifeDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+			<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+			<property name="url" value="jdbc:mysql://impactdbinstance.c1wcrdpiwvkq.us-west-2.rds.amazonaws.com:3306/impactdb"/>
+			<property name="username" value="impact_user"/>
+			<property name="password" value="impact_pw_14"/>
+			<property name="validationQuery" value="/* ping */ SELECT 1"/>
+			<property name="testWhileIdle" value="true"/>
+		</bean>
+	</beans>-->
+	
 	<!-- Production Profile: Use apache pooling to create a pool of DB connections -->
 	<beans profile="production">
 		<bean id="supportingLifeDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">

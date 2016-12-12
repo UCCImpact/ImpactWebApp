@@ -2,7 +2,7 @@ package ie.ucc.bis.supportinglife.ccm.dao;
 
 import ie.ucc.bis.supportinglife.ccm.domain.CcmAssessmentAnalytics;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmClassification;
-import ie.ucc.bis.supportinglife.ccm.domain.CcmClassification_;
+import ie.ucc.bis.supportinglife.ccm.domain.CcmClassification_; 
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientClassification_;
 import ie.ucc.bis.supportinglife.ccm.domain.CcmPatientVisit;
@@ -48,7 +48,7 @@ public class CcmAssessmentAnalyticsDaoImpl implements CcmAssessmentAnalyticsDao 
 	@Override
 	public List<SurveillanceRecord> getSurveillanceRecords(SurveillanceRequestComms surveillanceRequestComms) {
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-		// Create criteria query and pass the value object which needs to be populated as result
+		// Create  criteria query and pass the value object which needs to be populated as result
 		CriteriaQuery<CcmPatientVisit> query = criteriaBuilder.createQuery(CcmPatientVisit.class);
 		// Specify to criteria query which tables/entities you want to fetch
 		Root<CcmPatientVisit> patientVisitRoot = query.from(CcmPatientVisit.class);

@@ -76,6 +76,11 @@ public class PatientAssessmentComms implements Serializable {
 	private Integer difficultySeeingDuration;
 	private boolean cannotTreatProblem;
 	private String cannotTreatProblemDetails;
+	//new impact variables
+	private boolean immunizationNeeded;
+	private boolean rdtDone;
+	private String rdtResult;
+	private boolean otherProblems;
 
 	// classifications
 	private Map<String, String> classifications;
@@ -107,7 +112,9 @@ public class PatientAssessmentComms implements Serializable {
 			String unableToDrinkOrFeed, String vomiting, String vomitsEverything,
 			String redEye, Integer redEyeDuration, String difficultySeeing,
 			Integer difficultySeeingDuration, String cannotTreatProblem, 
-			String cannotTreatProblemDetails) {
+			String cannotTreatProblemDetails,String immunizationNeeded,String rdtDone,
+        String rdtResult, String otherProblems) {
+	
 
 		setId(id);
 		setDeviceGeneratedAssessmentId(deviceGeneratedAssessmentId);
@@ -148,6 +155,11 @@ public class PatientAssessmentComms implements Serializable {
 		setDifficultySeeingDuration(difficultySeeingDuration);
 		setCannotTreatProblem(Boolean.valueOf(cannotTreatProblem));
 		setCannotTreatProblemDetails(cannotTreatProblemDetails);
+		setImmunizationNeeded(Boolean.valueOf(immunizationNeeded));
+		setRDTDone(Boolean.valueOf(rdtDone));
+		setRDTResult(rdtResult);
+		setOtherProblems(Boolean.valueOf(otherProblems));
+
 
 		try {
 			setBirthDate(parseDate(birthDate, BIRTH_DATE_CUSTOM_FORMAT));
@@ -571,4 +583,33 @@ public class PatientAssessmentComms implements Serializable {
 	public void setSensorBodyTemperature(String sensorBodyTemperature) {
 		this.sensorBodyTemperature = sensorBodyTemperature;
 	}	
+	
+	public boolean getImmunizationNeeded() {
+		return immunizationNeeded;
+	}
+	
+	public void setImmunizationNeeded(boolean immunizationNeeded) {
+		this.immunizationNeeded = immunizationNeeded;
+	}
+		public void setRDTDone(boolean rdtDone) {
+		this.rdtDone = rdtDone;
+	}
+	
+	public boolean getRDTDone() {
+		return rdtDone;
+	}
+	public void setRDTResult(String rdtResult) {
+		this.rdtResult = rdtResult;
+	}
+	
+	public String getRDTResult() {
+		return rdtResult;
+	}
+	public void setOtherProblems(boolean otherProblems) {
+		this.otherProblems= otherProblems;
+	}
+	
+	public boolean getOtherProblems () {
+		return this.otherProblems;
+	}
 }

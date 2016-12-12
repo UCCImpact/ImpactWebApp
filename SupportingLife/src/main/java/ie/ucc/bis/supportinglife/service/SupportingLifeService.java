@@ -223,7 +223,7 @@ public class SupportingLifeService implements SupportingLifeServiceInf, Resource
 							patientAssessment.getFeverDuration(), patientAssessment.isConvulsions(), patientAssessment.isDifficultyDrinkingOrFeeding(),
 							patientAssessment.isUnableToDrinkOrFeed(), patientAssessment.isVomiting(), patientAssessment.isVomitsEverything(),
 							patientAssessment.isRedEye(), patientAssessment.getRedEyeDuration(), patientAssessment.isDifficultySeeing(),
-							patientAssessment.getDifficultySeeingDuration(), patientAssessment.getCannotTreatProblemDetails());
+							patientAssessment.getDifficultySeeingDuration(), patientAssessment.getCannotTreatProblemDetails(),patientAssessment.getImmunizationNeeded(), patientAssessment.getRDTDone(), patientAssessment.getRDTResult(), patientAssessment.getOtherProblems());
 		
 		// associate the symptoms with the patient visit
 		ccmPatientVisit.setCcmPatientLookSymptoms(ccmPatientLookSymptoms);

@@ -14,7 +14,7 @@
 	<!-- **** SUPPORTING LIFE SERVICES													**** -->
 	<!-- =================================================================================== -->
 
-	<!-- Validation support (e.g. @Valid) notatation requires a validator bean be added to the 
+	<!-- Validation support (e.g. @Valid) notation requires a validator bean be added to the 
 		 context -->
 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
 	

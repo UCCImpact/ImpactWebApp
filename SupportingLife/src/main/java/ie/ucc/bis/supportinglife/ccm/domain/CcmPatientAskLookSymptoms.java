@@ -97,6 +97,18 @@ public class CcmPatientAskLookSymptoms implements Serializable {
 	@Column(name="other_problems")
 	private String otherProblems;
 	
+	@Column(name="immunization_needed", columnDefinition = "TINYINT(1)")
+	private boolean immunizationNeeded;
+	
+	@Column(name="rdt_done", columnDefinition = "TINYINT(1)")
+	private boolean rdtDone;
+	
+	@Column(name="rdt_result")
+	private String rdtResult;
+	
+	@Column(name="other_prob", columnDefinition = "TINYINT(1)")
+	private boolean otherProb;
+	
 	public CcmPatientAskLookSymptoms() {}
 
 	/**
@@ -122,6 +134,10 @@ public class CcmPatientAskLookSymptoms implements Serializable {
 	 * @param difficultySeeing
 	 * @param difficultySeeingDuration
 	 * @param otherProblems
+	 * @param immunizationNeeded
+	 * @param rdtDone
+	 * @param rdtResult
+	 * @param otherProb
 	 * 
 	 */
 	public CcmPatientAskLookSymptoms(CcmPatientVisit visit, CcmPatient patient, String problem, boolean cough,
@@ -130,7 +146,7 @@ public class CcmPatientAskLookSymptoms implements Serializable {
 								boolean convulsions, boolean difficultyDrinkingOrFeeding,
 								boolean unableToDrinkOrFeed, boolean vomiting, boolean vomitsEverything,
 								boolean redEye, Integer redEyeDuration, boolean difficultySeeing,
-								Integer difficultySeeingDuration, String otherProblems) {	
+								Integer difficultySeeingDuration, String otherProblems,boolean immunizationNeeded,boolean rdtDone,String rdtResult, boolean otherProb) {	
 
 		setVisit(visit);
 		setPatient(patient);
@@ -152,6 +168,10 @@ public class CcmPatientAskLookSymptoms implements Serializable {
 		setDifficultySeeing(difficultySeeing);
 		setDifficultySeeingDuration(difficultySeeingDuration);
 		setOtherProblems(otherProblems);
+		setImmunizationNeeded(Boolean.valueOf(immunizationNeeded));
+		setRDTDone(Boolean.valueOf(rdtDone));
+		setRDTResult(rdtResult);
+		setOtherProb(Boolean.valueOf(otherProb));
 	}
 
 	public Long getId() {
@@ -320,6 +340,30 @@ public class CcmPatientAskLookSymptoms implements Serializable {
 
 	public void setOtherProblems(String otherProblems) {
 		this.otherProblems = otherProblems;
+	}
+	public boolean getImmunizationNeeded() {
+		return immunizationNeeded;
+	}
+	
+	public void setImmunizationNeeded(boolean immunizationNeeded) {
+		this.immunizationNeeded = immunizationNeeded;
+	}
+	public void setRDTDone(boolean rdtDone) {
+		this.rdtDone = rdtDone;
+	}
+	
+	public boolean getRDTDone() {
+		return rdtDone;
+	}
+	public void setRDTResult(String rdtResult) {
+		this.rdtResult = rdtResult;
+	}
+	
+	public String getRDTResult() {
+		return rdtResult;
+	}
+	public void setOtherProb(boolean otherProblems) {
+		this.otherProb= otherProblems;
 	}
 
 }
